@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 async function loadProfileOverview() {
     const user = JSON.parse(localStorage.getItem("user"));
     if (!user) {
-        window.location.href = "../login.html";
+        window.location.href="/login.html";
         return;
     }
 
@@ -97,7 +97,7 @@ async function loadProfileOverview() {
 async function renderSimpleOrgChart() {
     const user = JSON.parse(localStorage.getItem("user"));
     if (!user) {
-        window.location.href = "../login.html";
+        window.location.href="/login.html";
         return;
     }
 
