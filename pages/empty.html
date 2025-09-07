@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="ie=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1" />
+		<meta
+			name="description"
+			content="SPARK - Sales Performance and Revenue Keeper" />
+		<meta
+			name="author"
+			content="SparkPro" />
+		<title>SPARK - Deals & Commissions</title>
+
+		<!-- color-modes:js -->
+		<script src="../../../assets/js/color-modes.js"></script>
+
+		<!-- Fonts -->
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com" />
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+			rel="stylesheet" />
+
+		<!-- core:css -->
+		<link
+			rel="stylesheet"
+			href="../../../assets/vendors/core/core.css" />
+		<!-- icons -->
+		<link
+			rel="stylesheet"
+			href="../../../assets/fonts/feather-font/css/iconfont.css" />
+		<!-- layout styles -->
+		<link
+			rel="stylesheet"
+			href="../../../assets/css/style.css" />
+		<link
+			rel="shortcut icon"
+			href="../icons/white favicon.png" />
+
+		<style>
+			/* Small polish for this page */
+			.filters .form-select,
+			.filters .form-control {
+				min-width: 140px;
+			}
+			.table thead th {
+				white-space: nowrap;
+			}
+		</style>
+	</head>
+	<body class="sidebar-dark">
+		<div
+			class="page-wrapper"
+			style="margin-left: 0">
+			<div class="page-content container-fluid">
+				<!-- Page header -->
+				<div class="row">
+					<div class="col-12 grid-margin">
+						<div class="card">
+							<div class="d-flex align-items-center justify-content-between p-3">
+								<h2 class="mb-0 fw-bold">Deals</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Filters toolbar (merged: My Team style + this page’s fields) -->
+				<div class="card mb-3">
+					<div class="card-body">
+						<div class="row g-2 align-items-center filters">
+							<div class="col-6 col-md-2">
+								<select
+									class="form-select"
+									id="dateFilter"
+									aria-label="Filter by Date">
+									<option value="">Timeframe</option>
+									<option value="today">Today</option>
+									<option value="yesterday">Yesterday</option>
+								</select>
+							</div>
+							<div class="col-6 col-md-2">
+								<select
+									class="form-select"
+									id="roleFilter"
+									aria-label="Filter by Project Type">
+									<option value="">Project Type</option>
+									<option>Fiber</option>
+									<option>Pest</option>
+									<option>Roofing</option>
+									<option>Solar</option>
+								</select>
+							</div>
+							<div class="col-6 col-md-2">
+								<select
+									class="form-select"
+									id="statusFilter"
+									aria-label="Filter by Status">
+									<option value="">All Statuses</option>
+									<option>Active</option>
+									<option>Inactive</option>
+								</select>
+							</div>
+							<div class="col-6 col-md-2">
+								<select
+									class="form-select"
+									id="teamLevelFilter"
+									aria-label="Filter by Team">
+									<option value="">Team</option>
+									<option>Team 1</option>
+									<option>Team 2</option>
+									<option>Team 3</option>
+								</select>
+							</div>
+							<div class="col-12 col-md-3">
+								<input
+									type="text"
+									class="form-control"
+									id="searchBar"
+									placeholder="Search by name or ID" />
+							</div>
+							<div class="col-6 col-md-auto">
+								<button
+									class="btn btn-outline-secondary w-100"
+									id="clearFiltersBtn">
+									Clear
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Deals Table -->
+				<div class="card p-0">
+					<div class="table-responsive">
+						<table
+							class="table table-hover mb-0"
+							id="dealsTable">
+							<thead class="align-middle">
+								<tr>
+									<th>Name</th>
+									<th>Role</th>
+									<th>Status</th>
+									<th>Join Date</th>
+									<th>Recruited By</th>
+									<th>Override %</th>
+									<th>Total Override</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Example rows; replace with your data rendering -->
+								<tr
+									data-name="Jane Doe"
+									data-id="1001"
+									data-role="Closer"
+									data-status="Active"
+									data-team="Team 1">
+									<td>Jane Doe</td>
+									<td>Closer</td>
+									<td>Active</td>
+									<td>2024-03-01</td>
+									<td>John Smith</td>
+									<td>7%</td>
+									<td>$3,500</td>
+									<td>
+										<button
+											class="btn btn-sm btn-primary"
+											data-open-commission
+											data-sale-id="1001">
+											Commission
+										</button>
+									</td>
+								</tr>
+								<tr
+									data-name="Mike Lee"
+									data-id="1002"
+									data-role="Setter"
+									data-status="Inactive"
+									data-team="Team 2">
+									<td>Mike Lee</td>
+									<td>Setter</td>
+									<td>Inactive</td>
+									<td>2023-11-14</td>
+									<td>Jane Doe</td>
+									<td>5%</td>
+									<td>$800</td>
+									<td>
+										<button
+											class="btn btn-sm btn-primary"
+											data-open-commission
+											data-sale-id="1002">
+											Commission
+										</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- Commission Modal -->
+				<div
+					class="modal fade"
+					id="commissionModal"
+					tabindex="-1"
+					aria-hidden="true">
+					<div class="modal-dialog modal-xl modal-dialog-scrollable">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Commission - <span id="sp-commission-title">Loading…</span></h5>
+								<button
+									type="button"
+									class="btn-close"
+									data-bs-dismiss="modal"
+									aria-label="Close"></button>
+							</div>
+
+							<div class="modal-body">
+								<!-- SALE HEADER -->
+								<section class="mb-3">
+									<div class="row g-2">
+										<div class="col-md-4"><strong>Customer:</strong> <span id="sp-sale-customer">—</span></div>
+										<div class="col-md-4"><strong>Address:</strong> <span id="sp-sale-address">—</span></div>
+										<div class="col-md-2"><strong>Type:</strong> <span id="sp-sale-type">—</span></div>
+										<div class="col-md-2"><strong>Signed:</strong> <span id="sp-sale-signed">—</span></div>
+									</div>
+									<div class="row g-2 mt-1">
+										<div class="col-12"><strong>Notes:</strong> <span id="sp-sale-notes">—</span></div>
+									</div>
+								</section>
+
+								<hr class="my-3" />
+
+								<!-- CONTROLS -->
+								<section class="mb-3">
+									<div class="row g-3 align-items-end">
+										<div class="col-md-2">
+											<label class="form-label">Phase</label>
+											<select
+												id="sp-phase"
+												class="form-select">
+												<option value="MP1">MP1</option>
+												<option
+													value="MP2"
+													selected>
+													MP2
+												</option>
+											</select>
+										</div>
+
+										<div class="col-md-2">
+											<label class="form-label">Mode</label>
+											<select
+												id="sp-mode"
+												class="form-select">
+												<option
+													value="Projected"
+													selected>
+													Projected
+												</option>
+												<option value="Actual">Actual</option>
+											</select>
+										</div>
+
+										<div class="col-md-2">
+											<label class="form-label">Stack Base ($)</label>
+											<input
+												id="sp-stack-base"
+												class="form-control"
+												type="number"
+												step="0.01"
+												readonly />
+										</div>
+
+										<div class="col-md-2">
+											<label class="form-label">Stack %</label>
+											<input
+												id="sp-stack-pct"
+												class="form-control"
+												type="number"
+												step="0.01"
+												min="0"
+												max="1" />
+											<div class="form-text">0–1 (e.g. 0.14 = 14%)</div>
+										</div>
+
+										<div class="col-md-2">
+											<label class="form-label">Adders (+$)</label>
+											<input
+												id="sp-adders"
+												class="form-control"
+												type="number"
+												step="0.01"
+												value="0" />
+										</div>
+
+										<div class="col-md-2">
+											<label class="form-label">Clawbacks (-$)</label>
+											<input
+												id="sp-clawbacks"
+												class="form-control"
+												type="number"
+												step="0.01"
+												value="0" />
+										</div>
+									</div>
+								</section>
+
+								<!-- PARTICIPANTS -->
+								<section>
+									<div class="d-flex justify-content-between align-items-center mb-2">
+										<h6 class="m-0">Participants</h6>
+										<button
+											id="sp-add-row"
+											class="btn btn-sm btn-primary"
+											type="button">
+											Add Participant
+										</button>
+									</div>
+
+									<div class="table-responsive">
+										<table
+											class="table table-sm align-middle"
+											id="sp-table">
+											<thead>
+												<tr>
+													<th style="width: 18%">Role</th>
+													<th style="width: 24%">Participant</th>
+													<th style="width: 14%">Type</th>
+													<th style="width: 14%">Amount</th>
+													<th style="width: 18%">Payout $</th>
+													<th style="width: 12%"></th>
+												</tr>
+											</thead>
+											<tbody id="sp-rows"></tbody>
+										</table>
+									</div>
+
+									<div class="mt-1">
+										<small class="text-muted">Percent rows are % of Stack; Flat rows are exact dollars.</small>
+									</div>
+								</section>
+
+								<!-- MANAGER OVERRIDES -->
+								<section class="mt-3">
+									<h6 class="m-0 mb-1">Manager Overrides (auto)</h6>
+									<div class="table-responsive">
+										<table class="table table-sm">
+											<thead>
+												<tr>
+													<th>Manager</th>
+													<th>Amount</th>
+												</tr>
+											</thead>
+											<tbody id="sp-manager-rows"></tbody>
+										</table>
+									</div>
+									<small class="text-muted">Overrides are preview-only (currently 10% of each rep’s payout, paid by company).</small>
+								</section>
+
+								<hr class="my-3" />
+
+								<!-- SUMMARY -->
+								<section class="mb-1">
+									<div class="row g-2">
+										<div class="col-md-3"><strong>Stack Amount:</strong> <span id="sp-stack-amount">$0.00</span></div>
+										<div class="col-md-3"><strong>Participants Total:</strong> <span id="sp-total-part">$0.00</span></div>
+										<div class="col-md-3"><strong>Manager Overrides:</strong> <span id="sp-total-mgr">$0.00</span></div>
+										<div class="col-md-3"><strong>Company Remaining (MP3):</strong> <span id="sp-company">$0.00</span></div>
+									</div>
+									<div
+										class="mt-1"
+										id="sp-warning"
+										style="display: none">
+										<span class="badge bg-danger">Allocated more than stack — adjust percents/flats or stack %.</span>
+									</div>
+								</section>
+							</div>
+
+							<div class="modal-footer">
+								<button
+									class="btn btn-secondary"
+									data-bs-dismiss="modal">
+									Close
+								</button>
+								<button
+									id="sp-save"
+									class="btn btn-primary"
+									type="button">
+									Save
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Footer -->
+				<footer class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small mt-4">
+					<p class="text-secondary mb-1 mb-md-0">
+						Copyright © <span id="currentYear"></span>
+						<a
+							href="https://sparkpro.io"
+							target="_blank"
+							rel="noopener noreferrer"
+							>Spark</a
+						>.
+					</p>
+					<script>
+						document.getElementById("currentYear").textContent = new Date().getFullYear();
+					</script>
+					<p class="text-secondary">
+						Handcrafted By<i
+							class="mb-1 text-primary ms-1 icon-sm"
+							data-feather="zap"></i>
+					</p>
+				</footer>
+			</div>
+		</div>
+
+		<!-- core:js (includes Bootstrap) -->
+		<script src="../../../assets/vendors/core/core.js"></script>
+		<!-- icons + app -->
+		<script src="../../../assets/vendors/feather-icons/feather.min.js"></script>
+		<script src="../../../assets/js/app.js"></script>
+
+		<!-- Commission modal logic (from new page) -->
+		<script>
+			(() => {
+				const API_BASE = "http://localhost:5001";
+
+				// ---- State ----
+				let CURRENT = {
+					saleId: null,
+					phase: "MP2",
+					mode: "Projected",
+					stackBase: 0,
+					stackPct: 0.14,
+					managerRate: 0.1,
+					participants: [],
+					managers: [],
+				};
+
+				const el = (id) => document.getElementById(id);
+				const fmt = (n) => Number(n || 0).toLocaleString(undefined, { style: "currency", currency: "USD" });
+
+				function bindRecalcInputs() {
+					["sp-stack-pct", "sp-adders", "sp-clawbacks"].forEach((id) => {
+						el(id).addEventListener("input", recalc);
+					});
+				}
+
+				function recalc() {
+					const stackBase = Number(el("sp-stack-base").value || 0);
+					const stackPct = Math.min(1, Math.max(0, Number(el("sp-stack-pct").value || 0)));
+					const adders = Number(el("sp-adders").value || 0);
+					const clawbacks = Number(el("sp-clawbacks").value || 0);
+					const stackAmount = stackBase * stackPct + adders - clawbacks;
+
+					let totalPart = 0;
+					CURRENT.participants.forEach((p, idx) => {
+						const row = el(`sp-row-${idx}`);
+						const typeSel = row.querySelector(".sp-type");
+						const amtInp = row.querySelector(".sp-amt");
+						const type = typeSel.value;
+						const amtVal = Number(amtInp.value || 0);
+						p.payoutType = type;
+						p.amount = amtVal;
+
+						if (type === "Percent") {
+							p.calculatedPayout = stackAmount * (amtVal / 100);
+						} else {
+							p.calculatedPayout = amtVal;
+						}
+						totalPart += p.calculatedPayout;
+						row.querySelector(".sp-pay").textContent = fmt(p.calculatedPayout);
+					});
+
+					// Manager overrides preview
+					const mgrRate = CURRENT.managerRate || 0.1;
+					const mgrMap = new Map();
+					CURRENT.participants.forEach((p) => {
+						const mgrRow = CURRENT.managers.find((m) => m.childUserId === p.userId);
+						if (mgrRow) {
+							const cur = mgrMap.get(mgrRow.userId) || 0;
+							mgrMap.set(mgrRow.userId, cur + p.calculatedPayout * mgrRate);
+						}
+					});
+
+					const mgrBody = el("sp-manager-rows");
+					mgrBody.innerHTML = "";
+					let totalMgr = 0;
+					if (CURRENT.managers.length && !mgrMap.size) {
+						CURRENT.managers.forEach((m) => {
+							totalMgr += m.amount;
+							mgrBody.insertAdjacentHTML("beforeend", `<tr><td>${m.name}</td><td>${fmt(m.amount)}</td></tr>`);
+						});
+					} else {
+						mgrMap.forEach((val, mid) => {
+							const m = CURRENT.managers.find((x) => x.userId === mid);
+							const name = m ? m.name : "Manager " + mid;
+							totalMgr += val;
+							mgrBody.insertAdjacentHTML("beforeend", `<tr><td>${name}</td><td>${fmt(val)}</td></tr>`);
+						});
+					}
+
+					const company = stackAmount - totalPart - totalMgr;
+
+					el("sp-stack-amount").textContent = fmt(stackAmount);
+					el("sp-total-part").textContent = fmt(totalPart);
+					el("sp-total-mgr").textContent = fmt(totalMgr);
+					el("sp-company").textContent = fmt(company);
+					el("sp-warning").style.display = company >= -0.005 ? "none" : "block";
+				}
+
+				function renderParticipants() {
+					const tbody = el("sp-rows");
+					tbody.innerHTML = "";
+					CURRENT.participants.forEach((p, idx) => {
+						const row = document.createElement("tr");
+						row.id = `sp-row-${idx}`;
+						row.innerHTML = `
+            <td><input class="form-control form-control-sm sp-role" value="${p.role ?? ""}"></td>
+            <td><input class="form-control form-control-sm sp-name" value="${p.name ?? ""}"></td>
+            <td>
+              <select class="form-select form-select-sm sp-type">
+                <option value="Percent" ${p.payoutType === "Percent" ? "selected" : ""}>Percent</option>
+                <option value="Flat" ${p.payoutType === "Flat" ? "selected" : ""}>Flat</option>
+              </select>
+            </td>
+            <td><input type="number" step="0.01" class="form-control form-control-sm sp-amt" value="${p.amount ?? 0}"></td>
+            <td class="sp-pay">${fmt(p.calculatedPayout || 0)}</td>
+            <td><button class="btn btn-sm btn-outline-danger sp-del">&times;</button></td>
+          `;
+						row.querySelector(".sp-type").addEventListener("change", recalc);
+						row.querySelector(".sp-amt").addEventListener("input", recalc);
+						row.querySelector(".sp-del").addEventListener("click", () => {
+							CURRENT.participants.splice(idx, 1);
+							renderParticipants();
+							recalc();
+						});
+						tbody.appendChild(row);
+					});
+				}
+
+				function addParticipantRow() {
+					CURRENT.participants.push({
+						userId: 0,
+						name: "",
+						role: "",
+						payoutType: "Percent",
+						amount: 0,
+						calculatedPayout: 0,
+					});
+					renderParticipants();
+					recalc();
+				}
+
+				async function fetchCommission(saleId) {
+					const url = new URL(`${API_BASE}/sales/${encodeURIComponent(saleId)}/roofing-comission-calculator`);
+					url.searchParams.set("phase", CURRENT.phase);
+					url.searchParams.set("mode", CURRENT.mode);
+					const res = await fetch(url.toString());
+					if (!res.ok) throw new Error(await res.text());
+					return await res.json();
+				}
+
+				function populateFromApi(data) {
+					CURRENT.saleId = data.saleId;
+					CURRENT.phase = data.phase || "MP2";
+					CURRENT.mode = data.mode || "Projected";
+					CURRENT.stackBase = Number(data.stackBase || 0);
+					CURRENT.stackPct = Number(data.stackPercent || 0.14);
+					CURRENT.managerRate = Number(data.managerRate ?? 0.1);
+
+					// Header
+					el("sp-commission-title").textContent = `Sale #${data.saleId} - ${data.projectType}`;
+					el("sp-sale-customer").textContent = data.saleDetails?.customerName || "—";
+					el("sp-sale-address").textContent = data.saleDetails?.address || "—";
+					el("sp-sale-type").textContent = data.projectType || "—";
+					el("sp-sale-signed").textContent = data.saleDetails?.signedDate ? new Date(data.saleDetails.signedDate).toLocaleDateString() : "—";
+					el("sp-sale-notes").textContent = data.saleDetails?.notes || "—";
+
+					// Controls
+					el("sp-phase").value = CURRENT.phase;
+					el("sp-mode").value = CURRENT.mode;
+					el("sp-stack-base").value = CURRENT.stackBase.toFixed(2);
+					el("sp-stack-pct").value = CURRENT.stackPct.toString();
+					el("sp-adders").value = (data.adders ?? 0).toString();
+					el("sp-clawbacks").value = (data.clawbacks ?? 0).toString();
+
+					// Participants
+					CURRENT.participants = (data.participants || []).map((p) => ({
+						userId: p.userId,
+						name: p.name,
+						role: p.role,
+						payoutType: p.payoutType,
+						amount: p.amount,
+						calculatedPayout: p.calculatedPayout,
+					}));
+
+					CURRENT.managers = (data.managerOverrides || []).map((m) => ({
+						userId: m.userId,
+						name: m.name,
+						amount: m.amount,
+						childUserId: null,
+					}));
+
+					renderParticipants();
+					renderManagersTable(CURRENT.managers);
+
+					// Summary
+					el("sp-stack-amount").textContent = fmt(data.stackAmount || 0);
+					el("sp-total-part").textContent = fmt((data.participants || []).reduce((s, p) => s + (p.calculatedPayout || 0), 0));
+					el("sp-total-mgr").textContent = fmt((data.managerOverrides || []).reduce((s, m) => s + (m.amount || 0), 0));
+					el("sp-company").textContent = fmt(data.companyRemaining || 0);
+
+					bindRecalcInputs();
+					recalc();
+				}
+
+				function renderManagersTable(list) {
+					const body = el("sp-manager-rows");
+					body.innerHTML = "";
+					list.forEach((m) => {
+						body.insertAdjacentHTML("beforeend", `<tr><td>${m.name}</td><td>${fmt(m.amount)}</td></tr>`);
+					});
+				}
+
+				async function openCommissionModal(saleId) {
+					try {
+						CURRENT.saleId = saleId;
+						CURRENT.phase = el("sp-phase").value || "MP2";
+						CURRENT.mode = el("sp-mode").value || "Projected";
+
+						el("sp-phase").onchange = async () => {
+							CURRENT.phase = el("sp-phase").value;
+							populateFromApi(await fetchCommission(saleId));
+						};
+						el("sp-mode").onchange = async () => {
+							CURRENT.mode = el("sp-mode").value;
+							populateFromApi(await fetchCommission(saleId));
+						};
+
+						const data = await fetchCommission(saleId);
+						populateFromApi(data);
+
+						const modal = new bootstrap.Modal(el("commissionModal"));
+						modal.show();
+					} catch (err) {
+						console.error(err);
+						alert("Failed to load commission data: " + (err?.message || err));
+					}
+				}
+
+				async function saveCommission() {
+					const payload = {
+						phase: el("sp-phase").value,
+						mode: el("sp-mode").value,
+						stackPercent: Number(el("sp-stack-pct").value || 0),
+						adders: Number(el("sp-adders").value || 0),
+						clawbacks: Number(el("sp-clawbacks").value || 0),
+						participants: CURRENT.participants.map((p) => ({
+							userId: p.userId || 0,
+							name: p.name || "",
+							role: p.role || "",
+							payoutType: p.payoutType,
+							amount: Number(p.amount || 0),
+							calculatedPayout: Number(p.calculatedPayout || 0),
+						})),
+					};
+
+					const res = await fetch(`${API_BASE}/sales/${encodeURIComponent(CURRENT.saleId)}/roofing-comission-calculator`, {
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify(payload),
+					});
+
+					if (!res.ok && res.status !== 202) {
+						const t = await res.text();
+						throw new Error(t);
+					}
+					alert("Saved!");
+				}
+
+				document.addEventListener("DOMContentLoaded", () => {
+					// Commission modal controls
+					document.getElementById("sp-add-row").addEventListener("click", addParticipantRow);
+					document.getElementById("sp-save").addEventListener("click", () =>
+						saveCommission().catch((err) => {
+							console.error(err);
+							alert("Save failed: " + (err?.message || err));
+						})
+					);
+
+					// Open modal from any button in the table
+					document.addEventListener("click", (e) => {
+						const btn = e.target.closest("[data-open-commission]");
+						if (!btn) return;
+						const saleId = Number(btn.getAttribute("data-sale-id"));
+						if (!saleId) {
+							alert("Missing sale id");
+							return;
+						}
+						openCommissionModal(saleId);
+					});
+
+					// Simple client-side filtering for the demo table (merged from My Team UX)
+					const $table = document.getElementById("dealsTable").querySelector("tbody");
+					const applyFilters = () => {
+						const timeframe = document.getElementById("dateFilter").value.toLowerCase();
+						const projType = (document.getElementById("roleFilter").value || "").toLowerCase();
+						const status = (document.getElementById("statusFilter").value || "").toLowerCase();
+						const team = (document.getElementById("teamLevelFilter").value || "").toLowerCase();
+						const q = (document.getElementById("searchBar").value || "").toLowerCase();
+
+						[...$table.rows].forEach((tr) => {
+							const name = (tr.dataset.name || "").toLowerCase();
+							const id = (tr.dataset.id || "").toLowerCase();
+							const role = (tr.dataset.role || "").toLowerCase();
+							const st = (tr.dataset.status || "").toLowerCase();
+							const tm = (tr.dataset.team || "").toLowerCase();
+
+							let show = true;
+							if (projType && role !== projType) show = false;
+							if (status && st !== status) show = false;
+							if (team && tm !== team) show = false;
+							if (q && !name.includes(q) && !id.includes(q)) show = false;
+
+							// timeframe demo only (no date parsing for sample rows)
+							// you can wire real logic against your data timestamps if needed
+							tr.style.display = show ? "" : "none";
+						});
+					};
+
+					["dateFilter", "roleFilter", "statusFilter", "teamLevelFilter", "searchBar"].forEach((id) => {
+						const node = document.getElementById(id);
+						node && node.addEventListener(id === "searchBar" ? "input" : "change", applyFilters);
+					});
+
+					document.getElementById("clearFiltersBtn").addEventListener("click", () => {
+						["dateFilter", "roleFilter", "statusFilter", "teamLevelFilter", "searchBar"].forEach((id) => {
+							const node = document.getElementById(id);
+							if (!node) return;
+							if (node.tagName === "INPUT") node.value = "";
+							else node.value = "";
+						});
+						applyFilters();
+					});
+				});
+
+				// Expose if needed elsewhere
+				window.openCommissionModal = openCommissionModal;
+			})();
+		</script>
+	</body>
+</html>

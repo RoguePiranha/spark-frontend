@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="ie=edge" />
+		<meta
+			name="description"
+			content="SPARK - Sales Performance and Revenue Keeper" />
+		<meta
+			name="author"
+			content="SparkPro" />
+
+		<title>SPARK - Roof Calculator</title>
+
+		<!-- color-modes:js -->
+		<script src="../../../assets/js/color-modes.js"></script>
+		<!-- endinject -->
+
+		<!-- Fonts -->
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com" />
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+			rel="stylesheet" />
+		<!-- End fonts -->
+
+		<!-- core:css -->
+		<link
+			rel="stylesheet"
+			href="../../../assets/vendors/core/core.css" />
+		<!-- endinject -->
+
+		<!-- Plugin css for this page -->
+		<!-- End plugin css for this page -->
+
+		<!-- inject:css -->
+		<link
+			rel="stylesheet"
+			href="../../../assets/fonts/feather-font/css/iconfont.css" />
+		<!-- endinject -->
+
+		<!-- Layout styles -->
+		<link
+			rel="stylesheet"
+			href="../../../assets/css/style.css" />
+		<!-- End layout styles -->
+
+		<link
+			rel="shortcut icon"
+			href="../icons/white favicon.png" />
+	</head>
+
+	<body class="sidebar-dark">
+		<div class="main-wrapper">
+			<!-- partial:../../partials/_sidebar.html -->
+			<nav class="sidebar">
+				<div class="sidebar-header">
+					<a
+						href="#"
+						class="sidebar-brand"
+						aria-label="Spark Home"
+						title="Spark Home">
+						<img
+							src="/template/pages/icons/horz-dark-mode-logo.png"
+							class="sidebar-logo"
+							alt="Spark Logo" />
+					</a>
+					<div class="sidebar-toggler">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<div class="sidebar-body">
+					<ul
+						class="nav"
+						id="sidebarNav">
+						<li class="nav-item nav-category">Main</li>
+						<li class="nav-item">
+							<a
+								href="/template/pages/dashboard.html"
+								class="nav-link">
+								<i
+									class="link-icon"
+									data-feather="zap"></i>
+								<span class="link-title">Dashboard</span>
+							</a>
+						</li>
+						<li class="nav-item nav-category">Web Apps</li>
+						<li class="nav-item">
+							<a
+								href="/template/pages/apps/chat.html"
+								class="nav-link">
+								<i
+									class="link-icon"
+									data-feather="message-square"></i>
+								<span class="link-title">Chat</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a
+								href="/template/pages/apps/calendar.html"
+								class="nav-link">
+								<i
+									class="link-icon"
+									data-feather="calendar"></i>
+								<span class="link-title">Calendar</span>
+							</a>
+						</li>
+						<li class="nav-item nav-category">Components</li>
+						<li class="nav-item">
+							<a
+								href="/template/pages/profile.html"
+								class="nav-link">
+								<i
+									class="link-icon"
+									data-feather="user"></i>
+								<span class="link-title">Profile</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a
+								href="/template/pages/my-team.html"
+								class="nav-link">
+								<i
+									class="link-icon"
+									data-feather="users"></i>
+								<span class="link-title">My Team</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a
+								href="/template/pages/compensation.html"
+								class="nav-link">
+								<i
+									class="link-icon"
+									data-feather="dollar-sign"></i>
+								<span class="link-title">Compensation</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a
+								href="/template/pages/installers.html"
+								class="nav-link">
+								<i
+									class="link-icon"
+									data-feather="tool"></i>
+								<span class="link-title">Installers</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a
+								href="/template/pages/documents.html"
+								class="nav-link">
+								<i
+									class="link-icon"
+									data-feather="folder"></i>
+								<span class="link-title">Documents</span>
+							</a>
+						</li>
+						<li class="nav-item nav-category">Pages</li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								data-bs-toggle="collapse"
+								href="#general-pages"
+								role="button"
+								aria-expanded="false"
+								aria-controls="general-pages">
+								<i
+									class="link-icon"
+									data-feather="book"></i>
+								<span class="link-title">Special pages</span>
+								<i
+									class="link-arrow"
+									data-feather="chevron-down"></i>
+							</a>
+							<div
+								class="collapse"
+								data-bs-parent="#sidebarNav"
+								id="general-pages">
+								<ul class="nav sub-menu">
+									<li class="nav-item">
+										<a
+											href="/template/pages/blank-page.html"
+											class="nav-link"
+											>Blank page</a
+										>
+									</li>
+									<li class="nav-item">
+										<a
+											href="/template/pages/faq.html"
+											class="nav-link"
+											>Faq</a
+										>
+									</li>
+									<li class="nav-item">
+										<a
+											href="/template/pages/invoice.html"
+											class="nav-link"
+											>Invoice</a
+										>
+									</li>
+									<li class="nav-item">
+										<a
+											href="/template/pages/profile.html"
+											class="nav-link"
+											>Profile</a
+										>
+									</li>
+									<li class="nav-item">
+										<a
+											href="/template/pages/pricing.html"
+											class="nav-link"
+											>Pricing</a
+										>
+									</li>
+									<li class="nav-item">
+										<a
+											href="/template/pages/timeline.html"
+											class="nav-link"
+											>Timeline</a
+										>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								data-bs-toggle="collapse"
+								href="#authPages"
+								role="button"
+								aria-expanded="false"
+								aria-controls="authPages">
+								<i
+									class="link-icon"
+									data-feather="unlock"></i>
+								<span class="link-title">Authentication</span>
+								<i
+									class="link-arrow"
+									data-feather="chevron-down"></i>
+							</a>
+							<div
+								class="collapse"
+								data-bs-parent="#sidebarNav"
+								id="authPages">
+								<ul class="nav sub-menu">
+									<li class="nav-item">
+										<a
+											href="/template/pages/auth/login.html"
+											class="nav-link"
+											>Login</a
+										>
+									</li>
+									<li class="nav-item">
+										<a
+											href="/template/pages/auth/register.html"
+											class="nav-link"
+											>Register</a
+										>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item nav-category">Docs</li>
+						<li class="nav-item">
+							<a
+								href="/template/pages/settings.html"
+								class="nav-link">
+								<i
+									class="link-icon"
+									data-feather="settings"></i>
+								<span class="link-title">Settings</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<!-- partial -->
+
+			<div class="page-wrapper">
+				<!-- partial:../../partials/_navbar.html -->
+				<nav class="navbar">
+					<div class="navbar-content">
+						<div class="navbar-page-title d-flex align-items-center">
+							<h2
+								class="mb-0 fw-bold"
+								id="navbar-page-title"></h2>
+						</div>
+
+						<ul class="navbar-nav">
+							<li class="theme-switcher-wrapper nav-item">
+								<input
+									type="checkbox"
+									value=""
+									id="theme-switcher"
+									title="Toggle theme" />
+								<label
+									for="theme-switcher"
+									aria-label="Toggle theme">
+									<div class="box">
+										<div class="ball"></div>
+										<div class="icons">
+											<i class="feather icon-sun"></i>
+											<i class="feather icon-moon"></i>
+										</div>
+									</div>
+								</label>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="appsDropdown"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-haspopup="true"
+									aria-expanded="false"
+									title="Apps">
+									<i data-feather="grid"></i>
+								</a>
+								<div
+									class="dropdown-menu p-0"
+									aria-labelledby="appsDropdown">
+									<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+										<p class="mb-0 fw-bold">Web Apps</p>
+										<a
+											href="javascript:;"
+											class="text-secondary"
+											>Edit</a
+										>
+									</div>
+									<div class="row g-0 p-1">
+										<div class="col-3 text-center">
+											<a
+												href="/template/pages/apps/chat.html"
+												class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
+												><i
+													data-feather="message-square"
+													class="icon-lg mb-1"></i>
+												<p class="fs-12px">Chat</p>
+											</a>
+										</div>
+										<div class="col-3 text-center">
+											<a
+												href="/template/pages/apps/calendar.html"
+												class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
+												><i
+													data-feather="calendar"
+													class="icon-lg mb-1"></i>
+												<p class="fs-12px">Calendar</p>
+											</a>
+										</div>
+										<div class="col-3 text-center">
+											<a
+												href="/template/pages/email/inbox.html"
+												class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
+												><i
+													data-feather="mail"
+													class="icon-lg mb-1"></i>
+												<p class="fs-12px">Email</p>
+											</a>
+										</div>
+										<div class="col-3 text-center">
+											<a
+												href="/template/pages/profile.html"
+												class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
+												><i
+													data-feather="instagram"
+													class="icon-lg mb-1"></i>
+												<p class="fs-12px">Profile</p>
+											</a>
+										</div>
+									</div>
+									<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+										<a href="javascript:;">View all</a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="messageDropdown"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-haspopup="true"
+									aria-expanded="false"
+									title="Messages">
+									<i data-feather="message-square"></i>
+								</a>
+								<div
+									class="dropdown-menu p-0"
+									aria-labelledby="messageDropdown">
+									<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+										<p>9 New Messages</p>
+										<a
+											href="javascript:;"
+											class="text-secondary"
+											>Clear all</a
+										>
+									</div>
+									<div class="p-1">
+										<a
+											href="javascript:;"
+											class="dropdown-item d-flex align-items-center py-2">
+											<div class="me-3">
+												<img
+													class="w-30px h-30px rounded-circle"
+													src="/template/assets/images/profile_images/user_stock.png"
+													alt="user" />
+											</div>
+											<div class="d-flex justify-content-between flex-grow-1">
+												<div class="me-4">
+													<p>Leonardo Payne</p>
+													<p class="fs-12px text-secondary">Project status</p>
+												</div>
+												<p class="fs-12px text-secondary">2 min ago</p>
+											</div>
+										</a>
+										<a
+											href="javascript:;"
+											class="dropdown-item d-flex align-items-center py-2">
+											<div class="me-3">
+												<img
+													class="w-30px h-30px rounded-circle"
+													src="/template/assets/images/profile_images/user_stock.png"
+													alt="user" />
+											</div>
+											<div class="d-flex justify-content-between flex-grow-1">
+												<div class="me-4">
+													<p>Carl Henson</p>
+													<p class="fs-12px text-secondary">Client meeting</p>
+												</div>
+												<p class="fs-12px text-secondary">30 min ago</p>
+											</div>
+										</a>
+										<a
+											href="javascript:;"
+											class="dropdown-item d-flex align-items-center py-2">
+											<div class="me-3">
+												<img
+													class="w-30px h-30px rounded-circle"
+													src="/template/assets/images/profile_images/user_stock.png"
+													alt="user" />
+											</div>
+											<div class="d-flex justify-content-between flex-grow-1">
+												<div class="me-4">
+													<p>Jensen Combs</p>
+													<p class="fs-12px text-secondary">Project updates</p>
+												</div>
+												<p class="fs-12px text-secondary">1 hrs ago</p>
+											</div>
+										</a>
+										<a
+											href="javascript:;"
+											class="dropdown-item d-flex align-items-center py-2">
+											<div class="me-3">
+												<img
+													class="w-30px h-30px rounded-circle"
+													src="/template/assets/images/profile_images/user_stock.png"
+													alt="user" />
+											</div>
+											<div class="d-flex justify-content-between flex-grow-1">
+												<div class="me-4">
+													<p>Amiah Burton</p>
+													<p class="fs-12px text-secondary">Project deadline</p>
+												</div>
+												<p class="fs-12px text-secondary">2 hrs ago</p>
+											</div>
+										</a>
+										<a
+											href="javascript:;"
+											class="dropdown-item d-flex align-items-center py-2">
+											<div class="me-3">
+												<img
+													class="w-30px h-30px rounded-circle"
+													src="/template/assets/images/profile_images/user_stock.png"
+													alt="user" />
+											</div>
+											<div class="d-flex justify-content-between flex-grow-1">
+												<div class="me-4">
+													<p>Yaretzi Mayo</p>
+													<p class="fs-12px text-secondary">New record</p>
+												</div>
+												<p class="fs-12px text-secondary">5 hrs ago</p>
+											</div>
+										</a>
+									</div>
+									<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+										<a href="javascript:;">View all</a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="notificationDropdown"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-haspopup="true"
+									aria-expanded="false"
+									title="Notifications">
+									<i data-feather="bell"></i>
+									<div class="indicator">
+										<div class="circle"></div>
+									</div>
+								</a>
+								<div
+									class="dropdown-menu p-0"
+									aria-labelledby="notificationDropdown">
+									<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+										<p>6 New Notifications</p>
+										<a
+											href="javascript:;"
+											class="text-secondary"
+											>Clear all</a
+										>
+									</div>
+									<div class="p-1">
+										<a
+											href="javascript:;"
+											class="dropdown-item d-flex align-items-center py-2">
+											<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+												<i
+													class="icon-sm text-white"
+													data-feather="gift"></i>
+											</div>
+											<div class="flex-grow-1 me-2">
+												<p>New Order Recieved</p>
+												<p class="fs-12px text-secondary">30 min ago</p>
+											</div>
+										</a>
+										<a
+											href="javascript:;"
+											class="dropdown-item d-flex align-items-center py-2">
+											<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+												<i
+													class="icon-sm text-white"
+													data-feather="alert-circle"></i>
+											</div>
+											<div class="flex-grow-1 me-2">
+												<p>Server Limit Reached!</p>
+												<p class="fs-12px text-secondary">1 hrs ago</p>
+											</div>
+										</a>
+										<a
+											href="javascript:;"
+											class="dropdown-item d-flex align-items-center py-2">
+											<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+												<img
+													class="w-30px h-30px rounded-circle"
+													src="/template/assets/images/profile_images/user_stock.png"
+													alt="userr" />
+											</div>
+											<div class="flex-grow-1 me-2">
+												<p>New customer registered</p>
+												<p class="fs-12px text-secondary">2 sec ago</p>
+											</div>
+										</a>
+										<a
+											href="javascript:;"
+											class="dropdown-item d-flex align-items-center py-2">
+											<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+												<i
+													class="icon-sm text-white"
+													data-feather="layers"></i>
+											</div>
+											<div class="flex-grow-1 me-2">
+												<p>Apps are ready for update</p>
+												<p class="fs-12px text-secondary">5 hrs ago</p>
+											</div>
+										</a>
+										<a
+											href="javascript:;"
+											class="dropdown-item d-flex align-items-center py-2">
+											<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+												<i
+													class="icon-sm text-white"
+													data-feather="download"></i>
+											</div>
+											<div class="flex-grow-1 me-2">
+												<p>Download completed</p>
+												<p class="fs-12px text-secondary">6 hrs ago</p>
+											</div>
+										</a>
+									</div>
+									<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+										<a href="javascript:;">View all</a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="profileDropdown"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-haspopup="true"
+									aria-expanded="false">
+									<img
+										class="w-30px h-30px ms-1 rounded-circle"
+										src="/template/assets/images/profile_images/user_stock.png"
+										alt="profile" />
+								</a>
+								<div
+									class="dropdown-menu p-0"
+									aria-labelledby="profileDropdown">
+									<div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
+										<div class="mb-3">
+											<img
+												class="w-80px h-80px rounded-circle"
+												src="/template/assets/images/profile_images/user_stock.png"
+												alt="" />
+										</div>
+										<div class="text-center">
+											<p
+												class="fs-16px fw-bolder"
+												id="navbar-user-name">
+												Loading...
+											</p>
+											<p
+												class="fs-12px text-secondary"
+												id="navbar-user-email">
+												Loading...
+											</p>
+										</div>
+									</div>
+									<ul class="list-unstyled p-1">
+										<li class="dropdown-item py-2">
+											<a
+												href="/template/pages/profile.html"
+												class="text-body ms-0">
+												<i
+													class="me-2 icon-md"
+													data-feather="user"></i>
+												<span>Profile</span>
+											</a>
+										</li>
+										<li class="dropdown-item py-2">
+											<a
+												href="javascript:;"
+												class="text-body ms-0">
+												<i
+													class="me-2 icon-md"
+													data-feather="edit"></i>
+												<span>Edit Profile</span>
+											</a>
+										</li>
+										<li class="dropdown-item py-2">
+											<a
+												href="javascript:;"
+												class="text-body ms-0"
+												onclick="logout()">
+												<i
+													class="me-2 icon-md"
+													data-feather="log-out"></i>
+												<span>Log Out</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+
+						<a
+							href="#"
+							class="sidebar-toggler"
+							title="Toggle Sidebar">
+							<i data-feather="menu"></i>
+						</a>
+					</div>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							const user = JSON.parse(localStorage.getItem("user"));
+							if (!user) {
+								window.location.href = "/templatepages/login.html";
+								return;
+							}
+
+							try {
+								const res = await fetch(`http://localhost:5001/profile/${user.userId}`);
+								const data = await res.json();
+
+								document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;
+								document.getElementById("navbar-user-email").textContent = data.email ?? "-";
+							} catch (err) {
+								console.error("Failed to load profile data:", err);
+							}
+						});
+					</script>
+
+					<script>
+						function logout() {
+							localStorage.removeItem("user");
+							window.location.href = "/template/pages/login.html";
+						}
+					</script>
+					<script>
+						// Set the page title in the navbar
+						// Removes "SPARK - " from the title
+						document.addEventListener("DOMContentLoaded", function () {
+							let pageTitle = document.title || "Page";
+							pageTitle = pageTitle.replace(/^\s*SPARK\s*-\s*/i, "");
+							// this can override the title if you want it custom
+							// let customTitle = document.body.getAttribute("data-page-title");
+							document.getElementById("navbar-page-title").textContent = pageTitle;
+						});
+					</script>
+				</nav>
+
+				<!-- partial -->
+
+				<div class="page-content">
+					<!--  Modal Style Calc Test -->
+					<!-- Filters toolbar (Ruthlessly stolen from the myTeams page) -->
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="row g-2 align-items-center filters">
+								<div class="col-6 col-md-2">
+									<select
+										class="form-select"
+										id="dateFilter"
+										aria-label="Filter by Date">
+										<option value="">Timeframe</option>
+										<option value="today">Today</option>
+										<option value="yesterday">Yesterday</option>
+									</select>
+								</div>
+								<div class="col-6 col-md-2">
+									<select
+										class="form-select"
+										id="roleFilter"
+										aria-label="Filter by Project Type">
+										<option value="">Project Type</option>
+										<option>Fiber</option>
+										<option>Pest</option>
+										<option>Roofing</option>
+										<option>Solar</option>
+									</select>
+								</div>
+								<div class="col-6 col-md-2">
+									<select
+										class="form-select"
+										id="statusFilter"
+										aria-label="Filter by Status">
+										<option value="">All Statuses</option>
+										<option>Active</option>
+										<option>Inactive</option>
+									</select>
+								</div>
+								<div class="col-6 col-md-2">
+									<select
+										class="form-select"
+										id="teamLevelFilter"
+										aria-label="Filter by Team">
+										<option value="">Team</option>
+										<option>Team 1</option>
+										<option>Team 2</option>
+										<option>Team 3</option>
+									</select>
+								</div>
+								<div class="col-12 col-md-3">
+									<input
+										type="text"
+										class="form-control"
+										id="searchBar"
+										placeholder="Search by name or ID" />
+								</div>
+								<div class="col-6 col-md-auto">
+									<button
+										class="btn btn-outline-secondary w-100"
+										id="clearFiltersBtn">
+										Clear
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Deals Table -->
+					<div class="card p-0">
+						<div class="table-responsive">
+							<table
+								class="table table-hover mb-0"
+								id="dealsTable">
+								<thead class="align-middle">
+									<tr>
+										<th>Name</th>
+										<th>Role</th>
+										<th>Status</th>
+										<th>Join Date</th>
+										<th>Recruited By</th>
+										<th>Override %</th>
+										<th>Total Override</th>
+										<th>Actions</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- Example rows; replace with your data rendering -->
+									<tr
+										data-name="Jane Doe"
+										data-id="1001"
+										data-role="Closer"
+										data-status="Active"
+										data-team="Team 1">
+										<td>Jane Doe</td>
+										<td>Closer</td>
+										<td>Active</td>
+										<td>2024-03-01</td>
+										<td>John Smith</td>
+										<td>7%</td>
+										<td>$3,500</td>
+										<td>
+											<button
+												class="btn btn-sm btn-primary"
+												data-open-commission
+												data-sale-id="1001">
+												Commission
+											</button>
+										</td>
+									</tr>
+									<tr
+										data-name="Mike Lee"
+										data-id="1002"
+										data-role="Setter"
+										data-status="Inactive"
+										data-team="Team 2">
+										<td>Mike Lee</td>
+										<td>Setter</td>
+										<td>Inactive</td>
+										<td>2023-11-14</td>
+										<td>Jane Doe</td>
+										<td>5%</td>
+										<td>$800</td>
+										<td>
+											<button
+												class="btn btn-sm btn-primary"
+												data-open-commission
+												data-sale-id="1002">
+												Commission
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<!-- Commission Modal -->
+					<div
+						class="modal fade"
+						id="commissionModal"
+						tabindex="-1"
+						aria-hidden="true">
+						<div class="modal-dialog modal-xl modal-dialog-scrollable">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Commission - <span id="sp-commission-title">Loading…</span></h5>
+									<button
+										type="button"
+										class="btn-close"
+										data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+
+								<div class="modal-body">
+									<!-- SALE HEADER -->
+									<section class="mb-3">
+										<div class="row g-2">
+											<div class="col-md-4"><strong>Customer:</strong> <span id="sp-sale-customer">—</span></div>
+											<div class="col-md-4"><strong>Address:</strong> <span id="sp-sale-address">—</span></div>
+											<div class="col-md-2"><strong>Type:</strong> <span id="sp-sale-type">—</span></div>
+											<div class="col-md-2"><strong>Signed:</strong> <span id="sp-sale-signed">—</span></div>
+										</div>
+										<div class="row g-2 mt-1">
+											<div class="col-12"><strong>Notes:</strong> <span id="sp-sale-notes">—</span></div>
+										</div>
+									</section>
+
+									<hr class="my-3" />
+
+									<!-- CONTROLS -->
+									<section class="mb-3">
+										<div class="row g-3 align-items-end">
+											<div class="col-md-2">
+												<label class="form-label">Phase</label>
+												<select
+													id="sp-phase"
+													class="form-select">
+													<option value="MP1">MP1</option>
+													<option
+														value="MP2"
+														selected>
+														MP2
+													</option>
+												</select>
+											</div>
+
+											<div class="col-md-2">
+												<label class="form-label">Mode</label>
+												<select
+													id="sp-mode"
+													class="form-select">
+													<option
+														value="Projected"
+														selected>
+														Projected
+													</option>
+													<option value="Actual">Actual</option>
+												</select>
+											</div>
+
+											<div class="col-md-2">
+												<label class="form-label">Stack Base ($)</label>
+												<input
+													id="sp-stack-base"
+													class="form-control"
+													type="number"
+													step="0.01"
+													readonly />
+											</div>
+
+											<div class="col-md-2">
+												<label class="form-label">Stack %</label>
+												<input
+													id="sp-stack-pct"
+													class="form-control"
+													type="number"
+													step="0.01"
+													min="0"
+													max="1" />
+												<div class="form-text">0–1 (e.g. 0.14 = 14%)</div>
+											</div>
+
+											<div class="col-md-2">
+												<label class="form-label">Adders (+$)</label>
+												<input
+													id="sp-adders"
+													class="form-control"
+													type="number"
+													step="0.01"
+													value="0" />
+											</div>
+
+											<div class="col-md-2">
+												<label class="form-label">Clawbacks (-$)</label>
+												<input
+													id="sp-clawbacks"
+													class="form-control"
+													type="number"
+													step="0.01"
+													value="0" />
+											</div>
+										</div>
+									</section>
+
+									<!-- PARTICIPANTS -->
+									<section>
+										<div class="d-flex justify-content-between align-items-center mb-2">
+											<h6 class="m-0">Participants</h6>
+											<button
+												id="sp-add-row"
+												class="btn btn-sm btn-primary"
+												type="button">
+												Add Participant
+											</button>
+										</div>
+
+										<div class="table-responsive">
+											<table
+												class="table table-sm align-middle"
+												id="sp-table">
+												<thead>
+													<tr>
+														<th style="width: 18%">Role</th>
+														<th style="width: 24%">Participant</th>
+														<th style="width: 14%">Type</th>
+														<th style="width: 14%">Amount</th>
+														<th style="width: 18%">Payout $</th>
+														<th style="width: 12%"></th>
+													</tr>
+												</thead>
+												<tbody id="sp-rows"></tbody>
+											</table>
+										</div>
+
+										<div class="mt-1">
+											<small class="text-muted">Percent rows are % of Stack; Flat rows are exact dollars.</small>
+										</div>
+									</section>
+
+									<!-- MANAGER OVERRIDES -->
+									<section class="mt-3">
+										<h6 class="m-0 mb-1">Manager Overrides (auto)</h6>
+										<div class="table-responsive">
+											<table class="table table-sm">
+												<thead>
+													<tr>
+														<th>Manager</th>
+														<th>Amount</th>
+													</tr>
+												</thead>
+												<tbody id="sp-manager-rows"></tbody>
+											</table>
+										</div>
+										<small class="text-muted">Overrides are preview-only (currently 10% of each rep’s payout, paid by company).</small>
+									</section>
+
+									<hr class="my-3" />
+
+									<!-- SUMMARY -->
+									<section class="mb-1">
+										<div class="row g-2">
+											<div class="col-md-3"><strong>Stack Amount:</strong> <span id="sp-stack-amount">$0.00</span></div>
+											<div class="col-md-3"><strong>Participants Total:</strong> <span id="sp-total-part">$0.00</span></div>
+											<div class="col-md-3"><strong>Manager Overrides:</strong> <span id="sp-total-mgr">$0.00</span></div>
+											<div class="col-md-3"><strong>Company Remaining (MP3):</strong> <span id="sp-company">$0.00</span></div>
+										</div>
+										<div
+											class="mt-1"
+											id="sp-warning"
+											style="display: none">
+											<span class="badge bg-danger">Allocated more than stack — adjust percents/flats or stack %.</span>
+										</div>
+									</section>
+								</div>
+
+								<div class="modal-footer">
+									<button
+										class="btn btn-secondary"
+										data-bs-dismiss="modal">
+										Close
+									</button>
+									<button
+										id="sp-save"
+										class="btn btn-primary"
+										type="button">
+										Save
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- partial:../../partials/_footer.html -->
+				<footer class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small">
+					<p class="text-secondary mb-1 mb-md-0">
+						Copyright © <span id="currentYear"></span>
+						<a
+							href="https://sparkpro.io"
+							target="_blank"
+							rel="noopener noreferrer"
+							>Spark</a
+						>.
+					</p>
+					<script>
+						document.getElementById("currentYear").textContent = new Date().getFullYear();
+					</script>
+					<p class="text-secondary">
+						Handcrafted By<i
+							class="mb-1 text-primary ms-1 icon-sm"
+							data-feather="zap"></i>
+					</p>
+				</footer>
+
+				<!-- partial -->
+			</div>
+		</div>
+
+		<!-- core:js -->
+		<script src="../../../assets/vendors/core/core.js"></script>
+		<!-- endinject -->
+
+		<!-- Plugin js for this page -->
+
+		<!-- End plugin js for this page -->
+
+		<!-- inject:js -->
+		<script src="../../../assets/vendors/feather-icons/feather.min.js"></script>
+		<script src="../../../assets/js/app.js"></script>
+		<!-- endinject -->
+
+		<!-- Custom js for this page -->
+
+		<!-- Commission modal opener -->
+		<script>
+			document.addEventListener("click", (e) => {
+				const btn = e.target.closest("[data-open-commission]");
+				if (!btn) return;
+				const saleId = Number(btn.getAttribute("data-sale-id"));
+				if (!saleId) {
+					alert("Missing sale id");
+					return;
+				}
+				window.openCommissionModal(saleId);
+			});
+		</script>
+
+		<!-- Modal Logic -->
+		<script>
+			(() => {
+				const API_BASE = "http://localhost:5001";
+
+				// ---- State ----
+				let CURRENT = {
+					saleId: null,
+					phase: "MP2",
+					mode: "Projected",
+					stackBase: 0,
+					stackPct: 0.14,
+					managerRate: 0.1,
+					participants: [],
+					managers: [],
+				};
+
+				const el = (id) => document.getElementById(id);
+				const fmt = (n) => Number(n || 0).toLocaleString(undefined, { style: "currency", currency: "USD" });
+
+				function bindRecalcInputs() {
+					["sp-stack-pct", "sp-adders", "sp-clawbacks"].forEach((id) => {
+						el(id).addEventListener("input", recalc);
+					});
+				}
+
+				function recalc() {
+					const stackBase = Number(el("sp-stack-base").value || 0);
+					const stackPct = Math.min(1, Math.max(0, Number(el("sp-stack-pct").value || 0)));
+					const adders = Number(el("sp-adders").value || 0);
+					const clawbacks = Number(el("sp-clawbacks").value || 0);
+					const stackAmount = stackBase * stackPct + adders - clawbacks;
+
+					let totalPart = 0;
+					CURRENT.participants.forEach((p, idx) => {
+						const row = el(`sp-row-${idx}`);
+						const typeSel = row.querySelector(".sp-type");
+						const amtInp = row.querySelector(".sp-amt");
+						const type = typeSel.value;
+						const amtVal = Number(amtInp.value || 0);
+						p.payoutType = type;
+						p.amount = amtVal;
+
+						if (type === "Percent") {
+							p.calculatedPayout = stackAmount * (amtVal / 100);
+						} else {
+							p.calculatedPayout = amtVal;
+						}
+						totalPart += p.calculatedPayout;
+						row.querySelector(".sp-pay").textContent = fmt(p.calculatedPayout);
+					});
+
+					// Manager overrides preview
+					const mgrRate = CURRENT.managerRate || 0.1;
+					const mgrMap = new Map();
+					CURRENT.participants.forEach((p) => {
+						const mgrRow = CURRENT.managers.find((m) => m.childUserId === p.userId);
+						if (mgrRow) {
+							const cur = mgrMap.get(mgrRow.userId) || 0;
+							mgrMap.set(mgrRow.userId, cur + p.calculatedPayout * mgrRate);
+						}
+					});
+
+					const mgrBody = el("sp-manager-rows");
+					mgrBody.innerHTML = "";
+					let totalMgr = 0;
+					if (CURRENT.managers.length && !mgrMap.size) {
+						CURRENT.managers.forEach((m) => {
+							totalMgr += m.amount;
+							mgrBody.insertAdjacentHTML("beforeend", `<tr><td>${m.name}</td><td>${fmt(m.amount)}</td></tr>`);
+						});
+					} else {
+						mgrMap.forEach((val, mid) => {
+							const m = CURRENT.managers.find((x) => x.userId === mid);
+							const name = m ? m.name : "Manager " + mid;
+							totalMgr += val;
+							mgrBody.insertAdjacentHTML("beforeend", `<tr><td>${name}</td><td>${fmt(val)}</td></tr>`);
+						});
+					}
+
+					const company = stackAmount - totalPart - totalMgr;
+
+					el("sp-stack-amount").textContent = fmt(stackAmount);
+					el("sp-total-part").textContent = fmt(totalPart);
+					el("sp-total-mgr").textContent = fmt(totalMgr);
+					el("sp-company").textContent = fmt(company);
+					el("sp-warning").style.display = company >= -0.005 ? "none" : "block";
+				}
+
+				function renderParticipants() {
+					const tbody = el("sp-rows");
+					tbody.innerHTML = "";
+					CURRENT.participants.forEach((p, idx) => {
+						const row = document.createElement("tr");
+						row.id = `sp-row-${idx}`;
+						row.innerHTML = `
+            <td><input class="form-control form-control-sm sp-role" value="${p.role ?? ""}"></td>
+            <td><input class="form-control form-control-sm sp-name" value="${p.name ?? ""}"></td>
+            <td>
+              <select class="form-select form-select-sm sp-type">
+                <option value="Percent" ${p.payoutType === "Percent" ? "selected" : ""}>Percent</option>
+                <option value="Flat" ${p.payoutType === "Flat" ? "selected" : ""}>Flat</option>
+              </select>
+            </td>
+            <td><input type="number" step="0.01" class="form-control form-control-sm sp-amt" value="${p.amount ?? 0}"></td>
+            <td class="sp-pay">${fmt(p.calculatedPayout || 0)}</td>
+            <td><button class="btn btn-sm btn-outline-danger sp-del">&times;</button></td>
+          `;
+						row.querySelector(".sp-type").addEventListener("change", recalc);
+						row.querySelector(".sp-amt").addEventListener("input", recalc);
+						row.querySelector(".sp-del").addEventListener("click", () => {
+							CURRENT.participants.splice(idx, 1);
+							renderParticipants();
+							recalc();
+						});
+						tbody.appendChild(row);
+					});
+				}
+
+				function addParticipantRow() {
+					CURRENT.participants.push({
+						userId: 0,
+						name: "",
+						role: "",
+						payoutType: "Percent",
+						amount: 0,
+						calculatedPayout: 0,
+					});
+					renderParticipants();
+					recalc();
+				}
+
+				async function fetchCommission(saleId) {
+					const url = new URL(`${API_BASE}/sales/${encodeURIComponent(saleId)}/roofing-comission-calculator`);
+					url.searchParams.set("phase", CURRENT.phase);
+					url.searchParams.set("mode", CURRENT.mode);
+					const res = await fetch(url.toString());
+					if (!res.ok) throw new Error(await res.text());
+					return await res.json();
+				}
+
+				function populateFromApi(data) {
+					CURRENT.saleId = data.saleId;
+					CURRENT.phase = data.phase || "MP2";
+					CURRENT.mode = data.mode || "Projected";
+					CURRENT.stackBase = Number(data.stackBase || 0);
+					CURRENT.stackPct = Number(data.stackPercent || 0.14);
+					CURRENT.managerRate = Number(data.managerRate ?? 0.1);
+
+					// Header
+					el("sp-commission-title").textContent = `Sale #${data.saleId} - ${data.projectType}`;
+					el("sp-sale-customer").textContent = data.saleDetails?.customerName || "—";
+					el("sp-sale-address").textContent = data.saleDetails?.address || "—";
+					el("sp-sale-type").textContent = data.projectType || "—";
+					el("sp-sale-signed").textContent = data.saleDetails?.signedDate ? new Date(data.saleDetails.signedDate).toLocaleDateString() : "—";
+					el("sp-sale-notes").textContent = data.saleDetails?.notes || "—";
+
+					// Controls
+					el("sp-phase").value = CURRENT.phase;
+					el("sp-mode").value = CURRENT.mode;
+					el("sp-stack-base").value = CURRENT.stackBase.toFixed(2);
+					el("sp-stack-pct").value = CURRENT.stackPct.toString();
+					el("sp-adders").value = (data.adders ?? 0).toString();
+					el("sp-clawbacks").value = (data.clawbacks ?? 0).toString();
+
+					// Participants
+					CURRENT.participants = (data.participants || []).map((p) => ({
+						userId: p.userId,
+						name: p.name,
+						role: p.role,
+						payoutType: p.payoutType,
+						amount: p.amount,
+						calculatedPayout: p.calculatedPayout,
+					}));
+
+					CURRENT.managers = (data.managerOverrides || []).map((m) => ({
+						userId: m.userId,
+						name: m.name,
+						amount: m.amount,
+						childUserId: null,
+					}));
+
+					renderParticipants();
+					renderManagersTable(CURRENT.managers);
+
+					// Summary
+					el("sp-stack-amount").textContent = fmt(data.stackAmount || 0);
+					el("sp-total-part").textContent = fmt((data.participants || []).reduce((s, p) => s + (p.calculatedPayout || 0), 0));
+					el("sp-total-mgr").textContent = fmt((data.managerOverrides || []).reduce((s, m) => s + (m.amount || 0), 0));
+					el("sp-company").textContent = fmt(data.companyRemaining || 0);
+
+					bindRecalcInputs();
+					recalc();
+				}
+
+				function renderManagersTable(list) {
+					const body = el("sp-manager-rows");
+					body.innerHTML = "";
+					list.forEach((m) => {
+						body.insertAdjacentHTML("beforeend", `<tr><td>${m.name}</td><td>${fmt(m.amount)}</td></tr>`);
+					});
+				}
+
+				async function openCommissionModal(saleId) {
+					try {
+						CURRENT.saleId = saleId;
+						CURRENT.phase = el("sp-phase").value || "MP2";
+						CURRENT.mode = el("sp-mode").value || "Projected";
+
+						el("sp-phase").onchange = async () => {
+							CURRENT.phase = el("sp-phase").value;
+							populateFromApi(await fetchCommission(saleId));
+						};
+						el("sp-mode").onchange = async () => {
+							CURRENT.mode = el("sp-mode").value;
+							populateFromApi(await fetchCommission(saleId));
+						};
+
+						const data = await fetchCommission(saleId);
+						populateFromApi(data);
+
+						const modal = new bootstrap.Modal(el("commissionModal"));
+						modal.show();
+					} catch (err) {
+						console.error(err);
+						alert("Failed to load commission data: " + (err?.message || err));
+					}
+				}
+
+				async function saveCommission() {
+					const payload = {
+						phase: el("sp-phase").value,
+						mode: el("sp-mode").value,
+						stackPercent: Number(el("sp-stack-pct").value || 0),
+						adders: Number(el("sp-adders").value || 0),
+						clawbacks: Number(el("sp-clawbacks").value || 0),
+						participants: CURRENT.participants.map((p) => ({
+							userId: p.userId || 0,
+							name: p.name || "",
+							role: p.role || "",
+							payoutType: p.payoutType,
+							amount: Number(p.amount || 0),
+							calculatedPayout: Number(p.calculatedPayout || 0),
+						})),
+					};
+
+					const res = await fetch(`${API_BASE}/sales/${encodeURIComponent(CURRENT.saleId)}/roofing-comission-calculator`, {
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify(payload),
+					});
+
+					if (!res.ok && res.status !== 202) {
+						const t = await res.text();
+						throw new Error(t);
+					}
+					alert("Saved!");
+				}
+
+				document.addEventListener("DOMContentLoaded", () => {
+					// Commission modal controls
+					document.getElementById("sp-add-row").addEventListener("click", addParticipantRow);
+					document.getElementById("sp-save").addEventListener("click", () =>
+						saveCommission().catch((err) => {
+							console.error(err);
+							alert("Save failed: " + (err?.message || err));
+						})
+					);
+
+					// Open modal from any button in the table
+					document.addEventListener("click", (e) => {
+						const btn = e.target.closest("[data-open-commission]");
+						if (!btn) return;
+						const saleId = Number(btn.getAttribute("data-sale-id"));
+						if (!saleId) {
+							alert("Missing sale id");
+							return;
+						}
+						openCommissionModal(saleId);
+					});
+
+					// Simple client-side filtering for the demo table (merged from My Team UX)
+					const $table = document.getElementById("dealsTable").querySelector("tbody");
+					const applyFilters = () => {
+						const timeframe = document.getElementById("dateFilter").value.toLowerCase();
+						const projType = (document.getElementById("roleFilter").value || "").toLowerCase();
+						const status = (document.getElementById("statusFilter").value || "").toLowerCase();
+						const team = (document.getElementById("teamLevelFilter").value || "").toLowerCase();
+						const q = (document.getElementById("searchBar").value || "").toLowerCase();
+
+						[...$table.rows].forEach((tr) => {
+							const name = (tr.dataset.name || "").toLowerCase();
+							const id = (tr.dataset.id || "").toLowerCase();
+							const role = (tr.dataset.role || "").toLowerCase();
+							const st = (tr.dataset.status || "").toLowerCase();
+							const tm = (tr.dataset.team || "").toLowerCase();
+
+							let show = true;
+							if (projType && role !== projType) show = false;
+							if (status && st !== status) show = false;
+							if (team && tm !== team) show = false;
+							if (q && !name.includes(q) && !id.includes(q)) show = false;
+
+							// timeframe demo only (no date parsing for sample rows)
+							// you can wire real logic against your data timestamps if needed
+							tr.style.display = show ? "" : "none";
+						});
+					};
+
+					["dateFilter", "roleFilter", "statusFilter", "teamLevelFilter", "searchBar"].forEach((id) => {
+						const node = document.getElementById(id);
+						node && node.addEventListener(id === "searchBar" ? "input" : "change", applyFilters);
+					});
+
+					document.getElementById("clearFiltersBtn").addEventListener("click", () => {
+						["dateFilter", "roleFilter", "statusFilter", "teamLevelFilter", "searchBar"].forEach((id) => {
+							const node = document.getElementById(id);
+							if (!node) return;
+							if (node.tagName === "INPUT") node.value = "";
+							else node.value = "";
+						});
+						applyFilters();
+					});
+				});
+
+				// Expose if needed elsewhere
+				window.openCommissionModal = openCommissionModal;
+			})();
+		</script>
+		<!-- End custom js for this page -->
+	</body>
+</html>
