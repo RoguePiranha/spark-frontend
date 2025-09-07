@@ -3,6 +3,7 @@ import gulp from 'gulp';
 import { create as bsCreate } from 'browser-sync';
 const browserSync = bsCreate();
 
+import fs from 'node:fs';
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
@@ -37,8 +38,15 @@ const copy = (globs, dest) =>
 /** -----------------------------------------
  *  Styles
  *  ----------------------------------------- */
-gulp.task('sass', () => {
-    return gulp.src('assets/scss/style.scss', { allowEmpty: true })
+gulp.task('sass', (done) => {
+    const scssEntry = 'assets/scss/style.scss';
+    if (!fs.existsSync(scssEntry)) {
+        console.log('[sass] No assets/scss/style.scss found — skipping Sass.');
+        return done();
+    }
+
+    return gulp.src(scssEntry)
+        .pipe(plumber(err => { console.error(err?.message || err); }))
         .pipe(sourcemaps.init())
         .pipe(sass({ includePaths: ['node_modules'] }).on('error', sass.logError))
         .pipe(cleanCSS({ compatibility: 'ie8' }))
