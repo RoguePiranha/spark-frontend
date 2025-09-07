@@ -36,6 +36,22 @@ const copy = (globs, dest) =>
         .pipe(gulp.dest(dest));
 
 
+const path = require('path');
+const gulp = require('gulp');
+const injectPartials = require('gulp-inject-partials');
+
+gulp.task('html', function () {
+  return gulp.src([
+      'pages/**/*.html',
+      '!pages/partials/**' // don't output the partials themselves
+    ])
+    .pipe(injectPartials({
+      removeTags: true,
+      basePath: (file) => path.resolve(__dirname, 'pages') // <— key line
+    }))
+    .pipe(gulp.dest('dist'));
+});
+
 /** -----------------------------------------
  *  Styles
  *  ----------------------------------------- */
