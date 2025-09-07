@@ -8,6 +8,7 @@ import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
 
+import path from 'node:path';
 import sourcemaps from 'gulp-sourcemaps';
 import inject from 'gulp-inject';
 import injectPartials from 'gulp-inject-partials';
@@ -76,7 +77,17 @@ gulp.task('serve', gulp.series('sass', () => {
  *  Partials + asset injection
  *  ----------------------------------------- */
 gulp.task('injectPartials', () => {
+    const PARTIALS_ROOT = path.resolve('pages/partials');
+
     return gulp.src(['index.html', 'pages/**/*.html'], { base: './' })
+        .pipe(replace(/<!--\s*partial:\s*partials\//g, function (match, ...args) {
+            // `this.file` is available in gulp-replace’s function form
+            const fileDir = path.dirname(this.file.path);
+            const relToPartials = path
+                .relative(fileDir, PARTIALS_ROOT)
+                .replace(/\\/g, '/'); // fix Windows slashes
+            return `<!-- partial:${relToPartials}/`;
+        }))
         .pipe(injectPartials({ removeTags: true }))
         .pipe(gulp.dest('.'));
 });
