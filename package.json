@@ -21,7 +21,7 @@
     "dropify": "0.2.2",
     "dropzone": "6.0.0-beta.2",
     "easymde": "2.18.0",
-    "feather-icons": "4.29.2",
+    "feather-icons": "^4.29.2",
     "flag-icons": "^7.5.0",
     "flatpickr": "4.6.13",
     "font-awesome": "4.7.0",
