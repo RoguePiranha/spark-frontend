@@ -223,4 +223,4 @@ gulp.task('build', gulp.series(
 )); // 'copy:partials',
 
 /** Default */
-gulp.task('default', gulp.series('serve'));
+gulp.task('default');
