@@ -109,27 +109,27 @@ gulp.task('serve', gulp.series('sass', () => {
 // Currently your structure uses direct /assets/* references, so we keep this a no-op.
 gulp.task('replacePaths', (done) => done());
 
-gulp.task('injectCommonAssets', () => {
-    return gulp.src(['index.html', 'pages/**/*.html', '!node_modules/**/*.html', '!assets/**/*.html'])
-        // Core bundle (css+js)
-        .pipe(inject(gulp.src(['assets/vendors/core/core.css', 'assets/vendors/core/core.js'], { read: false }), {
-            name: 'core', relative: true
-        }))
-        // Color mode toggle
-        .pipe(inject(gulp.src(['assets/js/color-modes.js'], { read: false }), {
-            name: 'color-modes', relative: true
-        }))
-        // Feather + app + feather font css
-        .pipe(inject(gulp.src([
-            'assets/vendors/feather-icons/feather.min.js',
-            'assets/js/app.js',
-            'assets/fonts/feather-font/css/iconfont.css'
-        ], { read: false }), { relative: true }))
-        .pipe(gulp.dest('.'));
-});
+// gulp.task('injectCommonAssets', () => {
+//     return gulp.src(['index.html', 'pages/**/*.html', '!node_modules/**/*.html', '!assets/**/*.html'])
+//         // Core bundle (css+js)
+//         .pipe(inject(gulp.src(['assets/vendors/core/core.css', 'assets/vendors/core/core.js'], { read: false }), {
+//             name: 'core', relative: true
+//         }))
+//         // Color mode toggle
+//         .pipe(inject(gulp.src(['assets/js/color-modes.js'], { read: false }), {
+//             name: 'color-modes', relative: true
+//         }))
+//         // Feather + app + feather font css
+//         .pipe(inject(gulp.src([
+//             'assets/vendors/feather-icons/feather.min.js',
+//             'assets/js/app.js',
+//             'assets/fonts/feather-font/css/iconfont.css'
+//         ], { read: false }), { relative: true }))
+//         .pipe(gulp.dest('.'));
+// });
 
-// removed "'injectPartials', "
-gulp.task('inject', gulp.series('replacePaths', 'injectCommonAssets'));
+// removed "'injectPartials', " and ", 'injectCommonAssets'"
+gulp.task('inject', gulp.series('replacePaths'));
 
 /** -----------------------------------------
  *  Vendors
