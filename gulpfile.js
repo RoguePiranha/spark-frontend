@@ -215,12 +215,12 @@ gulp.task('copy:static', () =>
 );
 
 gulp.task('build', gulp.series(
-    'copyVendors',
+    // 'copyVendors',
     'sass',
-    'inject',
+    // 'inject',
     'clean:dist',
-    gulp.parallel('copy:html', 'copy:partials', 'copy:assets', 'copy:static')
-));
+    gulp.parallel('copy:html', 'copy:assets', 'copy:static')
+)); // 'copy:partials',
 
 /** Default */
 gulp.task('default', gulp.series('serve'));
