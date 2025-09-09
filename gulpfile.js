@@ -36,9 +36,6 @@ const copy = (globs, dest) =>
         .pipe(gulp.dest(dest));
 
 
-const path = require('path');
-const gulp = require('gulp');
-const injectPartials = require('gulp-inject-partials');
 
 gulp.task('html', function () {
   return gulp.src([
