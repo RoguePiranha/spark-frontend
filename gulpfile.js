@@ -89,21 +89,21 @@ gulp.task('serve', gulp.series('sass', () => {
 /** -----------------------------------------
  *  Partials + asset injection
  *  ----------------------------------------- */
-gulp.task('injectPartials', () => {
-    const PARTIALS_ROOT = path.resolve('pages/partials');
+// gulp.task('injectPartials', () => {
+//     const PARTIALS_ROOT = path.resolve('pages/partials');
 
-    return gulp.src(['index.html', 'pages/**/*.html'], { base: './' })
-        .pipe(replace(/<!--\s*partial:\s*partials\//g, function (match, ...args) {
-            // `this.file` is available in gulp-replace’s function form
-            const fileDir = path.dirname(this.file.path);
-            const relToPartials = path
-                .relative(fileDir, PARTIALS_ROOT)
-                .replace(/\\/g, '/'); // fix Windows slashes
-            return `<!-- partial:${relToPartials}/`;
-        }))
-        .pipe(injectPartials({ removeTags: true }))
-        .pipe(gulp.dest('.'));
-});
+//     return gulp.src(['index.html', 'pages/**/*.html'], { base: './' })
+//         .pipe(replace(/<!--\s*partial:\s*partials\//g, function (match, ...args) {
+//             // `this.file` is available in gulp-replace’s function form
+//             const fileDir = path.dirname(this.file.path);
+//             const relToPartials = path
+//                 .relative(fileDir, PARTIALS_ROOT)
+//                 .replace(/\\/g, '/'); // fix Windows slashes
+//             return `<!-- partial:${relToPartials}/`;
+//         }))
+//         .pipe(injectPartials({ removeTags: true }))
+//         .pipe(gulp.dest('.'));
+// });
 
 // If you ever need to rewrite paths post-inject, add rules here.
 // Currently your structure uses direct /assets/* references, so we keep this a no-op.
@@ -128,7 +128,8 @@ gulp.task('injectCommonAssets', () => {
         .pipe(gulp.dest('.'));
 });
 
-gulp.task('inject', gulp.series('injectPartials', 'replacePaths', 'injectCommonAssets'));
+// removed "'injectPartials', "
+gulp.task('inject', gulp.series('replacePaths', 'injectCommonAssets'));
 
 /** -----------------------------------------
  *  Vendors
