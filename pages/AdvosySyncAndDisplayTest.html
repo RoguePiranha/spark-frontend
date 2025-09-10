@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advosy Sync Dashboard</title>
+  <script>
+    const syncTypes = [
+        { type: "users", label: "Users" },
+        { type: "leads", label: "Leads" },
+        { type: "solarSales", label: "Solar Sales" },
+        { type: "roofSales", label: "Roof Sales" },
+        { type: "fiberSales", label: "Fiber Sales" }
+    ];
+
+    async function syncType(type) 
+    {
+      const button = document.getElementById(`sync-${type}`);
+      button.disabled = true;
+      button.innerText = 'Syncing...';
+
+      try {
+        const response = await fetch(`http://localhost:5001/sync/advosy/${type}`, {
+          method: 'POST'
+        });
+
+        const result = await response.text();
+        alert(`${type} sync complete: ${result}`);
+
+        try {
+          await loadTableData(type); // catch errors separately
+        } catch (tableErr) {
+          console.error(`loadTableData error:`, tableErr);
+          alert(`Error loading table for ${type}: ${tableErr.message || tableErr}`);
+        }
+
+      } catch (err) {
+        console.error(`${type} sync error:`, err);
+        alert(`Error syncing ${type}: ${err.message || err}`);
+      } finally {
+        button.disabled = false;
+        button.innerText = `Sync ${type}`;
+      }
+  }
+
+
+    async function loadTableData(type) {
+      const resultsContainer = document.getElementById("results");
+      const tableSection = document.createElement("section");
+      tableSection.innerHTML = `<h2>${type}</h2>`;
+
+      try {
+        const res = await fetch(`http://localhost:5001/data/top/${type}`);
+        const rows = await res.json();
+        const tableEl = document.createElement("table");
+        tableEl.border = "1";
+
+        if (rows.length > 0) {
+          const headers = Object.keys(rows[0]);
+          const thead = document.createElement("thead");
+          const headerRow = document.createElement("tr");
+          headers.forEach(h => {
+            const th = document.createElement("th");
+            th.textContent = h;
+            headerRow.appendChild(th);
+          });
+          thead.appendChild(headerRow);
+          tableEl.appendChild(thead);
+
+          const tbody = document.createElement("tbody");
+          rows.forEach(r => {
+            const row = document.createElement("tr");
+            headers.forEach(h => {
+              const td = document.createElement("td");
+              td.textContent = r[h];
+              row.appendChild(td);
+            });
+            tbody.appendChild(row);
+          });
+          tableEl.appendChild(tbody);
+        } else {
+          tableEl.innerHTML = '<tr><td>No data found</td></tr>';
+        }
+
+        tableSection.appendChild(tableEl);
+        resultsContainer.appendChild(tableSection);
+      } catch (e) {
+        tableSection.innerHTML += `<p>Error loading data for ${type}</p>`;
+        resultsContainer.appendChild(tableSection);
+      }
+    }
+  </script>
+</head>
+<body class="sidebar-dark">
+  <h1>Advosy Sync Dashboard</h1>
+  <div id="buttons">
+    <p>Click to sync and display data:</p>
+    <div>
+      <button id="sync-users" onclick="syncType('users')">Sync Users</button>
+      <button id="sync-leads" onclick="syncType('leads')">Sync Leads</button>
+      <button id="sync-solarSales" onclick="syncType('solarSales')">Sync Solar Sales</button>
+      <button id="sync-roofSales" onclick="syncType('roofSales')">Sync Roof Sales</button>
+      <button id="sync-fiberSales" onclick="syncType('fiberSales')">Sync Fiber Sales</button>
+    </div>
+  </div>
+  <div id="results" style="margin-top: 2em;"></div>
+</body>
+</html>
