@@ -49,25 +49,25 @@ function onErr(err) {
 //     .pipe(gulp.dest('dist'));
 // });
 
-// /** -----------------------------------------
-//  *  Styles
-//  *  ----------------------------------------- */
-// gulp.task('sass', (done) => {
-//     const scssEntry = 'assets/scss/style.scss';
-//     if (!fs.existsSync(scssEntry)) {
-//         console.log('[sass] No assets/scss/style.scss found — skipping Sass.');
-//         return done();
-//     }
+/** -----------------------------------------
+ *  Styles
+ *  ----------------------------------------- */
+gulp.task('sass', (done) => {
+    const scssEntry = 'assets/scss/style.scss';
+    if (!fs.existsSync(scssEntry)) {
+        console.log('[sass] No assets/scss/style.scss found — skipping Sass.');
+        return done();
+    }
 
-//     return gulp.src(scssEntry)
-//         .pipe(plumber(err => { console.error(err?.message || err); }))
-//         .pipe(sourcemaps.init())
-//         .pipe(sass({ includePaths: ['node_modules'] }).on('error', sass.logError))
-//         .pipe(cleanCSS({ compatibility: 'ie8' }))
-//         .pipe(sourcemaps.write('./'))
-//         .pipe(gulp.dest('assets/css'))
-//         .pipe(browserSync.stream());
-// });
+    return gulp.src(scssEntry)
+        .pipe(plumber(err => { console.error(err?.message || err); }))
+        .pipe(sourcemaps.init())
+        .pipe(sass({ includePaths: ['node_modules'] }).on('error', sass.logError))
+        .pipe(cleanCSS({ compatibility: 'ie8' }))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('assets/css'))
+        .pipe(browserSync.stream());
+});
 
 
 /** -----------------------------------------
