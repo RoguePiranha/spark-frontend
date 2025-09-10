@@ -16060,13 +16060,13 @@ body {
 
 /* default: light mode logo */
 .logo {
-  content: url("/pages/icons/dark_icon.png");
+  content: url("/assets/images/icons/dark_icon.png");
 }
 
 /* dark mode: swap in the light logo */
 @media (prefers-color-scheme: dark) {
   .logo {
-    content: url("/pages/icons/white favicon.png");
+    content: url("/assets/images/icons/white favicon.png");
   }
 }
 
