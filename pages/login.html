@@ -107,7 +107,7 @@
       const password = document.getElementById("password").value;
 
       try {
-        const res = await fetch("http://localhost:5001/login", {
+        const res = await fetch("http://172.21.12.1:5001/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ username, password }),
