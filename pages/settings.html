@@ -1,1150 +1,1087 @@
 <!DOCTYPE html>
 
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0" />
-		<meta
-			http-equiv="X-UA-Compatible"
-			content="ie=edge" />
-		<meta
-			name="description"
-			content="SPARK - Sales Performance and Revenue Keeper" />
-		<meta
-			name="author"
-			content="SparkPro" />
 
-		<title>SPARK - Sales Performance and Revenue Keeper</title>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="description" content="SPARK - Sales Performance and Revenue Keeper" />
+	<meta name="author" content="SparkPro" />
 
-		<!-- color-modes:js -->
-		<script src="/assets/js/color-modes.js"></script>
-		<!-- endinject -->
+	<title>SPARK - Sales Performance and Revenue Keeper</title>
 
-		<!-- Fonts -->
-		<link
-			rel="preconnect"
-			href="https://fonts.googleapis.com" />
-		<link
-			rel="preconnect"
-			href="https://fonts.gstatic.com"
-			crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-			rel="stylesheet" />
-		<!-- End fonts -->
+	<!-- color-modes:js -->
+	<script src="/assets/js/color-modes.js"></script>
+	<!-- endinject -->
 
-		<!-- core:css -->
-		<link
-			rel="stylesheet"
-			href="/assets/vendors/core/core.css" />
-		<!-- endinject -->
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+		rel="stylesheet" />
+	<!-- End fonts -->
 
-		<!-- Plugin css for this page -->
-		<!-- End plugin css for this page -->
+	<!-- core:css -->
+	<link rel="stylesheet" href="/assets/vendors/core/core.css" />
+	<!-- endinject -->
 
-		<!-- inject:css -->
-		<link
-			rel="stylesheet"
-			href="/assets/fonts/feather-font/css/iconfont.css" />
-		<!-- endinject -->
+	<!-- Plugin css for this page -->
+	<!-- End plugin css for this page -->
 
-		<!-- Layout styles -->
-		<link
-			rel="stylesheet"
-			href="/assets/css/style.css" />
-		<!-- End layout styles -->
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/assets/fonts/feather-font/css/iconfont.css" />
+	<!-- endinject -->
 
-		<link
-			rel="shortcut icon"
-			href="/assets/images/icons/white favicon.png" />
-	</head>
-	<body class="sidebar-dark">
-		<div class="main-wrapper">
-			<!-- partial:partials/_sidebar.html -->
-			<nav class="sidebar">
-				<div class="sidebar-header">
-					<a
-						href="#"
-						class="sidebar-brand"
-						aria-label="Spark Home"
-						title="Spark Home">
-						<img
-							src="/assets/images/icons/horz-dark-mode-logo.png"
-							class="sidebar-logo"
-							alt="Spark Logo" />
-					</a>
-					<div class="sidebar-toggler">
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
+	<!-- Layout styles -->
+	<link rel="stylesheet" href="/assets/css/style.css" />
+	<!-- End layout styles -->
+
+	<link rel="shortcut icon" href="/assets/images/icons/white favicon.png" />
+</head>
+
+<body class="sidebar-dark">
+	<div class="main-wrapper">
+		<!-- partial:partials/_sidebar.html -->
+		<nav class="sidebar">
+			<div class="sidebar-header">
+				<a href="#" class="sidebar-brand" aria-label="Spark Home" title="Spark Home">
+					<img src="/assets/images/icons/horz-dark-mode-logo.png" class="sidebar-logo" alt="Spark Logo" />
+				</a>
+				<div class="sidebar-toggler">
+					<span></span>
+					<span></span>
+					<span></span>
 				</div>
-				<div class="sidebar-body">
-					<ul
-						class="nav"
-						id="sidebarNav">
-						<li class="nav-item nav-category">Main</li>
-						<li class="nav-item">
-							<a
-								href="/pages/dashboard.html"
-								class="nav-link">
-								<i
-									class="link-icon"
-									data-feather="zap"></i>
-								<span class="link-title">Dashboard</span>
-							</a>
+			</div>
+			<div class="sidebar-body">
+				<ul class="nav" id="sidebarNav">
+					<li class="nav-item nav-category">Main</li>
+					<li class="nav-item">
+						<a href="/pages/dashboard.html" class="nav-link">
+							<i class="link-icon" data-feather="zap"></i>
+							<span class="link-title">Dashboard</span>
+						</a>
+					</li>
+					<li class="nav-item nav-category">Web Apps</li>
+					<li class="nav-item">
+						<a href="/pages/apps/chat.html" class="nav-link">
+							<i class="link-icon" data-feather="message-square"></i>
+							<span class="link-title">Chat</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/apps/calendar.html" class="nav-link">
+							<i class="link-icon" data-feather="calendar"></i>
+							<span class="link-title">Calendar</span>
+						</a>
+					</li>
+					<li class="nav-item nav-category">Components</li>
+					<li class="nav-item">
+						<a href="/pages/profile.html" class="nav-link">
+							<i class="link-icon" data-feather="user"></i>
+							<span class="link-title">Profile</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/user-management.html" class="nav-link">
+							<i class="link-icon" data-feather="users"></i>
+							<span class="link-title">My Team</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/compensation.html" class="nav-link">
+							<i class="link-icon" data-feather="dollar-sign"></i>
+							<span class="link-title">Compensation</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/installers.html" class="nav-link">
+							<i class="link-icon" data-feather="tool"></i>
+							<span class="link-title">Installers</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/documents.html" class="nav-link">
+							<i class="link-icon" data-feather="folder"></i>
+							<span class="link-title">Documents</span>
+						</a>
+					</li>
+					<li class="nav-item nav-category">Pages</li>
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="collapse" href="#general-pages" role="button"
+							aria-expanded="false" aria-controls="general-pages">
+							<i class="link-icon" data-feather="book"></i>
+							<span class="link-title">Special pages</span>
+							<i class="link-arrow" data-feather="chevron-down"></i>
+						</a>
+						<div class="collapse" data-bs-parent="#sidebarNav" id="general-pages">
+							<ul class="nav sub-menu">
+								<li class="nav-item">
+									<a href="/pages/blank-page.html" class="nav-link">Blank page</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/faq.html" class="nav-link">Faq</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/invoice.html" class="nav-link">Invoice</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/profile.html" class="nav-link">Profile</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/pricing.html" class="nav-link">Pricing</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/timeline.html" class="nav-link">Timeline</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="collapse" href="#authPages" role="button"
+							aria-expanded="false" aria-controls="authPages">
+							<i class="link-icon" data-feather="unlock"></i>
+							<span class="link-title">Authentication</span>
+							<i class="link-arrow" data-feather="chevron-down"></i>
+						</a>
+						<div class="collapse" data-bs-parent="#sidebarNav" id="authPages">
+							<ul class="nav sub-menu">
+								<li class="nav-item">
+									<a href="/pages/auth/login.html" class="nav-link">Login</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/auth/register.html" class="nav-link">Register</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item nav-category">Docs</li>
+					<li class="nav-item">
+						<a href="/pages/settings.html" class="nav-link">
+							<i class="link-icon" data-feather="settings"></i>
+							<span class="link-title">Settings</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- partial -->
+
+		<div class="page-wrapper">
+			<!-- partial:partials/_navbar.html -->
+			<nav class="navbar">
+				<div class="navbar-content">
+					<div class="navbar-page-title d-flex align-items-center">
+						<h2 class="mb-0 fw-bold" id="navbar-page-title"></h2>
+					</div>
+
+					<ul class="navbar-nav">
+						<li class="theme-switcher-wrapper nav-item">
+							<input type="checkbox" value="" id="theme-switcher" title="Toggle theme" />
+							<label for="theme-switcher" aria-label="Toggle theme">
+								<div class="box">
+									<div class="ball"></div>
+									<div class="icons">
+										<i class="feather icon-sun"></i>
+										<i class="feather icon-moon"></i>
+									</div>
+								</div>
+							</label>
 						</li>
-						<li class="nav-item nav-category">Web Apps</li>
-						<li class="nav-item">
-							<a
-								href="/pages/apps/chat.html"
-								class="nav-link">
-								<i
-									class="link-icon"
-									data-feather="message-square"></i>
-								<span class="link-title">Chat</span>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="appsDropdown" role="button"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Apps">
+								<i data-feather="grid"></i>
 							</a>
+							<div class="dropdown-menu p-0" aria-labelledby="appsDropdown">
+								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+									<p class="mb-0 fw-bold">Web Apps</p>
+									<a href="javascript:;" class="text-secondary">Edit</a>
+								</div>
+								<div class="row g-0 p-1">
+									<div class="col-3 text-center">
+										<a href="/pages/apps/chat.html"
+											class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"><i
+												data-feather="message-square" class="icon-lg mb-1"></i>
+											<p class="fs-12px">Chat</p>
+										</a>
+									</div>
+									<div class="col-3 text-center">
+										<a href="/pages/apps/calendar.html"
+											class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"><i
+												data-feather="calendar" class="icon-lg mb-1"></i>
+											<p class="fs-12px">Calendar</p>
+										</a>
+									</div>
+									<div class="col-3 text-center">
+										<a href="/pages/email/inbox.html"
+											class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"><i
+												data-feather="mail" class="icon-lg mb-1"></i>
+											<p class="fs-12px">Email</p>
+										</a>
+									</div>
+									<div class="col-3 text-center">
+										<a href="/pages/profile.html"
+											class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"><i
+												data-feather="instagram" class="icon-lg mb-1"></i>
+											<p class="fs-12px">Profile</p>
+										</a>
+									</div>
+								</div>
+								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+									<a href="javascript:;">View all</a>
+								</div>
+							</div>
 						</li>
-						<li class="nav-item">
-							<a
-								href="/pages/apps/calendar.html"
-								class="nav-link">
-								<i
-									class="link-icon"
-									data-feather="calendar"></i>
-								<span class="link-title">Calendar</span>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Messages">
+								<i data-feather="message-square"></i>
 							</a>
+							<div class="dropdown-menu p-0" aria-labelledby="messageDropdown">
+								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+									<p>9 New Messages</p>
+									<a href="javascript:;" class="text-secondary">Clear all</a>
+								</div>
+								<div class="p-1">
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/assets/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Leonardo Payne</p>
+												<p class="fs-12px text-secondary">Project status</p>
+											</div>
+											<p class="fs-12px text-secondary">2 min ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/assets/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Carl Henson</p>
+												<p class="fs-12px text-secondary">Client meeting</p>
+											</div>
+											<p class="fs-12px text-secondary">30 min ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/assets/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Jensen Combs</p>
+												<p class="fs-12px text-secondary">Project updates</p>
+											</div>
+											<p class="fs-12px text-secondary">1 hrs ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/assets/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Amiah Burton</p>
+												<p class="fs-12px text-secondary">Project deatline</p>
+											</div>
+											<p class="fs-12px text-secondary">2 hrs ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/assets/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Yaretzi Mayo</p>
+												<p class="fs-12px text-secondary">New record</p>
+											</div>
+											<p class="fs-12px text-secondary">5 hrs ago</p>
+										</div>
+									</a>
+								</div>
+								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+									<a href="javascript:;">View all</a>
+								</div>
+							</div>
 						</li>
-						<li class="nav-item nav-category">Components</li>
-						<li class="nav-item">
-							<a
-								href="/pages/profile.html"
-								class="nav-link">
-								<i
-									class="link-icon"
-									data-feather="user"></i>
-								<span class="link-title">Profile</span>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+								title="Notifications">
+								<i data-feather="bell"></i>
+								<div class="indicator">
+									<div class="circle"></div>
+								</div>
 							</a>
+							<div class="dropdown-menu p-0" aria-labelledby="notificationDropdown">
+								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+									<p>6 New Notifications</p>
+									<a href="javascript:;" class="text-secondary">Clear all</a>
+								</div>
+								<div class="p-1">
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="gift"></i>
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>New Order Recieved</p>
+											<p class="fs-12px text-secondary">30 min ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="alert-circle"></i>
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>Server Limit Reached!</p>
+											<p class="fs-12px text-secondary">1 hrs ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/assets/images/profile_images/user_stock.png" alt="userr" />
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>New customer registered</p>
+											<p class="fs-12px text-secondary">2 sec ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="layers"></i>
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>Apps are ready for update</p>
+											<p class="fs-12px text-secondary">5 hrs ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="download"></i>
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>Download completed</p>
+											<p class="fs-12px text-secondary">6 hrs ago</p>
+										</div>
+									</a>
+								</div>
+								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+									<a href="javascript:;">View all</a>
+								</div>
+							</div>
 						</li>
-						<li class="nav-item">
-							<a
-								href="/pages/user-management.html"
-								class="nav-link">
-								<i
-									class="link-icon"
-									data-feather="users"></i>
-								<span class="link-title">My Team</span>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<img class="w-30px h-30px ms-1 rounded-circle"
+									src="/assets/images/profile_images/user_stock.png" alt="profile" />
 							</a>
-						</li>
-						<li class="nav-item">
-							<a
-								href="/pages/compensation.html"
-								class="nav-link">
-								<i
-									class="link-icon"
-									data-feather="dollar-sign"></i>
-								<span class="link-title">Compensation</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a
-								href="/pages/installers.html"
-								class="nav-link">
-								<i
-									class="link-icon"
-									data-feather="tool"></i>
-								<span class="link-title">Installers</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a
-								href="/pages/documents.html"
-								class="nav-link">
-								<i
-									class="link-icon"
-									data-feather="folder"></i>
-								<span class="link-title">Documents</span>
-							</a>
-						</li>
-						<li class="nav-item nav-category">Pages</li>
-						<li class="nav-item">
-							<a
-								class="nav-link"
-								data-bs-toggle="collapse"
-								href="#general-pages"
-								role="button"
-								aria-expanded="false"
-								aria-controls="general-pages">
-								<i
-									class="link-icon"
-									data-feather="book"></i>
-								<span class="link-title">Special pages</span>
-								<i
-									class="link-arrow"
-									data-feather="chevron-down"></i>
-							</a>
-							<div
-								class="collapse"
-								data-bs-parent="#sidebarNav"
-								id="general-pages">
-								<ul class="nav sub-menu">
-									<li class="nav-item">
-										<a
-											href="/pages/blank-page.html"
-											class="nav-link"
-											>Blank page</a
-										>
+							<div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
+								<div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
+									<div class="mb-3">
+										<img class="w-80px h-80px rounded-circle"
+											src="/assets/images/profile_images/user_stock.png" alt="" />
+									</div>
+									<div class="text-center">
+										<p class="fs-16px fw-bolder" id="navbar-user-name">
+											Loading...
+										</p>
+										<p class="fs-12px text-secondary" id="navbar-user-email">
+											Loading...
+										</p>
+									</div>
+								</div>
+								<ul class="list-unstyled p-1">
+									<li class="dropdown-item py-2">
+										<a href="/pages/profile.html" class="text-body ms-0">
+											<i class="me-2 icon-md" data-feather="user"></i>
+											<span>Profile</span>
+										</a>
 									</li>
-									<li class="nav-item">
-										<a
-											href="/pages/faq.html"
-											class="nav-link"
-											>Faq</a
-										>
+									<li class="dropdown-item py-2">
+										<a href="javascript:;" class="text-body ms-0">
+											<i class="me-2 icon-md" data-feather="edit"></i>
+											<span>Edit Profile</span>
+										</a>
 									</li>
-									<li class="nav-item">
-										<a
-											href="/pages/invoice.html"
-											class="nav-link"
-											>Invoice</a
-										>
-									</li>
-									<li class="nav-item">
-										<a
-											href="/pages/profile.html"
-											class="nav-link"
-											>Profile</a
-										>
-									</li>
-									<li class="nav-item">
-										<a
-											href="/pages/pricing.html"
-											class="nav-link"
-											>Pricing</a
-										>
-									</li>
-									<li class="nav-item">
-										<a
-											href="/pages/timeline.html"
-											class="nav-link"
-											>Timeline</a
-										>
+									<li class="dropdown-item py-2">
+										<a href="javascript:;" class="text-body ms-0" onclick="logout()">
+											<i class="me-2 icon-md" data-feather="log-out"></i>
+											<span>Log Out</span>
+										</a>
 									</li>
 								</ul>
 							</div>
-						</li>
-						<li class="nav-item">
-							<a
-								class="nav-link"
-								data-bs-toggle="collapse"
-								href="#authPages"
-								role="button"
-								aria-expanded="false"
-								aria-controls="authPages">
-								<i
-									class="link-icon"
-									data-feather="unlock"></i>
-								<span class="link-title">Authentication</span>
-								<i
-									class="link-arrow"
-									data-feather="chevron-down"></i>
-							</a>
-							<div
-								class="collapse"
-								data-bs-parent="#sidebarNav"
-								id="authPages">
-								<ul class="nav sub-menu">
-									<li class="nav-item">
-										<a
-											href="/pages/auth/login.html"
-											class="nav-link"
-											>Login</a
-										>
-									</li>
-									<li class="nav-item">
-										<a
-											href="/pages/auth/register.html"
-											class="nav-link"
-											>Register</a
-										>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="nav-item nav-category">Docs</li>
-						<li class="nav-item">
-							<a
-								href="/pages/settings.html"
-								class="nav-link">
-								<i
-									class="link-icon"
-									data-feather="settings"></i>
-								<span class="link-title">Settings</span>
-							</a>
 						</li>
 					</ul>
+
+					<a href="#" class="sidebar-toggler" title="Toggle Sidebar">
+						<i data-feather="menu"></i>
+					</a>
 				</div>
+				<script>
+					document.addEventListener("DOMContentLoaded", async () => {
+						const user = JSON.parse(localStorage.getItem("user"));
+						if (!user) {
+							window.location.href = "/pages/login.html";
+							return;
+						}
+
+						try {
+							const res = await fetch(`http://localhost:5001/profile/${user.userId}`);
+							const data = await res.json();
+
+							document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;
+							document.getElementById("navbar-user-email").textContent = data.email ?? "-";
+						} catch (err) {
+							console.error("Failed to load profile data:", err);
+						}
+					});
+				</script>
+
+				<script>
+					function logout() {
+						localStorage.removeItem("user");
+						window.location.href = "/pages/login.html";
+					}
+				</script>
+				<script>
+					// Set the page title in the navbar
+					// Removes "SPARK - " from the title
+					document.addEventListener("DOMContentLoaded", function () {
+						let pageTitle = document.title || "Page";
+						pageTitle = pageTitle.replace(/^\s*SPARK\s*-\s*/i, "");
+						// this can override the title if you want it custom
+						// let customTitle = document.body.getAttribute("data-page-title");
+						document.getElementById("navbar-page-title").textContent = pageTitle;
+					});
+				</script>
 			</nav>
 
 			<!-- partial -->
 
-			<div class="page-wrapper">
-				<!-- partial:partials/_navbar.html -->
-				<nav class="navbar">
-					<div class="navbar-content">
-						<div class="navbar-page-title d-flex align-items-center">
-							<h2
-								class="mb-0 fw-bold"
-								id="navbar-page-title"></h2>
-						</div>
-
-						<ul class="navbar-nav">
-							<li class="theme-switcher-wrapper nav-item">
-								<input
-									type="checkbox"
-									value=""
-									id="theme-switcher"
-									title="Toggle theme" />
-								<label
-									for="theme-switcher"
-									aria-label="Toggle theme">
-									<div class="box">
-										<div class="ball"></div>
-										<div class="icons">
-											<i class="feather icon-sun"></i>
-											<i class="feather icon-moon"></i>
-										</div>
-									</div>
-								</label>
-							</li>
-							<li class="nav-item dropdown">
-								<a
-									class="nav-link dropdown-toggle"
-									href="#"
-									id="appsDropdown"
-									role="button"
-									data-bs-toggle="dropdown"
-									aria-haspopup="true"
-									aria-expanded="false"
-									title="Apps">
-									<i data-feather="grid"></i>
-								</a>
-								<div
-									class="dropdown-menu p-0"
-									aria-labelledby="appsDropdown">
-									<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
-										<p class="mb-0 fw-bold">Web Apps</p>
-										<a
-											href="javascript:;"
-											class="text-secondary"
-											>Edit</a
-										>
-									</div>
-									<div class="row g-0 p-1">
-										<div class="col-3 text-center">
-											<a
-												href="/pages/apps/chat.html"
-												class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
-												><i
-													data-feather="message-square"
-													class="icon-lg mb-1"></i>
-												<p class="fs-12px">Chat</p></a
-											>
-										</div>
-										<div class="col-3 text-center">
-											<a
-												href="/pages/apps/calendar.html"
-												class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
-												><i
-													data-feather="calendar"
-													class="icon-lg mb-1"></i>
-												<p class="fs-12px">Calendar</p></a
-											>
-										</div>
-										<div class="col-3 text-center">
-											<a
-												href="/pages/email/inbox.html"
-												class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
-												><i
-													data-feather="mail"
-													class="icon-lg mb-1"></i>
-												<p class="fs-12px">Email</p></a
-											>
-										</div>
-										<div class="col-3 text-center">
-											<a
-												href="/pages/profile.html"
-												class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
-												><i
-													data-feather="instagram"
-													class="icon-lg mb-1"></i>
-												<p class="fs-12px">Profile</p></a
-											>
-										</div>
-									</div>
-									<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
-										<a href="javascript:;">View all</a>
-									</div>
-								</div>
-							</li>
-							<li class="nav-item dropdown">
-								<a
-									class="nav-link dropdown-toggle"
-									href="#"
-									id="messageDropdown"
-									role="button"
-									data-bs-toggle="dropdown"
-									aria-haspopup="true"
-									aria-expanded="false"
-									title="Messages">
-									<i data-feather="message-square"></i>
-								</a>
-								<div
-									class="dropdown-menu p-0"
-									aria-labelledby="messageDropdown">
-									<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
-										<p>9 New Messages</p>
-										<a
-											href="javascript:;"
-											class="text-secondary"
-											>Clear all</a
-										>
-									</div>
-									<div class="p-1">
-										<a
-											href="javascript:;"
-											class="dropdown-item d-flex align-items-center py-2">
-											<div class="me-3">
-												<img
-													class="w-30px h-30px rounded-circle"
-													src="/assets/images/profile_images/user_stock.png"
-													alt="user" />
-											</div>
-											<div class="d-flex justify-content-between flex-grow-1">
-												<div class="me-4">
-													<p>Leonardo Payne</p>
-													<p class="fs-12px text-secondary">Project status</p>
-												</div>
-												<p class="fs-12px text-secondary">2 min ago</p>
-											</div>
-										</a>
-										<a
-											href="javascript:;"
-											class="dropdown-item d-flex align-items-center py-2">
-											<div class="me-3">
-												<img
-													class="w-30px h-30px rounded-circle"
-													src="/assets/images/profile_images/user_stock.png"
-													alt="user" />
-											</div>
-											<div class="d-flex justify-content-between flex-grow-1">
-												<div class="me-4">
-													<p>Carl Henson</p>
-													<p class="fs-12px text-secondary">Client meeting</p>
-												</div>
-												<p class="fs-12px text-secondary">30 min ago</p>
-											</div>
-										</a>
-										<a
-											href="javascript:;"
-											class="dropdown-item d-flex align-items-center py-2">
-											<div class="me-3">
-												<img
-													class="w-30px h-30px rounded-circle"
-													src="/assets/images/profile_images/user_stock.png"
-													alt="user" />
-											</div>
-											<div class="d-flex justify-content-between flex-grow-1">
-												<div class="me-4">
-													<p>Jensen Combs</p>
-													<p class="fs-12px text-secondary">Project updates</p>
-												</div>
-												<p class="fs-12px text-secondary">1 hrs ago</p>
-											</div>
-										</a>
-										<a
-											href="javascript:;"
-											class="dropdown-item d-flex align-items-center py-2">
-											<div class="me-3">
-												<img
-													class="w-30px h-30px rounded-circle"
-													src="/assets/images/profile_images/user_stock.png"
-													alt="user" />
-											</div>
-											<div class="d-flex justify-content-between flex-grow-1">
-												<div class="me-4">
-													<p>Amiah Burton</p>
-													<p class="fs-12px text-secondary">Project deatline</p>
-												</div>
-												<p class="fs-12px text-secondary">2 hrs ago</p>
-											</div>
-										</a>
-										<a
-											href="javascript:;"
-											class="dropdown-item d-flex align-items-center py-2">
-											<div class="me-3">
-												<img
-													class="w-30px h-30px rounded-circle"
-													src="/assets/images/profile_images/user_stock.png"
-													alt="user" />
-											</div>
-											<div class="d-flex justify-content-between flex-grow-1">
-												<div class="me-4">
-													<p>Yaretzi Mayo</p>
-													<p class="fs-12px text-secondary">New record</p>
-												</div>
-												<p class="fs-12px text-secondary">5 hrs ago</p>
-											</div>
-										</a>
-									</div>
-									<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
-										<a href="javascript:;">View all</a>
-									</div>
-								</div>
-							</li>
-							<li class="nav-item dropdown">
-								<a
-									class="nav-link dropdown-toggle"
-									href="#"
-									id="notificationDropdown"
-									role="button"
-									data-bs-toggle="dropdown"
-									aria-haspopup="true"
-									aria-expanded="false"
-									title="Notifications">
-									<i data-feather="bell"></i>
-									<div class="indicator">
-										<div class="circle"></div>
-									</div>
-								</a>
-								<div
-									class="dropdown-menu p-0"
-									aria-labelledby="notificationDropdown">
-									<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
-										<p>6 New Notifications</p>
-										<a
-											href="javascript:;"
-											class="text-secondary"
-											>Clear all</a
-										>
-									</div>
-									<div class="p-1">
-										<a
-											href="javascript:;"
-											class="dropdown-item d-flex align-items-center py-2">
-											<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-												<i
-													class="icon-sm text-white"
-													data-feather="gift"></i>
-											</div>
-											<div class="flex-grow-1 me-2">
-												<p>New Order Recieved</p>
-												<p class="fs-12px text-secondary">30 min ago</p>
-											</div>
-										</a>
-										<a
-											href="javascript:;"
-											class="dropdown-item d-flex align-items-center py-2">
-											<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-												<i
-													class="icon-sm text-white"
-													data-feather="alert-circle"></i>
-											</div>
-											<div class="flex-grow-1 me-2">
-												<p>Server Limit Reached!</p>
-												<p class="fs-12px text-secondary">1 hrs ago</p>
-											</div>
-										</a>
-										<a
-											href="javascript:;"
-											class="dropdown-item d-flex align-items-center py-2">
-											<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-												<img
-													class="w-30px h-30px rounded-circle"
-													src="/assets/images/profile_images/user_stock.png"
-													alt="userr" />
-											</div>
-											<div class="flex-grow-1 me-2">
-												<p>New customer registered</p>
-												<p class="fs-12px text-secondary">2 sec ago</p>
-											</div>
-										</a>
-										<a
-											href="javascript:;"
-											class="dropdown-item d-flex align-items-center py-2">
-											<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-												<i
-													class="icon-sm text-white"
-													data-feather="layers"></i>
-											</div>
-											<div class="flex-grow-1 me-2">
-												<p>Apps are ready for update</p>
-												<p class="fs-12px text-secondary">5 hrs ago</p>
-											</div>
-										</a>
-										<a
-											href="javascript:;"
-											class="dropdown-item d-flex align-items-center py-2">
-											<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-												<i
-													class="icon-sm text-white"
-													data-feather="download"></i>
-											</div>
-											<div class="flex-grow-1 me-2">
-												<p>Download completed</p>
-												<p class="fs-12px text-secondary">6 hrs ago</p>
-											</div>
-										</a>
-									</div>
-									<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
-										<a href="javascript:;">View all</a>
-									</div>
-								</div>
-							</li>
-							<li class="nav-item dropdown">
-								<a
-									class="nav-link dropdown-toggle"
-									href="#"
-									id="profileDropdown"
-									role="button"
-									data-bs-toggle="dropdown"
-									aria-haspopup="true"
-									aria-expanded="false">
-									<img
-										class="w-30px h-30px ms-1 rounded-circle"
-										src="/assets/images/profile_images/user_stock.png"
-										alt="profile" />
-								</a>
-								<div
-									class="dropdown-menu p-0"
-									aria-labelledby="profileDropdown">
-									<div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
-										<div class="mb-3">
-											<img
-												class="w-80px h-80px rounded-circle"
-												src="/assets/images/profile_images/user_stock.png"
-												alt="" />
-										</div>
-										<div class="text-center">
-											<p
-												class="fs-16px fw-bolder"
-												id="navbar-user-name">
-												Loading...
-											</p>
-											<p
-												class="fs-12px text-secondary"
-												id="navbar-user-email">
-												Loading...
-											</p>
-										</div>
-									</div>
-									<ul class="list-unstyled p-1">
-										<li class="dropdown-item py-2">
-											<a
-												href="/pages/profile.html"
-												class="text-body ms-0">
-												<i
-													class="me-2 icon-md"
-													data-feather="user"></i>
-												<span>Profile</span>
-											</a>
-										</li>
-										<li class="dropdown-item py-2">
-											<a
-												href="javascript:;"
-												class="text-body ms-0">
-												<i
-													class="me-2 icon-md"
-													data-feather="edit"></i>
-												<span>Edit Profile</span>
-											</a>
-										</li>
-										<li class="dropdown-item py-2">
-											<a
-												href="javascript:;"
-												class="text-body ms-0"
-												onclick="logout()">
-												<i
-													class="me-2 icon-md"
-													data-feather="log-out"></i>
-												<span>Log Out</span>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-						</ul>
-
-						<a
-							href="#"
-							class="sidebar-toggler"
-							title="Toggle Sidebar">
-							<i data-feather="menu"></i>
-						</a>
-					</div>
-					<script>
-						document.addEventListener("DOMContentLoaded", async () => {
-							const user = JSON.parse(localStorage.getItem("user"));
-							if (!user) {
-								window.location.href = "/pages/login.html";
-								return;
-							}
-
-							try {
-								const res = await fetch(`http://localhost:5001/profile/${user.userId}`);
-								const data = await res.json();
-
-								document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;
-								document.getElementById("navbar-user-email").textContent = data.email ?? "-";
-							} catch (err) {
-								console.error("Failed to load profile data:", err);
-							}
-						});
-					</script>
-
-					<script>
-						function logout() {
-							localStorage.removeItem("user");
-							window.location.href = "/pages/login.html";
-						}
-					</script>
-					<script>
-						// Set the page title in the navbar
-						// Removes "SPARK - " from the title
-						document.addEventListener("DOMContentLoaded", function () {
-							let pageTitle = document.title || "Page";
-							pageTitle = pageTitle.replace(/^\s*SPARK\s*-\s*/i, "");
-							// this can override the title if you want it custom
-							// let customTitle = document.body.getAttribute("data-page-title");
-							document.getElementById("navbar-page-title").textContent = pageTitle;
-						});
-					</script>
-				</nav>
-
-				<!-- partial -->
-
-				<div class="page-content">
-					<!-- TAB HEADER -->
-					<div class="row">
-						<div class="col-12 grid-margin">
-							<div class="card align-items-center">
-								<div class="d-flex p-3 rounded-bottom d-flex align-items-center m-0">
-									<ul
-										class="nav nav-tabs nav-tabs-line"
-										id="profileTab"
-										role="tablist">
-										<li
-											class="nav-item"
-											role="presentation">
-											<button
-												class="nav-link active"
-												id="general-tab"
-												data-bs-toggle="tab"
-												data-bs-target="#general"
-												type="button"
-												role="tab"
-												aria-controls="general"
-												aria-selected="true">
-												<i
-													class="me-1 icon-md"
-													data-feather="briefcase"></i>
-												<span class="d-none d-md-inline">General</span>
-											</button>
-										</li>
-										<li
-											class="nav-item"
-											role="presentation">
-											<button
-												class="nav-link"
-												id="roles-permissions-tab"
-												data-bs-toggle="tab"
-												data-bs-target="#my-roles-permissions"
-												type="button"
-												role="tab"
-												aria-controls="roles-permissions"
-												aria-selected="false">
-												<i
-													class="me-1 icon-md"
-													data-feather="user-check"></i>
-												<span class="d-none d-md-inline">Roles and Permissions</span>
-											</button>
-										</li>
-										<li
-											class="nav-item"
-											role="presentation">
-											<button
-												class="nav-link"
-												id="payroll-payments-tab"
-												data-bs-toggle="tab"
-												data-bs-target="#payroll-payments"
-												type="button"
-												role="tab"
-												aria-controls="payroll-payments"
-												aria-selected="false">
-												<i
-													class="me-1 icon-md"
-													data-feather="dollar-sign"></i>
-												<span class="d-none d-md-inline">Default Commission Plans</span>
-											</button>
-										</li>
-										<li
-											class="nav-item"
-											role="presentation">
-											<button
-												class="nav-link"
-												id="payroll-payments-tab"
-												data-bs-toggle="tab"
-												data-bs-target="#payroll-payments"
-												type="button"
-												role="tab"
-												aria-controls="payroll-payments"
-												aria-selected="false">
-												<i
-													class="me-1 icon-md"
-													data-feather="dollar-sign"></i>
-												<span class="d-none d-md-inline">Rep Commission Settings</span>
-											</button>
-										</li>
-										<li
-											class="nav-item"
-											role="presentation">
-											<button
-												class="nav-link"
-												id="integrations-tab"
-												data-bs-toggle="tab"
-												data-bs-target="#integrations"
-												type="button"
-												role="tab"
-												aria-controls="integrations"
-												aria-selected="false">
-												<i
-													class="me-1 icon-md"
-													data-feather="link"></i>
-												<span class="d-none d-md-inline">Integrations</span>
-												<!-- Use page to submit support request for billable api integrations (use ticketing system) -->
-											</button>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--TAB HEADER END -->
-					<!-- Profile tab content -->
-					<div
-						class="tab-content"
-						id="profileTabContent">
-						<div
-							class="tab-pane fade show active"
-							id="personal-info"
-							role="tabpanel"
-							aria-labelledby="personal-info-tab">
-							<div class="row profile-body gap-4">
-								<!-- Profile left wrapper start -->
-								<div class="d-md-block col-md-3 col-xl-3 left-wrapper">
-									<div class="card rounded">
-										<div class="card-body profile-body">
-											<div class="profile-details">
-												<div class="card-header card-title mb-3">Company Info</div>
-												<div class="detail-item mb-2">
-													<label class="detail-label">Company Name:</label>
-													<p
-														class="profile-title"
-														id="company-name">
-														N/A
-													</p>
-												</div>
-												<div class="detail-item mb-2">
-													<label class="detail-label">Spark ID:</label>
-													<p
-														class="detail-value"
-														id="company-spark-id"></p>
-												</div>
-												<div class="detail-item mb-2">
-													<label class="detail-label">Phone:</label>
-													<p
-														class="detail-value"
-														id="company-phone">
-														N/A
-													</p>
-												</div>
-												<div class="detail-item mb-2">
-													<label class="detail-label">Contact Email:</label>
-													<p
-														class="detail-value"
-														id="company-email">
-														N/A
-													</p>
-												</div>
-												<div class="detail-item mb-2">
-													<label class="detail-label">Headquarters:</label>
-													<p
-														class="detail-value"
-														id="company-headquarters">
-														N/A
-													</p>
-												</div>
-												<div class="detail-item mb-2">
-													<label class="detail-label">Owner:</label>
-													<p
-														class="detail-value"
-														id="company-owner">
-														N/A
-													</p>
-												</div>
-												<div class="detail-item mb-2">
-													<label class="detail-label">Start Date:</label>
-													<p
-														class="detail-value"
-														id="company-start-date">
-														N/A
-													</p>
-												</div>
-												<div class="detail-item mb-2">
-													<label class="detail-label">Employee Count:</label>
-													<p
-														class="detail-value"
-														id="company-employee-count">
-														N/A
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Profile left wrapper end -->
-								<!-- Profile middle wrapper start -->
-								<div class="col middle-wrapper d-flex flex-column">
-									<div class="row">
-										<div class="col-md-12 grid-margin">
-											<div class="card rounded">
-												<div class="card-body">
-													<h6 class="card-title mb-3 text-center">Clawbacks</h6>
-													<div class="table-responsive">
-														<!-- Admin Sections -->
-														<div class="admin-tables-container">
-															<!-- Section: Users -->
-															<div
-																class="card mb-4 admin-content-section"
-																data-index="1">
-																<div class="card-header d-flex align-items-center">
-																	<i
-																		data-feather="users"
-																		class="me-2"></i>
-																	<h6 class="mb-0">Users</h6>
-																</div>
-																<div class="card-body p-0">
-																	<div class="table-responsive">
-																		<table
-																			class="table table-hover align-middle mb-0"
-																			data-name="users">
-																			<tbody>
-																				<tr
-																					class="admin-content-row"
-																					data-index="0">
-																					<td class="w-50">
-																						<div class="d-flex align-items-center">
-																							<i
-																								data-feather="user"
-																								class="me-2"></i>
-																							<a
-																								href="#User"
-																								class="fw-medium"
-																								>Users</a
-																							>
-																						</div>
-																					</td>
-																					<td>Users management</td>
-																				</tr>
-																				<tr
-																					class="admin-content-row"
-																					data-index="1">
-																					<td>
-																						<div class="d-flex align-items-center">
-																							<i
-																								data-feather="users"
-																								class="me-2"></i>
-																							<a
-																								href="#Team"
-																								class="fw-medium"
-																								>Teams</a
-																							>
-																						</div>
-																					</td>
-																					<td>Teams management</td>
-																				</tr>
-																				<tr
-																					class="admin-content-row"
-																					data-index="2">
-																					<td>
-																						<div class="d-flex align-items-center">
-																							<i
-																								data-feather="key"
-																								class="me-2"></i>
-																							<a
-																								href="#Role"
-																								class="fw-medium"
-																								>Roles</a
-																							>
-																						</div>
-																					</td>
-																					<td>Roles management</td>
-																				</tr>
-																			</tbody>
-																		</table>
-																	</div>
-																</div>
-															</div>
-
-															<!-- Section: Data -->
-															<div
-																class="card mb-4 admin-content-section"
-																data-index="5">
-																<div class="card-header d-flex align-items-center">
-																	<i
-																		data-feather="database"
-																		class="me-2"></i>
-																	<h6 class="mb-0">Data</h6>
-																</div>
-																<div class="card-body p-0">
-																	<div class="table-responsive">
-																		<table
-																			class="table table-hover align-middle mb-0"
-																			data-name="data">
-																			<tbody>
-																				<tr>
-																					<td class="w-50">
-																						<div class="d-flex align-items-center">
-																							<i
-																								data-feather="file-input"
-																								class="me-2"></i
-																							><a
-																								href="#Import"
-																								class="fw-medium"
-																								>Import</a
-																							>
-																						</div>
-																					</td>
-																					<td>Import data from CSV file</td>
-																				</tr>
-																				<tr>
-																					<td>
-																						<div class="d-flex align-items-center">
-																							<i
-																								data-feather="id-card"
-																								class="me-2"></i
-																							><a
-																								href="#LeadCapture"
-																								class="fw-medium"
-																								>Lead Capture</a
-																							>
-																						</div>
-																					</td>
-																					<td>API entry points for Web-to-Lead</td>
-																				</tr>
-																				<tr>
-																					<td>
-																						<div class="d-flex align-items-center">
-																							<i
-																								data-feather="file"
-																								class="me-2"></i
-																							><a
-																								href="#Template"
-																								class="fw-medium"
-																								>PDF Templates</a
-																							>
-																						</div>
-																					</td>
-																					<td>Templates for printing to PDF</td>
-																				</tr>
-																				<tr>
-																					<td>
-																						<div class="d-flex align-items-center">
-																							<i
-																								data-feather="share-2"
-																								class="me-2"></i
-																							><a
-																								href="#Webhook"
-																								class="fw-medium"
-																								>Webhooks</a
-																							>
-																						</div>
-																					</td>
-																					<td>Manage webhooks</td>
-																				</tr>
-																				<tr>
-																					<td>
-																						<div class="d-flex align-items-center">
-																							<i
-																								data-feather="layout"
-																								class="me-2"></i
-																							><a
-																								href="#DashboardTemplate"
-																								class="fw-medium"
-																								>Dashboard Templates</a
-																							>
-																						</div>
-																					</td>
-																					<td>Deploy dashboards to users</td>
-																				</tr>
-																			</tbody>
-																		</table>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Profile middle wrapper end -->
+			<div class="page-content">
+				<!-- TAB HEADER -->
+				<div class="row">
+					<div class="col-12 grid-margin">
+						<div class="card align-items-center">
+							<div class="d-flex p-3 rounded-bottom d-flex align-items-center m-0">
+								<ul class="nav nav-tabs nav-tabs-line" id="companySettingsTabs" role="tablist">
+									<li class="nav-item" role="presentation">
+										<button class="nav-link active" id="company-info-tab" data-bs-toggle="tab"
+											data-bs-target="#company-info" type="button" role="tab"
+											aria-controls="company-info" aria-selected="true">
+											<i class="me-1 icon-md" data-feather="briefcase"></i>
+											<span class="d-none d-md-inline">General</span>
+										</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="roles-permissions-tab" data-bs-toggle="tab"
+											data-bs-target="#my-roles-permissions" type="button" role="tab"
+											aria-controls="roles-permissions" aria-selected="false">
+											<i class="me-1 icon-md" data-feather="user-check"></i>
+											<span class="d-none d-md-inline">Roles and Permissions</span>
+										</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="payroll-payments-tab" data-bs-toggle="tab"
+											data-bs-target="#payroll-payments" type="button" role="tab"
+											aria-controls="payroll-payments" aria-selected="false">
+											<i class="me-1 icon-md" data-feather="dollar-sign"></i>
+											<span class="d-none d-md-inline">Default Commission Plans</span>
+										</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="payroll-payments-tab" data-bs-toggle="tab"
+											data-bs-target="#payroll-payments" type="button" role="tab"
+											aria-controls="payroll-payments" aria-selected="false">
+											<i class="me-1 icon-md" data-feather="dollar-sign"></i>
+											<span class="d-none d-md-inline">Rep Commission Settings</span>
+										</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="integrations-tab" data-bs-toggle="tab"
+											data-bs-target="#integrations" type="button" role="tab"
+											aria-controls="integrations" aria-selected="false">
+											<i class="me-1 icon-md" data-feather="link"></i>
+											<span class="d-none d-md-inline">Integrations</span>
+											<!-- Use page to submit support request for billable api integrations (use ticketing system) -->
+										</button>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
+				<!--TAB HEADER END -->
+				<!-- Profile tab content -->
+				<div class="tab-content" id="generalTabContent">
+					<div class="tab-pane fade show active" id="#company-info" role="tabpanel"
+						aria-labelledby="company-info-tab">
+						<div class="row profile-body gap-4">
+							<!-- Profile left wrapper start -->
+							<div class="d-md-block col-md-3 col-xl-3 left-wrapper">
+								<div class="card rounded">
+									<div class="card-body profile-body">
+										<div class="profile-details">
+											<div class="detail-item mb-2">
+												<label class="detail-label">Company Name:</label>
+												<p class="detail-value" id="company-name">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Company Logo:</label>
+												<div>
+													<img id="company-logo" class="rounded border" alt="Company Logo"
+														src="/assets/images/others/darth maul.png"
+														style="width: 72px; height: 72px; object-fit: cover;" />
+												</div>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">EIN Number:</label>
+												<p class="detail-value" id="ein-number">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Business Type(s):</label>
+												<p class="detail-value" id="business-types">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Default Currency:</label>
+												<p class="detail-value" id="default-currency">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Company Time Zone:</label>
+												<p class="detail-value" id="company-time-zone">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Main Office:</label>
+												<p class="detail-value" id="company-main-office">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Primary Color (HEX):</label>
+												<p class="detail-value" id="company-primary-color">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Accent Color (HEX):</label>
+												<p class="detail-value" id="company-accent-color">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Operational States:</label>
+												<p class="detail-value" id="company-operational-states">
+													N/A
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Profile left wrapper end -->
+							<!-- Profile middle wrapper start -->
+							<div class="col middle-wrapper d-flex flex-column">
+								<div class="row">
+									<div class="col-md-12 grid-margin">
+										<div class="card rounded">
+											<div class="card-body">
+												<div class="d-flex justify-content-between align-items-center mb-3">
+													<h5 class="card-title m-2">Company Settings</h5>
+													<small id="saveStatus" class="text-muted"></small>
+												</div>
 
-				<!-- partial:partials/_footer.html -->
-				<footer class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small">
-					<p class="text-secondary mb-1 mb-md-0">
-						Copyright © <span id="currentYear"></span>
-						<a
-							href="https://sparkpro.io"
-							target="_blank"
-							rel="noopener noreferrer"
-							>Spark</a
-						>.
-					</p>
-					<script>
-						document.getElementById("currentYear").textContent = new Date().getFullYear();
-					</script>
-					<p class="text-secondary">
-						Handcrafted By<i
-							class="mb-1 text-primary ms-1 icon-sm"
-							data-feather="zap"></i>
-					</p>
-				</footer>
+												<!-- Live brand gradient preview -->
+												<div id="brandPreview" class="rounded m-2"
+													style="height: 40px; background: linear-gradient(90deg, #0ea5e9 0%, #22c55e 100%);">
+												</div>
 
-				<!-- partial -->
+												<form id="companyForm" novalidate>
+													<div class="row g-3">
+														<!-- Company Name -->
+														<div class="col-6 m-2">
+															<label for="companyName" class="form-label">Company Name
+																<span class="text-danger">*</span></label>
+															<input id="companyName" type="text" class="form-control"
+																placeholder="Ex: Spark Industries LLC" required />
+															<div class="form-text">Your legal or public-facing name.
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<!-- EIN -->
+														<div class="col-4 m-2">
+															<label for="ein" class="form-label">EIN Number
+																(optional)</label>
+															<input id="ein" type="text" inputmode="numeric"
+																maxlength="10" class="form-control"
+																placeholder="12-3456789" />
+														</div>
+
+														<!-- Business Type / Industry -->
+														<div class="col-4 m-2">
+															<label for="industry" class="form-label">Business Type /
+																Industry
+																(optional)</label>
+															<select id="industry" class="form-select">
+																<option value="">Select…</option>
+																<option>Solar</option>
+																<option>Roofing</option>
+																<option>HVAC</option>
+																<option>Windows & Doors</option>
+																<option>General Home Services</option>
+																<option>Other</option>
+															</select>
+														</div>
+
+													</div>
+
+													<div class="row g-3">
+														<!-- Default Currency -->
+														<div class="col-4 m-2">
+															<label for="currency" class="form-label">Default Currency
+																<span class="text-danger">*</span></label>
+															<select id="currency" class="form-select" required></select>
+														</div>
+
+														<!-- Time Zone -->
+														<div class="col-4 m-2">
+															<label for="timeZone" class="form-label">Company Time Zone
+																<span class="text-danger">*</span></label>
+															<select id="timeZone" class="form-select" required></select>
+														</div>
+
+													</div>
+
+													<!-- Headquarters Address -->
+													<div class="col-12 m-2">
+														<label for="hqAddress" class="form-label">Headquarters Address
+															(optional)</label>
+														<input id="hqAddress" type="text" class="form-control"
+															placeholder="123 Main St, Mesa, AZ 85201" />
+													</div>
+
+													<!-- Primary Color -->
+													<div class="col-4 m-2">
+														<label for="primaryColor" class="form-label">Primary Brand Color
+															(hex)</label>
+														<div class="input-group">
+															<input id="primaryColor" type="text" class="form-control"
+																placeholder="#0ea5e9" />
+															<input id="primaryColorPicker" type="color"
+																class="form-control form-control-color" />
+														</div>
+													</div>
+
+													<!-- Accent Color -->
+													<div class="col-4 m-2">
+														<label for="accentColor" class="form-label">Accent Color
+															(hex)</label>
+														<div class="input-group">
+															<input id="accentColor" type="text" class="form-control"
+																placeholder="#22c55e" />
+															<input id="accentColorPicker" type="color"
+																class="form-control form-control-color" />
+														</div>
+													</div>
+
+													<!-- Operational States -->
+													<div class="col-4 m-2">
+														<label for="operationalStates" class="form-label">Operational
+															States</label>
+														<!-- search -->
+														<input id="stateSearch" type="text" class="form-control mb-2"
+															placeholder="Search states…" />
+
+														<!-- checkbox list -->
+														<div id="stateList" class="border rounded p-2 state-columns">
+														</div>
+
+														<!-- small actions -->
+														<div class="d-flex gap-2 mt-2">
+															<button type="button" id="checkAllStates"
+																class="btn btn-sm btn-outline-secondary">Select
+																All</button>
+															<button type="button" id="uncheckAllStates"
+																class="btn btn-sm btn-outline-secondary">Clear</button>
+														</div>
+														<div id="stateChips" class="mt-2"></div>
+													</div>
+
+													<!-- Logo upload + preview -->
+													<div class="col-4 m-2">
+														<label for="logo" class="form-label">Company Logo
+															(upload)</label>
+														<input id="logo" type="file" accept="image/*"
+															class="form-control" />
+														<div class="form-text">PNG or JPG up to 1MB.</div>
+													</div>
+													<div class="col-4 m-2 d-flex align-items-end">
+														<img id="logoPreview" class="rounded border" alt="Logo Preview"
+															style="width: 72px; height: 72px; object-fit: cover;" />
+													</div>
+
+
+													<div class="d-flex justify-content-end gap-2 mt-4">
+														<button type="button" id="btnReset"
+															class="btn btn-outline-secondary">Reset</button>
+														<button type="submit" class="btn btn-primary">Save
+															Changes</button>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Profile middle wrapper end -->
+							<div class="col-12">
+								<div class="card">
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
 			</div>
+
+			<!-- partial:partials/_footer.html -->
+			<footer
+				class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small">
+				<p class="text-secondary mb-1 mb-md-0">
+					Copyright © <span id="currentYear"></span>
+					<a href="https://sparkpro.io" target="_blank" rel="noopener noreferrer">Spark</a>.
+				</p>
+				<script>
+					document.getElementById("currentYear").textContent = new Date().getFullYear();
+				</script>
+				<p class="text-secondary">
+					Handcrafted By<i class="mb-1 text-primary ms-1 icon-sm" data-feather="zap"></i>
+				</p>
+			</footer>
+
+			<!-- partial -->
 		</div>
+	</div>
 
-		<!-- core:js -->
-		<script src="/assets/vendors/core/core.js"></script>
-		<!-- endinject -->
+	<!-- core:js -->
+	<script src="/assets/vendors/core/core.js"></script>
+	<!-- endinject -->
 
-		<!-- Plugin js for this page -->
-		<!-- End plugin js for this page -->
+	<!-- Plugin js for this page -->
+	<!-- End plugin js for this page -->
 
-		<!-- inject:js -->
-		<script src="/assets/vendors/feather-icons/feather.min.js"></script>
-		<script src="/assets/js/app.js"></script>
-		<!-- endinject -->
+	<!-- inject:js -->
+	<script src="/assets/vendors/feather-icons/feather.min.js"></script>
+	<script src="/assets/js/app.js"></script>
+	<!-- endinject -->
 
-		<!-- Custom js for this page -->
-		<!-- End custom js for this page -->
-	</body>
+	<!-- Custom js for this page -->
+	<script>
+		(function () {
+			// ---------- Data ----------
+			const US_STATES = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'District of Columbia', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+			const CURRENCIES = [
+				{ code: 'USD', name: 'US Dollar' },
+				{ code: 'CAD', name: 'Canadian Dollar' },
+				{ code: 'EUR', name: 'Euro' },
+				{ code: 'GBP', name: 'British Pound' },
+				{ code: 'MXN', name: 'Mexican Peso' },
+				{ code: 'AUD', name: 'Australian Dollar' }
+			];
+			const TIMEZONES = [
+				'America/New_York', 'America/Chicago', 'America/Denver', 'America/Phoenix', 'America/Los_Angeles',
+				'America/Anchorage', 'Pacific/Honolulu', 'America/Mexico_City', 'America/Toronto', 'Europe/London', 'Europe/Berlin'
+			];
+
+			// ---------- Elements ----------
+			const els = {
+				form: document.getElementById('companyForm'),
+				saveStatus: document.getElementById('saveStatus'),
+				companyName: document.getElementById('companyName'),
+				ein: document.getElementById('ein'),
+				currency: document.getElementById('currency'),
+				timeZone: document.getElementById('timeZone'),
+				industry: document.getElementById('industry'),
+				hqAddress: document.getElementById('hqAddress'),
+				primaryColor: document.getElementById('primaryColor'),
+				primaryPicker: document.getElementById('primaryColorPicker'),
+				accentColor: document.getElementById('accentColor'),
+				accentPicker: document.getElementById('accentColorPicker'),
+				brandPreview: document.getElementById('brandPreview'),
+				logo: document.getElementById('logo'),
+				logoPreview: document.getElementById('logoPreview'),
+				btnReset: document.getElementById('btnReset'),
+				stateSearch: document.getElementById('stateSearch'),
+				stateList: document.getElementById('stateList'),
+				stateChips: document.getElementById('stateChips'),
+				checkAllStates: document.getElementById('checkAllStates'),
+				uncheckAllStates: document.getElementById('uncheckAllStates')
+			};
+
+			if (!els.form) return; // Only run on the General tab page
+
+			// ---------- Helpers ----------
+			function isHex(x) { return /^#?[0-9A-Fa-f]{6}$/.test(x || ''); }
+			function normHex(x) { x = (x || '').trim(); return x && x[0] === '#' ? x : (x ? '#' + x : ''); }
+			function updatePreview() {
+				const p = isHex(els.primaryColor.value) ? normHex(els.primaryColor.value) : '#0ea5e9';
+				const a = isHex(els.accentColor.value) ? normHex(els.accentColor.value) : '#22c55e';
+				els.brandPreview.style.background = `linear-gradient(90deg, ${p} 0%, ${a} 100%)`;
+			}
+
+			// function chipHtml(code) {
+			// 	return `<span class="badge bg-secondary me-1 mb-1">${code}</span>`;
+			// }
+
+			// ---------- Populate selects ----------
+			// Currencies
+			els.currency.innerHTML = CURRENCIES
+				.map(c => `<option value="${c.code}">${c.code} — ${c.name}</option>`)
+				.join('');
+			// Timezones
+			const guessTz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Chicago';
+			const tzList = Array.from(new Set([guessTz, ...TIMEZONES]));
+			els.timeZone.innerHTML = tzList.map(tz => `<option value="${tz}">${tz}</option>`).join('');
+
+			// ---------- EIN mask ----------
+			els.ein.addEventListener('input', () => {
+				const digits = els.ein.value.replace(/\D/g, '').slice(0, 9);
+				els.ein.value = digits.length <= 2 ? digits : `${digits.slice(0, 2)}-${digits.slice(2)}`;
+			});
+
+			// ---------- Color sync & preview ----------
+			els.primaryColor.addEventListener('input', () => {
+				if (isHex(els.primaryColor.value)) els.primaryPicker.value = normHex(els.primaryColor.value);
+				updatePreview();
+			});
+			els.accentColor.addEventListener('input', () => {
+				if (isHex(els.accentColor.value)) els.accentPicker.value = normHex(els.accentColor.value);
+				updatePreview();
+			});
+			els.primaryPicker.addEventListener('input', () => { els.primaryColor.value = els.primaryPicker.value; updatePreview(); });
+			els.accentPicker.addEventListener('input', () => { els.accentColor.value = els.accentPicker.value; updatePreview(); });
+
+			// ---------- Logo preview ----------
+			els.logo.addEventListener('change', () => {
+				const file = els.logo.files?.[0];
+				if (!file) { els.logoPreview.src = ''; return; }
+				if (file.size > 1_000_000) { alert('Logo must be 1MB or less.'); els.logo.value = ''; return; }
+				const reader = new FileReader();
+				reader.onload = e => els.logoPreview.src = e.target.result;
+				reader.readAsDataURL(file);
+			});
+
+			// ---------- States: render as checkboxes ----------
+			function renderStateList(filterText = "", prechecked = new Set()) {
+				const f = (filterText || "").trim().toLowerCase();
+				const items = US_STATES
+					.filter(s => !f || s.toLowerCase().includes(f))
+					.map(s => {
+						const id = `state__${s.replace(/\s+/g, '_')}`;
+						const checked = prechecked.has(s) ? 'checked' : '';
+						return `
+        <label for="${id}" class="d-flex align-items-center gap-2 mb-1">
+          <input type="checkbox" class="form-check-input m-0" id="${id}" value="${s}" ${checked} />
+          <span>${s}</span>
+        </label>`;
+					})
+					.join('');
+				els.stateList.innerHTML = items;
+
+				// bind change handlers each render
+				els.stateList.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+					cb.addEventListener('change', renderStateChips);
+				});
+			}
+
+			// ---------- Chips ----------
+			function chipHtml(name) {
+				return `<span class="badge bg-secondary me-1 mb-1">${name}</span>`;
+			}
+			function getCheckedStates() {
+				return Array.from(
+					els.stateList.querySelectorAll('input[type="checkbox"]:checked')
+				).map(cb => cb.value);
+			}
+			function renderStateChips() {
+				const selected = getCheckedStates();
+				els.stateChips.innerHTML = selected.map(chipHtml).join('');
+			}
+
+			// ---------- Search ----------
+			els.stateSearch.addEventListener('input', () => {
+				const pre = new Set(getCheckedStates()); // keep current selections on re-render
+				renderStateList(els.stateSearch.value, pre);
+				// Re-draw chips after re-render to reflect preserved checks
+				renderStateChips();
+			});
+
+			// ---------- Select All / Clear ----------
+			els.checkAllStates.addEventListener('click', () => {
+				els.stateList.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
+				renderStateChips();
+			});
+			els.uncheckAllStates.addEventListener('click', () => {
+				els.stateList.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+				renderStateChips();
+			});
+
+			// ---------- Persistence ----------
+			const STORAGE_KEY = 'spark.settings.company';
+
+			function validate() {
+				if (!els.companyName.value.trim()) return 'Company Name is required.';
+				if (!els.currency.value) return 'Default Currency is required.';
+				if (!els.timeZone.value) return 'Company Time Zone is required.';
+				const pc = els.primaryColor.value.trim();
+				const ac = els.accentColor.value.trim();
+				if (pc && !isHex(pc)) return 'Primary Brand Color must be a 6-digit hex value.';
+				if (ac && !isHex(ac)) return 'Accent Color must be a 6-digit hex value.';
+				if (els.ein.value && !/^\d{2}-\d{7}$/.test(els.ein.value)) return 'EIN must be formatted as 12-3456789.';
+				return null;
+			}
+
+			async function saveToServer(payload) {
+				const BASE_URL = window.SParkSettingsApiBase || '/api/settings/company';
+				const hasLogo = els.logo.files && els.logo.files[0];
+				try {
+					let res;
+					if (hasLogo) {
+						const fd = new FormData();
+						Object.entries(payload).forEach(([k, v]) => fd.append(k, Array.isArray(v) ? JSON.stringify(v) : (v ?? '')));
+						fd.append('companyLogo', els.logo.files[0]);
+						res = await fetch(BASE_URL, { method: 'POST', body: fd });
+					} else {
+						res = await fetch(BASE_URL, {
+							method: 'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify(payload)
+						});
+					}
+					if (!res.ok) throw new Error(await res.text());
+					return await res.json().catch(() => ({ ok: true }));
+				} catch (err) {
+					console.warn('Save failed, falling back to localStorage. Error:', err.message);
+					return null; // signal fallback
+				}
+			}
+
+			function saveLocal(data) {
+				localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+			}
+
+			function loadLocal() {
+				try {
+					const raw = localStorage.getItem(STORAGE_KEY); if (!raw) return;
+					const data = JSON.parse(raw);
+					els.companyName.value = data.companyName || '';
+					els.ein.value = data.ein || '';
+					els.currency.value = data.currency || 'USD';
+					els.timeZone.value = data.timeZone || guessTz;
+					els.industry.value = data.industry || '';
+					els.hqAddress.value = data.hqAddress || '';
+					els.primaryColor.value = data.primaryColor || '#0ea5e9';
+					els.accentColor.value = data.accentColor || '#22c55e';
+					els.primaryPicker.value = normHex(els.primaryColor.value);
+					els.accentPicker.value = normHex(els.accentColor.value);
+					updatePreview();
+
+					// states: render with prechecked
+					const pre = new Set(data.operationalStates || []);
+					renderStateList("", pre);
+					renderStateChips();
+
+					// logo dataURL
+					if (data.logoDataUrl) els.logoPreview.src = data.logoDataUrl;
+				} catch { /* ignore */ }
+			}
+
+			els.form.addEventListener('submit', async (e) => {
+				e.preventDefault();
+				const error = validate();
+				if (error) { alert(error); return; }
+
+				const operationalStates = getCheckedStates();
+
+				const payload = {
+					companyName: els.companyName.value.trim(),
+					ein: els.ein.value.trim(),
+					currency: els.currency.value,
+					timeZone: els.timeZone.value,
+					industry: els.industry.value,
+					hqAddress: els.hqAddress.value.trim(),
+					primaryColor: normHex(els.primaryColor.value || ''),
+					accentColor: normHex(els.accentColor.value || ''),
+					operationalStates: getCheckedStates(),
+					logoDataUrl: els.logoPreview.src || ''   // keep this
+				};
+
+				// Include logo preview (DataURL) for local UX
+				//payload.logoDataUrl = els.logoPreview.src || '';
+
+				els.saveStatus.textContent = 'Saving…';
+				const serverResult = await saveToServer(payload);
+				if (serverResult) {
+					els.saveStatus.textContent = 'Saved to server.';
+				} else {
+					saveLocal(payload);
+					els.saveStatus.textContent = 'Saved locally (offline mode).';
+				}
+				setTimeout(() => els.saveStatus.textContent = '', 2500);
+			});
+
+			els.btnReset.addEventListener('click', () => {
+				localStorage.removeItem(STORAGE_KEY);
+				els.form.reset();
+				updatePreview();
+				els.logoPreview.src = '';
+				renderStateList("", new Set()); // clear checks
+				renderStateChips();
+				loadLocal();
+			});
+
+			// ---------- Init ----------
+			updatePreview();
+			renderStateList("", new Set()); // initial empty render
+			renderStateChips();
+			loadLocal();
+		})();
+	</script>
+
+
+	<!-- End custom js for this page -->
+</body>
+
 </html>
