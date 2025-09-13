@@ -503,11 +503,11 @@
 										</button>
 									</li>
 									<li class="nav-item" role="presentation">
-										<button class="nav-link" id="payroll-payments-tab" data-bs-toggle="tab"
-											data-bs-target="#payroll-payments" type="button" role="tab"
-											aria-controls="payroll-payments" aria-selected="false">
+										<button class="nav-link" id="products-payroll-tab" data-bs-toggle="tab"
+											data-bs-target="#products-payroll" type="button" role="tab"
+											aria-controls="products-payroll" aria-selected="false">
 											<i class="me-1 icon-md" data-feather="dollar-sign"></i>
-											<span class="d-none d-md-inline">Default Commission Plans</span>
+											<span class="d-none d-md-inline">Products & Payscales</span>
 										</button>
 									</li>
 									<li class="nav-item" role="presentation">
@@ -533,12 +533,12 @@
 					</div>
 				</div>
 				<!--TAB HEADER END -->
-				<!-- Profile tab content -->
+				<!-- General tab content -->
 				<div class="tab-content" id="generalTabContent">
 					<div class="tab-pane fade show active" id="company-info" role="tabpanel"
 						aria-labelledby="company-info-tab">
 						<div class="row profile-body gap-4">
-							<!-- Profile left wrapper start -->
+							<!-- General left wrapper start -->
 							<div class="d-md-block col-md-3 col-xl-3 left-wrapper">
 								<div class="card rounded">
 									<div class="card-body profile-body">
@@ -609,8 +609,8 @@
 									</div>
 								</div>
 							</div>
-							<!-- Profile left wrapper end -->
-							<!-- Profile middle wrapper start -->
+							<!-- General left wrapper end -->
+							<!-- General right wrapper start -->
 							<div class="col middle-wrapper d-flex flex-column">
 								<div class="row">
 									<div class="col-md-12 grid-margin">
@@ -764,10 +764,49 @@
 									</div>
 								</div>
 							</div>
-							<!-- Profile middle wrapper end -->
-							<div class="col-12">
-								<div class="card">
+							<!-- General right wrapper end -->
+						</div>
+					</div>
+				</div>
 
+				<!-- Profile tab content end -->
+				<!-- Products & Payscales tab content start -->
+				<div class="tab-content" id="ProductsPayrollTabContent">
+					<div class="tab-pane fade" id="products-payroll" role="tabpanel"
+						aria-labelledby="products-payroll-tab">
+						<div class="row profile-body gap-4">
+
+							<!-- Installers -->
+							<div class="col-12">
+								<div class="d-flex align-items-center justify-content-between mb-2">
+									<h5 class="mb-0">Installers</h5>
+									<div class="d-flex gap-2">
+										<input id="installerSearch" class="form-control form-control-sm"
+											placeholder="Search installers…" style="width:240px;">
+										<button class="btn btn-primary btn-sm" id="btnAddInstaller" type="button">+ Add
+											Installer</button>
+									</div>
+								</div>
+
+								<div class="card">
+									<div class="card-body p-0">
+										<div class="table-responsive">
+											<table class="table table-hover mb-0" id="installersTable">
+												<thead class="table-light">
+													<tr>
+														<th>Name</th>
+														<th>States</th>
+														<th>MP1 / MP2</th>
+														<th>Payment Schedule</th>
+														<th>Products</th>
+														<th>Status</th>
+														<th style="width:160px;">Actions</th>
+													</tr>
+												</thead>
+												<tbody><!-- renderInstallers() --></tbody>
+											</table>
+										</div>
+									</div>
 								</div>
 							</div>
 
@@ -775,13 +814,386 @@
 					</div>
 				</div>
 
-				<!-- Profile tab content end -->
-				<!-- Roles & Permissions tab content start -->
-				<div class="tab-content" id="rolesPermissionsTabContent">
-					<div class="tab-pane fade" id="roles-permissions" role="tabpanel"
-						aria-labelledby="roles-permissions-tab">
+				<!-- Installer Modal -->
+				<div class="modal fade" id="installerModal" tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog modal-lg modal-dialog-scrollable">
+						<form class="modal-content" id="installerForm">
+							<div class="modal-header">
+								<h6 class="modal-title">Add Installer</h6>
+								<button class="btn-close" data-bs-dismiss="modal" type="button"></button>
+							</div>
+							<div class="modal-body">
+								<input type="hidden" id="installerId">
+								<div class="row g-3">
+									<div class="col-md-6">
+										<label class="form-label">Installer Name</label>
+										<input class="form-control" id="installerName" required>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label">Payment Schedule</label>
+										<select id="installerSchedule" class="form-select">
+											<option>Net 15</option>
+											<option>Net 30</option>
+											<option>Weekly</option>
+											<option>Milestones</option>
+										</select>
+									</div>
+
+									<div class="col-12">
+										<label class="form-label">MP Structure</label>
+										<div class="d-flex gap-2">
+											<input class="form-control" id="installerMP1"
+												placeholder="MP1 % or $ (e.g., 30%)">
+											<input class="form-control" id="installerMP2"
+												placeholder="MP2 % or $ (e.g., 70%)">
+										</div>
+										<div class="form-text">Defaults for this installer; products can override if
+											needed.</div>
+									</div>
+
+									<!-- States -->
+									<div class="col-12">
+										<label class="form-label">States Operated In</label>
+										<input id="installerStateSearch" class="form-control mb-2"
+											placeholder="Search states…">
+										<div id="installerStateList" class="border rounded p-2 state-grid"
+											style="max-height:220px; overflow:auto;"></div>
+										<div class="d-flex gap-2 mt-2">
+											<button class="btn btn-sm btn-outline-secondary" type="button"
+												id="installerStatesAll">Select All</button>
+											<button class="btn btn-sm btn-outline-secondary" type="button"
+												id="installerStatesClear">Clear</button>
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<label class="form-label">Status</label>
+										<select id="installerStatus" class="form-select">
+											<option value="Active">Active</option>
+											<option value="Inactive">Inactive</option>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label">Effective Dates</label>
+										<div class="d-flex gap-2">
+											<input type="date" class="form-control" id="installerStart">
+											<input type="date" class="form-control" id="installerEnd">
+										</div>
+									</div>
+
+									<div class="col-12">
+										<label class="form-label">Notes</label>
+										<textarea id="installerNotes" class="form-control" rows="2"></textarea>
+									</div>
+								</div>
+
+								<hr class="my-3">
+
+								<!-- Products under this installer -->
+								<div class="d-flex align-items-center justify-content-between mb-2">
+									<h6 class="mb-0">Products</h6>
+									<button class="btn btn-outline-primary btn-sm" id="btnAddProduct" type="button">+
+										Add
+										Product</button>
+								</div>
+								<div class="table-responsive">
+									<table class="table table-sm align-middle" id="productsTable">
+										<thead class="table-light">
+											<tr>
+												<th>Name</th>
+												<th>Category</th>
+												<th>Service</th>
+												<th>Pay Scales</th>
+												<th>Redlines</th>
+												<th>Status</th>
+												<th style="width:160px;">Actions</th>
+											</tr>
+										</thead>
+										<tbody><!-- renderProductsForInstaller() --></tbody>
+									</table>
+								</div>
+
+							</div>
+							<div class="modal-footer">
+								<button class="btn btn-outline-secondary" data-bs-dismiss="modal"
+									type="button">Close</button>
+								<button class="btn btn-primary" type="submit">Save Installer</button>
+							</div>
+						</form>
 					</div>
 				</div>
+
+				<!-- Product Modal (per installer) -->
+				<div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog modal-xl modal-dialog-scrollable">
+						<form class="modal-content" id="productForm">
+							<div class="modal-header">
+								<h6 class="modal-title">Add Product</h6>
+								<button class="btn-close" data-bs-dismiss="modal" type="button"></button>
+							</div>
+							<div class="modal-body">
+								<input type="hidden" id="productIndex"> <!-- index within installer's products -->
+								<ul class="nav nav-tabs small" role="tablist">
+									<li class="nav-item"><button class="nav-link active" data-bs-toggle="tab"
+											data-bs-target="#p-overview" type="button">Overview</button></li>
+									<li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+											data-bs-target="#p-redlines" type="button">Redlines</button></li>
+									<li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+											data-bs-target="#p-payscale" type="button">Pay Scales</button></li>
+									<li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+											data-bs-target="#p-docs" type="button">Docs</button></li>
+								</ul>
+
+								<div class="tab-content pt-3">
+									<!-- Overview -->
+									<div class="tab-pane fade show active" id="p-overview">
+										<div class="row g-3">
+											<div class="col-md-4">
+												<label class="form-label">Category</label>
+												<select id="productCategory" class="form-select" required>
+													<option>Solar</option>
+													<option>Pest</option>
+													<option>Roofing</option>
+													<option>HVAC</option>
+													<option>Windows</option>
+													<option>Smart Home</option>
+												</select>
+											</div>
+											<div class="col-md-4">
+												<label class="form-label">Product Name</label>
+												<input id="productName" class="form-control"
+													placeholder="e.g., Solar CA" required>
+											</div>
+											<div class="col-md-4">
+												<label class="form-label">Service Type</label>
+												<select id="productServiceType" class="form-select">
+													<option>Residential</option>
+													<option>Commercial</option>
+													<option>Both</option>
+												</select>
+											</div>
+
+											<div class="col-md-4">
+												<label class="form-label">Unit of Measure</label>
+												<select id="productUnit" class="form-select">
+													<option>kW</option>
+													<option>sqft</option>
+													<option>unit</option>
+													<option>item</option>
+												</select>
+											</div>
+											<div class="col-md-4">
+												<label class="form-label">Status</label>
+												<select id="productStatus" class="form-select">
+													<option value="Active">Active</option>
+													<option value="Inactive">Inactive</option>
+												</select>
+											</div>
+											<div class="col-md-4">
+												<label class="form-label">Default Redline (optional)</label>
+												<input id="productDefaultRedline" class="form-control"
+													placeholder="e.g., $2.35 / W">
+											</div>
+
+											<div class="col-md-6">
+												<label class="form-label">Effective Dates</label>
+												<div class="d-flex gap-2">
+													<input type="date" class="form-control" id="productStart">
+													<input type="date" class="form-control" id="productEnd">
+												</div>
+											</div>
+											<div class="col-12">
+												<label class="form-label">Description / Notes</label>
+												<textarea id="productNotes" class="form-control" rows="2"></textarea>
+											</div>
+
+											<div class="col-md-6">
+												<label class="form-label">Adders (JSON or text)</label>
+												<textarea id="productAdders" class="form-control" rows="2"
+													placeholder='[{"name":"Steep roof","perUnit":200}]'></textarea>
+											</div>
+											<div class="col-md-6">
+												<label class="form-label">Clawbacks / Conditions</label>
+												<textarea id="productClawbacks" class="form-control" rows="2"
+													placeholder="60-day cancel clawback, etc."></textarea>
+											</div>
+										</div>
+									</div>
+
+									<!-- Redlines (per state) -->
+									<div class="tab-pane fade" id="p-redlines">
+										<div class="d-flex gap-2">
+											<select id="redlineState" class="form-select"
+												style="max-width:220px;"></select>
+											<input id="redlineValue" class="form-control" placeholder="$ / unit"
+												style="max-width:220px;">
+											<button class="btn btn-outline-secondary" type="button"
+												id="btnAddRedline">Add</button>
+										</div>
+										<div class="table-responsive mt-2">
+											<table class="table table-sm" id="redlinesTable">
+												<thead class="table-light">
+													<tr>
+														<th>State</th>
+														<th>Redline</th>
+														<th style="width:80px;">Actions</th>
+													</tr>
+												</thead>
+												<tbody><!-- renderRedlines() --></tbody>
+											</table>
+										</div>
+									</div>
+
+									<!-- Pay Scales -->
+									<div class="tab-pane fade" id="p-payscale">
+										<div class="d-flex justify-content-end mb-2">
+											<button class="btn btn-outline-primary btn-sm" id="btnAddScale"
+												type="button">+ Add Pay
+												Scale</button>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-sm align-middle" id="scalesTable">
+												<thead class="table-light">
+													<tr>
+														<th>Name</th>
+														<th>Role</th>
+														<th>Components</th>
+														<th>Service</th>
+														<th>Caps/Floors</th>
+														<th>Effective</th>
+														<th style="width:110px;">Actions</th>
+													</tr>
+												</thead>
+												<tbody><!-- renderScales() --></tbody>
+											</table>
+										</div>
+
+										<div id="scaleEditor" class="border rounded p-3 mt-3 d-none">
+											<div class="row g-3">
+												<input type="hidden" id="scaleIndex">
+												<div class="col-md-4">
+													<label class="form-label">Pay Scale Name</label>
+													<input id="scaleName" class="form-control">
+												</div>
+												<div class="col-md-4">
+													<label class="form-label">Role Type</label>
+													<select id="scaleRole" class="form-select">
+														<option>Setter</option>
+														<option>Closer</option>
+														<option>Manager</option>
+														<option>Regional</option>
+													</select>
+												</div>
+												<div class="col-md-4">
+													<label class="form-label">Service Type</label>
+													<select id="scaleService" class="form-select">
+														<option>Residential</option>
+														<option>Commercial</option>
+														<option>Both</option>
+													</select>
+												</div>
+
+												<div class="col-12">
+													<label class="form-label">Commission Structure</label>
+													<div class="row g-2">
+														<div class="col-md-3"><input id="scalePctDeal"
+																class="form-control" placeholder="% of Deal (e.g., 3%)">
+														</div>
+														<div class="col-md-3"><input id="scalePctAboveRedline"
+																class="form-control"
+																placeholder="% Above Redline (e.g., 30%)"></div>
+														<div class="col-md-3"><input id="scaleFlat" class="form-control"
+																placeholder="Flat $"></div>
+														<div class="col-md-3"><input id="scalePerUnit"
+																class="form-control"
+																placeholder="Per Unit (e.g., $50/kW)"></div>
+													</div>
+													<div class="form-text">Combine components as needed—we’ll sum them.
+													</div>
+												</div>
+
+												<div class="col-md-4">
+													<label class="form-label">Min Margin / Floor</label>
+													<input id="scaleMinMargin" class="form-control"
+														placeholder="$ or % above redline required">
+												</div>
+												<div class="col-md-4">
+													<label class="form-label">Cap</label>
+													<input id="scaleCap" class="form-control"
+														placeholder="Max $ or % payout">
+												</div>
+												<div class="col-md-4">
+													<label class="form-label">Rounding</label>
+													<select id="scaleRounding" class="form-select">
+														<option>Nearest</option>
+														<option>Down</option>
+														<option>Up</option>
+													</select>
+												</div>
+
+												<div class="col-md-6">
+													<label class="form-label">SPIF / Bonus (optional)</label>
+													<input id="scaleSpiff" class="form-control"
+														placeholder="$ or %; can be time-bound">
+												</div>
+												<div class="col-md-6">
+													<label class="form-label">Effective Dates</label>
+													<div class="d-flex gap-2">
+														<input type="date" class="form-control" id="scaleStart">
+														<input type="date" class="form-control" id="scaleEnd">
+													</div>
+												</div>
+
+												<div class="col-12 d-flex justify-content-end gap-2">
+													<button class="btn btn-outline-secondary" type="button"
+														id="cancelScale">Cancel</button>
+													<button class="btn btn-primary" type="button" id="saveScale">Save
+														Scale</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Docs -->
+									<div class="tab-pane fade" id="p-docs">
+										<div class="mb-2">
+											<input type="file" id="productDocs" class="form-control" multiple>
+											<div class="form-text">Upload product docs (optional). PDFs, images, etc.
+											</div>
+										</div>
+										<ul id="docsList" class="list-group small"><!-- renderDocs() --></ul>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button class="btn btn-outline-secondary" data-bs-dismiss="modal"
+									type="button">Close</button>
+								<button class="btn btn-primary" type="submit">Save Product</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<!-- Two-column state checkboxes -->
+				<style>
+					.state-grid {
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						gap: .25rem 1rem;
+					}
+
+					.state-grid label {
+						display: flex;
+						align-items: center;
+						gap: .5rem;
+					}
+
+					@media (max-width: 576px) {
+						.state-grid {
+							grid-template-columns: 1fr;
+						}
+					}
+				</style>
 
 			</div>
 
@@ -1086,6 +1498,347 @@
 			renderStateList("", new Set()); // initial empty render
 			renderStateChips();
 			loadLocal();
+		})();
+	</script>
+
+	<script>
+		(function () {
+			// ===== Constants =====
+			const US_STATES = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'District of Columbia', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+
+			// ===== Data model =====
+			// installer.products[] holds products with payScales[], redlines{}, docs[]
+			const installers = []; // { id, name, schedule, mp1, mp2, states[], status, start, end, notes, products: [] }
+
+			// ===== Shortcuts =====
+			const $ = (s) => document.querySelector(s);
+			const $$ = (s) => Array.from(document.querySelectorAll(s));
+			const modal = (id) => new bootstrap.Modal(document.getElementById(id));
+
+			// ===== Installers Table =====
+			function renderInstallers() {
+				const q = ($('#installerSearch').value || '').trim().toLowerCase();
+				const tbody = $('#installersTable tbody');
+				const rows = installers
+					.filter(i => !q || i.name.toLowerCase().includes(q))
+					.map(i => `
+	        <tr>
+	          <td><strong>${esc(i.name)}</strong></td>
+	          <td>${i.states?.length || 0}</td>
+	          <td>${esc([i.mp1, i.mp2].filter(Boolean).join(' / ')) || '—'}</td>
+	          <td>${esc(i.schedule || '')}</td>
+	          <td>${i.products?.length || 0}</td>
+	          <td><span class="badge ${i.status === 'Active' ? 'bg-success' : 'bg-secondary'}">${i.status || 'Active'}</span></td>
+	          <td class="text-end">
+	            <button class="btn btn-xs btn-outline-primary me-1" data-act="edit" data-id="${i.id}">Edit</button>
+	            <button class="btn btn-xs btn-outline-secondary me-1" data-act="prod" data-id="${i.id}">Manage Products</button>
+	            <button class="btn btn-xs btn-outline-danger" data-act="del" data-id="${i.id}">Del</button>
+	          </td>
+	        </tr>`).join('');
+				tbody.innerHTML = rows || `<tr><td colspan="7" class="text-center text-muted">No installers yet.</td></tr>`;
+			}
+
+			$('#installerSearch').addEventListener('input', renderInstallers);
+			$('#btnAddInstaller').addEventListener('click', () => openInstaller());
+			$('#installersTable').addEventListener('click', (e) => {
+				const btn = e.target.closest('button'); if (!btn) return;
+				const id = Number(btn.dataset.id);
+				const idx = installers.findIndex(x => x.id === id);
+				if (idx < 0) return;
+				if (btn.dataset.act === 'edit') openInstaller(installers[idx]);
+				if (btn.dataset.act === 'prod') openInstaller(installers[idx], /* jump to products */ true);
+				if (btn.dataset.act === 'del') { if (confirm('Delete installer?')) { installers.splice(idx, 1); renderInstallers(); } }
+			});
+
+			// ===== Installer Modal =====
+			function openInstaller(inst = null, jumpToProducts = false) {
+				$('#installerForm').reset();
+				$('#installerModal .modal-title').textContent = inst ? 'Edit Installer' : 'Add Installer';
+				$('#installerId').value = inst?.id ?? '';
+				$('#installerName').value = inst?.name ?? '';
+				$('#installerSchedule').value = inst?.schedule ?? 'Net 30';
+				$('#installerMP1').value = inst?.mp1 ?? '';
+				$('#installerMP2').value = inst?.mp2 ?? '';
+				$('#installerStatus').value = inst?.status ?? 'Active';
+				$('#installerStart').value = inst?.start ?? '';
+				$('#installerEnd').value = inst?.end ?? '';
+				$('#installerNotes').value = inst?.notes ?? '';
+
+				// states builder
+				renderStatesGrid('installerStateList', 'installerStateSearch', new Set(inst?.states || []), '#installerStatesAll', '#installerStatesClear');
+
+				// products list inside modal
+				_currentInstallerId = inst?.id ?? null;
+				_products = JSON.parse(JSON.stringify(inst?.products || []));
+				renderProductsForInstaller();
+
+				const m = modal('installerModal');
+				m.show();
+
+				if (jumpToProducts) {
+					// Scroll to products table inside modal after show
+					setTimeout(() => document.getElementById('productsTable')?.scrollIntoView({ behavior: 'smooth' }), 200);
+				}
+			}
+
+			$('#installerForm').addEventListener('submit', (e) => {
+				e.preventDefault();
+				const id = $('#installerId').value ? Number($('#installerId').value) : Date.now();
+				const idx = installers.findIndex(x => x.id === id);
+				const data = {
+					id,
+					name: $('#installerName').value.trim(),
+					schedule: $('#installerSchedule').value,
+					mp1: $('#installerMP1').value.trim(),
+					mp2: $('#installerMP2').value.trim(),
+					status: $('#installerStatus').value,
+					start: $('#installerStart').value,
+					end: $('#installerEnd').value,
+					notes: $('#installerNotes').value.trim(),
+					states: getCheckedStatesFrom('installerStateList'),
+					products: JSON.parse(JSON.stringify(_products))
+				};
+				if (!data.name) { alert('Installer Name is required'); return; }
+
+				if (idx < 0) installers.push(data); else installers[idx] = data;
+				modal('installerModal').hide();
+				renderInstallers();
+			});
+
+			// ===== Products within Installer Modal =====
+			let _currentInstallerId = null;
+			let _products = [];     // scoped to the open installer
+			let _redlines = {};     // scoped to product editor
+			let _scales = [];       // scoped to product editor
+			let _docs = [];         // scoped to product editor
+
+			function renderProductsForInstaller() {
+				const tbody = $('#productsTable tbody');
+				const rows = _products.map((p, i) => `
+	      <tr>
+	        <td><strong>${esc(p.name || '')}</strong></td>
+	        <td>${esc(p.category || '')}</td>
+	        <td>${esc(p.serviceType || '')}</td>
+	        <td>${p.payScales?.length || 0}</td>
+	        <td>${Object.keys(p.redlines || {}).length}</td>
+	        <td><span class="badge ${p.status === 'Active' ? 'bg-success' : 'bg-secondary'}">${p.status || 'Active'}</span></td>
+	        <td class="text-end">
+	          <button class="btn btn-xs btn-outline-primary me-1" data-act="edit" data-idx="${i}">Edit</button>
+	          <button class="btn btn-xs btn-outline-danger" data-act="del" data-idx="${i}">Del</button>
+	        </td>
+	      </tr>`).join('');
+				tbody.innerHTML = rows || `<tr><td colspan="7" class="text-center text-muted">No products yet.</td></tr>`;
+			}
+
+			$('#btnAddProduct').addEventListener('click', () => openProductEditor());
+			$('#productsTable').addEventListener('click', (e) => {
+				const btn = e.target.closest('button'); if (!btn) return;
+				const idx = Number(btn.dataset.idx);
+				if (btn.dataset.act === 'edit') openProductEditor(idx);
+				if (btn.dataset.act === 'del') { _products.splice(idx, 1); renderProductsForInstaller(); }
+			});
+
+			function openProductEditor(idx = null) {
+				$('#productForm').reset();
+				$('#productModal .modal-title').textContent = idx == null ? 'Add Product' : 'Edit Product';
+				$('#productIndex').value = idx == null ? '' : String(idx);
+
+				const p = idx == null ? {} : JSON.parse(JSON.stringify(_products[idx]));
+				// overview
+				$('#productCategory').value = p.category || 'Solar';
+				$('#productName').value = p.name || '';
+				$('#productServiceType').value = p.serviceType || 'Residential';
+				$('#productUnit').value = p.unit || 'kW';
+				$('#productStatus').value = p.status || 'Active';
+				$('#productDefaultRedline').value = p.defaultRedline || '';
+				$('#productStart').value = p.start || '';
+				$('#productEnd').value = p.end || '';
+				$('#productNotes').value = p.notes || '';
+				$('#productAdders').value = p.adders || '';
+				$('#productClawbacks').value = p.clawbacks || '';
+
+				// redlines
+				_redlines = p.redlines || {};
+				renderRedlineStateOptions();
+				renderRedlines();
+
+				// pay scales
+				_scales = p.payScales || [];
+				renderScales();
+
+				// docs
+				_docs = p.docs || [];
+				renderDocs();
+
+				modal('productModal').show();
+			}
+
+			$('#productForm').addEventListener('submit', (e) => {
+				e.preventDefault();
+				const idx = $('#productIndex').value === '' ? null : Number($('#productIndex').value);
+				const prod = {
+					category: $('#productCategory').value,
+					name: $('#productName').value.trim(),
+					serviceType: $('#productServiceType').value,
+					unit: $('#productUnit').value,
+					status: $('#productStatus').value,
+					defaultRedline: $('#productDefaultRedline').value.trim(),
+					start: $('#productStart').value,
+					end: $('#productEnd').value,
+					notes: $('#productNotes').value.trim(),
+					adders: $('#productAdders').value.trim(),
+					clawbacks: $('#productClawbacks').value.trim(),
+					redlines: JSON.parse(JSON.stringify(_redlines)),
+					payScales: JSON.parse(JSON.stringify(_scales)),
+					docs: JSON.parse(JSON.stringify(_docs))
+				};
+				if (!prod.name) { alert('Product Name is required'); return; }
+
+				if (idx == null) _products.push(prod); else _products[idx] = prod;
+				modal('productModal').hide();
+				renderProductsForInstaller();
+			});
+
+			// ===== Redlines helpers =====
+			function renderRedlineStateOptions() {
+				const sel = $('#redlineState');
+				sel.innerHTML = US_STATES.map(s => `<option>${s}</option>`).join('');
+			}
+			$('#btnAddRedline').addEventListener('click', () => {
+				const s = $('#redlineState').value;
+				const v = $('#redlineValue').value.trim();
+				if (!s || !v) return;
+				_redlines[s] = v;
+				$('#redlineValue').value = '';
+				renderRedlines();
+			});
+			function renderRedlines() {
+				const tbody = $('#redlinesTable tbody');
+				tbody.innerHTML = Object.entries(_redlines).map(([st, v]) => `
+	      <tr>
+	        <td>${esc(st)}</td><td>${esc(v)}</td>
+	        <td class="text-end"><button class="btn btn-xs btn-outline-danger" data-st="${st}">Del</button></td>
+	      </tr>`).join('') || `<tr><td colspan="3" class="text-center text-muted">None</td></tr>`;
+			}
+			$('#redlinesTable').addEventListener('click', (e) => {
+				const btn = e.target.closest('button'); if (!btn) return;
+				delete _redlines[btn.dataset.st]; renderRedlines();
+			});
+
+			// ===== Pay Scales helpers =====
+			$('#btnAddScale').addEventListener('click', () => openScaleEditor());
+			$('#cancelScale').addEventListener('click', () => $('#scaleEditor').classList.add('d-none'));
+			$('#saveScale').addEventListener('click', () => {
+				const idx = $('#scaleIndex').value === '' ? null : Number($('#scaleIndex').value);
+				const s = {
+					name: $('#scaleName').value.trim(),
+					role: $('#scaleRole').value,
+					service: $('#scaleService').value,
+					pctDeal: $('#scalePctDeal').value.trim(),
+					pctAbove: $('#scalePctAboveRedline').value.trim(),
+					flat: $('#scaleFlat').value.trim(),
+					perUnit: $('#scalePerUnit').value.trim(),
+					minMargin: $('#scaleMinMargin').value.trim(),
+					cap: $('#scaleCap').value.trim(),
+					rounding: $('#scaleRounding').value,
+					spiff: $('#scaleSpiff').value.trim(),
+					start: $('#scaleStart').value,
+					end: $('#scaleEnd').value
+				};
+				if (!s.name) { alert('Pay Scale Name required'); return; }
+				if (idx == null) _scales.push(s); else _scales[idx] = s;
+				$('#scaleEditor').classList.add('d-none'); renderScales();
+			});
+
+			function openScaleEditor(idx = null) {
+				$('#scaleEditor').classList.remove('d-none');
+				$('#scaleIndex').value = idx ?? '';
+				const s = idx != null ? _scales[idx] : {};
+				$('#scaleName').value = s?.name || '';
+				$('#scaleRole').value = s?.role || 'Setter';
+				$('#scaleService').value = s?.service || 'Residential';
+				$('#scalePctDeal').value = s?.pctDeal || '';
+				$('#scalePctAboveRedline').value = s?.pctAbove || '';
+				$('#scaleFlat').value = s?.flat || '';
+				$('#scalePerUnit').value = s?.perUnit || '';
+				$('#scaleMinMargin').value = s?.minMargin || '';
+				$('#scaleCap').value = s?.cap || '';
+				$('#scaleRounding').value = s?.rounding || 'Nearest';
+				$('#scaleSpiff').value = s?.spiff || '';
+				$('#scaleStart').value = s?.start || '';
+				$('#scaleEnd').value = s?.end || '';
+			}
+			function renderScales() {
+				const tbody = $('#scalesTable tbody');
+				tbody.innerHTML = _scales.map((s, i) => `
+	      <tr>
+	        <td>${esc(s.name || '')}</td>
+	        <td>${esc(s.role || '')}</td>
+	        <td>${['pctDeal', 'pctAbove', 'flat', 'perUnit'].filter(k => s[k] && String(s[k]).trim() !== '').join(', ') || '—'}</td>
+	        <td>${esc(s.service || '')}</td>
+	        <td>${esc((s.minMargin || '') + (s.cap ? ' / ' + s.cap : '')) || '—'}</td>
+	        <td>${esc((s.start || '') + (s.end ? ' → ' + s.end : '')) || '—'}</td>
+	        <td class="text-end">
+	          <button class="btn btn-xs btn-outline-primary me-1" data-sc="${i}" data-act="edit">Edit</button>
+	          <button class="btn btn-xs btn-outline-danger" data-sc="${i}" data-act="del">Del</button>
+	        </td>
+	      </tr>`).join('') || `<tr><td colspan="7" class="text-center text-muted">No pay scales yet.</td></tr>`;
+			}
+			$('#scalesTable').addEventListener('click', (e) => {
+				const btn = e.target.closest('button'); if (!btn) return;
+				const i = Number(btn.dataset.sc);
+				if (btn.dataset.act === 'edit') openScaleEditor(i);
+				if (btn.dataset.act === 'del') { _scales.splice(i, 1); renderScales(); }
+			});
+
+			// ===== Docs (simple metadata list) =====
+			$('#productDocs').addEventListener('change', () => {
+				_docs = Array.from($('#productDocs').files).map(f => ({ name: f.name, size: f.size }));
+				renderDocs();
+			});
+			function renderDocs() {
+				const list = $('#docsList');
+				list.innerHTML = _docs.map(d => `<li class="list-group-item d-flex justify-content-between">
+	      <span>${esc(d.name)}</span><span class="text-muted">${fmtBytes(d.size)}</span></li>`).join('') ||
+					`<li class="list-group-item text-muted">No docs uploaded.</li>`;
+			}
+
+			// ===== States grid builder (reusable) =====
+			function renderStatesGrid(listId, searchId, precheckedSet, allBtnSel, clearBtnSel) {
+				const list = document.getElementById(listId);
+				const search = document.getElementById(searchId);
+				const draw = () => {
+					const f = (search.value || '').trim().toLowerCase();
+					list.innerHTML = US_STATES
+						.filter(s => !f || s.toLowerCase().includes(f))
+						.map(s => {
+							const id = `${listId}__${s.replace(/\s+/g, '_')}`;
+							const chk = precheckedSet.has(s) ? 'checked' : '';
+							return `<label for="${id}"><input type="checkbox" id="${id}" value="${s}" ${chk} class="form-check-input m-0"> ${s}</label>`;
+						}).join('');
+				};
+				search.oninput = () => {
+					precheckedSet = new Set(getCheckedStatesFrom(listId));
+					draw();
+					restoreChecks(listId, precheckedSet);
+				};
+				document.querySelector(allBtnSel)?.addEventListener('click', () => { list.querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = true); });
+				document.querySelector(clearBtnSel)?.addEventListener('click', () => { list.querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = false); });
+				draw();
+			}
+			function getCheckedStatesFrom(listId) {
+				return Array.from(document.getElementById(listId).querySelectorAll('input[type=checkbox]:checked')).map(cb => cb.value);
+			}
+			function restoreChecks(listId, set) {
+				document.getElementById(listId).querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = set.has(cb.value));
+			}
+
+			// ===== Utils =====
+			function esc(s) { return (s ?? '').toString().replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m])); }
+			function fmtBytes(x) { if (!x && x !== 0) return ''; const k = 1024, s = ['B', 'KB', 'MB', 'GB']; const i = Math.floor(Math.log(x) / Math.log(k)); return (x / Math.pow(k, i)).toFixed(1) + ' ' + s[i]; }
+
+			// ===== Init =====
+			renderInstallers();
 		})();
 	</script>
 
