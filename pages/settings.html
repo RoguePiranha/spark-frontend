@@ -9,7 +9,7 @@
 	<meta name="description" content="SPARK - Sales Performance and Revenue Keeper" />
 	<meta name="author" content="SparkPro" />
 
-	<title>SPARK - Sales Performance and Revenue Keeper</title>
+	<title>SPARK - Company Settings</title>
 
 	<!-- color-modes:js -->
 	<script src="/assets/js/color-modes.js"></script>
@@ -438,7 +438,9 @@
 						<i data-feather="menu"></i>
 					</a>
 				</div>
-				<script>
+
+				<!-- LOGIN REDIRECT -->
+				<!-- <script>
 					document.addEventListener("DOMContentLoaded", async () => {
 						const user = JSON.parse(localStorage.getItem("user"));
 						if (!user) {
@@ -456,7 +458,7 @@
 							console.error("Failed to load profile data:", err);
 						}
 					});
-				</script>
+				</script> -->
 
 				<script>
 					function logout() {
@@ -629,7 +631,7 @@
 												<form id="companyForm" novalidate>
 													<div class="row g-3">
 														<!-- Company Name -->
-														<div class="col-6 m-2">
+														<div class="col m-2">
 															<label for="companyName" class="form-label">Company Name
 																<span class="text-danger">*</span></label>
 															<input id="companyName" type="text" class="form-control"
@@ -638,9 +640,9 @@
 															</div>
 														</div>
 													</div>
-													<div class="row">
+													<div class="row align-items-end">
 														<!-- EIN -->
-														<div class="col-4 m-2">
+														<div class="col m-2">
 															<label for="ein" class="form-label">EIN Number
 																(optional)</label>
 															<input id="ein" type="text" inputmode="numeric"
@@ -649,12 +651,11 @@
 														</div>
 
 														<!-- Business Type / Industry -->
-														<div class="col-4 m-2">
-															<label for="industry" class="form-label">Business Type /
-																Industry
-																(optional)</label>
+														<div class="col m-2">
+															<label for="industry" class="form-label">Industry (optional)</label>
 															<select id="industry" class="form-select">
 																<option value="">Select…</option>
+																<option>Pest Control</option>
 																<option>Solar</option>
 																<option>Roofing</option>
 																<option>HVAC</option>
@@ -668,14 +669,14 @@
 
 													<div class="row g-3">
 														<!-- Default Currency -->
-														<div class="col-4 m-2">
+														<div class="col m-2">
 															<label for="currency" class="form-label">Default Currency
 																<span class="text-danger">*</span></label>
 															<select id="currency" class="form-select" required></select>
 														</div>
 
 														<!-- Time Zone -->
-														<div class="col-4 m-2">
+														<div class="col m-2">
 															<label for="timeZone" class="form-label">Company Time Zone
 																<span class="text-danger">*</span></label>
 															<select id="timeZone" class="form-select" required></select>
@@ -684,7 +685,7 @@
 													</div>
 
 													<!-- Headquarters Address -->
-													<div class="col-12 m-2">
+													<div class="col m-2">
 														<label for="hqAddress" class="form-label">Headquarters Address
 															(optional)</label>
 														<input id="hqAddress" type="text" class="form-control"
@@ -692,63 +693,66 @@
 													</div>
 
 													<!-- Primary Color -->
-													<div class="col-4 m-2">
-														<label for="primaryColor" class="form-label">Primary Brand Color
-															(hex)</label>
-														<div class="input-group">
-															<input id="primaryColor" type="text" class="form-control"
-																placeholder="#0ea5e9" />
-															<input id="primaryColorPicker" type="color"
-																class="form-control form-control-color" />
+													<div class="row m-2 gap-3">
+														<div class="col">
+															<label for="primaryColor" class="form-label">Primary Brand Color
+																(hex)</label>
+															<div class="input-group">
+																<input id="primaryColor" type="text" class="form-control"
+																	placeholder="#0ea5e9" />
+																<input id="primaryColorPicker" type="color"
+																	class="form-control form-control-color" />
+															</div>
 														</div>
-													</div>
 
-													<!-- Accent Color -->
-													<div class="col-4 m-2">
-														<label for="accentColor" class="form-label">Accent Color
-															(hex)</label>
-														<div class="input-group">
-															<input id="accentColor" type="text" class="form-control"
-																placeholder="#22c55e" />
-															<input id="accentColorPicker" type="color"
-																class="form-control form-control-color" />
+														<!-- Accent Color -->
+														<div class="col">
+															<label for="accentColor" class="form-label">Accent Color
+																(hex)</label>
+															<div class="input-group">
+																<input id="accentColor" type="text" class="form-control"
+																	placeholder="#22c55e" />
+																<input id="accentColorPicker" type="color"
+																	class="form-control form-control-color" />
+															</div>
 														</div>
 													</div>
 
 													<!-- Operational States -->
-													<div class="col-4 m-2">
+													<div class="col m-2">
 														<label for="operationalStates" class="form-label">Operational
 															States</label>
-														<!-- search -->
-														<input id="stateSearch" type="text" class="form-control mb-2"
-															placeholder="Search states…" />
-
-														<!-- checkbox list -->
-														<div id="stateList" class="border rounded p-2 state-columns">
-														</div>
-
-														<!-- small actions -->
-														<div class="d-flex gap-2 mt-2">
+														<div class="d-flex gap-2 mb-2">
 															<button type="button" id="checkAllStates"
 																class="btn btn-sm btn-outline-secondary">Select
 																All</button>
 															<button type="button" id="uncheckAllStates"
 																class="btn btn-sm btn-outline-secondary">Clear</button>
 														</div>
+														<!-- search -->
+														<input id="stateSearch" type="text" class="form-control mb-2"
+															placeholder="Search states…" />
+
+														<!-- small actions -->
 														<div id="stateChips" class="mt-2"></div>
+
+														<!-- checkbox list -->
+														<div id="stateList" class="border rounded p-2 state-columns">
+														</div>
 													</div>
 
 													<!-- Logo upload + preview -->
-													<div class="col-4 m-2">
-														<label for="logo" class="form-label">Company Logo
-															(upload)</label>
-														<input id="logo" type="file" accept="image/*"
-															class="form-control" />
-														<div class="form-text">PNG or JPG up to 1MB.</div>
-													</div>
-													<div class="col-4 m-2 d-flex align-items-end">
-														<img id="logoPreview" class="rounded border" alt="Logo Preview"
-															style="width: 72px; height: 72px; object-fit: cover;" />
+													<div class="col">
+														<div class="col m-2">
+															<label for="logo" class="form-label">Company Logo (upload)</label>
+															<input id="logo" type="file" accept="image/*"
+																class="form-control" />
+															<div class="form-text">PNG or JPG up to 1MB.</div>
+														</div>
+														<div class="col m-2 d-flex align-items-end">
+															<img id="logoPreview" class="rounded border" alt="Logo Preview"
+																style="width: 72px; height: 72px; object-fit: cover;" />
+														</div>
 													</div>
 
 
@@ -921,10 +925,10 @@
 						const id = `state__${s.replace(/\s+/g, '_')}`;
 						const checked = prechecked.has(s) ? 'checked' : '';
 						return `
-        <label for="${id}" class="d-flex align-items-center gap-2 mb-1">
-          <input type="checkbox" class="form-check-input m-0" id="${id}" value="${s}" ${checked} />
-          <span>${s}</span>
-        </label>`;
+							<label for="${id}" class="d-flex align-items-center gap-2 mb-1">
+							<input type="checkbox" class="form-check-input m-0" id="${id}" value="${s}" ${checked} />
+							<span>${s}</span>
+							</label>`;
 					})
 					.join('');
 				els.stateList.innerHTML = items;
