@@ -20,7 +20,7 @@
       button.innerText = 'Syncing...';
 
       try {
-        const response = await fetch(`https://localhost:5001/sync/advosy/${type}`, {
+        const response = await fetch(`https://api.sparkpro.io/sync/advosy/${type}`, {
           method: 'POST'
         });
 
@@ -50,7 +50,7 @@
       tableSection.innerHTML = `<h2>${type}</h2>`;
 
       try {
-        const res = await fetch(`https://localhost:5001/data/top/${type}`);
+        const res = await fetch(`https://api.sparkpro.io/data/top/${type}`);
         const rows = await res.json();
         const tableEl = document.createElement("table");
         tableEl.border = "1";

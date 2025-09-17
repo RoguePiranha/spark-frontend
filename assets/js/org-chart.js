@@ -12,7 +12,7 @@ async function loadProfileOverview() {
     }
 
     try {
-        const userRes = await fetch(`https://localhost:5001/profile/${user.userId}`);
+        const userRes = await fetch(`https://api.sparkpro.io/profile/${user.userId}`);
         if (!userRes.ok) throw new Error("Failed to load profile");
         const self = await userRes.json();
 
@@ -107,14 +107,14 @@ async function renderSimpleOrgChart() {
     window.addEventListener('beforeunload', () => controller.abort());
 
     try {
-        const userRes = await fetch(`https://localhost:5001/profile/${user.userId}`, { signal });
+        const userRes = await fetch(`https://api.sparkpro.io/profile/${user.userId}`, { signal });
         if (!userRes.ok) throw new Error("Failed to load profile");
         const self = await userRes.json();
         const selfCompanyId = self.companyId ?? self.company_id;
 
         const [registryRes, usersRes] = await Promise.all([
-            fetch(`https://localhost:5001/employee_registry`, { signal }),
-            fetch(`https://localhost:5001/users`, { signal })
+            fetch(`https://api.sparkpro.io/employee_registry`, { signal }),
+            fetch(`https://api.sparkpro.io/users`, { signal })
         ]);
         if (!registryRes.ok || !usersRes.ok) throw new Error("Failed to load registry or users");
 
