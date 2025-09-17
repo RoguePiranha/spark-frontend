@@ -682,7 +682,7 @@
 			}
 
 			try {
-				const res = await fetch(`http://localhost:5001/profile/${user.userId}`);
+				const res = await fetch(`https://localhost:5001/profile/${user.userId}`);
 				const data = await res.json();
 
 				document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;
@@ -1140,7 +1140,7 @@
 				};
 
 				try {
-					const res = await fetch(`http://localhost:5001/profile/${user.userId}`);
+					const res = await fetch(`https://localhost:5001/profile/${user.userId}`);
 					const data = await res.json();
 
 					document.getElementById("user-name").textContent = `${data.firstName} ${data.lastName}`;
@@ -1169,7 +1169,7 @@
 				}
 
 				try {
-					const res = await fetch(`http://localhost:5001/profile/${user.userId}`);
+					const res = await fetch(`https://localhost:5001/profile/${user.userId}`);
 					const data = await res.json();
 
 					document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;

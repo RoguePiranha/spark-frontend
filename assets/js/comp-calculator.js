@@ -1,6 +1,6 @@
 (() => {
     // Configuration: (modify endpoint URL as needed for the Spark backend API)
-    const API_URL = 'http://localhost:5000/sales/{id}/details';
+    const API_URL = 'https://localhost:5000/sales/{id}/details';
 
     // Utility: Safely get nested values or default
     const getSafe = (obj, key, defaultVal = 'N/A') => (obj && obj[key] != null ? obj[key] : defaultVal);
