@@ -767,7 +767,7 @@
 							}
 
 							try {
-								const res = await fetch(`http://localhost:5001/profile/${user.userId}`);
+								const res = await fetch(`https://api.sparkpro.io/profile/${user.userId}`);
 								const data = await res.json();
 
 								document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;
@@ -933,7 +933,7 @@
 									<script src="/attps://cdn.jsdelivr.net/npm/orgchart@3.7.0/dist/js/jquery.orgchart.min.js"></script>
 									<script>
 										(function () {
-											const BASE_API = "http://localhost:5001";
+											const BASE_API = "https://api.sparkpro.io";
 											const user = JSON.parse(localStorage.getItem("user")) || {};
 
 											const els = {
@@ -1363,7 +1363,7 @@
 
 		<script>
 			(function () {
-				const BASE_API = "http://localhost:5001";
+				const BASE_API = "https://api.sparkpro.io";
 				const user = JSON.parse(localStorage.getItem("user"));
 				if (!user) {
 					window.location.href = "/pages/login.html";

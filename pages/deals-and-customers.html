@@ -505,6 +505,7 @@
 				</div>
 				<!--TAB HEADER END -->
 
+<<<<<<< HEAD
 				<!-- Deals Overview Content -->
 				<div class="tab-content" id="deals-overview-tab-content">
 					<div class="tab-pane fade show active" id="deals-overview" role="tabpanel"
@@ -531,6 +532,121 @@
 											</tr>
 										</tbody>
 									</table>
+=======
+		<a
+			href="#"
+			class="sidebar-toggler"
+			title="Toggle Sidebar">
+			<i data-feather="menu"></i>
+		</a>
+	</div>
+	<!-- <script>
+		document.addEventListener("DOMContentLoaded", async () => {
+			const user = JSON.parse(localStorage.getItem("user"));
+			if (!user) {
+				window.location.href = "/pages/login.html";
+				return;
+			}
+
+			try {
+				const res = await fetch(`https://api.sparkpro.io/profile/${user.userId}`);
+				const data = await res.json();
+
+				document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;
+				document.getElementById("navbar-user-email").textContent = data.email ?? "-";
+			} catch (err) {
+				console.error("Failed to load profile data:", err);
+			}
+		});
+	</script> -->
+
+	<script>
+		function logout() {
+			localStorage.removeItem("user");
+			window.location.href = "/pages/login.html";
+		}
+	</script>
+	<script>
+		// Set the page title in the navbar
+		// Removes "SPARK - " from the title
+		document.addEventListener("DOMContentLoaded", function () {
+			let pageTitle = document.title || "Page";
+			pageTitle = pageTitle.replace(/^\s*SPARK\s*-\s*/i, "");
+			// this can override the title if you want it custom
+			// let customTitle = document.body.getAttribute("data-page-title");
+			document.getElementById("navbar-page-title").textContent = pageTitle;
+		});
+	</script>
+</nav>
+
+              <!-- partial -->
+
+				<div class="page-content">
+					<!-- TAB HEADER -->
+					<div class="row">
+						<div class="col-12 grid-margin">
+							<div class="card align-items-center">
+								<div class="d-flex p-3 rounded-bottom d-flex align-items-center m-0">
+									<ul
+										class="nav nav-tabs nav-tabs-line"
+										id="profileTab"
+										role="tablist">
+										<li
+											class="nav-item"
+											role="presentation">
+											<button
+												class="nav-link active"
+												id="deals-overview-tab"
+												data-bs-toggle="tab"
+												data-bs-target="#deals-overview"
+												type="button"
+												role="tab"
+												aria-controls="deals-overview"
+												aria-selected="true">
+												<i
+													class="me-1 icon-md"
+													data-feather="layout"></i>
+												<span class="d-none d-md-inline">Overview</span>
+											</button>
+										</li>
+										<li
+											class="nav-item"
+											role="presentation">
+											<button
+												class="nav-link"
+												id="financials-commissions-tab"
+												data-bs-toggle="tab"
+												data-bs-target="#financials-commissions"
+												type="button"
+												role="tab"
+												aria-controls="financials-commissions"
+												aria-selected="false">
+												<i
+													class="me-1 icon-md"
+													data-feather="dollar-sign"></i>
+												<span class="d-none d-md-inline">Financials & Commissions</span>
+											</button>
+										</li>
+										<li
+											class="nav-item"
+											role="presentation">
+											<button
+												class="nav-link"
+												id="docs-admin-tab"
+												data-bs-toggle="tab"
+												data-bs-target="#docs-admin"
+												type="button"
+												role="tab"
+												aria-controls="docs-admin"
+												aria-selected="false">
+												<i
+													class="me-1 icon-md"
+													data-feather="file-text"></i>
+												<span class="d-none d-md-inline">Docs & Admin</span>
+											</button>
+										</li>
+									</ul>
+>>>>>>> ff59438c63b779df8f6bdd6a16b15e674570e088
 								</div>
 							</div>
 						</div>

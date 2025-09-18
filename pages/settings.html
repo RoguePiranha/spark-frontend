@@ -448,7 +448,7 @@
 						}
 
 						try {
-							const res = await fetch(`http://localhost:5001/profile/${user.userId}`);
+							const res = await fetch(`https://api.sparkpro.io/profile/${user.userId}`);
 							const data = await res.json();
 
 							document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;
@@ -1111,8 +1111,7 @@
 																class="form-control"
 																placeholder="Per Unit (e.g., $50/kW)"></div>
 													</div>
-													<div class="form-text">Combine components as needed—we’ll sum them.
-													</div>
+													<p class="form-text">Combine components as needed—we’ll sum them.</p>
 												</div>
 
 												<div class="col-md-4">
