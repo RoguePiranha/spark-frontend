@@ -1,1134 +1,1249 @@
 <!DOCTYPE html>
 
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0" />
-		<meta
-			http-equiv="X-UA-Compatible"
-			content="ie=edge" />
-		<meta
-			name="description"
-			content="SPARK - Sales Performance and Revenue Keeper" />
-		<meta
-			name="author"
-			content="SparkPro" />
 
-		<title>SPARK - Deals and Customers</title>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="description" content="SPARK - Sales Performance and Revenue Keeper" />
+	<meta name="author" content="SparkPro" />
 
-		<script src="/assets/js/color-modes.js"></script>
+	<title>SPARK - Deals and Customers</title>
 
-		<link
-			rel="preconnect"
-			href="https://fonts.googleapis.com" />
-		<link
-			rel="preconnect"
-			href="https://fonts.gstatic.com"
-			crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-			rel="stylesheet" />
+	<script src="/assets/js/color-modes.js"></script>
 
-		<link
-			rel="stylesheet"
-			href="/assets/vendors/core/core.css" />
-		<link
-			rel="stylesheet"
-			href="/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+		rel="stylesheet" />
 
-		<link
-			rel="stylesheet"
-			href="/assets/fonts/feather-font/css/iconfont.css" />
-		<link
-			rel="stylesheet"
-			href="/assets/css/style.css" />
+	<link rel="stylesheet" href="/assets/vendors/core/core.css" />
+	<link rel="stylesheet" href="/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css" />
 
-		<link
-			rel="shortcut icon"
-			href="/assets/images/icons/white favicon.png" />
-	</head>
+	<link rel="stylesheet" href="/assets/fonts/feather-font/css/iconfont.css" />
+	<link rel="stylesheet" href="/assets/css/style.css" />
 
-	<body class="sidebar-dark">
-		<div class="main-wrapper">
-			<!-- partial:partials/_sidebar.html -->
-			<nav class="sidebar">
-	<div class="sidebar-header">
-    <a href="#" class="sidebar-brand" aria-label="Spark Home" title="Spark Home">
-      <img src="/assets/images/icons/horz-dark-mode-logo.png" class="sidebar-logo" alt="Spark Logo">
-    </a>
-		<div class="sidebar-toggler">
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-	</div>
-	<div class="sidebar-body">
-		<ul
-			class="nav"
-			id="sidebarNav">
-			<li class="nav-item nav-category">Main</li>
-			<li class="nav-item">
-				<a href="/pages/dashboard.html" class="nav-link">
-					<i class="link-icon" data-feather="zap"></i>
-					<span class="link-title">Dashboard</span>
+	<link rel="shortcut icon" href="/assets/images/icons/white favicon.png" />
+</head>
+
+<body class="sidebar-dark">
+
+	<div class="main-wrapper">
+		<!-- partial:partials/_sidebar.html -->
+		<nav class="sidebar">
+			<div class="sidebar-header">
+				<a href="#" class="sidebar-brand" aria-label="Spark Home" title="Spark Home">
+					<img src="/assets/images/icons/horz-dark-mode-logo.png" class="sidebar-logo" alt="Spark Logo">
 				</a>
-			</li>
-			<li class="nav-item nav-category">Web Apps</li>
-			<li class="nav-item">
-				<a
-					href="/pages/apps/chat.html"
-					class="nav-link">
-					<i
-						class="link-icon"
-						data-feather="message-square"></i>
-					<span class="link-title">Chat</span>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a
-					href="/pages/apps/calendar.html"
-					class="nav-link">
-					<i
-						class="link-icon"
-						data-feather="calendar"></i>
-					<span class="link-title">Calendar</span>
-				</a>
-			</li>
-			<li class="nav-item nav-category">Components</li>
-			<li class="nav-item">
-				<a
-					href="/pages/profile.html"
-					class="nav-link">
-					<i
-						class="link-icon"
-						data-feather="user"></i>
-					<span class="link-title">Profile</span>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a
-					href="/pages/my-team.html"
-					class="nav-link">
-					<i
-						class="link-icon"
-						data-feather="users"></i>
-					<span class="link-title">My Team</span>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a
-					href="/pages/compensation.html"
-					class="nav-link">
-					<i
-						class="link-icon"
-						data-feather="dollar-sign"></i>
-					<span class="link-title">Compensation</span>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a
-					href="/pages/installers.html"
-					class="nav-link">
-					<i
-						class="link-icon"
-						data-feather="tool"></i>
-					<span class="link-title">Installers</span>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a
-					href="/pages/documents.html"
-					class="nav-link">
-					<i
-						class="link-icon"
-						data-feather="folder"></i>
-					<span class="link-title">Documents</span>
-				</a>
-			</li>
-			<li class="nav-item nav-category">Pages</li>
-			<li class="nav-item">
-				<a
-					class="nav-link"
-					data-bs-toggle="collapse"
-					href="#general-pages"
-					role="button"
-					aria-expanded="false"
-					aria-controls="general-pages">
-					<i
-						class="link-icon"
-						data-feather="book"></i>
-					<span class="link-title">Special pages</span>
-					<i
-						class="link-arrow"
-						data-feather="chevron-down"></i>
-				</a>
-				<div
-					class="collapse"
-					data-bs-parent="#sidebarNav"
-					id="general-pages">
-					<ul class="nav sub-menu">
-						<li class="nav-item">
-							<a
-								href="/pages/blank-page.html"
-								class="nav-link"
-								>Blank page</a
-							>
+				<div class="sidebar-toggler">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<div class="sidebar-body">
+				<ul class="nav" id="sidebarNav">
+					<li class="nav-item nav-category">Main</li>
+					<li class="nav-item">
+						<a href="/pages/dashboard.html" class="nav-link">
+							<i class="link-icon" data-feather="zap"></i>
+							<span class="link-title">Dashboard</span>
+						</a>
+					</li>
+					<li class="nav-item nav-category">Web Apps</li>
+					<li class="nav-item">
+						<a href="/pages/apps/chat.html" class="nav-link">
+							<i class="link-icon" data-feather="message-square"></i>
+							<span class="link-title">Chat</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/apps/calendar.html" class="nav-link">
+							<i class="link-icon" data-feather="calendar"></i>
+							<span class="link-title">Calendar</span>
+						</a>
+					</li>
+					<li class="nav-item nav-category">Components</li>
+					<li class="nav-item">
+						<a href="/pages/profile.html" class="nav-link">
+							<i class="link-icon" data-feather="user"></i>
+							<span class="link-title">Profile</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/my-team.html" class="nav-link">
+							<i class="link-icon" data-feather="users"></i>
+							<span class="link-title">My Team</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/compensation.html" class="nav-link">
+							<i class="link-icon" data-feather="dollar-sign"></i>
+							<span class="link-title">Compensation</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/installers.html" class="nav-link">
+							<i class="link-icon" data-feather="tool"></i>
+							<span class="link-title">Installers</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/documents.html" class="nav-link">
+							<i class="link-icon" data-feather="folder"></i>
+							<span class="link-title">Documents</span>
+						</a>
+					</li>
+					<li class="nav-item nav-category">Pages</li>
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="collapse" href="#general-pages" role="button"
+							aria-expanded="false" aria-controls="general-pages">
+							<i class="link-icon" data-feather="book"></i>
+							<span class="link-title">Special pages</span>
+							<i class="link-arrow" data-feather="chevron-down"></i>
+						</a>
+						<div class="collapse" data-bs-parent="#sidebarNav" id="general-pages">
+							<ul class="nav sub-menu">
+								<li class="nav-item">
+									<a href="/pages/blank-page.html" class="nav-link">Blank page</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/faq.html" class="nav-link">Faq</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/invoice.html" class="nav-link">Invoice</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/profile.html" class="nav-link">Profile</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/pricing.html" class="nav-link">Pricing</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/timeline.html" class="nav-link">Timeline</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="collapse" href="#authPages" role="button"
+							aria-expanded="false" aria-controls="authPages">
+							<i class="link-icon" data-feather="unlock"></i>
+							<span class="link-title">Authentication</span>
+							<i class="link-arrow" data-feather="chevron-down"></i>
+						</a>
+						<div class="collapse" data-bs-parent="#sidebarNav" id="authPages">
+							<ul class="nav sub-menu">
+								<li class="nav-item">
+									<a href="/pages/auth/login.html" class="nav-link">Login</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/auth/register.html" class="nav-link">Register</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item nav-category">Docs</li>
+					<li class="nav-item">
+						<a href="/pages/settings.html" class="nav-link">
+							<i class="link-icon" data-feather="settings"></i>
+							<span class="link-title">Settings</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- partial -->
+
+		<div class="page-wrapper">
+			<!-- partial:partials/_navbar.html -->
+			<nav class="navbar">
+				<div class="navbar-content">
+					<div class="navbar-page-title d-flex align-items-center">
+						<h2 class="mb-0 fw-bold" id="navbar-page-title"></h2>
+					</div>
+
+					<ul class="navbar-nav">
+						<li class="theme-switcher-wrapper nav-item">
+							<input type="checkbox" value="" id="theme-switcher" title="Toggle theme" />
+							<label for="theme-switcher" aria-label="Toggle theme">
+								<div class="box">
+									<div class="ball"></div>
+									<div class="icons">
+										<i class="feather icon-sun"></i>
+										<i class="feather icon-moon"></i>
+									</div>
+								</div>
+							</label>
 						</li>
-						<li class="nav-item">
-							<a
-								href="/pages/faq.html"
-								class="nav-link"
-								>Faq</a
-							>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="appsDropdown" role="button"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Apps">
+								<i data-feather="grid"></i>
+							</a>
+							<div class="dropdown-menu p-0" aria-labelledby="appsDropdown">
+								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+									<p class="mb-0 fw-bold">Web Apps</p>
+									<a href="javascript:;" class="text-secondary">Edit</a>
+								</div>
+								<div class="row g-0 p-1">
+									<div class="col-3 text-center">
+										<a href="/pages/apps/chat.html"
+											class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"><i
+												data-feather="message-square" class="icon-lg mb-1"></i>
+											<p class="fs-12px">Chat</p>
+										</a>
+									</div>
+									<div class="col-3 text-center">
+										<a href="/pages/apps/calendar.html"
+											class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"><i
+												data-feather="calendar" class="icon-lg mb-1"></i>
+											<p class="fs-12px">Calendar</p>
+										</a>
+									</div>
+									<div class="col-3 text-center">
+										<a href="/pages/email/inbox.html"
+											class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"><i
+												data-feather="mail" class="icon-lg mb-1"></i>
+											<p class="fs-12px">Email</p>
+										</a>
+									</div>
+									<div class="col-3 text-center">
+										<a href="/pages/profile.html"
+											class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"><i
+												data-feather="instagram" class="icon-lg mb-1"></i>
+											<p class="fs-12px">Profile</p>
+										</a>
+									</div>
+								</div>
+								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+									<a href="javascript:;">View all</a>
+								</div>
+							</div>
 						</li>
-						<li class="nav-item">
-							<a
-								href="/pages/invoice.html"
-								class="nav-link"
-								>Invoice</a
-							>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Messages">
+								<i data-feather="message-square"></i>
+							</a>
+							<div class="dropdown-menu p-0" aria-labelledby="messageDropdown">
+								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+									<p>9 New Messages</p>
+									<a href="javascript:;" class="text-secondary">Clear all</a>
+								</div>
+								<div class="p-1">
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/assets/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Leonardo Payne</p>
+												<p class="fs-12px text-secondary">Project status</p>
+											</div>
+											<p class="fs-12px text-secondary">2 min ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/assets/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Carl Henson</p>
+												<p class="fs-12px text-secondary">Client meeting</p>
+											</div>
+											<p class="fs-12px text-secondary">30 min ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/assets/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Jensen Combs</p>
+												<p class="fs-12px text-secondary">Project updates</p>
+											</div>
+											<p class="fs-12px text-secondary">1 hrs ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/assets/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Amiah Burton</p>
+												<p class="fs-12px text-secondary">Project deatline</p>
+											</div>
+											<p class="fs-12px text-secondary">2 hrs ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/assets/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Yaretzi Mayo</p>
+												<p class="fs-12px text-secondary">New record</p>
+											</div>
+											<p class="fs-12px text-secondary">5 hrs ago</p>
+										</div>
+									</a>
+								</div>
+								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+									<a href="javascript:;">View all</a>
+								</div>
+							</div>
 						</li>
-						<li class="nav-item">
-							<a
-								href="/pages/profile.html"
-								class="nav-link"
-								>Profile</a
-							>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+								title="Notifications">
+								<i data-feather="bell"></i>
+								<div class="indicator">
+									<div class="circle"></div>
+								</div>
+							</a>
+							<div class="dropdown-menu p-0" aria-labelledby="notificationDropdown">
+								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+									<p>6 New Notifications</p>
+									<a href="javascript:;" class="text-secondary">Clear all</a>
+								</div>
+								<div class="p-1">
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="gift"></i>
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>New Order Recieved</p>
+											<p class="fs-12px text-secondary">30 min ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="alert-circle"></i>
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>Server Limit Reached!</p>
+											<p class="fs-12px text-secondary">1 hrs ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/assets/images/profile_images/user_stock.png" alt="userr" />
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>New customer registered</p>
+											<p class="fs-12px text-secondary">2 sec ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="layers"></i>
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>Apps are ready for update</p>
+											<p class="fs-12px text-secondary">5 hrs ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="download"></i>
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>Download completed</p>
+											<p class="fs-12px text-secondary">6 hrs ago</p>
+										</div>
+									</a>
+								</div>
+								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+									<a href="javascript:;">View all</a>
+								</div>
+							</div>
 						</li>
-						<li class="nav-item">
-							<a
-								href="/pages/pricing.html"
-								class="nav-link"
-								>Pricing</a
-							>
-						</li>
-						<li class="nav-item">
-							<a
-								href="/pages/timeline.html"
-								class="nav-link"
-								>Timeline</a
-							>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<img class="w-30px h-30px ms-1 rounded-circle"
+									src="/assets/images/profile_images/user_stock.png" alt="profile" />
+							</a>
+							<div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
+								<div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
+									<div class="mb-3">
+										<img class="w-80px h-80px rounded-circle"
+											src="/assets/images/profile_images/user_stock.png" alt="" />
+									</div>
+									<div class="text-center">
+										<p class="fs-16px fw-bolder" id="navbar-user-name">
+											Loading...
+										</p>
+										<p class="fs-12px text-secondary" id="navbar-user-email">
+											Loading...
+										</p>
+									</div>
+								</div>
+								<ul class="list-unstyled p-1">
+									<li class="dropdown-item py-2">
+										<a href="/pages/profile.html" class="text-body ms-0">
+											<i class="me-2 icon-md" data-feather="user"></i>
+											<span>Profile</span>
+										</a>
+									</li>
+									<li class="dropdown-item py-2">
+										<a href="javascript:;" class="text-body ms-0">
+											<i class="me-2 icon-md" data-feather="edit"></i>
+											<span>Edit Profile</span>
+										</a>
+									</li>
+									<li class="dropdown-item py-2">
+										<a href="javascript:;" class="text-body ms-0" onclick="logout()">
+											<i class="me-2 icon-md" data-feather="log-out"></i>
+											<span>Log Out</span>
+										</a>
+									</li>
+								</ul>
+							</div>
 						</li>
 					</ul>
+
+					<a href="#" class="sidebar-toggler" title="Toggle Sidebar">
+						<i data-feather="menu"></i>
+					</a>
 				</div>
-			</li>
-			<li class="nav-item">
-				<a
-					class="nav-link"
-					data-bs-toggle="collapse"
-					href="#authPages"
-					role="button"
-					aria-expanded="false"
-					aria-controls="authPages">
-					<i
-						class="link-icon"
-						data-feather="unlock"></i>
-					<span class="link-title">Authentication</span>
-					<i
-						class="link-arrow"
-						data-feather="chevron-down"></i>
-				</a>
-				<div
-					class="collapse"
-					data-bs-parent="#sidebarNav"
-					id="authPages">
-					<ul class="nav sub-menu">
-						<li class="nav-item">
-							<a
-								href="/pages/auth/login.html"
-								class="nav-link"
-								>Login</a
-							>
-						</li>
-						<li class="nav-item">
-							<a
-								href="/pages/auth/register.html"
-								class="nav-link"
-								>Register</a
-							>
-						</li>
-					</ul>
-				</div>
-			</li>
-			<li class="nav-item nav-category">Docs</li>
-			<li class="nav-item">
-				<a
-					href="/pages/settings.html"
-					class="nav-link">
-					<i
-						class="link-icon"
-						data-feather="settings"></i>
-					<span class="link-title">Settings</span>
-				</a>
-			</li>
-		</ul>
-	</div>
-</nav>
+				<script>
+					document.addEventListener("DOMContentLoaded", async () => {
+						const user = JSON.parse(localStorage.getItem("user"));
+						if (!user) {
+							window.location.href = "/pages/login.html";
+							return;
+						}
+
+						try {
+							const res = await fetch(`http://localhost:5001/profile/${user.userId}`);
+							const data = await res.json();
+
+							document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;
+							document.getElementById("navbar-user-email").textContent = data.email ?? "-";
+						} catch (err) {
+							console.error("Failed to load profile data:", err);
+						}
+					});
+				</script>
+
+				<script>
+					function logout() {
+						localStorage.removeItem("user");
+						window.location.href = "/pages/login.html";
+					}
+				</script>
+				<script>
+					// Set the page title in the navbar
+					// Removes "SPARK - " from the title
+					document.addEventListener("DOMContentLoaded", function () {
+						let pageTitle = document.title || "Page";
+						pageTitle = pageTitle.replace(/^\s*SPARK\s*-\s*/i, "");
+						// this can override the title if you want it custom
+						// let customTitle = document.body.getAttribute("data-page-title");
+						document.getElementById("navbar-page-title").textContent = pageTitle;
+					});
+				</script>
+			</nav>
 
 			<!-- partial -->
 
-            <div class="page-wrapper">
-              <!-- partial:partials/_navbar.html -->
-              <nav class="navbar">
-	<div class="navbar-content">
-		<div class="navbar-page-title d-flex align-items-center">
-			<h2
-				class="mb-0 fw-bold"
-				id="navbar-page-title"></h2>
-		</div>
-
-		<ul class="navbar-nav">
-			<li class="theme-switcher-wrapper nav-item">
-				<input
-					type="checkbox"
-					value=""
-					id="theme-switcher"
-					title="Toggle theme" />
-				<label
-					for="theme-switcher"
-					aria-label="Toggle theme">
-					<div class="box">
-						<div class="ball"></div>
-						<div class="icons">
-							<i class="feather icon-sun"></i>
-							<i class="feather icon-moon"></i>
+			<div class="page-content">
+				<!-- TAB HEADER -->
+				<div class="row">
+					<div class="col-12 grid-margin">
+						<div class="card align-items-center">
+							<div class="d-flex p-3 rounded-bottom d-flex align-items-center m-0">
+								<ul class="nav nav-tabs nav-tabs-line" id="profileTab" role="tablist">
+									<li class="nav-item" role="presentation">
+										<button class="nav-link active" id="deals-overview-tab" data-bs-toggle="tab"
+											data-bs-target="#deals-overview" type="button" role="tab"
+											aria-controls="deals-overview" aria-selected="true">
+											<i class="me-1 icon-md" data-feather="layout"></i>
+											<span class="d-none d-md-inline">Overview</span>
+										</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="financials-commissions-tab" data-bs-toggle="tab"
+											data-bs-target="#financials-commissions" type="button" role="tab"
+											aria-controls="financials-commissions" aria-selected="false">
+											<i class="me-1 icon-md" data-feather="dollar-sign"></i>
+											<span class="d-none d-md-inline">Financials & Commissions</span>
+										</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="docs-admin-tab" data-bs-toggle="tab"
+											data-bs-target="#docs-admin" type="button" role="tab"
+											aria-controls="docs-admin" aria-selected="false">
+											<i class="me-1 icon-md" data-feather="file-text"></i>
+											<span class="d-none d-md-inline">Docs & Admin</span>
+										</button>
+									</li>
+								</ul>
+							</div>
 						</div>
-					</div>
-				</label>
-			</li>
-			<li class="nav-item dropdown">
-				<a
-					class="nav-link dropdown-toggle"
-					href="#"
-					id="appsDropdown"
-					role="button"
-					data-bs-toggle="dropdown"
-					aria-haspopup="true"
-					aria-expanded="false"
-					title="Apps">
-					<i data-feather="grid"></i>
-				</a>
-				<div
-					class="dropdown-menu p-0"
-					aria-labelledby="appsDropdown">
-					<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
-						<p class="mb-0 fw-bold">Web Apps</p>
-						<a
-							href="javascript:;"
-							class="text-secondary"
-							>Edit</a
-						>
-					</div>
-					<div class="row g-0 p-1">
-						<div class="col-3 text-center">
-							<a
-								href="/pages/apps/chat.html"
-								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
-								><i
-									data-feather="message-square"
-									class="icon-lg mb-1"></i>
-								<p class="fs-12px">Chat</p></a
-							>
-						</div>
-						<div class="col-3 text-center">
-							<a
-								href="/pages/apps/calendar.html"
-								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
-								><i
-									data-feather="calendar"
-									class="icon-lg mb-1"></i>
-								<p class="fs-12px">Calendar</p></a
-							>
-						</div>
-						<div class="col-3 text-center">
-							<a
-								href="/pages/email/inbox.html"
-								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
-								><i
-									data-feather="mail"
-									class="icon-lg mb-1"></i>
-								<p class="fs-12px">Email</p></a
-							>
-						</div>
-						<div class="col-3 text-center">
-							<a
-								href="/pages/profile.html"
-								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
-								><i
-									data-feather="instagram"
-									class="icon-lg mb-1"></i>
-								<p class="fs-12px">Profile</p></a
-							>
-						</div>
-					</div>
-					<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
-						<a href="javascript:;">View all</a>
 					</div>
 				</div>
-			</li>
-			<li class="nav-item dropdown">
-				<a
-					class="nav-link dropdown-toggle"
-					href="#"
-					id="messageDropdown"
-					role="button"
-					data-bs-toggle="dropdown"
-					aria-haspopup="true"
-					aria-expanded="false"
-					title="Messages">
-					<i data-feather="message-square"></i>
-				</a>
-				<div
-					class="dropdown-menu p-0"
-					aria-labelledby="messageDropdown">
-					<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
-						<p>9 New Messages</p>
-						<a
-							href="javascript:;"
-							class="text-secondary"
-							>Clear all</a
-						>
-					</div>
-					<div class="p-1">
-						<a
-							href="javascript:;"
-							class="dropdown-item d-flex align-items-center py-2">
-							<div class="me-3">
-								<img
-									class="w-30px h-30px rounded-circle"
-									src="/assets/images/profile_images/user_stock.png"
-									alt="user" />
-							</div>
-							<div class="d-flex justify-content-between flex-grow-1">
-								<div class="me-4">
-									<p>Leonardo Payne</p>
-									<p class="fs-12px text-secondary">Project status</p>
-								</div>
-								<p class="fs-12px text-secondary">2 min ago</p>
-							</div>
-						</a>
-						<a
-							href="javascript:;"
-							class="dropdown-item d-flex align-items-center py-2">
-							<div class="me-3">
-								<img
-									class="w-30px h-30px rounded-circle"
-									src="/assets/images/profile_images/user_stock.png"
-									alt="user" />
-							</div>
-							<div class="d-flex justify-content-between flex-grow-1">
-								<div class="me-4">
-									<p>Carl Henson</p>
-									<p class="fs-12px text-secondary">Client meeting</p>
-								</div>
-								<p class="fs-12px text-secondary">30 min ago</p>
-							</div>
-						</a>
-						<a
-							href="javascript:;"
-							class="dropdown-item d-flex align-items-center py-2">
-							<div class="me-3">
-								<img
-									class="w-30px h-30px rounded-circle"
-									src="/assets/images/profile_images/user_stock.png"
-									alt="user" />
-							</div>
-							<div class="d-flex justify-content-between flex-grow-1">
-								<div class="me-4">
-									<p>Jensen Combs</p>
-									<p class="fs-12px text-secondary">Project updates</p>
-								</div>
-								<p class="fs-12px text-secondary">1 hrs ago</p>
-							</div>
-						</a>
-						<a
-							href="javascript:;"
-							class="dropdown-item d-flex align-items-center py-2">
-							<div class="me-3">
-								<img
-									class="w-30px h-30px rounded-circle"
-									src="/assets/images/profile_images/user_stock.png"
-									alt="user" />
-							</div>
-							<div class="d-flex justify-content-between flex-grow-1">
-								<div class="me-4">
-									<p>Amiah Burton</p>
-									<p class="fs-12px text-secondary">Project deatline</p>
-								</div>
-								<p class="fs-12px text-secondary">2 hrs ago</p>
-							</div>
-						</a>
-						<a
-							href="javascript:;"
-							class="dropdown-item d-flex align-items-center py-2">
-							<div class="me-3">
-								<img
-									class="w-30px h-30px rounded-circle"
-									src="/assets/images/profile_images/user_stock.png"
-									alt="user" />
-							</div>
-							<div class="d-flex justify-content-between flex-grow-1">
-								<div class="me-4">
-									<p>Yaretzi Mayo</p>
-									<p class="fs-12px text-secondary">New record</p>
-								</div>
-								<p class="fs-12px text-secondary">5 hrs ago</p>
-							</div>
-						</a>
-					</div>
-					<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
-						<a href="javascript:;">View all</a>
-					</div>
-				</div>
-			</li>
-			<li class="nav-item dropdown">
-				<a
-					class="nav-link dropdown-toggle"
-					href="#"
-					id="notificationDropdown"
-					role="button"
-					data-bs-toggle="dropdown"
-					aria-haspopup="true"
-					aria-expanded="false"
-					title="Notifications">
-					<i data-feather="bell"></i>
-					<div class="indicator">
-						<div class="circle"></div>
-					</div>
-				</a>
-				<div
-					class="dropdown-menu p-0"
-					aria-labelledby="notificationDropdown">
-					<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
-						<p>6 New Notifications</p>
-						<a
-							href="javascript:;"
-							class="text-secondary"
-							>Clear all</a
-						>
-					</div>
-					<div class="p-1">
-						<a
-							href="javascript:;"
-							class="dropdown-item d-flex align-items-center py-2">
-							<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-								<i
-									class="icon-sm text-white"
-									data-feather="gift"></i>
-							</div>
-							<div class="flex-grow-1 me-2">
-								<p>New Order Recieved</p>
-								<p class="fs-12px text-secondary">30 min ago</p>
-							</div>
-						</a>
-						<a
-							href="javascript:;"
-							class="dropdown-item d-flex align-items-center py-2">
-							<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-								<i
-									class="icon-sm text-white"
-									data-feather="alert-circle"></i>
-							</div>
-							<div class="flex-grow-1 me-2">
-								<p>Server Limit Reached!</p>
-								<p class="fs-12px text-secondary">1 hrs ago</p>
-							</div>
-						</a>
-						<a
-							href="javascript:;"
-							class="dropdown-item d-flex align-items-center py-2">
-							<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-								<img
-									class="w-30px h-30px rounded-circle"
-									src="/assets/images/profile_images/user_stock.png"
-									alt="userr" />
-							</div>
-							<div class="flex-grow-1 me-2">
-								<p>New customer registered</p>
-								<p class="fs-12px text-secondary">2 sec ago</p>
-							</div>
-						</a>
-						<a
-							href="javascript:;"
-							class="dropdown-item d-flex align-items-center py-2">
-							<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-								<i
-									class="icon-sm text-white"
-									data-feather="layers"></i>
-							</div>
-							<div class="flex-grow-1 me-2">
-								<p>Apps are ready for update</p>
-								<p class="fs-12px text-secondary">5 hrs ago</p>
-							</div>
-						</a>
-						<a
-							href="javascript:;"
-							class="dropdown-item d-flex align-items-center py-2">
-							<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-								<i
-									class="icon-sm text-white"
-									data-feather="download"></i>
-							</div>
-							<div class="flex-grow-1 me-2">
-								<p>Download completed</p>
-								<p class="fs-12px text-secondary">6 hrs ago</p>
-							</div>
-						</a>
-					</div>
-					<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
-						<a href="javascript:;">View all</a>
-					</div>
-				</div>
-			</li>
-			<li class="nav-item dropdown">
-				<a
-					class="nav-link dropdown-toggle"
-					href="#"
-					id="profileDropdown"
-					role="button"
-					data-bs-toggle="dropdown"
-					aria-haspopup="true"
-					aria-expanded="false">
-					<img
-						class="w-30px h-30px ms-1 rounded-circle"
-						src="/assets/images/profile_images/user_stock.png"
-						alt="profile" />
-				</a>
-				<div
-					class="dropdown-menu p-0"
-					aria-labelledby="profileDropdown">
-					<div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
-						<div class="mb-3">
-							<img
-								class="w-80px h-80px rounded-circle"
-								src="/assets/images/profile_images/user_stock.png"
-								alt="" />
-						</div>
-						<div class="text-center">
-							<p
-								class="fs-16px fw-bolder"
-								id="navbar-user-name">
-								Loading...
-							</p>
-							<p
-								class="fs-12px text-secondary"
-								id="navbar-user-email">
-								Loading...
-							</p>
-						</div>
-					</div>
-					<ul class="list-unstyled p-1">
-						<li class="dropdown-item py-2">
-							<a
-								href="/pages/profile.html"
-								class="text-body ms-0">
-								<i
-									class="me-2 icon-md"
-									data-feather="user"></i>
-								<span>Profile</span>
-							</a>
-						</li>
-						<li class="dropdown-item py-2">
-							<a
-								href="javascript:;"
-								class="text-body ms-0">
-								<i
-									class="me-2 icon-md"
-									data-feather="edit"></i>
-								<span>Edit Profile</span>
-							</a>
-						</li>
-						<li class="dropdown-item py-2">
-							<a
-								href="javascript:;"
-								class="text-body ms-0"
-								onclick="logout()">
-								<i
-									class="me-2 icon-md"
-									data-feather="log-out"></i>
-								<span>Log Out</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</li>
-		</ul>
+				<!--TAB HEADER END -->
 
-		<a
-			href="#"
-			class="sidebar-toggler"
-			title="Toggle Sidebar">
-			<i data-feather="menu"></i>
-		</a>
-	</div>
-	<script>
-		document.addEventListener("DOMContentLoaded", async () => {
-			const user = JSON.parse(localStorage.getItem("user"));
-			if (!user) {
-				window.location.href = "/pages/login.html";
-				return;
-			}
-
-			try {
-				const res = await fetch(`http://localhost:5001/profile/${user.userId}`);
-				const data = await res.json();
-
-				document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;
-				document.getElementById("navbar-user-email").textContent = data.email ?? "-";
-			} catch (err) {
-				console.error("Failed to load profile data:", err);
-			}
-		});
-	</script>
-
-	<script>
-		function logout() {
-			localStorage.removeItem("user");
-			window.location.href = "/pages/login.html";
-		}
-	</script>
-	<script>
-		// Set the page title in the navbar
-		// Removes "SPARK - " from the title
-		document.addEventListener("DOMContentLoaded", function () {
-			let pageTitle = document.title || "Page";
-			pageTitle = pageTitle.replace(/^\s*SPARK\s*-\s*/i, "");
-			// this can override the title if you want it custom
-			// let customTitle = document.body.getAttribute("data-page-title");
-			document.getElementById("navbar-page-title").textContent = pageTitle;
-		});
-	</script>
-</nav>
-
-              <!-- partial -->
-
-				<div class="page-content">
-					<!-- TAB HEADER -->
-					<div class="row">
-						<div class="col-12 grid-margin">
-							<div class="card align-items-center">
-								<div class="d-flex p-3 rounded-bottom d-flex align-items-center m-0">
-									<ul
-										class="nav nav-tabs nav-tabs-line"
-										id="profileTab"
-										role="tablist">
-										<li
-											class="nav-item"
-											role="presentation">
-											<button
-												class="nav-link active"
-												id="deals-overview-tab"
-												data-bs-toggle="tab"
-												data-bs-target="#deals-overview"
-												type="button"
-												role="tab"
-												aria-controls="deals-overview"
-												aria-selected="true">
-												<i
-													class="me-1 icon-md"
-													data-feather="layout"></i>
-												<span class="d-none d-md-inline">Overview</span>
-											</button>
-										</li>
-										<li
-											class="nav-item"
-											role="presentation">
-											<button
-												class="nav-link"
-												id="financials-commissions-tab"
-												data-bs-toggle="tab"
-												data-bs-target="#financials-commissions"
-												type="button"
-												role="tab"
-												aria-controls="financials-commissions"
-												aria-selected="false">
-												<i
-													class="me-1 icon-md"
-													data-feather="dollar-sign"></i>
-												<span class="d-none d-md-inline">Financials & Commissions</span>
-											</button>
-										</li>
-										<li
-											class="nav-item"
-											role="presentation">
-											<button
-												class="nav-link"
-												id="docs-admin-tab"
-												data-bs-toggle="tab"
-												data-bs-target="#docs-admin"
-												type="button"
-												role="tab"
-												aria-controls="docs-admin"
-												aria-selected="false">
-												<i
-													class="me-1 icon-md"
-													data-feather="file-text"></i>
-												<span class="d-none d-md-inline">Docs & Admin</span>
-											</button>
-										</li>
-									</ul>
+				<!-- Deals Overview Content -->
+				<div class="tab-content" id="deals-overview-tab-content">
+					<div class="tab-pane fade show active" id="deals-overview" role="tabpanel"
+						aria-labelledby="deals-overview-tab">
+						<div class="mt-3 card">
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-hover">
+										<thead>
+											<tr>
+												<th>Customer Name</th>
+												<th>Product Type</th>
+												<th>Date Sold</th>
+												<th>Projected/Total Payout</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="customer-sidebar" data-customer-id="12345"
+												style="cursor: pointer">
+												<td>John Smith</td>
+												<td>Solar</td>
+												<td>07/31/2025</td>
+												<td>$32,450</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 							</div>
 						</div>
-					</div>
-					<!--TAB HEADER END -->
 
-					<!-- Deals Overview Content -->
-					<div
-						class="tab-content"
-						id="deals-overview-tab-content">
-						<div
-							class="tab-pane fade show active"
-							id="deals-overview"
-							role="tabpanel"
-							aria-labelledby="deals-overview-tab">
-							<div class="mt-3 card">
-								<div class="card-body">
-									<div class="table-responsive">
-										<table class="table table-hover">
-											<thead>
-												<tr>
-													<th>Customer Name</th>
-													<th>Product Type</th>
-													<th>Date Sold</th>
-													<th>Projected/Total Payout</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr class="customer-sidebar" data-customer-id="12345" style="cursor: pointer">
-													<td>John Smith</td>
-													<td>Solar</td>
-													<td>07/31/2025</td>
-													<td>$32,450</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
+						<div id="deal-detail-panel" class="deal-side-panel">
+							<div class="panel-header d-flex justify-content-between align-items-center">
+								<h5>Deal Details</h5>
+								<button id="close-panel" class="btn-close" aria-label="Close" data-feather="x">
+								</button>
+							</div>
+							<div class="street-view">
+								<div class="d-flex align-items-center mb-3">
+									<img id="panel-google-street" alt="Google Street View" />
 								</div>
 							</div>
 
-							<div
-								id="deal-detail-panel"
-								class="deal-side-panel">
-								<div class="panel-header d-flex justify-content-between align-items-center">
-									<h5>Deal Details</h5>
-									<button
-										id="close-panel"
-										class="btn-close"
-										aria-label="Close" data-feather="x">
-									</button>
-								</div>
-								<div class="street-view">
-									<div class="d-flex align-items-center mb-3">
-										<img
-											id="panel-google-street"
-											alt="Google Street View"/>
+							<div class="panel-body">
+								<!-- Core Deal Information -->
+								<h6 class="fw-bold mt-3">Core Deal Information</h6>
+								<p><strong>Deal ID:</strong> <span id="panel-deal-id">-</span></p>
+								<p><strong>Customer Name:</strong> <span id="panel-customer-name">-</span></p>
+								<p><strong>Product Type:</strong> <span id="panel-product-type">-</span></p>
+								<p><strong>Project Status:</strong> <span id="panel-project-status">-</span></p>
+								<p><strong>Project Stage:</strong> <span id="panel-project-stage">-</span></p>
+								<p><strong>Signed Contract Date:</strong> <span id="panel-contract-date">-</span></p>
+								<p><strong>Created Date:</strong> <span id="panel-created-date">-</span></p>
+								<p><strong>Payout:</strong> <span id="panel-payout">-</span></p>
+								<div class="my-3">
+									<label class="form-label fw-bold">Status Progress</label>
+									<div class="progress">
+										<div class="progress-bar" id="panel-status-progress" style="width: 25%">
+											Submitted
+										</div>
 									</div>
 								</div>
 
-								<div class="panel-body">
-									<!-- Core Deal Information -->
-									<h6 class="fw-bold mt-3">Core Deal Information</h6>
-									<p><strong>Deal ID:</strong> <span id="panel-deal-id">-</span></p>
-									<p><strong>Customer Name:</strong> <span id="panel-customer-name">-</span></p>
-									<p><strong>Product Type:</strong> <span id="panel-product-type">-</span></p>
-									<p><strong>Project Status:</strong> <span id="panel-project-status">-</span></p>
-									<p><strong>Project Stage:</strong> <span id="panel-project-stage">-</span></p>
-									<p><strong>Signed Contract Date:</strong> <span id="panel-contract-date">-</span></p>
-									<p><strong>Created Date:</strong> <span id="panel-created-date">-</span></p>
-									<p><strong>Payout:</strong> <span id="panel-payout">-</span></p>
-									<div class="my-3">
-										<label class="form-label fw-bold">Status Progress</label>
-										<div class="progress">
-											<div
-												class="progress-bar"
-												id="panel-status-progress"
-												style="width: 25%">
-												Submitted
+								<!-- Customer Details -->
+								<h6 class="fw-bold mt-4">👤 Customer Details</h6>
+								<p><strong>Full Name:</strong> <span id="panel-customer-name-2">-</span></p>
+								<p><strong>Phone:</strong> <span id="panel-customer-phone">-</span></p>
+								<p><strong>Email:</strong> <span id="panel-customer-email">-</span></p>
+								<p><strong>Address:</strong> <span id="panel-customer-address">-</span></p>
+								<div class="ratio ratio-16x9 mb-3">
+									<iframe id="panel-google-map" src="" allowfullscreen loading="lazy"></iframe>
+								</div>
+								<p><strong>Lead Source:</strong> <span id="panel-lead-source">-</span></p>
+
+								<!-- Sales Team -->
+								<h6 class="fw-bold mt-4">👥 Sales Team</h6>
+								<p><strong>Sales Rep:</strong> <span id="panel-sales-rep">-</span></p>
+								<p><strong>Setter(s):</strong> <span id="panel-setters">-</span></p>
+								<p><strong>Closer(s):</strong> <span id="panel-closers">-</span></p>
+								<p><strong>Team / Office:</strong> <span id="panel-team-office">-</span></p>
+								<p><strong>Dealer/Partner:</strong> <span id="panel-dealer">-</span></p>
+
+								<!-- Tracking & Reporting -->
+								<h6 class="fw-bold mt-4">🗕️ Tracking & Reporting</h6>
+								<p><strong>Initial Lead Date:</strong> <span id="panel-lead-date">-</span></p>
+								<p><strong>Close Date:</strong> <span id="panel-close-date">-</span></p>
+								<p><strong>Install Date:</strong> <span id="panel-install-date">-</span></p>
+								<p><strong>Rep Paid Date:</strong> <span id="panel-paid-date">-</span></p>
+								<p><strong>Tags / Deal Flags:</strong> <span id="panel-tags">-</span></p>
+								<p>
+									<a href="#" id="panel-dispute-link">Quick Dispute Link</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Overview Tab Content -->
+				<!-- Financials & Commissions Tab Content -->
+				<div class="tab-content" id="financials-commissions-tab-content">
+					<div class="tab-pane fade" id="financials-commissions" role="tabpanel"
+						aria-labelledby="financials-commissions-tab">
+						<div class="row profile-body gap-4">
+
+							<!-- Filters (project type + dates + search) -->
+							<div class="col-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="row g-2">
+											<div class="col m-2">
+												<label class="form-label">Search</label>
+												<input id="dealSearch" class="form-control"
+													placeholder="Customer or Deal ID…">
+											</div>
+											<div class="col m-2">
+												<label class="form-label">Project Type</label>
+												<select id="filterProjectType" class="form-select">
+													<option value="">All</option>
+													<option>Solar</option>
+													<option>Roofing</option>
+													<option>Pest</option>
+													<option>Fiber</option>
+												</select>
+											</div>
+										</div>
+										<div class="row g-2">
+											<div class="col m-2">
+												<label class="form-label">From</label>
+												<input type="date" id="dateFrom" class="form-control">
+											</div>
+											<div class="col m-2">
+												<label class="form-label">To</label>
+												<input type="date" id="dateTo" class="form-control">
+											</div>
+										</div>
+										<div class="row g-2">
+											<div class="col d-flex gap-2 ">
+												<button class="btn btn-outline-secondary" id="btnResetFilters"
+													type="button">Reset</button>
+												<button class="btn btn-primary" id="btnApplyFilters"
+													type="button">Apply</button>
 											</div>
 										</div>
 									</div>
-
-									<!-- Customer Details -->
-									<h6 class="fw-bold mt-4">👤 Customer Details</h6>
-									<p><strong>Full Name:</strong> <span id="panel-customer-name-2">-</span></p>
-									<p><strong>Phone:</strong> <span id="panel-customer-phone">-</span></p>
-									<p><strong>Email:</strong> <span id="panel-customer-email">-</span></p>
-									<p><strong>Address:</strong> <span id="panel-customer-address">-</span></p>
-									<div class="ratio ratio-16x9 mb-3">
-										<iframe
-											id="panel-google-map"
-											src=""
-											allowfullscreen
-											loading="lazy"></iframe>
-									</div>
-									<p><strong>Lead Source:</strong> <span id="panel-lead-source">-</span></p>
-
-									<!-- Sales Team -->
-									<h6 class="fw-bold mt-4">👥 Sales Team</h6>
-									<p><strong>Sales Rep:</strong> <span id="panel-sales-rep">-</span></p>
-									<p><strong>Setter(s):</strong> <span id="panel-setters">-</span></p>
-									<p><strong>Closer(s):</strong> <span id="panel-closers">-</span></p>
-									<p><strong>Team / Office:</strong> <span id="panel-team-office">-</span></p>
-									<p><strong>Dealer/Partner:</strong> <span id="panel-dealer">-</span></p>
-
-									<!-- Tracking & Reporting -->
-									<h6 class="fw-bold mt-4">🗕️ Tracking & Reporting</h6>
-									<p><strong>Initial Lead Date:</strong> <span id="panel-lead-date">-</span></p>
-									<p><strong>Close Date:</strong> <span id="panel-close-date">-</span></p>
-									<p><strong>Install Date:</strong> <span id="panel-install-date">-</span></p>
-									<p><strong>Rep Paid Date:</strong> <span id="panel-paid-date">-</span></p>
-									<p><strong>Tags / Deal Flags:</strong> <span id="panel-tags">-</span></p>
-									<p>
-										<a
-											href="#"
-											id="panel-dispute-link"
-											>Quick Dispute Link</a
-										>
-									</p>
 								</div>
+							</div>
+
+							<!-- Deals Table (only the 6 requested columns) -->
+							<div class="col-12">
+								<div class="card">
+									<div class="card-body p-0">
+										<div class="table-responsive">
+											<table class="table table-hover align-middle mb-0" id="dealsTable">
+												<thead class="table-light">
+													<tr>
+														<th>Deal ID</th>
+														<th>Customer</th>
+														<th>Type</th>
+														<th>Already Paid</th>
+														<th>Pending Amount</th>
+														<th>Sign Date</th>
+													</tr>
+												</thead>
+												<tbody><!-- renderDeals() --></tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="small text-muted mt-2">Tip: Click a row to view full details.</div>
 							</div>
 						</div>
 					</div>
-					<!-- End Overview Tab Content -->
-					<!-- Docs Tab Content -->
-					<div
-						class="tab-content"
-						id="docs-admin-tab-content">
-						<div
-							class="tab-pane fade"
-							id="docs-admin"
-							role="tabpanel"
-							aria-labelledby="docs-admin-tab">
-							<div class="mt-3 card">
-								<div class="card-body">
-									<div class="table-responsive">
-										<table class="table table-hover">
-											<thead>
-												<tr>
-													<th>Document</th>
-													<th>View</th>
-													<th>Download</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<th>Advosy Energy Direct Sales Solar Pro</th>
-													<td>
-														<a
-															href="/testFiles/advosy-solar-pro.pdf"
-															target="_blank"
-															class="text-blue-600 hover:text-blue-800"
-															title="View Document"
-															><i data-feather="eye"></i
-														></a>
-													</td>
-													<td>
-														<a
-															href="/testFiles/advosy-solar-pro.pdf"
-															download
-															class="text-blue-600 hover:text-blue-800"
-															title="Download Document"
-															><i data-feather="download"></i
-														></a>
-													</td>
-												</tr>
-												<tr>
-													<th>Advosy Energy Direct Sales Rookie</th>
-													<td>
-														<a
-															href="/testFiles/advosy-solar-pro.pdf"
-															target="_blank"
-															class="text-blue-600 hover:text-blue-800"
-															title="View Document"
-															><i data-feather="eye"></i
-														></a>
-													</td>
-													<td>
-														<a
-															href="/testFiles/advosy-solar-pro.pdf"
-															download
-															class="text-blue-600 hover:text-blue-800"
-															title="Download Document"
-															><i data-feather="download"></i
-														></a>
-													</td>
-												</tr>
-												<tr>
-													<th>Advosy Energy Dealer In A Box A1 Roofing</th>
-													<td>
-														<a
-															href="/testFiles/advosy-solar-pro.pdf"
-															target="_blank"
-															class="text-blue-600 hover:text-blue-800"
-															title="View Document"
-															><i data-feather="eye"></i
-														></a>
-													</td>
-													<td>
-														<a
-															href="/testFiles/advosy-solar-pro.pdf"
-															download
-															class="text-blue-600 hover:text-blue-800"
-															title="Download Document"
-															><i data-feather="download"></i
-														></a>
-													</td>
-												</tr>
-												<tr>
-													<th>Blue Papaya Route Manager</th>
-													<td>
-														<a
-															href="/testFiles/advosy-solar-pro.pdf"
-															target="_blank"
-															class="text-blue-600 hover:text-blue-800"
-															title="View Document"
-															><i data-feather="eye"></i
-														></a>
-													</td>
-													<td>
-														<a
-															href="/testFiles/advosy-solar-pro.pdf"
-															download
-															class="text-blue-600 hover:text-blue-800"
-															title="Download Document"
-															><i data-feather="download"></i
-														></a>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Docs Tab Content -->
 				</div>
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small">
+			</div>
+			<!-- Details Modal (content varies by project type) -->
+			<div class="modal fade" id="dealDetailsModal" tabindex="-1" aria-hidden="true">
+				<div class="modal-dialog modal-xl modal-dialog-scrollable">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h6 class="modal-title" id="dealDetailsTitle">Deal Details</h6>
+							<button class="btn-close" data-bs-dismiss="modal" type="button"></button>
+						</div>
+						<div class="modal-body" id="dealDetailsBody">
+							<!-- Filled dynamically based on project type -->
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-outline-secondary" data-bs-dismiss="modal"
+								type="button">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<style>
+				#dealsTable tbody tr {
+					cursor: pointer;
+				}
+
+				#dealsTable td,
+				#dealsTable th {
+					white-space: nowrap;
+				}
+			</style>
+			<!-- End Financials & Commissions Tab Content -->
+			<!-- Docs Tab Content -->
+			<div class="tab-content" id="docs-admin-tab-content">
+				<div class="tab-pane fade" id="docs-admin" role="tabpanel" aria-labelledby="docs-admin-tab">
+					<div class="mt-3 card">
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>Document</th>
+											<th>View</th>
+											<th>Download</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>Advosy Energy Direct Sales Solar Pro</th>
+											<td>
+												<a href="/testFiles/advosy-solar-pro.pdf" target="_blank"
+													class="text-blue-600 hover:text-blue-800" title="View Document"><i
+														data-feather="eye"></i></a>
+											</td>
+											<td>
+												<a href="/testFiles/advosy-solar-pro.pdf" download
+													class="text-blue-600 hover:text-blue-800"
+													title="Download Document"><i data-feather="download"></i></a>
+											</td>
+										</tr>
+										<tr>
+											<th>Advosy Energy Direct Sales Rookie</th>
+											<td>
+												<a href="/testFiles/advosy-solar-pro.pdf" target="_blank"
+													class="text-blue-600 hover:text-blue-800" title="View Document"><i
+														data-feather="eye"></i></a>
+											</td>
+											<td>
+												<a href="/testFiles/advosy-solar-pro.pdf" download
+													class="text-blue-600 hover:text-blue-800"
+													title="Download Document"><i data-feather="download"></i></a>
+											</td>
+										</tr>
+										<tr>
+											<th>Advosy Energy Dealer In A Box A1 Roofing</th>
+											<td>
+												<a href="/testFiles/advosy-solar-pro.pdf" target="_blank"
+													class="text-blue-600 hover:text-blue-800" title="View Document"><i
+														data-feather="eye"></i></a>
+											</td>
+											<td>
+												<a href="/testFiles/advosy-solar-pro.pdf" download
+													class="text-blue-600 hover:text-blue-800"
+													title="Download Document"><i data-feather="download"></i></a>
+											</td>
+										</tr>
+										<tr>
+											<th>Blue Papaya Route Manager</th>
+											<td>
+												<a href="/testFiles/advosy-solar-pro.pdf" target="_blank"
+													class="text-blue-600 hover:text-blue-800" title="View Document"><i
+														data-feather="eye"></i></a>
+											</td>
+											<td>
+												<a href="/testFiles/advosy-solar-pro.pdf" download
+													class="text-blue-600 hover:text-blue-800"
+													title="Download Document"><i data-feather="download"></i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Docs Tab Content -->
+
+		</div>
+		<!-- partial:partials/_footer.html -->
+		<footer class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small">
 			<p class="text-secondary mb-1 mb-md-0">Copyright © <span id="currentYear"></span>
-				<a href="https://sparkpro.io" target="_blank" rel="noopener noreferrer">Spark</a>.</p>
+				<a href="https://sparkpro.io" target="_blank" rel="noopener noreferrer">Spark</a>.
+			</p>
 			<script>document.getElementById("currentYear").textContent = new Date().getFullYear();</script>
-			<p class="text-secondary">Handcrafted By<i class="mb-1 text-primary ms-1 icon-sm" data-feather="zap"></i></p>
+			<p class="text-secondary">Handcrafted By<i class="mb-1 text-primary ms-1 icon-sm" data-feather="zap"></i>
+			</p>
 		</footer>
 
-        <!-- partial -->
-			</div>
-		</div>
+		<!-- partial -->
+	</div>
+	</div>
 
-		<!-- core:js -->
-		<script src="/assets/vendors/core/core.js"></script>
-		<!-- endinject -->
+	<!-- core:js -->
+	<script src="/assets/vendors/core/core.js"></script>
+	<!-- endinject -->
 
-		<!-- Plugin js for this page -->
+	<!-- Plugin js for this page -->
 
-		<script src="/assets/vendors/datatables.net/dataTables.js"></script>
-		<script src="/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
-		<!-- End plugin js for this page -->
+	<script src="/assets/vendors/datatables.net/dataTables.js"></script>
+	<script src="/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
+	<!-- End plugin js for this page -->
 
-		<!-- inject:js -->
-		<script src="/assets/vendors/feather-icons/feather.min.js"></script>
-		<script src="/assets/js/app.js"></script>
-		<!-- endinject -->
+	<!-- inject:js -->
+	<script src="/assets/vendors/feather-icons/feather.min.js"></script>
+	<script src="/assets/js/app.js"></script>
+	<!-- endinject -->
 
 
 
-		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				const sidePanel = document.getElementById("deal-detail-panel");
-				const closeBtn = document.getElementById("close-panel");
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const sidePanel = document.getElementById("deal-detail-panel");
+			const closeBtn = document.getElementById("close-panel");
 
-				document.addEventListener("click", (e) => {const row = e.target.closest("tr.customer-sidebar");
-					if (row) {
-						// Static placeholder data
-						const data = {
-							customerName: "John Smith",
-							address: "35506 Dante Pl, Fremont, CA 94536",
-							email: "john.smith@example.com",
-							phone: "(480) 555-1234",
-							saleStage: "Signed",
-							status: "Pending Installation",
-							installer: "SunPower AZ",
-							dealID: "12345",
-							productType: "Solar",
-							projectStatus: "In Progress",
-							projectStage: "Installation Scheduled",
-							signDate: "2025-07-31",
-							createdDate: "2025-07-01",
-							payout: "$32,450",
-							statusProgress: "25%",
-							customerName2: "John Smith",
-							leadSource: "Online Lead",
-							salesRep: "Jane Doe",
-							setters: "Mike Johnson, Sarah Lee",
-							closers: "Emily Davis",
-							teamOffice: "Mesa Office",
-							dealer: "Advosy Energy",
-							leadDate: "2025-06-15",
-							closeDate: "2025-08-15",
-							installDate: "2025-09-01",
-							paidDate: "2025-09-15",
-							tags: "High Priority, Solar",
-							disputeLink: "https://example.com/dispute/12345",
-						};
+			document.addEventListener("click", (e) => {
+				const row = e.target.closest("tr.customer-sidebar");
+				if (row) {
+					// Static placeholder data
+					const data = {
+						customerName: "John Smith",
+						address: "35506 Dante Pl, Fremont, CA 94536",
+						email: "john.smith@example.com",
+						phone: "(480) 555-1234",
+						saleStage: "Signed",
+						status: "Pending Installation",
+						installer: "SunPower AZ",
+						dealID: "12345",
+						productType: "Solar",
+						projectStatus: "In Progress",
+						projectStage: "Installation Scheduled",
+						signDate: "2025-07-31",
+						createdDate: "2025-07-01",
+						payout: "$32,450",
+						statusProgress: "25%",
+						customerName2: "John Smith",
+						leadSource: "Online Lead",
+						salesRep: "Jane Doe",
+						setters: "Mike Johnson, Sarah Lee",
+						closers: "Emily Davis",
+						teamOffice: "Mesa Office",
+						dealer: "Advosy Energy",
+						leadDate: "2025-06-15",
+						closeDate: "2025-08-15",
+						installDate: "2025-09-01",
+						paidDate: "2025-09-15",
+						tags: "High Priority, Solar",
+						disputeLink: "https://example.com/dispute/12345",
+					};
 
-						document.getElementById("panel-customer-name").textContent = data.customerName;
-						document.getElementById("panel-customer-address").textContent = data.address;
-						document.getElementById("panel-customer-email").textContent = data.email;
-						document.getElementById("panel-customer-phone").textContent = data.phone;
-						document.getElementById("panel-project-stage").textContent = data.saleStage;
-						document.getElementById("panel-project-status").textContent = data.status;
-						document.getElementById("panel-deal-id").textContent = data.dealID;
-						document.getElementById("panel-product-type").textContent = data.productType;
-						document.getElementById("panel-project-status").textContent = data.projectStatus;
-						document.getElementById("panel-project-stage").textContent = data.projectStage;
-						document.getElementById("panel-contract-date").textContent = data.signDate;
-						document.getElementById("panel-created-date").textContent = data.createdDate;
-						document.getElementById("panel-payout").textContent = data.payout;
-						document.getElementById("panel-status-progress").style.width = data.statusProgress;
-						document.getElementById("panel-status-progress").textContent = data.statusProgress;
-						document.getElementById("panel-customer-name-2").textContent = data.customerName2;
-						document.getElementById("panel-customer-phone").textContent = data.phone;
-						document.getElementById("panel-customer-email").textContent = data.email;
-						document.getElementById("panel-customer-address").textContent = data.address;
-						document.getElementById("panel-google-map").src = `https://www.google.com/maps?q=${encodeURIComponent(data.address)}&layer=c&output=svembed`;
-						document.getElementById("panel-google-street").src = `https://maps.googleapis.com/maps/api/streetview?size=600x300&location=${encodeURIComponent(data.address)}&pitch=-0.76&key=AIzaSyBUK4fx5KixzLtRYiTLHPu6Yw6Xh1PZ-iU`;
-						document.getElementById("panel-lead-source").textContent = data.leadSource;
-						document.getElementById("panel-sales-rep").textContent = data.salesRep;
-						document.getElementById("panel-setters").textContent = data.setters;
-						document.getElementById("panel-closers").textContent = data.closers;
-						document.getElementById("panel-team-office").textContent = data.teamOffice;
-						document.getElementById("panel-dealer").textContent = data.dealer;
-						document.getElementById("panel-lead-date").textContent = data.leadDate;
-						document.getElementById("panel-close-date").textContent = data.closeDate;
-						document.getElementById("panel-install-date").textContent = data.installDate;
-						document.getElementById("panel-paid-date").textContent = data.paidDate;
-						document.getElementById("panel-tags").textContent = data.tags;
-						document.getElementById("panel-dispute-link").href = data.disputeLink;
+					document.getElementById("panel-customer-name").textContent = data.customerName;
+					document.getElementById("panel-customer-address").textContent = data.address;
+					document.getElementById("panel-customer-email").textContent = data.email;
+					document.getElementById("panel-customer-phone").textContent = data.phone;
+					document.getElementById("panel-project-stage").textContent = data.saleStage;
+					document.getElementById("panel-project-status").textContent = data.status;
+					document.getElementById("panel-deal-id").textContent = data.dealID;
+					document.getElementById("panel-product-type").textContent = data.productType;
+					document.getElementById("panel-project-status").textContent = data.projectStatus;
+					document.getElementById("panel-project-stage").textContent = data.projectStage;
+					document.getElementById("panel-contract-date").textContent = data.signDate;
+					document.getElementById("panel-created-date").textContent = data.createdDate;
+					document.getElementById("panel-payout").textContent = data.payout;
+					document.getElementById("panel-status-progress").style.width = data.statusProgress;
+					document.getElementById("panel-status-progress").textContent = data.statusProgress;
+					document.getElementById("panel-customer-name-2").textContent = data.customerName2;
+					document.getElementById("panel-customer-phone").textContent = data.phone;
+					document.getElementById("panel-customer-email").textContent = data.email;
+					document.getElementById("panel-customer-address").textContent = data.address;
+					document.getElementById("panel-google-map").src = `https://www.google.com/maps?q=${encodeURIComponent(data.address)}&layer=c&output=svembed`;
+					document.getElementById("panel-google-street").src = `https://maps.googleapis.com/maps/api/streetview?size=600x300&location=${encodeURIComponent(data.address)}&pitch=-0.76&key=AIzaSyBUK4fx5KixzLtRYiTLHPu6Yw6Xh1PZ-iU`;
+					document.getElementById("panel-lead-source").textContent = data.leadSource;
+					document.getElementById("panel-sales-rep").textContent = data.salesRep;
+					document.getElementById("panel-setters").textContent = data.setters;
+					document.getElementById("panel-closers").textContent = data.closers;
+					document.getElementById("panel-team-office").textContent = data.teamOffice;
+					document.getElementById("panel-dealer").textContent = data.dealer;
+					document.getElementById("panel-lead-date").textContent = data.leadDate;
+					document.getElementById("panel-close-date").textContent = data.closeDate;
+					document.getElementById("panel-install-date").textContent = data.installDate;
+					document.getElementById("panel-paid-date").textContent = data.paidDate;
+					document.getElementById("panel-tags").textContent = data.tags;
+					document.getElementById("panel-dispute-link").href = data.disputeLink;
 
-						sidePanel.classList.add("active");
-            
-            return;
+					sidePanel.classList.add("active");
+
+					return;
+				}
+				if (e.target === closeBtn) {
+					sidePanel.classList.remove("active");
+					return;
+				}
+
+				if (sidePanel.classList.contains("active") &&
+					!e.target.closest("#deal-detail-panel")) {
+					sidePanel.classList.remove("active");
+				}
+			});
+		});
+	</script>
+
+	<script>
+		(function () {
+			// ===== Sample Data (swap for API) =====
+			// For API integration: map your response into these fields inside `loadDeals()`.
+			const deals = [
+				// --- Solar ---
+				{
+					id: 20001, customer: 'Jane Doe', projectType: 'Solar', signDate: '2025-08-15',
+					// commission inputs (for rep)
+					mp1: 1800, mp2: 1200, mp3: 0, overrides: [{ name: 'Q3 Bonus', amount: 150 }], setterDeduction: 200, repSplitPct: 60,
+					// payments
+					payments: [{ date: '2025-09-12', amount: 1000 }],
+					// type-specific
+					solar: {
+						systemSizeKw: 7.2, panelBrand: 'REC', inverter: 'SolarEdge', batteryKwh: 10,
+						dealer: 'SunBest', installer: 'BrightInstall', redline: '$2.25/W',
+						finance: { lender: 'GoodLeap', program: 'GL-25', apr: 6.99, termMonths: 300 },
+						milestones: { submitted: '2025-08-17', install: '2025-09-10', pto: '2025-09-18' },
+						adders: [{ name: 'Main Panel Upgrade', amount: 800 }]
 					}
-          if (e.target === closeBtn) {
-            sidePanel.classList.remove("active");
-            return;
-          }
+				},
+				// --- Fiber ---
+				{
+					id: 20002, customer: 'ACME HQ', projectType: 'Fiber', signDate: '2025-08-20',
+					mp1: 600, mp2: 0, mp3: 0, overrides: [], setterDeduction: 0, repSplitPct: 70,
+					payments: [{ date: '2025-09-02', amount: 300 }],
+					fiber: {
+						serviceAddress: '123 Industrial Way, Austin, TX',
+						provider: 'GigaNet', speedTier: '2 Gbps Symmetric',
+						contractTermMonths: 36, installDate: '2025-09-05',
+						mrc: 899, otc: 299, circuitId: 'GN-TX-99123'
+					}
+				},
+				// --- Roofing ---
+				{
+					id: 20003, customer: 'Smith Family', projectType: 'Roofing', signDate: '2025-08-10',
+					mp1: 1500, mp2: 500, mp3: 0, overrides: [{ name: 'Manager Override', amount: 250 }], setterDeduction: 0, repSplitPct: 65,
+					payments: [],
+					roofing: {
+						squares: 28, material: 'Architectural Asphalt', pitch: '6/12', layers: 1,
+						insurance: { rcv: 19500, acv: 17200, deductible: 1500 },
+						installDate: '2025-09-12', permits: 'City of Round Rock'
+					}
+				},
+				// --- Pest ---
+				{
+					id: 20004, customer: 'John Smith', projectType: 'Pest', signDate: '2025-08-22',
+					mp1: 350, mp2: 150, mp3: 50, overrides: [], setterDeduction: 50, repSplitPct: 50,
+					payments: [{ date: '2025-09-05', amount: 200 }],
+					pest: {
+						plan: 'Quarterly', termMonths: 12,
+						initialFee: 99, recurring: 49, startDate: '2025-08-25', serviceAddress: '44 Maple St'
+					}
+				}
+			];
 
-          if (sidePanel.classList.contains("active") &&
-          !e.target.closest("#deal-detail-panel")) {
-            sidePanel.classList.remove("active");
-          }
-        });
-      });
-		</script>
+			// ===== Shortcuts =====
+			const $ = s => document.querySelector(s);
+			const $$ = s => Array.from(document.querySelectorAll(s));
+			const modal = id => new bootstrap.Modal(document.getElementById(id));
 
-		<!-- Custom js for this page -->
-		<script src="/assets/js/data-table.js"></script>
-		<!-- End custom js for this page -->
-	</body>
+			// ===== Utils =====
+			const toNum = x => {
+				if (x === null || x === undefined) return 0;
+				if (typeof x === 'number') return x;
+				return Number(String(x).replace(/[^0-9.-]/g, '')) || 0;
+			};
+			const sum = (arr, fn = x => x) => (arr || []).reduce((a, b) => a + fn(b), 0);
+			const fmtMoney = n => (toNum(n)).toLocaleString(undefined, { style: 'currency', currency: 'USD', maximumFractionDigits: 2 });
+			const fmtDate = d => d ? new Date(d + 'T00:00:00').toLocaleDateString() : '';
+			const escapeHtml = s => (s ?? '').toString().replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+			const overridesTotal = ov => sum(ov || [], o => toNum(o.amount));
+			// Rep Due = ((MP1+MP2+MP3 + Overrides) - SetterDeduction) * (RepSplit%/100)
+			function calcRepDue(d) {
+				const pool = toNum(d.mp1) + toNum(d.mp2) + toNum(d.mp3) + overridesTotal(d.overrides) - toNum(d.setterDeduction);
+				return Math.max(0, pool * (toNum(d.repSplitPct) / 100));
+			}
+			const calcPaid = d => sum(d.payments || [], p => toNum(p.amount));
+			const calcPending = d => Math.max(0, calcRepDue(d) - calcPaid(d));
+
+			// ===== Filters =====
+			const state = { rows: deals.slice(), filtered: deals.slice() };
+			function applyFilters() {
+				const q = ($('#dealSearch').value || '').trim().toLowerCase();
+				const proj = $('#filterProjectType').value;
+				const from = $('#dateFrom').value ? new Date($('#dateFrom').value + 'T00:00:00') : null;
+				const to = $('#dateTo').value ? new Date($('#dateTo').value + 'T23:59:59') : null;
+
+				state.filtered = state.rows.filter(d => {
+					if (q && !(String(d.id).includes(q) || (d.customer || '').toLowerCase().includes(q))) return false;
+					if (proj && d.projectType !== proj) return false;
+
+
+					// date range
+					if (from || to) {
+						if (df === 'sign') {
+							const sd = d.signDate ? new Date(d.signDate + 'T00:00:00') : null;
+							if (from && (!sd || sd < from)) return false;
+							if (to && (!sd || sd > to)) return false;
+						} else {
+							// any pay date in range
+							const anyIn = (d.payments || []).some(p => {
+								const pd = new Date(p.date + 'T00:00:00');
+								if (from && pd < from) return false;
+								if (to && pd > to) return false;
+								return true;
+							});
+							if (!anyIn) return false;
+						}
+					}
+					return true;
+				});
+				renderDeals();
+			}
+			function resetFilters() {
+				$('#dealSearch').value = '';
+				$('#filterProjectType').value = '';
+				$('#dateFrom').value = '';
+				$('#dateTo').value = '';
+				applyFilters();
+			}
+
+			// ===== Table render (only 6 columns) =====
+			function renderDeals() {
+				const tbody = $('#dealsTable tbody');
+				tbody.innerHTML = state.filtered.map(d => `
+	      <tr data-id="${d.id}">
+	        <td>${d.id}</td>
+	        <td>${escapeHtml(d.customer)}</td>
+	        <td>${escapeHtml(d.projectType)}</td>
+	        <td>${fmtMoney(calcPaid(d))}</td>
+	        <td><strong>${fmtMoney(calcPending(d))}</strong></td>
+	        <td>${fmtDate(d.signDate)}</td>
+	      </tr>
+	    `).join('') || `<tr><td colspan="6" class="text-center text-muted">No deals match your filters.</td></tr>`;
+			}
+
+			// Row click → open type-specific modal
+			$('#dealsTable').addEventListener('click', (e) => {
+				const tr = e.target.closest('tr[data-id]'); if (!tr) return;
+				const id = Number(tr.dataset.id);
+				const d = state.rows.find(x => x.id === id); if (!d) return;
+				openDealDetails(d);
+			});
+
+			// ===== Modal routing by type =====
+			function openDealDetails(d) {
+				const title = `${escapeHtml(d.projectType)} • ${escapeHtml(d.customer)} • #${d.id}`;
+				document.getElementById('dealDetailsTitle').textContent = title;
+				const paid = calcPaid(d), pending = calcPending(d);
+
+				// common header summary
+				const summary = `
+	      <div class="row g-3 mb-3">
+	        <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body">
+	          <div class="small text-muted">Already Paid</div><div class="h5 mb-0">${fmtMoney(paid)}</div>
+	        </div></div></div>
+	        <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body">
+	          <div class="small text-muted">Pending Amount</div><div class="h5 mb-0">${fmtMoney(pending)}</div>
+	        </div></div></div>
+	        <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body">
+	          <div class="small text-muted">Sign Date</div><div class="h5 mb-0">${fmtDate(d.signDate)}</div>
+	        </div></div></div>
+	        <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body">
+	          <div class="small text-muted">Rep Split</div><div class="h5 mb-0">${toNum(d.repSplitPct)}%</div>
+	        </div></div></div>
+	      </div>
+	    `;
+
+				// route to type-specific renderer
+				let body = '';
+				switch ((d.projectType || '').toLowerCase()) {
+					case 'solar': body = renderSolar(d); break;
+					case 'fiber': body = renderFiber(d); break;
+					case 'roofing': body = renderRoofing(d); break;
+					case 'pest': body = renderPest(d); break;
+					default: body = `<div class="text-muted">No template for type "${escapeHtml(d.projectType)}".</div>`;
+				}
+
+				document.getElementById('dealDetailsBody').innerHTML = summary + body + renderPayments(d);
+				modal('dealDetailsModal').show();
+			}
+
+			// ==== Type-specific sections ====
+			function renderSolar(d) {
+				const s = d.solar || {};
+				const adders = (s.adders || []).map(a => `<li class="list-group-item d-flex justify-content-between"><span>${escapeHtml(a.name)}</span><span>${fmtMoney(a.amount)}</span></li>`).join('');
+				return `
+	      <div class="card mb-3"><div class="card-body">
+	        <div class="fw-semibold mb-2">System</div>
+	        <div class="row g-3">
+	          <div class="col-md-3"><div class="small text-muted">Size</div><div>${s.systemSizeKw ?? '-'} kW</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Panel</div><div>${escapeHtml(s.panelBrand || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Inverter</div><div>${escapeHtml(s.inverter || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Battery</div><div>${s.batteryKwh ? s.batteryKwh + ' kWh' : '-'}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Dealer</div><div>${escapeHtml(s.dealer || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Installer</div><div>${escapeHtml(s.installer || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Redline</div><div>${escapeHtml(s.redline || '-')}</div></div>
+	        </div>
+	      </div></div>
+	      <div class="card mb-3"><div class="card-body">
+	        <div class="fw-semibold mb-2">Finance</div>
+	        <div class="row g-3">
+	          <div class="col-md-3"><div class="small text-muted">Lender</div><div>${escapeHtml(s.finance?.lender || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Program</div><div>${escapeHtml(s.finance?.program || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">APR</div><div>${s.finance?.apr ?? '-'}%</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Term</div><div>${s.finance?.termMonths ?? '-'} mo</div></div>
+	        </div>
+	      </div></div>
+	      <div class="card mb-3"><div class="card-body">
+	        <div class="fw-semibold mb-2">Milestones</div>
+	        <div class="row g-3">
+	          <div class="col-md-4"><div class="small text-muted">Submitted</div><div>${fmtDate(s.milestones?.submitted)}</div></div>
+	          <div class="col-md-4"><div class="small text-muted">Install</div><div>${fmtDate(s.milestones?.install)}</div></div>
+	          <div class="col-md-4"><div class="small text-muted">PTO</div><div>${fmtDate(s.milestones?.pto)}</div></div>
+	        </div>
+	      </div></div>
+	      ${(s.adders && s.adders.length) ? `
+	        <div class="card mb-3"><div class="card-body">
+	          <div class="fw-semibold mb-2">Adders</div>
+	          <ul class="list-group list-group-flush">${adders}</ul>
+	        </div></div>` : ''}
+	      ${renderCommissionMini(d)}
+	    `;
+			}
+
+			function renderFiber(d) {
+				const f = d.fiber || {};
+				return `
+	      <div class="card mb-3"><div class="card-body">
+	        <div class="fw-semibold mb-2">Circuit</div>
+	        <div class="row g-3">
+	          <div class="col-md-6"><div class="small text-muted">Service Address</div><div>${escapeHtml(f.serviceAddress || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Provider</div><div>${escapeHtml(f.provider || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Speed Tier</div><div>${escapeHtml(f.speedTier || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Term</div><div>${f.contractTermMonths ?? '-'} mo</div></div>
+	          <div class="col-md-3"><div class="small text-muted">MRC</div><div>${fmtMoney(f.mrc)}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">OTC</div><div>${fmtMoney(f.otc)}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Circuit ID</div><div>${escapeHtml(f.circuitId || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Install Date</div><div>${fmtDate(f.installDate)}</div></div>
+	        </div>
+	      </div></div>
+	      ${renderCommissionMini(d)}
+	    `;
+			}
+
+			function renderRoofing(d) {
+				const r = d.roofing || {};
+				return `
+	      <div class="card mb-3"><div class="card-body">
+	        <div class="fw-semibold mb-2">Project</div>
+	        <div class="row g-3">
+	          <div class="col-md-3"><div class="small text-muted">Squares</div><div>${r.squares ?? '-'}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Material</div><div>${escapeHtml(r.material || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Pitch</div><div>${escapeHtml(r.pitch || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Layers</div><div>${r.layers ?? '-'}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Install Date</div><div>${fmtDate(r.installDate)}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Permits</div><div>${escapeHtml(r.permits || '-')}</div></div>
+	        </div>
+	      </div></div>
+	      ${r.insurance ? `
+	      <div class="card mb-3"><div class="card-body">
+	        <div class="fw-semibold mb-2">Insurance</div>
+	        <div class="row g-3">
+	          <div class="col-md-4"><div class="small text-muted">RCV</div><div>${fmtMoney(r.insurance.rcv)}</div></div>
+	          <div class="col-md-4"><div class="small text-muted">ACV</div><div>${fmtMoney(r.insurance.acv)}</div></div>
+	          <div class="col-md-4"><div class="small text-muted">Deductible</div><div>${fmtMoney(r.insurance.deductible)}</div></div>
+	        </div>
+	      </div></div>` : ''}
+	      ${renderCommissionMini(d)}
+	    `;
+			}
+
+			function renderPest(d) {
+				const p = d.pest || {};
+				return `
+	      <div class="card mb-3"><div class="card-body">
+	        <div class="fw-semibold mb-2">Subscription</div>
+	        <div class="row g-3">
+	          <div class="col-md-3"><div class="small text-muted">Plan</div><div>${escapeHtml(p.plan || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Term</div><div>${p.termMonths ?? '-'} mo</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Initial Fee</div><div>${fmtMoney(p.initialFee)}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Recurring</div><div>${fmtMoney(p.recurring)}</div></div>
+	          <div class="col-md-6"><div class="small text-muted">Service Address</div><div>${escapeHtml(p.serviceAddress || '-')}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Start</div><div>${fmtDate(p.startDate)}</div></div>
+	        </div>
+	      </div></div>
+	      ${renderCommissionMini(d)}
+	    `;
+			}
+
+			// Small commission block shared across types
+			function renderCommissionMini(d) {
+				return `
+	      <div class="card mb-3"><div class="card-body">
+	        <div class="fw-semibold mb-2">Commission Breakdown</div>
+	        <div class="row g-3">
+	          <div class="col-md-2"><div class="small text-muted">MP1</div><div>${fmtMoney(d.mp1)}</div></div>
+	          ${toNum(d.mp2) ? `<div class="col-md-2"><div class="small text-muted">MP2</div><div>${fmtMoney(d.mp2)}</div></div>` : ''}
+	          ${toNum(d.mp3) ? `<div class="col-md-2"><div class="small text-muted">MP3</div><div>${fmtMoney(d.mp3)}</div></div>` : ''}
+	          <div class="col-md-3"><div class="small text-muted">Overrides</div><div>${fmtMoney(overridesTotal(d.overrides))}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Setter Deduction</div><div>- ${fmtMoney(d.setterDeduction || 0)}</div></div>
+	        </div>
+	      </div></div>
+	    `;
+			}
+
+			// Payments list (shared)
+			function renderPayments(d) {
+				const paidList = (d.payments || []).map(p => `
+	      <li class="list-group-item d-flex justify-content-between">
+	        <span>${fmtDate(p.date)}</span><span>${fmtMoney(p.amount)}</span>
+	      </li>`).join('');
+				return `
+	      <div class="card"><div class="card-body">
+	        <div class="fw-semibold mb-2">Payments</div>
+	        ${(d.payments && d.payments.length) ? `<ul class="list-group list-group-flush">${paidList}</ul>` : `<div class="text-muted">No payments recorded.</div>`}
+	      </div></div>
+	    `;
+			}
+
+			// ===== Events =====
+			$('#btnApplyFilters').addEventListener('click', applyFilters);
+			$('#btnResetFilters').addEventListener('click', resetFilters);
+			$('#dealSearch').addEventListener('input', applyFilters);
+			$('#filterProjectType').addEventListener('change', applyFilters);
+			$('#dateFrom').addEventListener('change', applyFilters);
+			$('#dateTo').addEventListener('change', applyFilters);
+
+			// ===== Init =====
+			renderDeals();
+		})();
+	</script>
+
+	<!-- Custom js for this page -->
+	<script src="/assets/js/data-table.js"></script>
+	<!-- End custom js for this page -->
+</body>
+
 </html>
 <!DOCTYPE html>
