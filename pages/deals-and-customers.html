@@ -466,7 +466,6 @@
 			</nav>
 
 			<!-- partial -->
-
 			<div class="page-content">
 				<!-- TAB HEADER -->
 				<div class="row">
@@ -502,416 +501,302 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<!--TAB HEADER END -->
+					<!--TAB HEADER END -->
 
-<<<<<<< HEAD
-				<!-- Deals Overview Content -->
-				<div class="tab-content" id="deals-overview-tab-content">
-					<div class="tab-pane fade show active" id="deals-overview" role="tabpanel"
-						aria-labelledby="deals-overview-tab">
+					<!-- Deals Overview Content -->
+					<div class="tab-content" id="deals-overview-tab-content">
+						<div class="tab-pane fade show active" id="deals-overview" role="tabpanel"
+							aria-labelledby="deals-overview-tab">
+							<div class="mt-3 card">
+								<div class="card-body">
+									<div class="table-responsive">
+										<table class="table table-hover">
+											<thead>
+												<tr>
+													<th>Customer Name</th>
+													<th>Product Type</th>
+													<th>Date Sold</th>
+													<th>Projected/Total Payout</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr class="customer-sidebar" data-customer-id="12345"
+													style="cursor: pointer">
+													<td>John Smith</td>
+													<td>Solar</td>
+													<td>07/31/2025</td>
+													<td>$32,450</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+							<div id="deal-detail-panel" class="deal-side-panel">
+								<div class="panel-header d-flex justify-content-between align-items-center">
+									<h5>Deal Details</h5>
+									<button id="close-panel" class="btn-close" aria-label="Close" data-feather="x">
+									</button>
+								</div>
+								<div class="street-view">
+									<div class="d-flex align-items-center mb-3">
+										<img id="panel-google-street" alt="Google Street View" />
+									</div>
+								</div>
+
+								<div class="panel-body">
+									<!-- Core Deal Information -->
+									<h6 class="fw-bold mt-3">Core Deal Information</h6>
+									<p><strong>Deal ID:</strong> <span id="panel-deal-id">-</span></p>
+									<p><strong>Customer Name:</strong> <span id="panel-customer-name">-</span></p>
+									<p><strong>Product Type:</strong> <span id="panel-product-type">-</span></p>
+									<p><strong>Project Status:</strong> <span id="panel-project-status">-</span></p>
+									<p><strong>Project Stage:</strong> <span id="panel-project-stage">-</span></p>
+									<p><strong>Signed Contract Date:</strong> <span id="panel-contract-date">-</span>
+									</p>
+									<p><strong>Created Date:</strong> <span id="panel-created-date">-</span></p>
+									<p><strong>Payout:</strong> <span id="panel-payout">-</span></p>
+									<div class="my-3">
+										<label class="form-label fw-bold">Status Progress</label>
+										<div class="progress">
+											<div class="progress-bar" id="panel-status-progress" style="width: 25%">
+												Submitted
+											</div>
+										</div>
+									</div>
+
+									<!-- Customer Details -->
+									<h6 class="fw-bold mt-4">👤 Customer Details</h6>
+									<p><strong>Full Name:</strong> <span id="panel-customer-name-2">-</span></p>
+									<p><strong>Phone:</strong> <span id="panel-customer-phone">-</span></p>
+									<p><strong>Email:</strong> <span id="panel-customer-email">-</span></p>
+									<p><strong>Address:</strong> <span id="panel-customer-address">-</span></p>
+									<div class="ratio ratio-16x9 mb-3">
+										<iframe id="panel-google-map" src="" allowfullscreen loading="lazy"></iframe>
+									</div>
+									<p><strong>Lead Source:</strong> <span id="panel-lead-source">-</span></p>
+
+									<!-- Sales Team -->
+									<h6 class="fw-bold mt-4">👥 Sales Team</h6>
+									<p><strong>Sales Rep:</strong> <span id="panel-sales-rep">-</span></p>
+									<p><strong>Setter(s):</strong> <span id="panel-setters">-</span></p>
+									<p><strong>Closer(s):</strong> <span id="panel-closers">-</span></p>
+									<p><strong>Team / Office:</strong> <span id="panel-team-office">-</span></p>
+									<p><strong>Dealer/Partner:</strong> <span id="panel-dealer">-</span></p>
+
+									<!-- Tracking & Reporting -->
+									<h6 class="fw-bold mt-4">🗕️ Tracking & Reporting</h6>
+									<p><strong>Initial Lead Date:</strong> <span id="panel-lead-date">-</span></p>
+									<p><strong>Close Date:</strong> <span id="panel-close-date">-</span></p>
+									<p><strong>Install Date:</strong> <span id="panel-install-date">-</span></p>
+									<p><strong>Rep Paid Date:</strong> <span id="panel-paid-date">-</span></p>
+									<p><strong>Tags / Deal Flags:</strong> <span id="panel-tags">-</span></p>
+									<p>
+										<a href="#" id="panel-dispute-link">Quick Dispute Link</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Overview Tab Content -->
+					<!-- Financials & Commissions Tab Content -->
+					<div class="tab-content" id="financials-commissions-tab-content">
+						<div class="tab-pane fade" id="financials-commissions" role="tabpanel"
+							aria-labelledby="financials-commissions-tab">
+							<div class="row profile-body gap-4">
+
+								<!-- Filters (project type + dates + search) -->
+								<div class="col-12">
+									<div class="card">
+										<div class="card-body">
+											<div class="row g-2">
+												<div class="col m-2">
+													<label class="form-label">Search</label>
+													<input id="dealSearch" class="form-control"
+														placeholder="Customer or Deal ID…">
+												</div>
+												<div class="col m-2">
+													<label class="form-label">Project Type</label>
+													<select id="filterProjectType" class="form-select">
+														<option value="">All</option>
+														<option>Solar</option>
+														<option>Roofing</option>
+														<option>Pest</option>
+														<option>Fiber</option>
+													</select>
+												</div>
+											</div>
+											<div class="row g-2">
+												<div class="col m-2">
+													<label class="form-label">From</label>
+													<input type="date" id="dateFrom" class="form-control">
+												</div>
+												<div class="col m-2">
+													<label class="form-label">To</label>
+													<input type="date" id="dateTo" class="form-control">
+												</div>
+											</div>
+											<div class="row g-2">
+												<div class="col d-flex gap-2 ">
+													<button class="btn btn-outline-secondary" id="btnResetFilters"
+														type="button">Reset</button>
+													<button class="btn btn-primary" id="btnApplyFilters"
+														type="button">Apply</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Deals Table (only the 6 requested columns) -->
+								<div class="col-12">
+									<div class="card">
+										<div class="card-body p-0">
+											<div class="table-responsive">
+												<table class="table table-hover align-middle mb-0" id="dealsTable">
+													<thead class="table-light">
+														<tr>
+															<th>Deal ID</th>
+															<th>Customer</th>
+															<th>Type</th>
+															<th>Already Paid</th>
+															<th>Pending Amount</th>
+															<th>Sign Date</th>
+														</tr>
+													</thead>
+													<tbody><!-- renderDeals() --></tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="small text-muted mt-2">Tip: Click a row to view full details.</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Details Modal (content varies by project type) -->
+				<div class="modal fade" id="dealDetailsModal" tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog modal-xl modal-dialog-scrollable">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h6 class="modal-title" id="dealDetailsTitle">Deal Details</h6>
+								<button class="btn-close" data-bs-dismiss="modal" type="button"></button>
+							</div>
+							<div class="modal-body" id="dealDetailsBody">
+								<!-- Filled dynamically based on project type -->
+							</div>
+							<div class="modal-footer">
+								<button class="btn btn-outline-secondary" data-bs-dismiss="modal"
+									type="button">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<style>
+					#dealsTable tbody tr {
+						cursor: pointer;
+					}
+
+					#dealsTable td,
+					#dealsTable th {
+						white-space: nowrap;
+					}
+				</style>
+				<!-- End Financials & Commissions Tab Content -->
+				<!-- Docs Tab Content -->
+				<div class="tab-content" id="docs-admin-tab-content">
+					<div class="tab-pane fade" id="docs-admin" role="tabpanel" aria-labelledby="docs-admin-tab">
 						<div class="mt-3 card">
 							<div class="card-body">
 								<div class="table-responsive">
 									<table class="table table-hover">
 										<thead>
 											<tr>
-												<th>Customer Name</th>
-												<th>Product Type</th>
-												<th>Date Sold</th>
-												<th>Projected/Total Payout</th>
+												<th>Document</th>
+												<th>View</th>
+												<th>Download</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr class="customer-sidebar" data-customer-id="12345"
-												style="cursor: pointer">
-												<td>John Smith</td>
-												<td>Solar</td>
-												<td>07/31/2025</td>
-												<td>$32,450</td>
+											<tr>
+												<th>Advosy Energy Direct Sales Solar Pro</th>
+												<td>
+													<a href="/testFiles/advosy-solar-pro.pdf" target="_blank"
+														class="text-blue-600 hover:text-blue-800"
+														title="View Document"><i data-feather="eye"></i></a>
+												</td>
+												<td>
+													<a href="/testFiles/advosy-solar-pro.pdf" download
+														class="text-blue-600 hover:text-blue-800"
+														title="Download Document"><i data-feather="download"></i></a>
+												</td>
+											</tr>
+											<tr>
+												<th>Advosy Energy Direct Sales Rookie</th>
+												<td>
+													<a href="/testFiles/advosy-solar-pro.pdf" target="_blank"
+														class="text-blue-600 hover:text-blue-800"
+														title="View Document"><i data-feather="eye"></i></a>
+												</td>
+												<td>
+													<a href="/testFiles/advosy-solar-pro.pdf" download
+														class="text-blue-600 hover:text-blue-800"
+														title="Download Document"><i data-feather="download"></i></a>
+												</td>
+											</tr>
+											<tr>
+												<th>Advosy Energy Dealer In A Box A1 Roofing</th>
+												<td>
+													<a href="/testFiles/advosy-solar-pro.pdf" target="_blank"
+														class="text-blue-600 hover:text-blue-800"
+														title="View Document"><i data-feather="eye"></i></a>
+												</td>
+												<td>
+													<a href="/testFiles/advosy-solar-pro.pdf" download
+														class="text-blue-600 hover:text-blue-800"
+														title="Download Document"><i data-feather="download"></i></a>
+												</td>
+											</tr>
+											<tr>
+												<th>Blue Papaya Route Manager</th>
+												<td>
+													<a href="/testFiles/advosy-solar-pro.pdf" target="_blank"
+														class="text-blue-600 hover:text-blue-800"
+														title="View Document"><i data-feather="eye"></i></a>
+												</td>
+												<td>
+													<a href="/testFiles/advosy-solar-pro.pdf" download
+														class="text-blue-600 hover:text-blue-800"
+														title="Download Document"><i data-feather="download"></i></a>
+												</td>
 											</tr>
 										</tbody>
 									</table>
-=======
-		<a
-			href="#"
-			class="sidebar-toggler"
-			title="Toggle Sidebar">
-			<i data-feather="menu"></i>
-		</a>
-	</div>
-	<!-- <script>
-		document.addEventListener("DOMContentLoaded", async () => {
-			const user = JSON.parse(localStorage.getItem("user"));
-			if (!user) {
-				window.location.href = "/pages/login.html";
-				return;
-			}
-
-			try {
-				const res = await fetch(`https://api.sparkpro.io/profile/${user.userId}`);
-				const data = await res.json();
-
-				document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;
-				document.getElementById("navbar-user-email").textContent = data.email ?? "-";
-			} catch (err) {
-				console.error("Failed to load profile data:", err);
-			}
-		});
-	</script> -->
-
-	<script>
-		function logout() {
-			localStorage.removeItem("user");
-			window.location.href = "/pages/login.html";
-		}
-	</script>
-	<script>
-		// Set the page title in the navbar
-		// Removes "SPARK - " from the title
-		document.addEventListener("DOMContentLoaded", function () {
-			let pageTitle = document.title || "Page";
-			pageTitle = pageTitle.replace(/^\s*SPARK\s*-\s*/i, "");
-			// this can override the title if you want it custom
-			// let customTitle = document.body.getAttribute("data-page-title");
-			document.getElementById("navbar-page-title").textContent = pageTitle;
-		});
-	</script>
-</nav>
-
-              <!-- partial -->
-
-				<div class="page-content">
-					<!-- TAB HEADER -->
-					<div class="row">
-						<div class="col-12 grid-margin">
-							<div class="card align-items-center">
-								<div class="d-flex p-3 rounded-bottom d-flex align-items-center m-0">
-									<ul
-										class="nav nav-tabs nav-tabs-line"
-										id="profileTab"
-										role="tablist">
-										<li
-											class="nav-item"
-											role="presentation">
-											<button
-												class="nav-link active"
-												id="deals-overview-tab"
-												data-bs-toggle="tab"
-												data-bs-target="#deals-overview"
-												type="button"
-												role="tab"
-												aria-controls="deals-overview"
-												aria-selected="true">
-												<i
-													class="me-1 icon-md"
-													data-feather="layout"></i>
-												<span class="d-none d-md-inline">Overview</span>
-											</button>
-										</li>
-										<li
-											class="nav-item"
-											role="presentation">
-											<button
-												class="nav-link"
-												id="financials-commissions-tab"
-												data-bs-toggle="tab"
-												data-bs-target="#financials-commissions"
-												type="button"
-												role="tab"
-												aria-controls="financials-commissions"
-												aria-selected="false">
-												<i
-													class="me-1 icon-md"
-													data-feather="dollar-sign"></i>
-												<span class="d-none d-md-inline">Financials & Commissions</span>
-											</button>
-										</li>
-										<li
-											class="nav-item"
-											role="presentation">
-											<button
-												class="nav-link"
-												id="docs-admin-tab"
-												data-bs-toggle="tab"
-												data-bs-target="#docs-admin"
-												type="button"
-												role="tab"
-												aria-controls="docs-admin"
-												aria-selected="false">
-												<i
-													class="me-1 icon-md"
-													data-feather="file-text"></i>
-												<span class="d-none d-md-inline">Docs & Admin</span>
-											</button>
-										</li>
-									</ul>
->>>>>>> ff59438c63b779df8f6bdd6a16b15e674570e088
 								</div>
-							</div>
-						</div>
-
-						<div id="deal-detail-panel" class="deal-side-panel">
-							<div class="panel-header d-flex justify-content-between align-items-center">
-								<h5>Deal Details</h5>
-								<button id="close-panel" class="btn-close" aria-label="Close" data-feather="x">
-								</button>
-							</div>
-							<div class="street-view">
-								<div class="d-flex align-items-center mb-3">
-									<img id="panel-google-street" alt="Google Street View" />
-								</div>
-							</div>
-
-							<div class="panel-body">
-								<!-- Core Deal Information -->
-								<h6 class="fw-bold mt-3">Core Deal Information</h6>
-								<p><strong>Deal ID:</strong> <span id="panel-deal-id">-</span></p>
-								<p><strong>Customer Name:</strong> <span id="panel-customer-name">-</span></p>
-								<p><strong>Product Type:</strong> <span id="panel-product-type">-</span></p>
-								<p><strong>Project Status:</strong> <span id="panel-project-status">-</span></p>
-								<p><strong>Project Stage:</strong> <span id="panel-project-stage">-</span></p>
-								<p><strong>Signed Contract Date:</strong> <span id="panel-contract-date">-</span></p>
-								<p><strong>Created Date:</strong> <span id="panel-created-date">-</span></p>
-								<p><strong>Payout:</strong> <span id="panel-payout">-</span></p>
-								<div class="my-3">
-									<label class="form-label fw-bold">Status Progress</label>
-									<div class="progress">
-										<div class="progress-bar" id="panel-status-progress" style="width: 25%">
-											Submitted
-										</div>
-									</div>
-								</div>
-
-								<!-- Customer Details -->
-								<h6 class="fw-bold mt-4">👤 Customer Details</h6>
-								<p><strong>Full Name:</strong> <span id="panel-customer-name-2">-</span></p>
-								<p><strong>Phone:</strong> <span id="panel-customer-phone">-</span></p>
-								<p><strong>Email:</strong> <span id="panel-customer-email">-</span></p>
-								<p><strong>Address:</strong> <span id="panel-customer-address">-</span></p>
-								<div class="ratio ratio-16x9 mb-3">
-									<iframe id="panel-google-map" src="" allowfullscreen loading="lazy"></iframe>
-								</div>
-								<p><strong>Lead Source:</strong> <span id="panel-lead-source">-</span></p>
-
-								<!-- Sales Team -->
-								<h6 class="fw-bold mt-4">👥 Sales Team</h6>
-								<p><strong>Sales Rep:</strong> <span id="panel-sales-rep">-</span></p>
-								<p><strong>Setter(s):</strong> <span id="panel-setters">-</span></p>
-								<p><strong>Closer(s):</strong> <span id="panel-closers">-</span></p>
-								<p><strong>Team / Office:</strong> <span id="panel-team-office">-</span></p>
-								<p><strong>Dealer/Partner:</strong> <span id="panel-dealer">-</span></p>
-
-								<!-- Tracking & Reporting -->
-								<h6 class="fw-bold mt-4">🗕️ Tracking & Reporting</h6>
-								<p><strong>Initial Lead Date:</strong> <span id="panel-lead-date">-</span></p>
-								<p><strong>Close Date:</strong> <span id="panel-close-date">-</span></p>
-								<p><strong>Install Date:</strong> <span id="panel-install-date">-</span></p>
-								<p><strong>Rep Paid Date:</strong> <span id="panel-paid-date">-</span></p>
-								<p><strong>Tags / Deal Flags:</strong> <span id="panel-tags">-</span></p>
-								<p>
-									<a href="#" id="panel-dispute-link">Quick Dispute Link</a>
-								</p>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!-- End Overview Tab Content -->
-				<!-- Financials & Commissions Tab Content -->
-				<div class="tab-content" id="financials-commissions-tab-content">
-					<div class="tab-pane fade" id="financials-commissions" role="tabpanel"
-						aria-labelledby="financials-commissions-tab">
-						<div class="row profile-body gap-4">
+				<!-- End Docs Tab Content -->
 
-							<!-- Filters (project type + dates + search) -->
-							<div class="col-12">
-								<div class="card">
-									<div class="card-body">
-										<div class="row g-2">
-											<div class="col m-2">
-												<label class="form-label">Search</label>
-												<input id="dealSearch" class="form-control"
-													placeholder="Customer or Deal ID…">
-											</div>
-											<div class="col m-2">
-												<label class="form-label">Project Type</label>
-												<select id="filterProjectType" class="form-select">
-													<option value="">All</option>
-													<option>Solar</option>
-													<option>Roofing</option>
-													<option>Pest</option>
-													<option>Fiber</option>
-												</select>
-											</div>
-										</div>
-										<div class="row g-2">
-											<div class="col m-2">
-												<label class="form-label">From</label>
-												<input type="date" id="dateFrom" class="form-control">
-											</div>
-											<div class="col m-2">
-												<label class="form-label">To</label>
-												<input type="date" id="dateTo" class="form-control">
-											</div>
-										</div>
-										<div class="row g-2">
-											<div class="col d-flex gap-2 ">
-												<button class="btn btn-outline-secondary" id="btnResetFilters"
-													type="button">Reset</button>
-												<button class="btn btn-primary" id="btnApplyFilters"
-													type="button">Apply</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Deals Table (only the 6 requested columns) -->
-							<div class="col-12">
-								<div class="card">
-									<div class="card-body p-0">
-										<div class="table-responsive">
-											<table class="table table-hover align-middle mb-0" id="dealsTable">
-												<thead class="table-light">
-													<tr>
-														<th>Deal ID</th>
-														<th>Customer</th>
-														<th>Type</th>
-														<th>Already Paid</th>
-														<th>Pending Amount</th>
-														<th>Sign Date</th>
-													</tr>
-												</thead>
-												<tbody><!-- renderDeals() --></tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-								<div class="small text-muted mt-2">Tip: Click a row to view full details.</div>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
-			<!-- Details Modal (content varies by project type) -->
-			<div class="modal fade" id="dealDetailsModal" tabindex="-1" aria-hidden="true">
-				<div class="modal-dialog modal-xl modal-dialog-scrollable">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h6 class="modal-title" id="dealDetailsTitle">Deal Details</h6>
-							<button class="btn-close" data-bs-dismiss="modal" type="button"></button>
-						</div>
-						<div class="modal-body" id="dealDetailsBody">
-							<!-- Filled dynamically based on project type -->
-						</div>
-						<div class="modal-footer">
-							<button class="btn btn-outline-secondary" data-bs-dismiss="modal"
-								type="button">Close</button>
-						</div>
-					</div>
-				</div>
-			</div>
+			<!-- partial:partials/_footer.html -->
+			<footer
+				class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small">
+				<p class="text-secondary mb-1 mb-md-0">Copyright © <span id="currentYear"></span>
+					<a href="https://sparkpro.io" target="_blank" rel="noopener noreferrer">Spark</a>.
+				</p>
+				<script>document.getElementById("currentYear").textContent = new Date().getFullYear();</script>
+				<p class="text-secondary">Handcrafted By<i class="mb-1 text-primary ms-1 icon-sm"
+						data-feather="zap"></i>
+				</p>
+			</footer>
 
-			<style>
-				#dealsTable tbody tr {
-					cursor: pointer;
-				}
-
-				#dealsTable td,
-				#dealsTable th {
-					white-space: nowrap;
-				}
-			</style>
-			<!-- End Financials & Commissions Tab Content -->
-			<!-- Docs Tab Content -->
-			<div class="tab-content" id="docs-admin-tab-content">
-				<div class="tab-pane fade" id="docs-admin" role="tabpanel" aria-labelledby="docs-admin-tab">
-					<div class="mt-3 card">
-						<div class="card-body">
-							<div class="table-responsive">
-								<table class="table table-hover">
-									<thead>
-										<tr>
-											<th>Document</th>
-											<th>View</th>
-											<th>Download</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th>Advosy Energy Direct Sales Solar Pro</th>
-											<td>
-												<a href="/testFiles/advosy-solar-pro.pdf" target="_blank"
-													class="text-blue-600 hover:text-blue-800" title="View Document"><i
-														data-feather="eye"></i></a>
-											</td>
-											<td>
-												<a href="/testFiles/advosy-solar-pro.pdf" download
-													class="text-blue-600 hover:text-blue-800"
-													title="Download Document"><i data-feather="download"></i></a>
-											</td>
-										</tr>
-										<tr>
-											<th>Advosy Energy Direct Sales Rookie</th>
-											<td>
-												<a href="/testFiles/advosy-solar-pro.pdf" target="_blank"
-													class="text-blue-600 hover:text-blue-800" title="View Document"><i
-														data-feather="eye"></i></a>
-											</td>
-											<td>
-												<a href="/testFiles/advosy-solar-pro.pdf" download
-													class="text-blue-600 hover:text-blue-800"
-													title="Download Document"><i data-feather="download"></i></a>
-											</td>
-										</tr>
-										<tr>
-											<th>Advosy Energy Dealer In A Box A1 Roofing</th>
-											<td>
-												<a href="/testFiles/advosy-solar-pro.pdf" target="_blank"
-													class="text-blue-600 hover:text-blue-800" title="View Document"><i
-														data-feather="eye"></i></a>
-											</td>
-											<td>
-												<a href="/testFiles/advosy-solar-pro.pdf" download
-													class="text-blue-600 hover:text-blue-800"
-													title="Download Document"><i data-feather="download"></i></a>
-											</td>
-										</tr>
-										<tr>
-											<th>Blue Papaya Route Manager</th>
-											<td>
-												<a href="/testFiles/advosy-solar-pro.pdf" target="_blank"
-													class="text-blue-600 hover:text-blue-800" title="View Document"><i
-														data-feather="eye"></i></a>
-											</td>
-											<td>
-												<a href="/testFiles/advosy-solar-pro.pdf" download
-													class="text-blue-600 hover:text-blue-800"
-													title="Download Document"><i data-feather="download"></i></a>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End Docs Tab Content -->
-
+			<!-- partial -->
 		</div>
-		<!-- partial:partials/_footer.html -->
-		<footer class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small">
-			<p class="text-secondary mb-1 mb-md-0">Copyright © <span id="currentYear"></span>
-				<a href="https://sparkpro.io" target="_blank" rel="noopener noreferrer">Spark</a>.
-			</p>
-			<script>document.getElementById("currentYear").textContent = new Date().getFullYear();</script>
-			<p class="text-secondary">Handcrafted By<i class="mb-1 text-primary ms-1 icon-sm" data-feather="zap"></i>
-			</p>
-		</footer>
-
-		<!-- partial -->
-	</div>
 	</div>
 
 	<!-- core:js -->
