@@ -50,7 +50,6 @@
               <div class="row">
                 <div class="col-md-4 pe-md-0">
                   <div class="d-flex align-items-center h-100 mx-3">
-                    <!-- set logo to 'white favicon.png' for dark mode and 'dark_icon.png' in light mode -->
                     <img src="/public/images/icons/white favicon.png" alt="login image" class="img-fluid logo">
                   </div>
                 </div>
@@ -117,7 +116,7 @@
 
         const data = await res.json();
         localStorage.setItem("user", JSON.stringify(data));
-        window.location.href = `Profile.html`; // ✅ Redirect
+        window.location.href = `Profile.html`; // Redirect
       } catch (err) {
         msg.style.color = "red";
         msg.textContent = err.message;
