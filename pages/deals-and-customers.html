@@ -24,7 +24,7 @@
 	<link rel="stylesheet" href="/assets/fonts/feather-font/css/iconfont.css" />
 	<link rel="stylesheet" href="/assets/css/style.css" />
 
-	<link rel="shortcut icon" href="/images/icons/white favicon.png" />
+	<link rel="shortcut icon" href="/public/images/icons/white favicon.png" />
 </head>
 
 <body class="sidebar-dark">
@@ -34,7 +34,7 @@
 		<nav class="sidebar">
 			<div class="sidebar-header">
 				<a href="#" class="sidebar-brand" aria-label="Spark Home" title="Spark Home">
-					<img src="/images/icons/horz-dark-mode-logo.png" class="sidebar-logo" alt="Spark Logo">
+					<img src="/public/images/icons/horz-dark-mode-logo.png" class="sidebar-logo" alt="Spark Logo">
 				</a>
 				<div class="sidebar-toggler">
 					<span></span>
@@ -237,7 +237,7 @@
 									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
 										<div class="me-3">
 											<img class="w-30px h-30px rounded-circle"
-												src="/images/profile_images/user_stock.png" alt="user" />
+												src="/public/images/profile_images/user_stock.png" alt="user" />
 										</div>
 										<div class="d-flex justify-content-between flex-grow-1">
 											<div class="me-4">
@@ -250,7 +250,7 @@
 									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
 										<div class="me-3">
 											<img class="w-30px h-30px rounded-circle"
-												src="/images/profile_images/user_stock.png" alt="user" />
+												src="/public/images/profile_images/user_stock.png" alt="user" />
 										</div>
 										<div class="d-flex justify-content-between flex-grow-1">
 											<div class="me-4">
@@ -263,7 +263,7 @@
 									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
 										<div class="me-3">
 											<img class="w-30px h-30px rounded-circle"
-												src="/images/profile_images/user_stock.png" alt="user" />
+												src="/public/images/profile_images/user_stock.png" alt="user" />
 										</div>
 										<div class="d-flex justify-content-between flex-grow-1">
 											<div class="me-4">
@@ -276,7 +276,7 @@
 									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
 										<div class="me-3">
 											<img class="w-30px h-30px rounded-circle"
-												src="/images/profile_images/user_stock.png" alt="user" />
+												src="/public/images/profile_images/user_stock.png" alt="user" />
 										</div>
 										<div class="d-flex justify-content-between flex-grow-1">
 											<div class="me-4">
@@ -289,7 +289,7 @@
 									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
 										<div class="me-3">
 											<img class="w-30px h-30px rounded-circle"
-												src="/images/profile_images/user_stock.png" alt="user" />
+												src="/public/images/profile_images/user_stock.png" alt="user" />
 										</div>
 										<div class="d-flex justify-content-between flex-grow-1">
 											<div class="me-4">
@@ -344,7 +344,7 @@
 										<div
 											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
 											<img class="w-30px h-30px rounded-circle"
-												src="/images/profile_images/user_stock.png" alt="userr" />
+												src="/public/images/profile_images/user_stock.png" alt="userr" />
 										</div>
 										<div class="flex-grow-1 me-2">
 											<p>New customer registered</p>
@@ -381,13 +381,13 @@
 							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
 								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<img class="w-30px h-30px ms-1 rounded-circle"
-									src="/images/profile_images/user_stock.png" alt="profile" />
+									src="/public/images/profile_images/user_stock.png" alt="profile" />
 							</a>
 							<div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
 								<div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
 									<div class="mb-3">
 										<img class="w-80px h-80px rounded-circle"
-											src="/images/profile_images/user_stock.png" alt="" />
+											src="/public/images/profile_images/user_stock.png" alt="" />
 									</div>
 									<div class="text-center">
 										<p class="fs-16px fw-bolder" id="navbar-user-name">
@@ -435,7 +435,7 @@
 						}
 
 						try {
-							const res = await fetch(`http://localhost:5001/profile/${user.userId}`);
+							const res = await fetch(`https://api.sparkpro.io:5001/profile/${user.userId}`);
 							const data = await res.json();
 
 							document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;
