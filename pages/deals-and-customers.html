@@ -27,6 +27,85 @@
 	<link rel="shortcut icon" href="/public/images/icons/white favicon.png" />
 </head>
 
+<style>
+	/* Table niceties */
+	#dealsTable tbody tr {
+		cursor: pointer;
+	}
+
+	#dealsTable td,
+	#dealsTable th {
+		white-space: nowrap;
+	}
+
+	/* Content-sized modal (no backdrop), pinned over the page-content area */
+	.modal.content-modal .modal-dialog {
+		position: fixed;
+		margin: 0;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+		max-width: none;
+		pointer-events: auto;
+	}
+
+	.modal.content-modal .modal-content {
+		height: 100%;
+		border-radius: 0;
+	}
+
+	.modal.content-modal .modal-body {
+		overflow: auto;
+	}
+</style>
+
+<style>
+	body.mega-open #dealMegaModal.modal {
+		z-index: 1000;
+	}
+
+	/* < navbar(1030), popover(1070) */
+	body.mega-open .dropdown-menu,
+	body.mega-open .popover,
+	body.mega-open .tooltip,
+	body.mega-open .offcanvas,
+	body.mega-open .toast {
+		z-index: 2000;
+	}
+
+	/* The full-screen modal container shouldn't intercept clicks */
+	#dealMegaModal.modal {
+		pointer-events: none;
+		background: transparent;
+	}
+
+	#dealMegaModal .modal-dialog,
+	#dealMegaModal .modal-content {
+		pointer-events: auto;
+	}
+
+	/* (you already had these, keep them) */
+	#dealMegaModal.content-modal .modal-dialog {
+		position: fixed;
+		margin: 0;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+		max-width: none;
+	}
+
+	#dealMegaModal .modal-content {
+		height: 100%;
+		border-radius: 0;
+	}
+
+	#dealMegaModal .modal-body {
+		overflow: auto;
+	}
+</style>
+
 <body class="sidebar-dark">
 
 	<div class="main-wrapper">
@@ -467,322 +546,296 @@
 
 			<!-- partial -->
 			<div class="page-content">
-				<!-- TAB HEADER -->
-				<div class="row">
-					<div class="col-12 grid-margin">
-						<div class="card align-items-center">
-							<div class="d-flex p-3 rounded-bottom d-flex align-items-center m-0">
-								<ul class="nav nav-tabs nav-tabs-line" id="profileTab" role="tablist">
-									<li class="nav-item" role="presentation">
-										<button class="nav-link active" id="deals-overview-tab" data-bs-toggle="tab"
-											data-bs-target="#deals-overview" type="button" role="tab"
-											aria-controls="deals-overview" aria-selected="true">
-											<i class="me-1 icon-md" data-feather="layout"></i>
-											<span class="d-none d-md-inline">Overview</span>
-										</button>
-									</li>
-									<li class="nav-item" role="presentation">
-										<button class="nav-link" id="financials-commissions-tab" data-bs-toggle="tab"
-											data-bs-target="#financials-commissions" type="button" role="tab"
-											aria-controls="financials-commissions" aria-selected="false">
-											<i class="me-1 icon-md" data-feather="dollar-sign"></i>
-											<span class="d-none d-md-inline">Financials & Commissions</span>
-										</button>
-									</li>
-									<li class="nav-item" role="presentation">
-										<button class="nav-link" id="docs-admin-tab" data-bs-toggle="tab"
-											data-bs-target="#docs-admin" type="button" role="tab"
-											aria-controls="docs-admin" aria-selected="false">
-											<i class="me-1 icon-md" data-feather="file-text"></i>
-											<span class="d-none d-md-inline">Docs & Admin</span>
-										</button>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!--TAB HEADER END -->
 
-					<!-- Deals Overview Content -->
-					<div class="tab-content" id="deals-overview-tab-content">
-						<div class="tab-pane fade show active" id="deals-overview" role="tabpanel"
-							aria-labelledby="deals-overview-tab">
-							<div class="mt-3 card">
-								<div class="card-body">
-									<div class="table-responsive">
-										<table class="table table-hover">
-											<thead>
-												<tr>
-													<th>Customer Name</th>
-													<th>Product Type</th>
-													<th>Date Sold</th>
-													<th>Projected/Total Payout</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr class="customer-sidebar" data-customer-id="12345"
-													style="cursor: pointer">
-													<td>John Smith</td>
-													<td>Solar</td>
-													<td>07/31/2025</td>
-													<td>$32,450</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-
-							<div id="deal-detail-panel" class="deal-side-panel">
-								<div class="panel-header d-flex justify-content-between align-items-center">
-									<h5>Deal Details</h5>
-									<button id="close-panel" class="btn-close" aria-label="Close" data-feather="x">
-									</button>
-								</div>
-								<div class="street-view">
-									<div class="d-flex align-items-center mb-3">
-										<img id="panel-google-street" alt="Google Street View" />
-									</div>
-								</div>
-
-								<div class="panel-body">
-									<!-- Core Deal Information -->
-									<h6 class="fw-bold mt-3">Core Deal Information</h6>
-									<p><strong>Deal ID:</strong> <span id="panel-deal-id">-</span></p>
-									<p><strong>Customer Name:</strong> <span id="panel-customer-name">-</span></p>
-									<p><strong>Product Type:</strong> <span id="panel-product-type">-</span></p>
-									<p><strong>Project Status:</strong> <span id="panel-project-status">-</span></p>
-									<p><strong>Project Stage:</strong> <span id="panel-project-stage">-</span></p>
-									<p><strong>Signed Contract Date:</strong> <span id="panel-contract-date">-</span>
-									</p>
-									<p><strong>Created Date:</strong> <span id="panel-created-date">-</span></p>
-									<p><strong>Payout:</strong> <span id="panel-payout">-</span></p>
-									<div class="my-3">
-										<label class="form-label fw-bold">Status Progress</label>
-										<div class="progress">
-											<div class="progress-bar" id="panel-status-progress" style="width: 25%">
-												Submitted
-											</div>
-										</div>
-									</div>
-
-									<!-- Customer Details -->
-									<h6 class="fw-bold mt-4">👤 Customer Details</h6>
-									<p><strong>Full Name:</strong> <span id="panel-customer-name-2">-</span></p>
-									<p><strong>Phone:</strong> <span id="panel-customer-phone">-</span></p>
-									<p><strong>Email:</strong> <span id="panel-customer-email">-</span></p>
-									<p><strong>Address:</strong> <span id="panel-customer-address">-</span></p>
-									<div class="ratio ratio-16x9 mb-3">
-										<iframe id="panel-google-map" src="" allowfullscreen loading="lazy"></iframe>
-									</div>
-									<p><strong>Lead Source:</strong> <span id="panel-lead-source">-</span></p>
-
-									<!-- Sales Team -->
-									<h6 class="fw-bold mt-4">👥 Sales Team</h6>
-									<p><strong>Sales Rep:</strong> <span id="panel-sales-rep">-</span></p>
-									<p><strong>Setter(s):</strong> <span id="panel-setters">-</span></p>
-									<p><strong>Closer(s):</strong> <span id="panel-closers">-</span></p>
-									<p><strong>Team / Office:</strong> <span id="panel-team-office">-</span></p>
-									<p><strong>Dealer/Partner:</strong> <span id="panel-dealer">-</span></p>
-
-									<!-- Tracking & Reporting -->
-									<h6 class="fw-bold mt-4">🗕️ Tracking & Reporting</h6>
-									<p><strong>Initial Lead Date:</strong> <span id="panel-lead-date">-</span></p>
-									<p><strong>Close Date:</strong> <span id="panel-close-date">-</span></p>
-									<p><strong>Install Date:</strong> <span id="panel-install-date">-</span></p>
-									<p><strong>Rep Paid Date:</strong> <span id="panel-paid-date">-</span></p>
-									<p><strong>Tags / Deal Flags:</strong> <span id="panel-tags">-</span></p>
-									<p>
-										<a href="#" id="panel-dispute-link">Quick Dispute Link</a>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Overview Tab Content -->
-					<!-- Financials & Commissions Tab Content -->
-					<div class="tab-content" id="financials-commissions-tab-content">
-						<div class="tab-pane fade" id="financials-commissions" role="tabpanel"
-							aria-labelledby="financials-commissions-tab">
-							<div class="row profile-body gap-4">
-
-								<!-- Filters (project type + dates + search) -->
-								<div class="col-12">
-									<div class="card">
-										<div class="card-body">
-											<div class="row g-2">
-												<div class="col m-2">
-													<label class="form-label">Search</label>
-													<input id="dealSearch" class="form-control"
-														placeholder="Customer or Deal ID…">
-												</div>
-												<div class="col m-2">
-													<label class="form-label">Project Type</label>
-													<select id="filterProjectType" class="form-select">
-														<option value="">All</option>
-														<option>Solar</option>
-														<option>Roofing</option>
-														<option>Pest</option>
-														<option>Fiber</option>
-													</select>
-												</div>
-											</div>
-											<div class="row g-2">
-												<div class="col m-2">
-													<label class="form-label">From</label>
-													<input type="date" id="dateFrom" class="form-control">
-												</div>
-												<div class="col m-2">
-													<label class="form-label">To</label>
-													<input type="date" id="dateTo" class="form-control">
-												</div>
-											</div>
-											<div class="row g-2">
-												<div class="col d-flex gap-2 ">
-													<button class="btn btn-outline-secondary" id="btnResetFilters"
-														type="button">Reset</button>
-													<button class="btn btn-primary" id="btnApplyFilters"
-														type="button">Apply</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Deals Table (only the 6 requested columns) -->
-								<div class="col-12">
-									<div class="card">
-										<div class="card-body p-0">
-											<div class="table-responsive">
-												<table class="table table-hover align-middle mb-0" id="dealsTable">
-													<thead class="table-light">
-														<tr>
-															<th>Deal ID</th>
-															<th>Customer</th>
-															<th>Type</th>
-															<th>Already Paid</th>
-															<th>Pending Amount</th>
-															<th>Sign Date</th>
-														</tr>
-													</thead>
-													<tbody><!-- renderDeals() --></tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-									<div class="small text-muted mt-2">Tip: Click a row to view full details.</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Details Modal (content varies by project type) -->
-				<div class="modal fade" id="dealDetailsModal" tabindex="-1" aria-hidden="true">
-					<div class="modal-dialog modal-xl modal-dialog-scrollable">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h6 class="modal-title" id="dealDetailsTitle">Deal Details</h6>
-								<button class="btn-close" data-bs-dismiss="modal" type="button"></button>
-							</div>
-							<div class="modal-body" id="dealDetailsBody">
-								<!-- Filled dynamically based on project type -->
-							</div>
-							<div class="modal-footer">
-								<button class="btn btn-outline-secondary" data-bs-dismiss="modal"
-									type="button">Close</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<style>
-					#dealsTable tbody tr {
-						cursor: pointer;
-					}
-
-					#dealsTable td,
-					#dealsTable th {
-						white-space: nowrap;
-					}
-				</style>
-				<!-- End Financials & Commissions Tab Content -->
-				<!-- Docs Tab Content -->
-				<div class="tab-content" id="docs-admin-tab-content">
-					<div class="tab-pane fade" id="docs-admin" role="tabpanel" aria-labelledby="docs-admin-tab">
-						<div class="mt-3 card">
+				<!-- Filters -->
+				<div class="row mb-4">
+					<div class="col-12">
+						<div class="card">
 							<div class="card-body">
+								<div class="row g-2 align-items-end">
+									<div class="col-md-3 m-2">
+										<label class="form-label">Search</label>
+										<input id="dealSearch" class="form-control" placeholder="Customer or Deal ID…">
+									</div>
+									<div class="col-md-3 m-2">
+										<label class="form-label">Project Type</label>
+										<select id="filterProjectType" class="form-select">
+											<option value="">All</option>
+											<option>Solar</option>
+											<option>Roofing</option>
+											<option>Pest</option>
+											<option>Fiber</option>
+										</select>
+									</div>
+								</div>
+								<div class="row g-2 align-items-end">
+									<div class="col-md-3 m-2">
+										<label class="form-label">From</label>
+										<input type="date" id="dateFrom" class="form-control">
+									</div>
+									<div class="col-md-3 m-2">
+										<label class="form-label">To</label>
+										<input type="date" id="dateTo" class="form-control">
+									</div>
+								</div>
+								<div class="row g-2 align-items-end">
+									<div class="col-md-3 d-flex gap-2">
+										<button class="btn btn-outline-secondary m-2" id="btnResetFilters"
+											type="button">Reset</button>
+										<button class="btn btn-primary m-2" id="btnApplyFilters"
+											type="button">Apply</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Deals Table (6 columns only) -->
+				<div class="row">
+					<div class="col-12">
+						<div class="card">
+							<div class="card-body p-0">
 								<div class="table-responsive">
-									<table class="table table-hover">
-										<thead>
+									<table class="table table-hover align-middle mb-0" id="dealsTable">
+										<thead class="table-light">
 											<tr>
-												<th>Document</th>
-												<th>View</th>
-												<th>Download</th>
+												<th>Deal ID</th>
+												<th>Customer</th>
+												<th>Type</th>
+												<th>Already Paid</th>
+												<th>Pending Amount</th>
+												<th>Sign Date</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<th>Advosy Energy Direct Sales Solar Pro</th>
-												<td>
-													<a href="/documents/advosy-solar-pro.pdf" target="_blank"
-														class="text-blue-600 hover:text-blue-800"
-														title="View Document"><i data-feather="eye"></i></a>
-												</td>
-												<td>
-													<a href="/documents/advosy-solar-pro.pdf" download
-														class="text-blue-600 hover:text-blue-800"
-														title="Download Document"><i data-feather="download"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<th>Advosy Energy Direct Sales Rookie</th>
-												<td>
-													<a href="/documents/advosy-solar-pro.pdf" target="_blank"
-														class="text-blue-600 hover:text-blue-800"
-														title="View Document"><i data-feather="eye"></i></a>
-												</td>
-												<td>
-													<a href="/documents/advosy-solar-pro.pdf" download
-														class="text-blue-600 hover:text-blue-800"
-														title="Download Document"><i data-feather="download"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<th>Advosy Energy Dealer In A Box A1 Roofing</th>
-												<td>
-													<a href="/documents/advosy-solar-pro.pdf" target="_blank"
-														class="text-blue-600 hover:text-blue-800"
-														title="View Document"><i data-feather="eye"></i></a>
-												</td>
-												<td>
-													<a href="/documents/advosy-solar-pro.pdf" download
-														class="text-blue-600 hover:text-blue-800"
-														title="Download Document"><i data-feather="download"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<th>Blue Papaya Route Manager</th>
-												<td>
-													<a href="/documents/advosy-solar-pro.pdf" target="_blank"
-														class="text-blue-600 hover:text-blue-800"
-														title="View Document"><i data-feather="eye"></i></a>
-												</td>
-												<td>
-													<a href="/documents/advosy-solar-pro.pdf" download
-														class="text-blue-600 hover:text-blue-800"
-														title="Download Document"><i data-feather="download"></i></a>
-												</td>
-											</tr>
-										</tbody>
+										<tbody><!-- renderDeals() --></tbody>
 									</table>
 								</div>
 							</div>
 						</div>
+						<div class="small text-muted mt-2">Tip: Click a row to open the full Deal modal (Overview •
+							Financials &
+							Commissions • Docs).</div>
 					</div>
 				</div>
-				<!-- End Docs Tab Content -->
+				<div class="modal fade content-modal" id="dealMegaModal" data-bs-backdrop="false" tabindex="-1"
+					aria-hidden="true">
+					<div class="modal-dialog modal-dialog-scrollable" id="dealMegaDialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h6 class="modal-title" id="mm-title">Deal</h6>
+								<button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
 
+							<div class="modal-body p-0">
+								<ul class="nav nav-tabs px-3 pt-3" id="mmTabs" role="tablist">
+									<li class="nav-item" role="presentation">
+										<button class="nav-link active" id="mm-overview-tab" data-bs-toggle="tab"
+											data-bs-target="#mm-overview" type="button" role="tab">Overview</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="mm-fin-tab" data-bs-toggle="tab"
+											data-bs-target="#mm-fin" type="button" role="tab">Financials &
+											Commissions</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="mm-docs-tab" data-bs-toggle="tab"
+											data-bs-target="#mm-docs" type="button" role="tab">Docs</button>
+									</li>
+								</ul>
+
+								<div class="tab-content p-3" id="mmTabContent">
+									<!-- Overview -->
+									<div class="tab-pane fade show active" id="mm-overview" role="tabpanel">
+										<div class="row g-3">
+											<div class="col-12">
+												<img id="mm-google-street" alt="Street View"
+													style="width: 100%; max-height: 240px; object-fit: cover; border-radius: .5rem; border: 1px solid rgba(0,0,0,.1);" />
+											</div>
+
+											<div class="col-12">
+												<div class="card">
+													<div class="card-body">
+														<h6 class="fw-bold mb-3">Core Deal Information</h6>
+														<div class="row g-3">
+															<div class="col-md-3">
+																<div class="small text-muted">Deal ID</div>
+																<div id="mm-deal-id">-</div>
+															</div>
+															<div class="col-md-3">
+																<div class="small text-muted">Customer Name</div>
+																<div id="mm-customer-name">-</div>
+															</div>
+															<div class="col-md-3">
+																<div class="small text-muted">Product Type</div>
+																<div id="mm-product-type">-</div>
+															</div>
+															<div class="col-md-3">
+																<div class="small text-muted">Project Status</div>
+																<div id="mm-project-status">-</div>
+															</div>
+															<div class="col-md-3">
+																<div class="small text-muted">Project Stage</div>
+																<div id="mm-project-stage">-</div>
+															</div>
+															<div class="col-md-3">
+																<div class="small text-muted">Signed Contract</div>
+																<div id="mm-contract-date">-</div>
+															</div>
+															<div class="col-md-3">
+																<div class="small text-muted">Created</div>
+																<div id="mm-created-date">-</div>
+															</div>
+															<div class="col-md-3">
+																<div class="small text-muted">Payout</div>
+																<div id="mm-payout">-</div>
+															</div>
+														</div>
+														<div class="my-3">
+															<label class="form-label fw-bold">Status Progress</label>
+															<div class="progress">
+																<div class="progress-bar" id="mm-status-progress"
+																	style="width: 25%">
+																	Submitted</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-12 col-lg-6">
+												<div class="card">
+													<div class="card-body">
+														<h6 class="fw-bold mb-3">👤 Customer Details</h6>
+														<div class="row g-2">
+															<div class="col-md-6">
+																<div class="small text-muted">Full Name</div>
+																<div id="mm-customer-name-2">-</div>
+															</div>
+															<div class="col-md-6">
+																<div class="small text-muted">Phone</div>
+																<div id="mm-customer-phone">-</div>
+															</div>
+															<div class="col-md-6">
+																<div class="small text-muted">Email</div>
+																<div id="mm-customer-email">-</div>
+															</div>
+															<div class="col-12">
+																<div class="small text-muted">Address</div>
+																<div id="mm-customer-address">-</div>
+															</div>
+															<div class="col-12">
+																<div class="ratio ratio-16x9"><iframe id="mm-google-map"
+																		src="" allowfullscreen loading="lazy"></iframe>
+																</div>
+															</div>
+															<div class="col-md-6">
+																<div class="small text-muted">Lead Source</div>
+																<div id="mm-lead-source">-</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-12 col-lg-6">
+												<div class="card">
+													<div class="card-body">
+														<h6 class="fw-bold mb-3">👥 Sales Team</h6>
+														<div class="row g-2">
+															<div class="col-md-6">
+																<div class="small text-muted">Sales Rep</div>
+																<div id="mm-sales-rep">-</div>
+															</div>
+															<div class="col-md-6">
+																<div class="small text-muted">Setter(s)</div>
+																<div id="mm-setters">-</div>
+															</div>
+															<div class="col-md-6">
+																<div class="small text-muted">Closer(s)</div>
+																<div id="mm-closers">-</div>
+															</div>
+															<div class="col-md-6">
+																<div class="small text-muted">Team / Office</div>
+																<div id="mm-team-office">-</div>
+															</div>
+															<div class="col-md-6">
+																<div class="small text-muted">Dealer/Partner</div>
+																<div id="mm-dealer">-</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="card mt-3">
+													<div class="card-body">
+														<h6 class="fw-bold mb-3">🗕️ Tracking & Reporting</h6>
+														<div class="row g-2">
+															<div class="col-md-6">
+																<div class="small text-muted">Initial Lead Date
+																</div>
+																<div id="mm-lead-date">-</div>
+															</div>
+															<div class="col-md-6">
+																<div class="small text-muted">Close Date</div>
+																<div id="mm-close-date">-</div>
+															</div>
+															<div class="col-md-6">
+																<div class="small text-muted">Install Date</div>
+																<div id="mm-install-date">-</div>
+															</div>
+															<div class="col-md-6">
+																<div class="small text-muted">Rep Paid Date</div>
+																<div id="mm-paid-date">-</div>
+															</div>
+															<div class="col-12">
+																<div class="small text-muted">Tags / Deal Flags
+																</div>
+																<div id="mm-tags">-</div>
+															</div>
+															<div class="col-12"><a href="#" id="mm-dispute-link"
+																	target="_blank">Quick Dispute Link</a></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Financials & Commissions -->
+									<div class="tab-pane fade" id="mm-fin" role="tabpanel">
+										<div id="mm-fin-summary" class="row g-3 mb-3"></div>
+										<div id="mm-fin-body"></div>
+										<div id="mm-payments"></div>
+									</div>
+
+									<!-- Docs -->
+									<div class="tab-pane fade" id="mm-docs" role="tabpanel">
+										<div class="card">
+											<div class="card-body">
+												<div class="table-responsive">
+													<table class="table table-hover">
+														<thead>
+															<tr>
+																<th>Document</th>
+																<th>View</th>
+																<th>Download</th>
+															</tr>
+														</thead>
+														<tbody id="mm-docs-body"><!-- render --></tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
 			</div>
+			<!-- /page-content -->
 			<!-- partial:partials/_footer.html -->
 			<footer
 				class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small">
@@ -806,7 +859,6 @@
 	<!-- Plugin js for this page -->
 
 	<script src="/assets/vendors/datatables.net/dataTables.js"></script>
-	<script src="/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
 	<!-- End plugin js for this page -->
 
 	<!-- inject:js -->
@@ -815,111 +867,16 @@
 	<!-- endinject -->
 
 
-
-	<script>
-		document.addEventListener("DOMContentLoaded", () => {
-			const sidePanel = document.getElementById("deal-detail-panel");
-			const closeBtn = document.getElementById("close-panel");
-
-			document.addEventListener("click", (e) => {
-				const row = e.target.closest("tr.customer-sidebar");
-				if (row) {
-					// Static placeholder data
-					const data = {
-						customerName: "John Smith",
-						address: "35506 Dante Pl, Fremont, CA 94536",
-						email: "john.smith@example.com",
-						phone: "(480) 555-1234",
-						saleStage: "Signed",
-						status: "Pending Installation",
-						installer: "SunPower AZ",
-						dealID: "12345",
-						productType: "Solar",
-						projectStatus: "In Progress",
-						projectStage: "Installation Scheduled",
-						signDate: "2025-07-31",
-						createdDate: "2025-07-01",
-						payout: "$32,450",
-						statusProgress: "25%",
-						customerName2: "John Smith",
-						leadSource: "Online Lead",
-						salesRep: "Jane Doe",
-						setters: "Mike Johnson, Sarah Lee",
-						closers: "Emily Davis",
-						teamOffice: "Mesa Office",
-						dealer: "Advosy Energy",
-						leadDate: "2025-06-15",
-						closeDate: "2025-08-15",
-						installDate: "2025-09-01",
-						paidDate: "2025-09-15",
-						tags: "High Priority, Solar",
-						disputeLink: "https://example.com/dispute/12345",
-					};
-
-					document.getElementById("panel-customer-name").textContent = data.customerName;
-					document.getElementById("panel-customer-address").textContent = data.address;
-					document.getElementById("panel-customer-email").textContent = data.email;
-					document.getElementById("panel-customer-phone").textContent = data.phone;
-					document.getElementById("panel-project-stage").textContent = data.saleStage;
-					document.getElementById("panel-project-status").textContent = data.status;
-					document.getElementById("panel-deal-id").textContent = data.dealID;
-					document.getElementById("panel-product-type").textContent = data.productType;
-					document.getElementById("panel-project-status").textContent = data.projectStatus;
-					document.getElementById("panel-project-stage").textContent = data.projectStage;
-					document.getElementById("panel-contract-date").textContent = data.signDate;
-					document.getElementById("panel-created-date").textContent = data.createdDate;
-					document.getElementById("panel-payout").textContent = data.payout;
-					document.getElementById("panel-status-progress").style.width = data.statusProgress;
-					document.getElementById("panel-status-progress").textContent = data.statusProgress;
-					document.getElementById("panel-customer-name-2").textContent = data.customerName2;
-					document.getElementById("panel-customer-phone").textContent = data.phone;
-					document.getElementById("panel-customer-email").textContent = data.email;
-					document.getElementById("panel-customer-address").textContent = data.address;
-					document.getElementById("panel-google-map").src = `https://www.google.com/maps?q=${encodeURIComponent(data.address)}&layer=c&output=svembed`;
-					document.getElementById("panel-google-street").src = `https://maps.googleapis.com/maps/api/streetview?size=600x300&location=${encodeURIComponent(data.address)}&pitch=-0.76&key=AIzaSyBUK4fx5KixzLtRYiTLHPu6Yw6Xh1PZ-iU`;
-					document.getElementById("panel-lead-source").textContent = data.leadSource;
-					document.getElementById("panel-sales-rep").textContent = data.salesRep;
-					document.getElementById("panel-setters").textContent = data.setters;
-					document.getElementById("panel-closers").textContent = data.closers;
-					document.getElementById("panel-team-office").textContent = data.teamOffice;
-					document.getElementById("panel-dealer").textContent = data.dealer;
-					document.getElementById("panel-lead-date").textContent = data.leadDate;
-					document.getElementById("panel-close-date").textContent = data.closeDate;
-					document.getElementById("panel-install-date").textContent = data.installDate;
-					document.getElementById("panel-paid-date").textContent = data.paidDate;
-					document.getElementById("panel-tags").textContent = data.tags;
-					document.getElementById("panel-dispute-link").href = data.disputeLink;
-
-					sidePanel.classList.add("active");
-
-					return;
-				}
-				if (e.target === closeBtn) {
-					sidePanel.classList.remove("active");
-					return;
-				}
-
-				if (sidePanel.classList.contains("active") &&
-					!e.target.closest("#deal-detail-panel")) {
-					sidePanel.classList.remove("active");
-				}
-			});
-		});
-	</script>
-
 	<script>
 		(function () {
-			// ===== Sample Data (swap for API) =====
-			// For API integration: map your response into these fields inside `loadDeals()`.
+			/* =========================
+			   DUMMY DATA (replace later)
+			   ========================= */
 			const deals = [
-				// --- Solar ---
 				{
-					id: 20001, customer: 'Jane Doe', projectType: 'Solar', signDate: '2025-08-15',
-					// commission inputs (for rep)
+					id: 22001, customer: 'Jane Doe', projectType: 'Solar', signDate: '2025-08-15',
 					mp1: 1800, mp2: 1200, mp3: 0, overrides: [{ name: 'Q3 Bonus', amount: 150 }], setterDeduction: 200, repSplitPct: 60,
-					// payments
 					payments: [{ date: '2025-09-12', amount: 1000 }],
-					// type-specific
 					solar: {
 						systemSizeKw: 7.2, panelBrand: 'REC', inverter: 'SolarEdge', batteryKwh: 10,
 						dealer: 'SunBest', installer: 'BrightInstall', redline: '$2.25/W',
@@ -928,21 +885,17 @@
 						adders: [{ name: 'Main Panel Upgrade', amount: 800 }]
 					}
 				},
-				// --- Fiber ---
 				{
-					id: 20002, customer: 'ACME HQ', projectType: 'Fiber', signDate: '2025-08-20',
+					id: 22002, customer: 'ACME HQ', projectType: 'Fiber', signDate: '2025-08-20',
 					mp1: 600, mp2: 0, mp3: 0, overrides: [], setterDeduction: 0, repSplitPct: 70,
 					payments: [{ date: '2025-09-02', amount: 300 }],
 					fiber: {
-						serviceAddress: '123 Industrial Way, Austin, TX',
-						provider: 'GigaNet', speedTier: '2 Gbps Symmetric',
-						contractTermMonths: 36, installDate: '2025-09-05',
-						mrc: 899, otc: 299, circuitId: 'GN-TX-99123'
+						serviceAddress: '123 Industrial Way, Austin, TX', provider: 'GigaNet', speedTier: '2 Gbps Symmetric',
+						contractTermMonths: 36, installDate: '2025-09-05', mrc: 899, otc: 299, circuitId: 'GN-TX-99123'
 					}
 				},
-				// --- Roofing ---
 				{
-					id: 20003, customer: 'Smith Family', projectType: 'Roofing', signDate: '2025-08-10',
+					id: 22003, customer: 'Smith Family', projectType: 'Roofing', signDate: '2025-08-10',
 					mp1: 1500, mp2: 500, mp3: 0, overrides: [{ name: 'Manager Override', amount: 250 }], setterDeduction: 0, repSplitPct: 65,
 					payments: [],
 					roofing: {
@@ -951,149 +904,167 @@
 						installDate: '2025-09-12', permits: 'City of Round Rock'
 					}
 				},
-				// --- Pest ---
 				{
-					id: 20004, customer: 'John Smith', projectType: 'Pest', signDate: '2025-08-22',
+					id: 22004, customer: 'John Smith', projectType: 'Pest', signDate: '2025-08-22',
 					mp1: 350, mp2: 150, mp3: 50, overrides: [], setterDeduction: 50, repSplitPct: 50,
 					payments: [{ date: '2025-09-05', amount: 200 }],
-					pest: {
-						plan: 'Quarterly', termMonths: 12,
-						initialFee: 99, recurring: 49, startDate: '2025-08-25', serviceAddress: '44 Maple St'
+					pest: { plan: 'Quarterly', termMonths: 12, initialFee: 99, recurring: 49, startDate: '2025-08-25', serviceAddress: '44 Maple St' }
+				},
+				{
+					id: 22005, customer: 'Blue Papaya Café', projectType: 'Solar', signDate: '2025-07-30',
+					mp1: 2200, mp2: 1200, mp3: 800, overrides: [{ name: 'Commercial Bonus', amount: 500 }], setterDeduction: 0, repSplitPct: 55,
+					payments: [{ date: '2025-08-20', amount: 1500 }, { date: '2025-09-15', amount: 700 }],
+					solar: {
+						systemSizeKw: 45.6, panelBrand: 'QCells', inverter: 'Enphase', batteryKwh: 0,
+						dealer: 'SunPro', installer: 'VoltNation', redline: '$1.95/W',
+						finance: { lender: 'Sunlight', program: 'SL-20', apr: 7.49, termMonths: 240 },
+						milestones: { submitted: '2025-08-02', install: '2025-09-05', pto: null },
+						adders: []
 					}
+				},
+				{
+					id: 22006, customer: 'Miller Residence', projectType: 'Roofing', signDate: '2025-09-01',
+					mp1: 900, mp2: 0, mp3: 0, overrides: [], setterDeduction: 150, repSplitPct: 60,
+					payments: [{ date: '2025-09-10', amount: 300 }],
+					roofing: { squares: 19, material: 'Metal', pitch: '4/12', layers: 1, installDate: null, permits: 'County Permit #7731' }
+				},
+				{
+					id: 22007, customer: 'Northside Storage', projectType: 'Fiber', signDate: '2025-08-01',
+					mp1: 800, mp2: 200, mp3: 0, overrides: [], setterDeduction: 0, repSplitPct: 60,
+					payments: [{ date: '2025-08-25', amount: 400 }],
+					fiber: {
+						serviceAddress: '88 Logistics Rd, Dallas, TX', provider: 'MetroFiber', speedTier: '1 Gbps',
+						contractTermMonths: 24, installDate: '2025-09-03', mrc: 699, otc: 199, circuitId: 'MF-DAL-44110'
+					}
+				},
+				{
+					id: 22008, customer: 'Johnson Home', projectType: 'Pest', signDate: '2025-09-05',
+					mp1: 300, mp2: 0, mp3: 0, overrides: [{ name: 'Back-to-School Promo', amount: 25 }], setterDeduction: 0, repSplitPct: 50,
+					payments: [],
+					pest: { plan: 'Bi-Monthly', termMonths: 12, initialFee: 79, recurring: 39, startDate: '2025-09-06', serviceAddress: '12 Pine Ln' }
 				}
 			];
 
-			// ===== Shortcuts =====
+			const overviewById = {
+				22001: {
+					customerName: 'Jane Doe', address: '742 Evergreen Ter, Springfield', email: 'jane.doe@example.com', phone: '(555) 111-2222',
+					projectStatus: 'In Progress', projectStage: 'Installed', createdDate: '2025-07-20', payout: '$12,300',
+					statusProgress: '60%', customerName2: 'Jane A. Doe', leadSource: 'Online', salesRep: 'Alex Ray',
+					setters: 'Mike Johnson', closers: 'Alex Ray', teamOffice: 'Mesa', dealer: 'SunBest',
+					leadDate: '2025-07-10', closeDate: '2025-08-15', installDate: '2025-09-10', paidDate: '2025-09-12',
+					tags: 'Battery, HOA', disputeLink: '#'
+				},
+				22002: {
+					customerName: 'ACME HQ', address: '123 Industrial Way, Austin, TX', email: 'it@acme.com', phone: '(512) 555-4455',
+					projectStatus: 'Active', projectStage: 'Live', createdDate: '2025-07-28', payout: '$1,200',
+					statusProgress: '100%', customerName2: 'ACME Headquarters', leadSource: 'Partner', salesRep: 'Taylor V.',
+					setters: '—', closers: 'Taylor V.', teamOffice: 'Austin', dealer: 'GigaNet',
+					leadDate: '2025-07-20', closeDate: '2025-08-20', installDate: '2025-09-05', paidDate: '2025-09-10',
+					tags: 'Fiber, B2B', disputeLink: '#'
+				},
+				22003: {
+					customerName: 'Smith Family', address: '9 Elm St, Round Rock, TX', email: 'smiths@example.com', phone: '(737) 555-1020',
+					projectStatus: 'Scheduled', projectStage: 'Install Scheduled', createdDate: '2025-07-18', payout: '$2,100',
+					statusProgress: '40%', customerName2: 'Bob & Karen Smith', leadSource: 'Door', salesRep: 'Morgan Lee',
+					setters: 'Team 3', closers: 'Morgan Lee', teamOffice: 'Round Rock', dealer: 'A1 Roofing',
+					leadDate: '2025-07-01', closeDate: '2025-08-10', installDate: '2025-09-12', paidDate: '',
+					tags: 'Insurance Claim', disputeLink: '#'
+				},
+				22004: {
+					customerName: 'John Smith', address: '44 Maple St', email: 'john.smith@example.com', phone: '(480) 555-9090',
+					projectStatus: 'Active', projectStage: 'Service Started', createdDate: '2025-08-18', payout: '$550',
+					statusProgress: '50%', customerName2: 'John H. Smith', leadSource: 'Referral', salesRep: 'Ava Chen',
+					setters: '—', closers: 'Ava Chen', teamOffice: 'Phoenix', dealer: 'BugAway',
+					leadDate: '2025-08-10', closeDate: '2025-08-22', installDate: '2025-08-25', paidDate: '2025-09-05',
+					tags: 'AutoPay', disputeLink: '#'
+				}
+			};
+
+			const docsById = {
+				22001: [{ name: 'Contract.pdf', url: '/testFiles/contract.pdf' }, { name: 'Site Plan.png', url: '/testFiles/site-plan.png' }],
+				22002: [{ name: 'LOA.pdf', url: '/testFiles/loa.pdf' }, { name: 'Circuit Diagram.pdf', url: '/testFiles/circuit.pdf' }],
+				22003: [{ name: 'Insurance Scope.pdf', url: '/testFiles/scope.pdf' }],
+				22004: [{ name: 'Service Agreement.pdf', url: '/testFiles/pest-agreement.pdf' }]
+			};
+
+			/* =========================
+			   RENDER TABLE + MEGA MODAL
+			   ========================= */
 			const $ = s => document.querySelector(s);
 			const $$ = s => Array.from(document.querySelectorAll(s));
-			const modal = id => new bootstrap.Modal(document.getElementById(id));
 
-			// ===== Utils =====
-			const toNum = x => {
-				if (x === null || x === undefined) return 0;
-				if (typeof x === 'number') return x;
-				return Number(String(x).replace(/[^0-9.-]/g, '')) || 0;
-			};
+			// Modal elements
+			const megaEl = document.getElementById('dealMegaModal');
+			const dlg = document.getElementById('dealMegaDialog');
+
+			// Utils
+			const toNum = x => (x == null ? 0 : Number(String(x).replace(/[^0-9.-]/g, '')) || 0);
 			const sum = (arr, fn = x => x) => (arr || []).reduce((a, b) => a + fn(b), 0);
 			const fmtMoney = n => (toNum(n)).toLocaleString(undefined, { style: 'currency', currency: 'USD', maximumFractionDigits: 2 });
 			const fmtDate = d => d ? new Date(d + 'T00:00:00').toLocaleDateString() : '';
 			const escapeHtml = s => (s ?? '').toString().replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
 			const overridesTotal = ov => sum(ov || [], o => toNum(o.amount));
-			// Rep Due = ((MP1+MP2+MP3 + Overrides) - SetterDeduction) * (RepSplit%/100)
-			function calcRepDue(d) {
-				const pool = toNum(d.mp1) + toNum(d.mp2) + toNum(d.mp3) + overridesTotal(d.overrides) - toNum(d.setterDeduction);
-				return Math.max(0, pool * (toNum(d.repSplitPct) / 100));
-			}
+			function calcRepDue(d) { const pool = toNum(d.mp1) + toNum(d.mp2) + toNum(d.mp3) + overridesTotal(d.overrides) - toNum(d.setterDeduction); return Math.max(0, pool * (toNum(d.repSplitPct) / 100)); }
 			const calcPaid = d => sum(d.payments || [], p => toNum(p.amount));
 			const calcPending = d => Math.max(0, calcRepDue(d) - calcPaid(d));
 
-			// ===== Filters =====
-			const state = { rows: deals.slice(), filtered: deals.slice() };
-			function applyFilters() {
-				const q = ($('#dealSearch').value || '').trim().toLowerCase();
-				const proj = $('#filterProjectType').value;
-				const from = $('#dateFrom').value ? new Date($('#dateFrom').value + 'T00:00:00') : null;
-				const to = $('#dateTo').value ? new Date($('#dateTo').value + 'T23:59:59') : null;
-
-				state.filtered = state.rows.filter(d => {
-					if (q && !(String(d.id).includes(q) || (d.customer || '').toLowerCase().includes(q))) return false;
-					if (proj && d.projectType !== proj) return false;
-
-
-					// date range
-					if (from || to) {
-						if (df === 'sign') {
-							const sd = d.signDate ? new Date(d.signDate + 'T00:00:00') : null;
-							if (from && (!sd || sd < from)) return false;
-							if (to && (!sd || sd > to)) return false;
-						} else {
-							// any pay date in range
-							const anyIn = (d.payments || []).some(p => {
-								const pd = new Date(p.date + 'T00:00:00');
-								if (from && pd < from) return false;
-								if (to && pd > to) return false;
-								return true;
-							});
-							if (!anyIn) return false;
-						}
-					}
-					return true;
+			// Position the dialog to cover only .page-content
+			function positionMegaModal() {
+				const page = document.querySelector('.page-content');
+				if (!page) return;
+				const r = page.getBoundingClientRect();
+				Object.assign(dlg.style, {
+					left: r.left + 'px',
+					top: r.top + 'px',
+					width: r.width + 'px',
+					height: r.height + 'px'
 				});
-				renderDeals();
-			}
-			function resetFilters() {
-				$('#dealSearch').value = '';
-				$('#filterProjectType').value = '';
-				$('#dateFrom').value = '';
-				$('#dateTo').value = '';
-				applyFilters();
 			}
 
-			// ===== Table render (only 6 columns) =====
-			function renderDeals() {
-				const tbody = $('#dealsTable tbody');
-				tbody.innerHTML = state.filtered.map(d => `
-	      <tr data-id="${d.id}">
-	        <td>${d.id}</td>
-	        <td>${escapeHtml(d.customer)}</td>
-	        <td>${escapeHtml(d.projectType)}</td>
-	        <td>${fmtMoney(calcPaid(d))}</td>
-	        <td><strong>${fmtMoney(calcPending(d))}</strong></td>
-	        <td>${fmtDate(d.signDate)}</td>
-	      </tr>
-	    `).join('') || `<tr><td colspan="6" class="text-center text-muted">No deals match your filters.</td></tr>`;
-			}
-
-			// Row click → open type-specific modal
-			$('#dealsTable').addEventListener('click', (e) => {
-				const tr = e.target.closest('tr[data-id]'); if (!tr) return;
-				const id = Number(tr.dataset.id);
-				const d = state.rows.find(x => x.id === id); if (!d) return;
-				openDealDetails(d);
-			});
-
-			// ===== Modal routing by type =====
-			function openDealDetails(d) {
-				const title = `${escapeHtml(d.projectType)} • ${escapeHtml(d.customer)} • #${d.id}`;
-				document.getElementById('dealDetailsTitle').textContent = title;
+			// Build summary/payment/type sections
+			function summaryRow(d) {
 				const paid = calcPaid(d), pending = calcPending(d);
-
-				// common header summary
-				const summary = `
-	      <div class="row g-3 mb-3">
-	        <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body">
-	          <div class="small text-muted">Already Paid</div><div class="h5 mb-0">${fmtMoney(paid)}</div>
-	        </div></div></div>
-	        <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body">
-	          <div class="small text-muted">Pending Amount</div><div class="h5 mb-0">${fmtMoney(pending)}</div>
-	        </div></div></div>
-	        <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body">
-	          <div class="small text-muted">Sign Date</div><div class="h5 mb-0">${fmtDate(d.signDate)}</div>
-	        </div></div></div>
-	        <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body">
-	          <div class="small text-muted">Rep Split</div><div class="h5 mb-0">${toNum(d.repSplitPct)}%</div>
-	        </div></div></div>
-	      </div>
-	    `;
-
-				// route to type-specific renderer
-				let body = '';
-				switch ((d.projectType || '').toLowerCase()) {
-					case 'solar': body = renderSolar(d); break;
-					case 'fiber': body = renderFiber(d); break;
-					case 'roofing': body = renderRoofing(d); break;
-					case 'pest': body = renderPest(d); break;
-					default: body = `<div class="text-muted">No template for type "${escapeHtml(d.projectType)}".</div>`;
-				}
-
-				document.getElementById('dealDetailsBody').innerHTML = summary + body + renderPayments(d);
-				modal('dealDetailsModal').show();
+				return `
+	      <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body">
+	        <div class="small text-muted">Already Paid</div><div class="h5 mb-0">${fmtMoney(paid)}</div>
+	      </div></div></div>
+	      <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body">
+	        <div class="small text-muted">Pending Amount</div><div class="h5 mb-0">${fmtMoney(pending)}</div>
+	      </div></div></div>
+	      <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body">
+	        <div class="small text-muted">Sign Date</div><div class="h5 mb-0">${fmtDate(d.signDate)}</div>
+	      </div></div></div>
+	      <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body">
+	        <div class="small text-muted">Rep Split</div><div class="h5 mb-0">${toNum(d.repSplitPct)}%</div>
+	      </div></div></div>`;
+			}
+			function renderCommissionMini(d) {
+				return `
+	      <div class="card mb-3"><div class="card-body">
+	        <div class="fw-semibold mb-2">Commission Breakdown</div>
+	        <div class="row g-3">
+	          <div class="col-md-2"><div class="small text-muted">MP1</div><div>${fmtMoney(d.mp1)}</div></div>
+	          ${toNum(d.mp2) ? `<div class="col-md-2"><div class="small text-muted">MP2</div><div>${fmtMoney(d.mp2)}</div></div>` : ''}
+	          ${toNum(d.mp3) ? `<div class="col-md-2"><div class="small text-muted">MP3</div><div>${fmtMoney(d.mp3)}</div></div>` : ''}
+	          <div class="col-md-3"><div class="small text-muted">Overrides</div><div>${fmtMoney(overridesTotal(d.overrides))}</div></div>
+	          <div class="col-md-3"><div class="small text-muted">Setter Deduction</div><div>- ${fmtMoney(d.setterDeduction || 0)}</div></div>
+	        </div>
+	      </div></div>`;
+			}
+			function renderPayments(d) {
+				const items = (d.payments || []).map(p => `
+	      <li class="list-group-item d-flex justify-content-between">
+	        <span>${fmtDate(p.date)}</span><span>${fmtMoney(p.amount)}</span>
+	      </li>`).join('');
+				return `
+	      <div class="card"><div class="card-body">
+	        <div class="fw-semibold mb-2">Payments</div>
+	        ${(d.payments && d.payments.length) ? `<ul class="list-group list-group-flush">${items}</ul>` : `<div class="text-muted">No payments recorded.</div>`}
+	      </div></div>`;
 			}
 
-			// ==== Type-specific sections ====
-			function renderSolar(d) {
-				const s = d.solar || {};
-				const adders = (s.adders || []).map(a => `<li class="list-group-item d-flex justify-content-between"><span>${escapeHtml(a.name)}</span><span>${fmtMoney(a.amount)}</span></li>`).join('');
+			function finSolar(d) {
+				const s = d.solar || {}; const adders = (s.adders || []).map(a => `<li class="list-group-item d-flex justify-content-between"><span>${escapeHtml(a.name)}</span><span>${fmtMoney(a.amount)}</span></li>`).join('');
 				return `
 	      <div class="card mb-3"><div class="card-body">
 	        <div class="fw-semibold mb-2">System</div>
@@ -1124,16 +1095,10 @@
 	          <div class="col-md-4"><div class="small text-muted">PTO</div><div>${fmtDate(s.milestones?.pto)}</div></div>
 	        </div>
 	      </div></div>
-	      ${(s.adders && s.adders.length) ? `
-	        <div class="card mb-3"><div class="card-body">
-	          <div class="fw-semibold mb-2">Adders</div>
-	          <ul class="list-group list-group-flush">${adders}</ul>
-	        </div></div>` : ''}
-	      ${renderCommissionMini(d)}
-	    `;
+	      ${(s.adders && s.adders.length) ? `<div class="card mb-3"><div class="card-body"><div class="fw-semibold mb-2">Adders</div><ul class="list-group list-group-flush">${adders}</ul></div></div>` : ''}
+	      ${renderCommissionMini(d)}`;
 			}
-
-			function renderFiber(d) {
+			function finFiber(d) {
 				const f = d.fiber || {};
 				return `
 	      <div class="card mb-3"><div class="card-body">
@@ -1149,11 +1114,9 @@
 	          <div class="col-md-3"><div class="small text-muted">Install Date</div><div>${fmtDate(f.installDate)}</div></div>
 	        </div>
 	      </div></div>
-	      ${renderCommissionMini(d)}
-	    `;
+	      ${renderCommissionMini(d)}`;
 			}
-
-			function renderRoofing(d) {
+			function finRoofing(d) {
 				const r = d.roofing || {};
 				return `
 	      <div class="card mb-3"><div class="card-body">
@@ -1175,12 +1138,10 @@
 	          <div class="col-md-4"><div class="small text-muted">ACV</div><div>${fmtMoney(r.insurance.acv)}</div></div>
 	          <div class="col-md-4"><div class="small text-muted">Deductible</div><div>${fmtMoney(r.insurance.deductible)}</div></div>
 	        </div>
-	      </div></div>` : ''}
-	      ${renderCommissionMini(d)}
-	    `;
+	      </div></div>`: ''}
+	      ${renderCommissionMini(d)}`;
 			}
-
-			function renderPest(d) {
+			function finPest(d) {
 				const p = d.pest || {};
 				return `
 	      <div class="card mb-3"><div class="card-body">
@@ -1194,41 +1155,89 @@
 	          <div class="col-md-3"><div class="small text-muted">Start</div><div>${fmtDate(p.startDate)}</div></div>
 	        </div>
 	      </div></div>
-	      ${renderCommissionMini(d)}
-	    `;
+	      ${renderCommissionMini(d)}`;
+			}
+			function renderType(d) {
+				switch ((d.projectType || '').toLowerCase()) {
+					case 'solar': return finSolar(d);
+					case 'fiber': return finFiber(d);
+					case 'roofing': return finRoofing(d);
+					case 'pest': return finPest(d);
+					default: return `<div class="text-muted">No template for type "${escapeHtml(d.projectType)}".</div>`;
+				}
 			}
 
-			// Small commission block shared across types
-			function renderCommissionMini(d) {
-				return `
-	      <div class="card mb-3"><div class="card-body">
-	        <div class="fw-semibold mb-2">Commission Breakdown</div>
-	        <div class="row g-3">
-	          <div class="col-md-2"><div class="small text-muted">MP1</div><div>${fmtMoney(d.mp1)}</div></div>
-	          ${toNum(d.mp2) ? `<div class="col-md-2"><div class="small text-muted">MP2</div><div>${fmtMoney(d.mp2)}</div></div>` : ''}
-	          ${toNum(d.mp3) ? `<div class="col-md-2"><div class="small text-muted">MP3</div><div>${fmtMoney(d.mp3)}</div></div>` : ''}
-	          <div class="col-md-3"><div class="small text-muted">Overrides</div><div>${fmtMoney(overridesTotal(d.overrides))}</div></div>
-	          <div class="col-md-3"><div class="small text-muted">Setter Deduction</div><div>- ${fmtMoney(d.setterDeduction || 0)}</div></div>
-	        </div>
-	      </div></div>
-	    `;
+			function renderDocsFor(id) {
+				const items = (docsById[id] || []).map(doc => `
+	      <tr>
+	        <td>${escapeHtml(doc.name)}</td>
+	        <td><a href="${doc.url}" target="_blank" title="View"><i data-feather="eye"></i></a></td>
+	        <td><a href="${doc.url}" download title="Download"><i data-feather="download"></i></a></td>
+	      </tr>`).join('');
+				$('#mm-docs-body').innerHTML = items || `<tr><td colspan="3" class="text-muted">No documents uploaded.</td></tr>`;
+				if (window.feather && feather.replace) feather.replace();
 			}
 
-			// Payments list (shared)
-			function renderPayments(d) {
-				const paidList = (d.payments || []).map(p => `
-	      <li class="list-group-item d-flex justify-content-between">
-	        <span>${fmtDate(p.date)}</span><span>${fmtMoney(p.amount)}</span>
-	      </li>`).join('');
-				return `
-	      <div class="card"><div class="card-body">
-	        <div class="fw-semibold mb-2">Payments</div>
-	        ${(d.payments && d.payments.length) ? `<ul class="list-group list-group-flush">${paidList}</ul>` : `<div class="text-muted">No payments recorded.</div>`}
-	      </div></div>
-	    `;
-			}
+			// Create the modal ONCE with interaction-friendly options
+			let mega = bootstrap.Modal.getInstance(megaEl);
+			if (mega) mega.dispose();
+			mega = new bootstrap.Modal(megaEl, { backdrop: false, focus: false, keyboard: true });
 
-			// ===== Events =====
+			// Let outside area remain interactive (defeat focus trap reclaim)
+			const allowOutsideFocus = (e) => {
+				if (!megaEl.classList.contains('show')) return;
+				if (!e.target.closest('#dealMegaModal')) e.stopPropagation();
+			};
+
+			megaEl.addEventListener('shown.bs.modal', () => {
+				document.body.classList.add('mega-open');          // <-- add
+				document.body.classList.remove('modal-open');
+				document.body.style.removeProperty('padding-right');
+				document.addEventListener('focusin', allowOutsideFocus, true);
+				positionMegaModal();
+			});
+
+			megaEl.addEventListener('hidden.bs.modal', () => {
+				document.body.classList.remove('mega-open');       // <-- add
+				document.removeEventListener('focusin', allowOutsideFocus, true);
+			});
+
+
+			// Keep dialog aligned to page-content
+			window.addEventListener('resize', positionMegaModal, { passive: true });
+			window.addEventListener('scroll', positionMegaModal, { passive: true });
+			document.querySelectorAll('.sidebar-toggler').forEach(btn => {
+				btn.addEventListener('click', () => setTimeout(positionMegaModal, 250));
+			});
+
+			// Filters
+			const state = { rows: deals.slice(), filtered: deals.slice() };
+			function applyFilters() {
+				const q = ($('#dealSearch').value || '').trim().toLowerCase();
+				const proj = $('#filterProjectType').value;
+				const from = $('#dateFrom').value ? new Date($('#dateFrom').value + 'T00:00:00') : null;
+				const to = $('#dateTo').value ? new Date($('#dateTo').value + 'T23:59:59') : null;
+
+				state.filtered = state.rows.filter(d => {
+					if (q && !(String(d.id).includes(q) || (d.customer || '').toLowerCase().includes(q))) return false;
+					if (proj && d.projectType !== proj) return false;
+
+					const pend = calcPending(d);
+
+					if (from || to) {
+						const sd = d.signDate ? new Date(d.signDate + 'T00:00:00') : null;
+						if (from && (!sd || sd < from)) return false;
+						if (to && (!sd || sd > to)) return false;
+					}
+					return true;
+				});
+				renderDeals();
+			}
+			function resetFilters() {
+				$('#dealSearch').value = ''; $('#filterProjectType').value = '';
+				$('#dateFrom').value = ''; $('#dateTo').value = '';
+				applyFilters();
+			}
 			$('#btnApplyFilters').addEventListener('click', applyFilters);
 			$('#btnResetFilters').addEventListener('click', resetFilters);
 			$('#dealSearch').addEventListener('input', applyFilters);
@@ -1236,10 +1245,90 @@
 			$('#dateFrom').addEventListener('change', applyFilters);
 			$('#dateTo').addEventListener('change', applyFilters);
 
-			// ===== Init =====
+			// Table rendering + click → open modal
+			function renderDeals() {
+				const tbody = $('#dealsTable tbody');
+				tbody.innerHTML = state.filtered.map(d => `
+	      <tr data-id="${d.id}">
+	        <td>${d.id}</td>
+	        <td>${escapeHtml(d.customer)}</td>
+	        <td>${escapeHtml(d.projectType)}</td>
+	        <td>${fmtMoney(calcPaid(d))}</td>
+	        <td><strong>${fmtMoney(calcPending(d))}</strong></td>
+	        <td>${fmtDate(d.signDate)}</td>
+	      </tr>`).join('') || `<tr><td colspan="6" class="text-center text-muted">No deals match your filters.</td></tr>`;
+			}
+			$('#dealsTable').addEventListener('click', (e) => {
+				const tr = e.target.closest('tr[data-id]'); if (!tr) return;
+				const id = Number(tr.dataset.id);
+				const d = state.rows.find(x => x.id === id); if (!d) return;
+				const ov = overviewById[id];
+				openMegaModal(d, ov);
+			});
+
+			// Open & fill mega modal
+			function renderDocsForAndIcons(id) {
+				renderDocsFor(id);
+				if (window.feather && feather.replace) feather.replace();
+			}
+			function openMegaModal(d, ov) {
+				document.getElementById('mm-title').textContent = `${d.projectType || 'Deal'} • ${d.customer || '-'} • #${d.id || '-'}`;
+
+				const o = ov || {};
+				const address = o.address || d?.fiber?.serviceAddress || d?.pest?.serviceAddress || '';
+				const mapUrl = address ? `https://www.google.com/maps?q=${encodeURIComponent(address)}&layer=c&output=svembed` : '';
+				const streetUrl = address ? `https://maps.googleapis.com/maps/api/streetview?size=1200x480&location=${encodeURIComponent(address)}&pitch=-0.76` : '';
+
+				$('#mm-deal-id').textContent = d.id ?? '-';
+				$('#mm-customer-name').textContent = d.customer ?? o.customerName ?? '-';
+				$('#mm-product-type').textContent = d.projectType ?? '-';
+				$('#mm-project-status').textContent = o.projectStatus ?? '-';
+				$('#mm-project-stage').textContent = o.projectStage ?? '-';
+				$('#mm-contract-date').textContent = d.signDate ? fmtDate(d.signDate) : (o.signDate || '-');
+				$('#mm-created-date').textContent = o.createdDate ?? '-';
+				$('#mm-payout').textContent = o.payout ?? '-';
+
+				const pb = document.getElementById('mm-status-progress');
+				pb.style.width = o.statusProgress || '25%';
+				pb.textContent = o.statusProgress || '25%';
+
+				$('#mm-customer-name-2').textContent = o.customerName2 || d.customer || '-';
+				$('#mm-customer-phone').textContent = o.phone || '-';
+				$('#mm-customer-email').textContent = o.email || '-';
+				$('#mm-customer-address').textContent = address || '-';
+				$('#mm-google-map').src = mapUrl;
+				$('#mm-google-street').src = streetUrl;
+				$('#mm-lead-source').textContent = o.leadSource || '-';
+				$('#mm-sales-rep').textContent = o.salesRep || '-';
+				$('#mm-setters').textContent = o.setters || '-';
+				$('#mm-closers').textContent = o.closers || '-';
+				$('#mm-team-office').textContent = o.teamOffice || '-';
+				$('#mm-dealer').textContent = o.dealer || '-';
+				$('#mm-lead-date').textContent = o.leadDate || '-';
+				$('#mm-close-date').textContent = o.closeDate || '-';
+				$('#mm-install-date').textContent = o.installDate || '-';
+				$('#mm-paid-date').textContent = o.paidDate || '-';
+				$('#mm-tags').textContent = o.tags || '-';
+				$('#mm-dispute-link').href = o.disputeLink || '#';
+
+				// Financials
+				$('#mm-fin-summary').innerHTML = summaryRow(d);
+				$('#mm-fin-body').innerHTML = renderType(d);
+				$('#mm-payments').innerHTML = renderPayments(d);
+
+				// Docs
+				renderDocsForAndIcons(d.id);
+
+				if (window.feather && feather.replace) feather.replace();
+				mega.show();
+			}
+
+			// Init
 			renderDeals();
+			positionMegaModal();
 		})();
 	</script>
+
 
 	<!-- Custom js for this page -->
 	<script src="/assets/js/data-table.js"></script>
