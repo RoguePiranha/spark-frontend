@@ -242,8 +242,8 @@ var Prism = (function (_self) {
 					// A stack will look like this:
 					//
 					// Error
-					//    at _.util.currentScript (https://localhost/components/prism-core.js:119:5)
-					//    at Global code (https://localhost/components/prism-core.js:606:1)
+					//    at _.util.currentScript (/components/prism-core.js:119:5)
+					//    at Global code (/components/prism-core.js:606:1)
 
 					var src = (/at [^(\r\n]*\((.*):[^:]+:[^:]+\)$/i.exec(err.stack) || [])[1];
 					if (src) {

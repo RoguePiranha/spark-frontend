@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --dt-row-selected: 13, 110, 253;
   --dt-row-selected-text: 255, 255, 255;
@@ -31,15 +30,24 @@ table.dataTable tr.dt-hasChild td.dt-control:before {
   border-bottom: 0px solid transparent;
   border-right: 5px solid transparent;
 }
+table.dataTable tfoot:empty {
+  display: none;
+}
 
 html.dark table.dataTable td.dt-control:before,
-:root[data-bs-theme=dark] table.dataTable td.dt-control:before {
+:root[data-bs-theme=dark] table.dataTable td.dt-control:before,
+:root[data-theme=dark] table.dataTable td.dt-control:before {
   border-left-color: rgba(255, 255, 255, 0.5);
 }
 html.dark table.dataTable tr.dt-hasChild td.dt-control:before,
-:root[data-bs-theme=dark] table.dataTable tr.dt-hasChild td.dt-control:before {
+:root[data-bs-theme=dark] table.dataTable tr.dt-hasChild td.dt-control:before,
+:root[data-theme=dark] table.dataTable tr.dt-hasChild td.dt-control:before {
   border-top-color: rgba(255, 255, 255, 0.5);
   border-left-color: transparent;
+}
+
+div.dt-scroll {
+  width: 100%;
 }
 
 div.dt-scroll-body thead tr,
@@ -72,8 +80,8 @@ table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order:before {
   position: absolute;
   display: block;
   bottom: 50%;
-  content: "▲";
-  content: "▲"/"";
+  content: "\25B2";
+  content: "\25B2"/"";
 }
 table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order:after, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order:after,
 table.dataTable thead > tr > td.dt-orderable-desc span.dt-column-order:after,
@@ -81,27 +89,17 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order:after {
   position: absolute;
   display: block;
   top: 50%;
-  content: "▼";
-  content: "▼"/"";
-}
-table.dataTable thead > tr > th.dt-orderable-asc, table.dataTable thead > tr > th.dt-orderable-desc, table.dataTable thead > tr > th.dt-ordering-asc, table.dataTable thead > tr > th.dt-ordering-desc,
-table.dataTable thead > tr > td.dt-orderable-asc,
-table.dataTable thead > tr > td.dt-orderable-desc,
-table.dataTable thead > tr > td.dt-ordering-asc,
-table.dataTable thead > tr > td.dt-ordering-desc {
-  position: relative;
-  padding-right: 30px;
+  content: "\25BC";
+  content: "\25BC"/"";
 }
 table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order, table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order,
 table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order,
 table.dataTable thead > tr > td.dt-orderable-desc span.dt-column-order,
 table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order,
 table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
-  position: absolute;
-  right: 12px;
-  top: 0;
-  bottom: 0;
+  position: relative;
   width: 12px;
+  height: 20px;
 }
 table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order:before, table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order:after, table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order:before, table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order:after, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order:before, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order:after, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order:before, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order:after,
 table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order:before,
@@ -141,6 +139,40 @@ table.dataTable thead > tr > td.sorting_asc_disabled span.dt-column-order:before
 table.dataTable thead > tr > th:active,
 table.dataTable thead > tr > td:active {
   outline: none;
+}
+
+table.dataTable thead > tr > th div.dt-column-header,
+table.dataTable thead > tr > th div.dt-column-footer,
+table.dataTable thead > tr > td div.dt-column-header,
+table.dataTable thead > tr > td div.dt-column-footer,
+table.dataTable tfoot > tr > th div.dt-column-header,
+table.dataTable tfoot > tr > th div.dt-column-footer,
+table.dataTable tfoot > tr > td div.dt-column-header,
+table.dataTable tfoot > tr > td div.dt-column-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+}
+table.dataTable thead > tr > th div.dt-column-header span.dt-column-title,
+table.dataTable thead > tr > th div.dt-column-footer span.dt-column-title,
+table.dataTable thead > tr > td div.dt-column-header span.dt-column-title,
+table.dataTable thead > tr > td div.dt-column-footer span.dt-column-title,
+table.dataTable tfoot > tr > th div.dt-column-header span.dt-column-title,
+table.dataTable tfoot > tr > th div.dt-column-footer span.dt-column-title,
+table.dataTable tfoot > tr > td div.dt-column-header span.dt-column-title,
+table.dataTable tfoot > tr > td div.dt-column-footer span.dt-column-title {
+  flex-grow: 1;
+}
+table.dataTable thead > tr > th div.dt-column-header span.dt-column-title:empty,
+table.dataTable thead > tr > th div.dt-column-footer span.dt-column-title:empty,
+table.dataTable thead > tr > td div.dt-column-header span.dt-column-title:empty,
+table.dataTable thead > tr > td div.dt-column-footer span.dt-column-title:empty,
+table.dataTable tfoot > tr > th div.dt-column-header span.dt-column-title:empty,
+table.dataTable tfoot > tr > th div.dt-column-footer span.dt-column-title:empty,
+table.dataTable tfoot > tr > td div.dt-column-header span.dt-column-title:empty,
+table.dataTable tfoot > tr > td div.dt-column-footer span.dt-column-title:empty {
+  display: none;
 }
 
 div.dt-scroll-body > table.dataTable > thead > tr > th,
@@ -233,9 +265,29 @@ table.dataTable th,
 table.dataTable td {
   box-sizing: border-box;
 }
+table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date,
+table.dataTable td.dt-type-numeric,
+table.dataTable td.dt-type-date {
+  text-align: right;
+}
+table.dataTable th.dt-type-numeric div.dt-column-header,
+table.dataTable th.dt-type-numeric div.dt-column-footer, table.dataTable th.dt-type-date div.dt-column-header,
+table.dataTable th.dt-type-date div.dt-column-footer,
+table.dataTable td.dt-type-numeric div.dt-column-header,
+table.dataTable td.dt-type-numeric div.dt-column-footer,
+table.dataTable td.dt-type-date div.dt-column-header,
+table.dataTable td.dt-type-date div.dt-column-footer {
+  flex-direction: row-reverse;
+}
 table.dataTable th.dt-left,
 table.dataTable td.dt-left {
   text-align: left;
+}
+table.dataTable th.dt-left div.dt-column-header,
+table.dataTable th.dt-left div.dt-column-footer,
+table.dataTable td.dt-left div.dt-column-header,
+table.dataTable td.dt-left div.dt-column-footer {
+  flex-direction: row;
 }
 table.dataTable th.dt-center,
 table.dataTable td.dt-center {
@@ -245,9 +297,21 @@ table.dataTable th.dt-right,
 table.dataTable td.dt-right {
   text-align: right;
 }
+table.dataTable th.dt-right div.dt-column-header,
+table.dataTable th.dt-right div.dt-column-footer,
+table.dataTable td.dt-right div.dt-column-header,
+table.dataTable td.dt-right div.dt-column-footer {
+  flex-direction: row-reverse;
+}
 table.dataTable th.dt-justify,
 table.dataTable td.dt-justify {
   text-align: justify;
+}
+table.dataTable th.dt-justify div.dt-column-header,
+table.dataTable th.dt-justify div.dt-column-footer,
+table.dataTable td.dt-justify div.dt-column-header,
+table.dataTable td.dt-justify div.dt-column-footer {
+  flex-direction: row;
 }
 table.dataTable th.dt-nowrap,
 table.dataTable td.dt-nowrap {
@@ -257,11 +321,6 @@ table.dataTable th.dt-empty,
 table.dataTable td.dt-empty {
   text-align: center;
   vertical-align: top;
-}
-table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date,
-table.dataTable td.dt-type-numeric,
-table.dataTable td.dt-type-date {
-  text-align: right;
 }
 table.dataTable thead th,
 table.dataTable thead td,
@@ -275,6 +334,16 @@ table.dataTable tfoot th.dt-head-left,
 table.dataTable tfoot td.dt-head-left {
   text-align: left;
 }
+table.dataTable thead th.dt-head-left div.dt-column-header,
+table.dataTable thead th.dt-head-left div.dt-column-footer,
+table.dataTable thead td.dt-head-left div.dt-column-header,
+table.dataTable thead td.dt-head-left div.dt-column-footer,
+table.dataTable tfoot th.dt-head-left div.dt-column-header,
+table.dataTable tfoot th.dt-head-left div.dt-column-footer,
+table.dataTable tfoot td.dt-head-left div.dt-column-header,
+table.dataTable tfoot td.dt-head-left div.dt-column-footer {
+  flex-direction: row;
+}
 table.dataTable thead th.dt-head-center,
 table.dataTable thead td.dt-head-center,
 table.dataTable tfoot th.dt-head-center,
@@ -287,11 +356,31 @@ table.dataTable tfoot th.dt-head-right,
 table.dataTable tfoot td.dt-head-right {
   text-align: right;
 }
+table.dataTable thead th.dt-head-right div.dt-column-header,
+table.dataTable thead th.dt-head-right div.dt-column-footer,
+table.dataTable thead td.dt-head-right div.dt-column-header,
+table.dataTable thead td.dt-head-right div.dt-column-footer,
+table.dataTable tfoot th.dt-head-right div.dt-column-header,
+table.dataTable tfoot th.dt-head-right div.dt-column-footer,
+table.dataTable tfoot td.dt-head-right div.dt-column-header,
+table.dataTable tfoot td.dt-head-right div.dt-column-footer {
+  flex-direction: row-reverse;
+}
 table.dataTable thead th.dt-head-justify,
 table.dataTable thead td.dt-head-justify,
 table.dataTable tfoot th.dt-head-justify,
 table.dataTable tfoot td.dt-head-justify {
   text-align: justify;
+}
+table.dataTable thead th.dt-head-justify div.dt-column-header,
+table.dataTable thead th.dt-head-justify div.dt-column-footer,
+table.dataTable thead td.dt-head-justify div.dt-column-header,
+table.dataTable thead td.dt-head-justify div.dt-column-footer,
+table.dataTable tfoot th.dt-head-justify div.dt-column-header,
+table.dataTable tfoot th.dt-head-justify div.dt-column-footer,
+table.dataTable tfoot td.dt-head-justify div.dt-column-header,
+table.dataTable tfoot td.dt-head-justify div.dt-column-footer {
+  flex-direction: row;
 }
 table.dataTable thead th.dt-head-nowrap,
 table.dataTable thead td.dt-head-nowrap,
@@ -365,6 +454,34 @@ table.table.dataTable.table-hover > tbody > tr.selected:hover > * {
   box-shadow: inset 0 0 0 9999px rgba(var(--dt-row-selected), 0.975);
 }
 
+div.dt-container div.dt-layout-start > *:not(:last-child) {
+  margin-right: 1em;
+}
+div.dt-container div.dt-layout-end > *:not(:first-child) {
+  margin-left: 1em;
+}
+div.dt-container div.dt-layout-full {
+  width: 100%;
+}
+div.dt-container div.dt-layout-full > *:only-child {
+  margin-left: auto;
+  margin-right: auto;
+}
+div.dt-container div.dt-layout-table > div {
+  display: block !important;
+}
+
+@media screen and (max-width: 767px) {
+  div.dt-container div.dt-layout-start > *:not(:last-child) {
+    margin-right: 0;
+  }
+  div.dt-container div.dt-layout-end > *:not(:first-child) {
+    margin-left: 0;
+  }
+}
+div.dt-container {
+  position: relative;
+}
 div.dt-container div.dt-length label {
   font-weight: normal;
   text-align: left;
@@ -387,9 +504,6 @@ div.dt-container div.dt-search input {
   margin-left: 0.5em;
   display: inline-block;
   width: auto;
-}
-div.dt-container div.dt-info {
-  padding-top: 0.85em;
 }
 div.dt-container div.dt-paging {
   margin: 0;
@@ -456,14 +570,19 @@ table.dataTable.table-sm > thead > tr td.dt-orderable-asc,
 table.dataTable.table-sm > thead > tr td.dt-orderable-desc,
 table.dataTable.table-sm > thead > tr td.dt-ordering-asc,
 table.dataTable.table-sm > thead > tr td.dt-ordering-desc {
-  padding-right: 20px;
+  padding-right: 0.25rem;
 }
 table.dataTable.table-sm > thead > tr th.dt-orderable-asc span.dt-column-order, table.dataTable.table-sm > thead > tr th.dt-orderable-desc span.dt-column-order, table.dataTable.table-sm > thead > tr th.dt-ordering-asc span.dt-column-order, table.dataTable.table-sm > thead > tr th.dt-ordering-desc span.dt-column-order,
 table.dataTable.table-sm > thead > tr td.dt-orderable-asc span.dt-column-order,
 table.dataTable.table-sm > thead > tr td.dt-orderable-desc span.dt-column-order,
 table.dataTable.table-sm > thead > tr td.dt-ordering-asc span.dt-column-order,
 table.dataTable.table-sm > thead > tr td.dt-ordering-desc span.dt-column-order {
-  right: 5px;
+  right: 0.25rem;
+}
+table.dataTable.table-sm > thead > tr th.dt-type-date span.dt-column-order, table.dataTable.table-sm > thead > tr th.dt-type-numeric span.dt-column-order,
+table.dataTable.table-sm > thead > tr td.dt-type-date span.dt-column-order,
+table.dataTable.table-sm > thead > tr td.dt-type-numeric span.dt-column-order {
+  left: 0.25rem;
 }
 
 div.dt-scroll-head table.table-bordered {
