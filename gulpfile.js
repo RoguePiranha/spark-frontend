@@ -121,8 +121,8 @@ gulp.task('injectCommonAssets', () => {
         .pipe(gulp.dest('.'));
 });
 
-// removed "'injectPartials', " and ", 'injectCommonAssets'"
-gulp.task('inject', gulp.series('replacePaths'));
+// removed 'injectPartials'
+gulp.task('inject', gulp.series('replacePaths','injectCommonAssets'));
 
 /** -----------------------------------------
  *  Vendors
@@ -234,7 +234,7 @@ gulp.task('copy:static', () =>
 gulp.task('build', gulp.series(
     // 'copyVendors',
     'sass',
-    // 'inject',
+    'inject',
     'clean:dist',
     gulp.parallel('copy:html', 'copy:assets', 'copy:static')
 )); // 'copy:partials',
