@@ -1,49 +1,74 @@
 <!DOCTYPE html>
 
+<!-- **************************************************************************************************************************
+ wants the dashboard/landing page to have a image of rep and leaderboard type stats, open tickets, (manifestation board, they 
+ can set a goal of how much they want to make, how much they need to make each month, how many of of each item do they need to 
+ sell this year/month to do that, etc)
+
+****************************************************************************************************************************-->
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="SPARK - Sales Performance and Revenue Keeper">
-	<meta name="author" content="SparkPro">
-	
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="ie=edge" />
+		<meta
+			name="description"
+			content="SPARK - Sales Performance and Revenue Keeper" />
+		<meta
+			name="author"
+			content="SparkPro" />
 
-	<title>SPARK - Sales Performance and Revenue Keeper</title>
+		<title>SPARK - Dashboard</title>
 
-  <!-- color-modes:js -->
-  <script src="../../assets/js/color-modes.js"></script>
-  <!-- endinject -->
+		<!-- Fonts -->
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com" />
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+			rel="stylesheet" />
+		<!-- End fonts -->
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <!-- End fonts -->
+		<!-- core:css -->
+		<link rel="stylesheet" href="assets/vendors/core/core.css">
+		<!-- endinject -->
 
-	<!-- core:css -->
-	<link rel="stylesheet" href="../../assets/vendors/core/core.css">
-	<!-- endinject -->
+		<!-- Plugin css for this page -->
+		<!-- End plugin css for this page -->
 
-	<!-- Plugin css for this page -->
-	<link rel="stylesheet" href="/assets/vendors/prismjs/themes/prism.css">
-	<!-- End plugin css for this page -->
+		<!-- Color Modes Script -->
+		<script src="/assets/js/color-modes.js"></script>
+		<!-- end Color Modes Script -->
 
-	<!-- inject:css -->
-	<link rel="stylesheet" href="/assets/fonts/feather-font/css/iconfont.css">
-	<!-- endinject -->
+		<!-- inject:css -->
+		<link rel="stylesheet" href="../assets/fonts/feather-font/css/iconfont.css">
+		<!-- endinject -->
 
-  <!-- Layout styles -->  
-	<link rel="stylesheet" href="/assets/css/style.css">
-  <!-- End layout styles -->
+		<!-- Layout styles -->
+		<link
+			rel="stylesheet"
+			href="/assets/css/style.css" />
+		<link
+			rel="stylesheet"
+			href="/assets/css/style-rtl.css" />
+		<!-- End layout styles -->
 
-  <link rel="shortcut icon" href="/public/images/icons/white favicon.png" />
-</head>
-<body class="sidebar-dark">
-	<div class="main-wrapper">
-
-		<!-- partial:partials/_sidebar.html -->
-		<nav class="sidebar">
+		<link
+			rel="shortcut icon"
+			href="/public/images/icons/white favicon.png" />
+	</head>
+	<body class="sidebar-dark">
+		<div class="main-wrapper">
+			<!-- partial:partials/_sidebar.html -->
+			<nav class="sidebar">
 	<div class="sidebar-header">
     <a href="#" class="sidebar-brand" aria-label="Spark Home" title="Spark Home">
       <img src="/public/images/icons/horz-dark-mode-logo.png" class="sidebar-logo" alt="Spark Logo">
@@ -257,12 +282,11 @@
 	</div>
 </nav>
 
-		<!-- partial -->
-	
-		<div class="page-wrapper">
-				
-			<!-- partial:partials/_navbar.html -->
-			<nav class="navbar">
+			<!-- partial -->
+
+			<div class="page-wrapper">
+				<!-- partial:partials/_navbar.html -->
+				<nav class="navbar">
 	<div class="navbar-content">
 		<div class="navbar-page-title d-flex align-items-center">
 			<h2
@@ -693,287 +717,160 @@
 	</script>
 </nav>
 
-			<!-- partial -->
+				<!-- partial -->
 
-			<div class="page-content">
-				<div class="row">
-					<div class="col-xl-10 main-content ps-xl-4 pe-xl-5">
-						<h1 class="page-title">Navs</h1>
-						<p class="lead">Documentation and examples for how to use Bootstrap’s included navigation components. Read the <a href="https://getbootstrap.com/docs/5.1/components/navs/" target="_blank">Official Bootstrap Documentation</a> for a full list of instructions and other options.</p>
-						
-						<hr>
-						
-						<h4 id="default">Basic example</h4>
-						<p class="mb-3">Navigation available in Bootstrap share general markup and styles, from the base <code>.nav</code> class to the active and disabled states. Swap modifier classes to switch between each style.</p>
-						<div class="example">
-							<ul class="nav">
-								<li class="nav-item">
-									<a class="nav-link active" href="javascript:;">Active</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:;">Link</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:;">Link</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link disabled" href="javascript:;" tabindex="-1" aria-disabled="true">Disabled</a>
-								</li>
-							</ul>
-						</div>
-						<figure class="highlight" id="Default">
-<pre><code class="language-markup"><script type="script/prism-html-markup"><ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-  </li>
-</ul></script></code></pre>
-							<button type="button" class="btn btn-clipboard" data-clipboard-target="#Default">copy</button>
-            </figure>
-            
-						<hr>
-						
-						<h4 id="h-alignment">Horizontal alignment</h4>
-						<p class="mb-3">Change the horizontal alignment of your nav with flexbox utilities. By default, navs are left-aligned, but you can easily change them to center or right aligned.</p>
-						<div class="example">
-							<ul class="nav justify-content-center">
-								<li class="nav-item">
-									<a class="nav-link active" href="javascript:;">Active</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:;">Link</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:;">Link</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link disabled" href="javascript:;" tabindex="-1" aria-disabled="true">Disabled</a>
-								</li>
-							</ul>
-						</div>
-						<figure class="highlight" id="hAlignment">
-<pre><code class="language-markup"><script type="script/prism-html-markup"><ul class="nav justify-content-center">
-  ...
-</ul></script></code></pre>
-							<button type="button" class="btn btn-clipboard" data-clipboard-target="#hAlignment">copy</button>
-						</figure>
-						<div class="example">
-							<ul class="nav justify-content-end">
-								<li class="nav-item">
-									<a class="nav-link active" href="javascript:;">Active</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:;">Link</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:;">Link</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link disabled" href="javascript:;" tabindex="-1" aria-disabled="true">Disabled</a>
-								</li>
-							</ul>
-						</div>
-						<figure class="highlight" id="hAlignmentB">
-<pre><code class="language-markup"><script type="script/prism-html-markup"><ul class="nav justify-content-end">
-  ...
-</ul></script></code></pre>
-							<button type="button" class="btn btn-clipboard" data-clipboard-target="#hAlignmentB">copy</button>
-            </figure>
-            
-						<hr>
-						
-						<h4 id="v-alignment">Vertical alignment</h4>
-						<p class="mb-3">Stack your navigation by changing the flex item direction with the <code>.flex-column</code> utility. </p>
-						<div class="example">
-							<ul class="nav flex-column">
-								<li class="nav-item">
-									<a class="nav-link active" href="javascript:;">Active</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:;">Link</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:;">Link</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link disabled" href="javascript:;" tabindex="-1" aria-disabled="true">Disabled</a>
-								</li>
-							</ul>
-						</div>
-						<figure class="highlight" id="vAlignment">
-<pre><code class="language-markup"><script type="script/prism-html-markup"><ul class="nav justify-content-center">
-  ...
-</ul></script></code></pre>
-							<button type="button" class="btn btn-clipboard" data-clipboard-target="#vAlignment">copy</button>
-						</figure>
-
-						<hr>
-
-						<h4 id="tabs">Tabs</h4>
-						<p class="mb-3">Takes the basic nav from above and adds the <code>.nav-tabs</code> class to generate a tabbed interface.</p>
-						<div class="example">
-							<ul class="nav nav-tabs">
-								<li class="nav-item">
-									<a class="nav-link active" href="javascript:;">Active</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:;">Link</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:;">Link</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link disabled" href="javascript:;" tabindex="-1" aria-disabled="true">Disabled</a>
-								</li>
-							</ul>
-						</div>
-						<figure class="highlight" id="Tabs">
-<pre><code class="language-markup"><script type="script/prism-html-markup"><ul class="nav nav-tabs">
-  ...
-</ul></script></code></pre>
-							<button type="button" class="btn btn-clipboard" data-clipboard-target="#Tabs">copy</button>
-						</figure>
-
-						<hr>
-
-						<h4 id="fill-justify">Fill and justify</h4>
-						<p class="mb-3">Force your <code>.nav</code>’s contents to extend the full available width one of two modifier classes. To proportionately fill all available space with your <code>.nav-item</code>s, use <code>.nav-fill</code>.</p>
-						<div class="example">
-							<ul class="nav nav-pills nav-fill">
-								<li class="nav-item">
-									<a class="nav-link active" href="javascript:;">Active</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:;">Much longer nav link</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:;">Link</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link disabled" href="javascript:;" tabindex="-1" aria-disabled="true">Disabled</a>
-								</li>
-							</ul>
-						</div>
-						<figure class="highlight" id="fillJustify">
-<pre><code class="language-markup"><script type="script/prism-html-markup"><ul class="nav nav-fill">
-  ...
-</ul></script></code></pre>
-							<button type="button" class="btn btn-clipboard" data-clipboard-target="#fillJustify">copy</button>
-						</figure>
-
-						<hr>
-
-						<h4 id="tabs-dropdown">Tabs with dropdowns</h4>
-						<div class="example">
-							<ul class="nav nav-tabs">
-								<li class="nav-item">
-									<a class="nav-link active" href="javascript:;">Active</a>
-								</li>
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="javascript:;" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-									<div class="dropdown-menu">
-										<a class="dropdown-item" href="javascript:;">Action</a>
-										<a class="dropdown-item" href="javascript:;">Another action</a>
-										<a class="dropdown-item" href="javascript:;">Something else here</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="javascript:;">Separated link</a>
-									</div>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="javascript:;">Link</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link disabled" href="javascript:;" tabindex="-1" aria-disabled="true">Disabled</a>
-								</li>
-							</ul>
-						</div>
-						<figure class="highlight" id="tabsDropdown">
-<pre><code class="language-markup"><script type="script/prism-html-markup"><ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Separated link</a>
-    </div>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-  </li>
-</ul></script></code></pre>
-							<button type="button" class="btn btn-clipboard" data-clipboard-target="#tabsDropdown">copy</button>
-						</figure>
-
+				<div class="page-content">
+					<div class="dashboard-hero">
+						<!-- Overlayed Image -->
+						<img
+							class="img-xxl rounded-circle"
+							src="/public/images/others/darth maul.png"
+							style="position: absolute; left: 50%; top: 100%; transform: translate(-50%, -50%)"
+							title="Darth Maul" />
 					</div>
-					<div class="col-xl-2 content-nav-wrapper">
-						<ul class="nav content-nav d-flex flex-column">
-							<li class="nav-item">
-								<a href="#default" class="nav-link">Basic example</a>
-							</li>
-							<li class="nav-item">
-								<a href="#h-alignment" class="nav-link">Horizontal alignment</a>
-							</li>
-							<li class="nav-item">
-								<a href="#v-alignment" class="nav-link">Vertical alignment</a>
-							</li>
-							<li class="nav-item">
-								<a href="#tabs" class="nav-link">Tabs</a>
-							</li>
-							<li class="nav-item">
-								<a href="#fill-justify" class="nav-link">Fill and justify</a>
-							</li>
-							<li class="nav-item">
-								<a href="#tabs-dropdown" class="nav-link">Tabs with dropdowns</a>
-							</li>
-						</ul>
+					<!-- Heading below the banner -->
+					<h1
+						style="text-align: center; margin-top: 100px"
+						class="mb-3 mb-md-0">
+						Darth Maul
+					</h1>
+
+					<div class="row mt-2">
+						<div class="grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<h6
+										style="text-align: center"
+										class="card-title">
+										My Pipeline
+									</h6>
+									<div class="text-center">
+										<div class="pipeline-tooltip-wrapper">
+											<span class="rounded-pill-xxxl border border-primary text-success pipeline-amount"> $70,000.00 </span>
+											<div class="pipeline-tooltip">
+												<h4>Pipeline Breakdown</h4>
+												<div class="tooltip-line text-success">Solar: $55,678.52</div>
+												<div class="tooltip-line text-success">Roofing: $15,689.32</div>
+												<div class="tooltip-line red-text">Solar: $3,467.97</div>
+												<div class="tooltip-line red-text">Roofing: $2,325.56</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-2">
+						<div class="col-md-4 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body d-flex flex-column">
+									<h6
+										style="text-align: center"
+										class="card-title">
+										Current Pay Period
+									</h6>
+									<div class="flex-fill d-flex justify-content-center align-items-center">
+										<span class="rounded-pill-xl border border-primary text-success pipeline-amount"> $2,420.69 </span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body d-flex flex-column">
+									<h6
+										style="text-align: center"
+										class="card-title">
+										Deals Closed This Pay Period
+									</h6>
+									<div class="flex-fill d-flex justify-content-center align-items-center">
+										<p class="text-card mb-0">4 Solar, 5 Pest</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<h6
+										style="text-align: center"
+										class="card-title">
+										Annual Income Goal
+									</h6>
+									<div class="text-center mb-3">
+										<strong>Total Goal: $200,000</strong>
+									</div>
+									<div class="text-center">
+										<div class="progress">
+											<div
+												class="progress-bar"
+												role="progressbar"
+												style="width: 50%"
+												aria-valuenow="15"
+												aria-valuemin="0"
+												aria-valuemax="100">
+												$100,000
+											</div>
+											<div
+												class="progress-bar bg-success"
+												role="progressbar"
+												style="width: 35%"
+												aria-valuenow="30"
+												aria-valuemin="0"
+												aria-valuemax="100">
+												$70,000
+											</div>
+										</div>
+									</div>
+									<div class="d-flex justify-content-center align-items-center mt-3 gap-4">
+										<div class="d-flex align-items-center">
+											<span
+												class="d-inline-block me-1"
+												style="width: 1rem; height: 1rem; background-color: var(--bs-primary)"></span>
+											Already Earned
+										</div>
+										<div class="d-flex align-items-center">
+											<span
+												class="d-inline-block me-1"
+												style="width: 1rem; height: 1rem; background-color: var(--bs-success)"></span>
+											In Pipeline
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<!-- partial:partials/_footer.html -->
-			<footer class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small">
+				<!-- partial:partials/_footer.html -->
+				<footer class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small">
 	<p class="text-secondary mb-1 mb-md-0">Copyright © <span id="currentYear"></span>
 		<a href="https://sparkpro.io" target="_blank" rel="noopener noreferrer">Spark</a>.</p>
 	<script>document.getElementById("currentYear").textContent = new Date().getFullYear();</script>
 	<p class="text-secondary">Handcrafted By<i class="mb-1 text-primary ms-1 icon-sm" data-feather="zap"></i></p>
 </footer>
 
-			<!-- partial -->
-	
+				<!-- partial -->
+			</div>
 		</div>
-	</div>
 
-	<!-- core:js -->
-	<script src="../../assets/vendors/core/core.js"></script>
-	<!-- endinject -->
+		<!-- core:js -->
+		<script src="assets/vendors/core/core.js"></script>
+		<!-- endinject -->
 
-	<!-- Plugin js for this page -->
-	<script src="/assets/vendors/prismjs/prism.js"></script>
-	<script src="/assets/vendors/clipboard/clipboard.min.js"></script>
-	<!-- End plugin js for this page -->
+		<!-- Plugin js for this page -->
+		<script src="/assets/vendors/jquery/jquery.min.js"></script>
+		<script src="/assets/vendors/jquery.flot/jquery.flot.js"></script>
+		<script src="/assets/vendors/jquery.flot/jquery.flot.resize.js"></script>
+		<script src="/assets/vendors/jquery.flot/jquery.flot.categories.js"></script>
+		<!-- End plugin js for this page -->
 
-	<!-- inject:js -->
-	<script src="../../assets/js/app.js"></script>
-	<!-- endinject -->
+		<!-- inject:js -->
+		<script src="assets/js/app.js"></script>
+		<!-- endinject -->
 
-	<!-- Custom js for this page -->
-	<!-- End custom js for this page -->
-
-</body>
+		<!-- Custom js for this page -->
+		<script src="/assets/js/dashboard.js"></script>
+		<!-- End custom js for this page -->
+	</body>
 </html>
