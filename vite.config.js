@@ -40,16 +40,16 @@ export default defineConfig({
         { src: 'pages/**/*', dest: 'pages' },
         // { src: 'partials/**/*', dest: 'partials' },
 
-        // ---------- Top-level static (uncomment the ones you actually have) ----------
+        // ---------- Top-level static ----------
         // { src: '_redirects',  dest: '.' },
         // { src: '_headers',    dest: '.' },
         // { src: 'robots.txt',  dest: '.' },
         // { src: 'favicon.ico', dest: '.' },
 
-        // ---------- Your own assets (EXCEPT vendors/core which we rebuild) ----------
+        // ---------- Our assets ----------
         { src: ['assets/**', '!assets/vendors/**'], dest: '.' },
 
-        // ---------- Vendor folders from node_modules (your old copyAddons) ----------
+        // ---------- Vendor folders from node_modules ----------
         { src: 'node_modules/@mdi/font/css/materialdesignicons.min.css', dest: 'assets/vendors/mdi/css' },
         { src: 'node_modules/@mdi/font/fonts/*',                        dest: 'assets/vendors/mdi/fonts' },
 
