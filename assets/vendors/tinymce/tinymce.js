@@ -8533,7 +8533,7 @@
      * @example
      * const isExtending = ExtendingChar.isExtendingChar('a');
      */
-    // Generated from: http://www.unicode.org/Public/UNIDATA/DerivedCoreProperties.txt
+    // Generated from: http://www.unicode.org/UNIDATA/DerivedCoreProperties.txt
     // Only includes the characters in that fit into UCS-2 16 bit
     const extendingChars = new RegExp('[\u0300-\u036F\u0483-\u0487\u0488-\u0489\u0591-\u05BD\u05BF\u05C1-\u05C2\u05C4-\u05C5\u05C7\u0610-\u061A' +
         '\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E4\u06E7-\u06E8\u06EA-\u06ED\u0711\u0730-\u074A\u07A6-\u07B0' +

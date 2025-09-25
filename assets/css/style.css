@@ -16060,13 +16060,13 @@ body {
 
 /* default: light mode logo */
 .logo {
-  content: url("/public/images/icons/dark_icon.png");
+  content: url("/images/icons/dark_icon.png");
 }
 
 /* dark mode: swap in the light logo */
 @media (prefers-color-scheme: dark) {
   .logo {
-    content: url("/public/images/icons/white favicon.png");
+    content: url("/images/icons/white favicon.png");
   }
 }
 
@@ -19905,7 +19905,7 @@ div.tox .tox-button::before {
   position: relative;
   width: 100%;
   height: 300px; /* adjust height as desired */
-  background: url("/public/images/others/main-qimg-f6197f5f6e986143e385f8f370d9094e.webp")
+  background: url("/images/others/main-qimg-f6197f5f6e986143e385f8f370d9094e.webp")
     no-repeat center;
   background-size: cover;
 }

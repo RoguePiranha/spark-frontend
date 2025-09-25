@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+
+
+<!-- **************************************************************************************************************************
+ This page will allow the users to see their pay info. This should default to showing the current pay period, but be able to go 
+ back in time. It should show this like the leads that they put in or closed and how much they made from that specific service. 
+ There should be a a total displayed at the top easily visible and possible a chart show how they are performing compared to 
+ previous pay periods.(See dashboard page for example chart)
+****************************************************************************************************************************-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="SPARK - Sales Performance and Revenue Keeper">
+	<meta name="author" content="SparkPro">
+	
+
+	<title>SPARK - Sales Performance and Revenue Keeper</title>
+
+  <!-- color-modes:js -->
+  <script src="/assets/js/color-modes.js"></script>
+  <!-- endinject -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- End fonts -->
+
+	<!-- core:css -->
+	<link rel="stylesheet" href="/assets/vendors/core/core.css">
+	<!-- endinject -->
+
+	<!-- Plugin css for this page -->
+	<!-- End plugin css for this page -->
+
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/assets/fonts/feather-font/css/iconfont.css">
+	<!-- endinject -->
+
+  <!-- Layout styles -->  
+	<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style-rtl.css">
+  <!-- End layout styles -->
+
+  <link rel="shortcut icon" href="/images/icons/white favicon.png" />
+</head>
+<body class="sidebar-dark">
+	<div class="main-wrapper">
+
+		<!-- partial:partials/_sidebar.html -->
+		<nav class="sidebar">
+	<div class="sidebar-header">
+    <a href="#" class="sidebar-brand" aria-label="Spark Home" title="Spark Home">
+      <img src="/images/icons/horz-dark-mode-logo.png" class="sidebar-logo" alt="Spark Logo">
+    </a>
+		<div class="sidebar-toggler">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<div class="sidebar-body">
+		<ul
+			class="nav"
+			id="sidebarNav">
+			<li class="nav-item nav-category">Main</li>
+			<li class="nav-item">
+				<a href="/pages/dashboard.html" class="nav-link">
+					<i class="link-icon" data-feather="zap"></i>
+					<span class="link-title">Dashboard</span>
+				</a>
+			</li>
+			<li class="nav-item nav-category">Web Apps</li>
+			<li class="nav-item">
+				<a
+					href="/pages/apps/chat.html"
+					class="nav-link">
+					<i
+						class="link-icon"
+						data-feather="message-square"></i>
+					<span class="link-title">Chat</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a
+					href="/pages/apps/calendar.html"
+					class="nav-link">
+					<i
+						class="link-icon"
+						data-feather="calendar"></i>
+					<span class="link-title">Calendar</span>
+				</a>
+			</li>
+			<li class="nav-item nav-category">Components</li>
+			<li class="nav-item">
+				<a
+					href="/pages/profile.html"
+					class="nav-link">
+					<i
+						class="link-icon"
+						data-feather="user"></i>
+					<span class="link-title">Profile</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a
+					href="/pages/my-team.html"
+					class="nav-link">
+					<i
+						class="link-icon"
+						data-feather="users"></i>
+					<span class="link-title">My Team</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a
+					href="/pages/compensation.html"
+					class="nav-link">
+					<i
+						class="link-icon"
+						data-feather="dollar-sign"></i>
+					<span class="link-title">Compensation</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a
+					href="/pages/installers.html"
+					class="nav-link">
+					<i
+						class="link-icon"
+						data-feather="tool"></i>
+					<span class="link-title">Installers</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a
+					href="/pages/documents.html"
+					class="nav-link">
+					<i
+						class="link-icon"
+						data-feather="folder"></i>
+					<span class="link-title">Documents</span>
+				</a>
+			</li>
+			<li class="nav-item nav-category">Pages</li>
+			<li class="nav-item">
+				<a
+					class="nav-link"
+					data-bs-toggle="collapse"
+					href="#general-pages"
+					role="button"
+					aria-expanded="false"
+					aria-controls="general-pages">
+					<i
+						class="link-icon"
+						data-feather="book"></i>
+					<span class="link-title">Special pages</span>
+					<i
+						class="link-arrow"
+						data-feather="chevron-down"></i>
+				</a>
+				<div
+					class="collapse"
+					data-bs-parent="#sidebarNav"
+					id="general-pages">
+					<ul class="nav sub-menu">
+						<li class="nav-item">
+							<a
+								href="/pages/blank-page.html"
+								class="nav-link"
+								>Blank page</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								href="/pages/faq.html"
+								class="nav-link"
+								>Faq</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								href="/pages/invoice.html"
+								class="nav-link"
+								>Invoice</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								href="/pages/profile.html"
+								class="nav-link"
+								>Profile</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								href="/pages/pricing.html"
+								class="nav-link"
+								>Pricing</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								href="/pages/timeline.html"
+								class="nav-link"
+								>Timeline</a
+							>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="nav-item">
+				<a
+					class="nav-link"
+					data-bs-toggle="collapse"
+					href="#authPages"
+					role="button"
+					aria-expanded="false"
+					aria-controls="authPages">
+					<i
+						class="link-icon"
+						data-feather="unlock"></i>
+					<span class="link-title">Authentication</span>
+					<i
+						class="link-arrow"
+						data-feather="chevron-down"></i>
+				</a>
+				<div
+					class="collapse"
+					data-bs-parent="#sidebarNav"
+					id="authPages">
+					<ul class="nav sub-menu">
+						<li class="nav-item">
+							<a
+								href="/pages/auth/login.html"
+								class="nav-link"
+								>Login</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								href="/pages/auth/register.html"
+								class="nav-link"
+								>Register</a
+							>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="nav-item nav-category">Docs</li>
+			<li class="nav-item">
+				<a
+					href="/pages/settings.html"
+					class="nav-link">
+					<i
+						class="link-icon"
+						data-feather="settings"></i>
+					<span class="link-title">Settings</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- partial -->
+	
+		<div class="page-wrapper">
+				
+			<!-- partial:partials/_navbar.html -->
+      <nav class="navbar">
+	<div class="navbar-content">
+		<div class="navbar-page-title d-flex align-items-center">
+			<h2
+				class="mb-0 fw-bold"
+				id="navbar-page-title"></h2>
+		</div>
+
+		<ul class="navbar-nav">
+			<li class="theme-switcher-wrapper nav-item">
+				<input
+					type="checkbox"
+					value=""
+					id="theme-switcher"
+					title="Toggle theme" />
+				<label
+					for="theme-switcher"
+					aria-label="Toggle theme">
+					<div class="box">
+						<div class="ball"></div>
+						<div class="icons">
+							<i class="feather icon-sun"></i>
+							<i class="feather icon-moon"></i>
+						</div>
+					</div>
+				</label>
+			</li>
+			<li class="nav-item dropdown">
+				<a
+					class="nav-link dropdown-toggle"
+					href="#"
+					id="appsDropdown"
+					role="button"
+					data-bs-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false"
+					title="Apps">
+					<i data-feather="grid"></i>
+				</a>
+				<div
+					class="dropdown-menu p-0"
+					aria-labelledby="appsDropdown">
+					<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+						<p class="mb-0 fw-bold">Web Apps</p>
+						<a
+							href="javascript:;"
+							class="text-secondary"
+							>Edit</a
+						>
+					</div>
+					<div class="row g-0 p-1">
+						<div class="col-3 text-center">
+							<a
+								href="/pages/apps/chat.html"
+								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
+								><i
+									data-feather="message-square"
+									class="icon-lg mb-1"></i>
+								<p class="fs-12px">Chat</p></a
+							>
+						</div>
+						<div class="col-3 text-center">
+							<a
+								href="/pages/apps/calendar.html"
+								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
+								><i
+									data-feather="calendar"
+									class="icon-lg mb-1"></i>
+								<p class="fs-12px">Calendar</p></a
+							>
+						</div>
+						<div class="col-3 text-center">
+							<a
+								href="/pages/email/inbox.html"
+								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
+								><i
+									data-feather="mail"
+									class="icon-lg mb-1"></i>
+								<p class="fs-12px">Email</p></a
+							>
+						</div>
+						<div class="col-3 text-center">
+							<a
+								href="/pages/profile.html"
+								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
+								><i
+									data-feather="instagram"
+									class="icon-lg mb-1"></i>
+								<p class="fs-12px">Profile</p></a
+							>
+						</div>
+					</div>
+					<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+						<a href="javascript:;">View all</a>
+					</div>
+				</div>
+			</li>
+			<li class="nav-item dropdown">
+				<a
+					class="nav-link dropdown-toggle"
+					href="#"
+					id="messageDropdown"
+					role="button"
+					data-bs-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false"
+					title="Messages">
+					<i data-feather="message-square"></i>
+				</a>
+				<div
+					class="dropdown-menu p-0"
+					aria-labelledby="messageDropdown">
+					<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+						<p>9 New Messages</p>
+						<a
+							href="javascript:;"
+							class="text-secondary"
+							>Clear all</a
+						>
+					</div>
+					<div class="p-1">
+						<a
+							href="javascript:;"
+							class="dropdown-item d-flex align-items-center py-2">
+							<div class="me-3">
+								<img
+									class="w-30px h-30px rounded-circle"
+									src="/images/profile_images/user_stock.png"
+									alt="user" />
+							</div>
+							<div class="d-flex justify-content-between flex-grow-1">
+								<div class="me-4">
+									<p>Leonardo Payne</p>
+									<p class="fs-12px text-secondary">Project status</p>
+								</div>
+								<p class="fs-12px text-secondary">2 min ago</p>
+							</div>
+						</a>
+						<a
+							href="javascript:;"
+							class="dropdown-item d-flex align-items-center py-2">
+							<div class="me-3">
+								<img
+									class="w-30px h-30px rounded-circle"
+									src="/images/profile_images/user_stock.png"
+									alt="user" />
+							</div>
+							<div class="d-flex justify-content-between flex-grow-1">
+								<div class="me-4">
+									<p>Carl Henson</p>
+									<p class="fs-12px text-secondary">Client meeting</p>
+								</div>
+								<p class="fs-12px text-secondary">30 min ago</p>
+							</div>
+						</a>
+						<a
+							href="javascript:;"
+							class="dropdown-item d-flex align-items-center py-2">
+							<div class="me-3">
+								<img
+									class="w-30px h-30px rounded-circle"
+									src="/images/profile_images/user_stock.png"
+									alt="user" />
+							</div>
+							<div class="d-flex justify-content-between flex-grow-1">
+								<div class="me-4">
+									<p>Jensen Combs</p>
+									<p class="fs-12px text-secondary">Project updates</p>
+								</div>
+								<p class="fs-12px text-secondary">1 hrs ago</p>
+							</div>
+						</a>
+						<a
+							href="javascript:;"
+							class="dropdown-item d-flex align-items-center py-2">
+							<div class="me-3">
+								<img
+									class="w-30px h-30px rounded-circle"
+									src="/images/profile_images/user_stock.png"
+									alt="user" />
+							</div>
+							<div class="d-flex justify-content-between flex-grow-1">
+								<div class="me-4">
+									<p>Amiah Burton</p>
+									<p class="fs-12px text-secondary">Project deatline</p>
+								</div>
+								<p class="fs-12px text-secondary">2 hrs ago</p>
+							</div>
+						</a>
+						<a
+							href="javascript:;"
+							class="dropdown-item d-flex align-items-center py-2">
+							<div class="me-3">
+								<img
+									class="w-30px h-30px rounded-circle"
+									src="/images/profile_images/user_stock.png"
+									alt="user" />
+							</div>
+							<div class="d-flex justify-content-between flex-grow-1">
+								<div class="me-4">
+									<p>Yaretzi Mayo</p>
+									<p class="fs-12px text-secondary">New record</p>
+								</div>
+								<p class="fs-12px text-secondary">5 hrs ago</p>
+							</div>
+						</a>
+					</div>
+					<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+						<a href="javascript:;">View all</a>
+					</div>
+				</div>
+			</li>
+			<li class="nav-item dropdown">
+				<a
+					class="nav-link dropdown-toggle"
+					href="#"
+					id="notificationDropdown"
+					role="button"
+					data-bs-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false"
+					title="Notifications">
+					<i data-feather="bell"></i>
+					<div class="indicator">
+						<div class="circle"></div>
+					</div>
+				</a>
+				<div
+					class="dropdown-menu p-0"
+					aria-labelledby="notificationDropdown">
+					<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+						<p>6 New Notifications</p>
+						<a
+							href="javascript:;"
+							class="text-secondary"
+							>Clear all</a
+						>
+					</div>
+					<div class="p-1">
+						<a
+							href="javascript:;"
+							class="dropdown-item d-flex align-items-center py-2">
+							<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+								<i
+									class="icon-sm text-white"
+									data-feather="gift"></i>
+							</div>
+							<div class="flex-grow-1 me-2">
+								<p>New Order Recieved</p>
+								<p class="fs-12px text-secondary">30 min ago</p>
+							</div>
+						</a>
+						<a
+							href="javascript:;"
+							class="dropdown-item d-flex align-items-center py-2">
+							<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+								<i
+									class="icon-sm text-white"
+									data-feather="alert-circle"></i>
+							</div>
+							<div class="flex-grow-1 me-2">
+								<p>Server Limit Reached!</p>
+								<p class="fs-12px text-secondary">1 hrs ago</p>
+							</div>
+						</a>
+						<a
+							href="javascript:;"
+							class="dropdown-item d-flex align-items-center py-2">
+							<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+								<img
+									class="w-30px h-30px rounded-circle"
+									src="/images/profile_images/user_stock.png"
+									alt="userr" />
+							</div>
+							<div class="flex-grow-1 me-2">
+								<p>New customer registered</p>
+								<p class="fs-12px text-secondary">2 sec ago</p>
+							</div>
+						</a>
+						<a
+							href="javascript:;"
+							class="dropdown-item d-flex align-items-center py-2">
+							<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+								<i
+									class="icon-sm text-white"
+									data-feather="layers"></i>
+							</div>
+							<div class="flex-grow-1 me-2">
+								<p>Apps are ready for update</p>
+								<p class="fs-12px text-secondary">5 hrs ago</p>
+							</div>
+						</a>
+						<a
+							href="javascript:;"
+							class="dropdown-item d-flex align-items-center py-2">
+							<div class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+								<i
+									class="icon-sm text-white"
+									data-feather="download"></i>
+							</div>
+							<div class="flex-grow-1 me-2">
+								<p>Download completed</p>
+								<p class="fs-12px text-secondary">6 hrs ago</p>
+							</div>
+						</a>
+					</div>
+					<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+						<a href="javascript:;">View all</a>
+					</div>
+				</div>
+			</li>
+			<li class="nav-item dropdown">
+				<a
+					class="nav-link dropdown-toggle"
+					href="#"
+					id="profileDropdown"
+					role="button"
+					data-bs-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false">
+					<img
+						class="w-30px h-30px ms-1 rounded-circle"
+						src="/images/profile_images/user_stock.png"
+						alt="profile" />
+				</a>
+				<div
+					class="dropdown-menu p-0"
+					aria-labelledby="profileDropdown">
+					<div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
+						<div class="mb-3">
+							<img
+								class="w-80px h-80px rounded-circle"
+								src="/images/profile_images/user_stock.png"
+								alt="" />
+						</div>
+						<div class="text-center">
+							<p
+								class="fs-16px fw-bolder"
+								id="navbar-user-name">
+								Loading...
+							</p>
+							<p
+								class="fs-12px text-secondary"
+								id="navbar-user-email">
+								Loading...
+							</p>
+						</div>
+					</div>
+					<ul class="list-unstyled p-1">
+						<li class="dropdown-item py-2">
+							<a
+								href="/pages/profile.html"
+								class="text-body ms-0">
+								<i
+									class="me-2 icon-md"
+									data-feather="user"></i>
+								<span>Profile</span>
+							</a>
+						</li>
+						<li class="dropdown-item py-2">
+							<a
+								href="javascript:;"
+								class="text-body ms-0">
+								<i
+									class="me-2 icon-md"
+									data-feather="edit"></i>
+								<span>Edit Profile</span>
+							</a>
+						</li>
+						<li class="dropdown-item py-2">
+							<a
+								href="javascript:;"
+								class="text-body ms-0"
+								onclick="logout()">
+								<i
+									class="me-2 icon-md"
+									data-feather="log-out"></i>
+								<span>Log Out</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+
+		<a
+			href="#"
+			class="sidebar-toggler"
+			title="Toggle Sidebar">
+			<i data-feather="menu"></i>
+		</a>
+	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", async () => {
+			const user = JSON.parse(localStorage.getItem("user"));
+			if (!user) {
+				window.location.href = "/pages/login.html";
+				return;
+			}
+
+			try {
+				const res = await fetch(`https://api.sparkpro.io/profile/${user.userId}`);
+				const data = await res.json();
+
+				document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;
+				document.getElementById("navbar-user-email").textContent = data.email ?? "-";
+			} catch (err) {
+				console.error("Failed to load profile data:", err);
+			}
+		});
+	</script>
+
+	<script>
+		function logout() {
+			localStorage.removeItem("user");
+			window.location.href = "/pages/login.html";
+		}
+	</script>
+	<script>
+		// Set the page title in the navbar
+		// Removes "SPARK - " from the title
+		document.addEventListener("DOMContentLoaded", function () {
+			let pageTitle = document.title || "Page";
+			pageTitle = pageTitle.replace(/^\s*SPARK\s*-\s*/i, "");
+			// this can override the title if you want it custom
+			// let customTitle = document.body.getAttribute("data-page-title");
+			document.getElementById("navbar-page-title").textContent = pageTitle;
+		});
+	</script>
+</nav>
+
+      <!-- partial -->
+
+			<div class="page-content">
+        <div class="row">
+          <div class="col-12 col-xl-12 stretch-card">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Select Pay Period
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item">1/1/25-1/14/25</a>
+                <a class="dropdown-item">1/15/25-1/31/25</a>
+                <a class="dropdown-item">2/1/25-2/14/25</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-xl-12 stretch-card">
+            <div class="row flex-grow-1">
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-baseline">
+                      <h6 class="card-title mb-0">Current Pay Period Total</h6>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-12 col-xl-5">
+                        <h3 class="mb-2">3,897</h3>
+                        <div class="d-flex align-items-baseline">
+                          <p class="text-success">
+                            <span>+3.3%</span>
+                            <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-12 col-xl-7">
+                        <div id="customersChart" class="mt-md-3 mt-xl-0"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">        
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-baseline">
+                      <h6 class="card-title mb-0">Current Pay period count of jobs payed for</h6>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-12 col-xl-5">
+                        <h3 class="mb-2">5</h3>
+                        <div class="d-flex align-items-baseline">
+                          <p class="text-success">
+                            <span>+3.3%</span>
+                            <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-12 col-xl-7">
+                          <div id="customersChart" class="mt-md-3 mt-xl-0"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">        
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-baseline">
+                      <h6 class="card-title mb-0">Pending Audits</h6>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-12 col-xl-5">
+                        <h3 class="mb-2">XXXXXXX</h3>
+                        <div class="d-flex align-items-baseline">
+                          <p class="text-success">
+                            <span>+3.3%</span>
+                            <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-12 col-xl-7">
+                        <div id="customersChart" class="mt-md-3 mt-xl-0"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div class="row">
+          <div class="col-12 col-xl-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title">Pay Totals for X last pay periods</h6>
+                <div class="flot-chart-wrapper">
+                  <div class="flot-chart" id="payChart"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+					<div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+								<h6 class="card-title">Commission Table by Pay Period</h6>
+								<div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Payout Date
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item">1/14/25</a>
+                    <a class="dropdown-item">1/31/25</a>
+                    <a class="dropdown-item">2/14/25</a>
+                  </div>
+                </div>
+								<div class="table-responsive">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>#</th>
+													<th>PAYOUT DATE</th>
+													<th>LAST NAME</th>
+													<th>ADDRESS</th>
+                          <th>COMMISSION</th>
+                          <th></th>
+                          <th></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th>1</th>
+													<td>1/14/25</td>
+													<td>Otto</td>
+													<td>123456 Pine Pl</td>
+                          <td>$ 256.32</td>
+                          <td><a href="#" class="btn btn-primary">View Deals</a></td>
+												</tr>
+												<tr>
+													<th>2</th>
+													<td>2/14/25</td>
+													<td>Thornton</td>
+													<td>987654 Trump Way</td>
+                          <td>$ 384.64</td>
+                          <td><a href="#" class="btn btn-primary">View Deals</a></td>
+												</tr>
+												<tr>
+													<th>3</th>
+													<td>3/14/25</td>
+													<td>the Bird</td>
+													<td>741258 Main St</td>
+                          <td>$ 147.68</td>
+                          <td><a href="#" class="btn btn-primary">View Deals</a></td>
+												</tr>
+												<tr>
+													<th>4</th>
+													<td>4/14/25</td>
+													<td>Jellybean</td>
+													<td>965847 Side Ln</td>
+                          <td>$ 258.51</td>
+                          <td><a href="#" class="btn btn-primary">View Deals</a></td>
+												</tr>
+												<tr>
+													<th>5</th>
+													<td>5/14/25</td>
+													<td>Kikat</td>
+													<td>743281 Food Ct</td>
+                          <td>$ 462.51</td>
+                          <td><a href="#" class="btn btn-primary">View Deals</a></td>
+												</tr>                        
+											</tbody>
+                      <thead>
+                        <tr>
+													<th></th>
+													<th></th>
+													<th></th>
+													<th>YTD</th>
+                          <td>$ 8000</td>
+												</tr>
+                      </thead>
+										</table>
+								</div>
+              </div>
+            </div>
+					</div>
+      </div>
+
+			<!-- partial:partials/_footer.html -->
+			<footer class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small">
+	<p class="text-secondary mb-1 mb-md-0">Copyright © <span id="currentYear"></span>
+		<a href="https://sparkpro.io" target="_blank" rel="noopener noreferrer">Spark</a>.</p>
+	<script>document.getElementById("currentYear").textContent = new Date().getFullYear();</script>
+	<p class="text-secondary">Handcrafted By<i class="mb-1 text-primary ms-1 icon-sm" data-feather="zap"></i></p>
+</footer>
+
+			<!-- partial -->
+		</div>
+	</div>
+
+	<!-- core:js -->
+	<script src="/assets/vendors/core/core.js"></script>
+	<!-- endinject -->
+
+	<!-- Plugin js for this page -->
+  <script src="/assets/vendors/jquery/jquery.min.js"></script>
+  <script src="/assets/vendors/jquery.flot/jquery.flot.js"></script>
+  <script src="/assets/vendors/jquery.flot/jquery.flot.resize.js"></script>
+  <script src="/assets/vendors/jquery.flot/jquery.flot.categories.js"></script>
+	<!-- End plugin js for this page -->
+
+	<!-- inject:js -->
+	<script src="/assets/js/app.js"></script>
+	<!-- endinject -->
+
+  <script>
+    $(function () {
+      // 6 pay periods (2 weeks each). We’ll label them #1 through #6.
+      // We'll generate a random pay between 1,000 and 3,000 for demonstration.
+      const dataPoints = [];
+      for (let i = 1; i <= 6; i++) {
+        const payAmount = Math.floor(1000 + Math.random() * 2001); // 1000..3000
+        dataPoints.push([`Pay Period #${i}`, payAmount]);
+      }
+
+      // We have one series, labeled "Total Pay"
+      const data = [
+        {
+          label: "Total Pay",
+          data: dataPoints
+        }
+      ];
+
+      // Flot options
+      const options = {
+        series: {
+          lines: { show: true },   // connect points with a line
+          points: { show: true }   // show circles at data points
+        },
+        xaxis: {
+          mode: "categories",   // treat x values as category names
+          tickLength: 0         // no little tick extending downward
+          // If not using the axis label plugin, we can't do "axisLabel" here
+        },
+        yaxis: {
+          min: 0,               // ensure the axis starts at 0
+          // you could set max if you want a fixed top, e.g. max: 3000
+        },
+        grid: {
+          hoverable: true,      // enable tooltip or hover
+          clickable: true
+        }
+      };
+
+      // Render the chart into #payChart
+      $.plot("#payChart", data, options);
+    });
+  </script>
+  
+  <!--This script is to load the sidebar-->
+  <script>
+    $(function() {
+      // Load partial
+      $('#sidebar-placeholder').load('partials/_sidebar.html', function() {
+        // Re-init icons after the HTML is inserted
+        feather.replace();
+      });
+    });
+  </script>
+
+  <!--This script is to load the navbar-->
+  <script>
+    $(function() {
+      // Load partial
+      $('#navbar-placeholder').load('partials/_navbar.html', function() {
+        // Re-init icons after the HTML is inserted
+        feather.replace();
+      });
+    });
+  </script>
+
+	<!-- Custom js for this page -->
+  <!-- End custom js for this page -->
+</body>
+</html>

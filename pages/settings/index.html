@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="description" content="SPARK - Sales Performance and Revenue Keeper" />
+	<meta name="author" content="SparkPro" />
+
+	<title>SPARK - Company Settings</title>
+
+	<!-- color-modes:js -->
+	<script src="/assets/js/color-modes.js"></script>
+	<!-- endinject -->
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+		rel="stylesheet" />
+	<!-- End fonts -->
+
+	<!-- core:css -->
+	<link rel="stylesheet" href="/assets/vendors/core/core.css">
+	<!-- endinject -->
+
+	<!-- Plugin css for this page -->
+	<!-- End plugin css for this page -->
+
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/assets/fonts/feather-font/css/iconfont.css" />
+	<!-- endinject -->
+
+	<!-- Layout styles -->
+	<link rel="stylesheet" href="/assets/css/style.css" />
+	<!-- End layout styles -->
+
+	<link rel="shortcut icon" href="/assets/images/icons/white favicon.png" />
+
+	<style>
+		/* share the same stacking rules as your other mega modal */
+		body.mega-open #installerMegaModal.modal {
+			z-index: 1000;
+		}
+
+		/* below navbar/popovers */
+		body.mega-open .dropdown-menu,
+		body.mega-open .popover,
+		body.mega-open .tooltip,
+		body.mega-open .offcanvas,
+		body.mega-open .toast {
+			z-index: 2000;
+		}
+
+		/* pointer-events like your deal mega modal */
+		#installerMegaModal.modal {
+			pointer-events: none;
+			background: transparent;
+		}
+
+		#installerMegaModal .modal-dialog,
+		#installerMegaModal .modal-content {
+			pointer-events: auto;
+		}
+
+		/* subtab header spacing */
+		.subtab-bar .nav-link {
+			padding: .35rem .75rem;
+		}
+	</style>
+
+</head>
+
+<body class="sidebar-dark">
+	<div class="main-wrapper">
+		<!-- partial:partials/_sidebar.html -->
+		<nav class="sidebar">
+			<div class="sidebar-header">
+				<a href="#" class="sidebar-brand" aria-label="Spark Home" title="Spark Home">
+					<img src="/images/icons/horz-dark-mode-logo.png" class="sidebar-logo" alt="Spark Logo" />
+				</a>
+				<div class="sidebar-toggler">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<div class="sidebar-body">
+				<ul class="nav" id="sidebarNav">
+					<li class="nav-item nav-category">Main</li>
+					<li class="nav-item">
+						<a href="/pages/dashboard.html" class="nav-link">
+							<i class="link-icon" data-feather="zap"></i>
+							<span class="link-title">Dashboard</span>
+						</a>
+					</li>
+					<li class="nav-item nav-category">Web Apps</li>
+					<li class="nav-item">
+						<a href="/pages/apps/chat.html" class="nav-link">
+							<i class="link-icon" data-feather="message-square"></i>
+							<span class="link-title">Chat</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/apps/calendar.html" class="nav-link">
+							<i class="link-icon" data-feather="calendar"></i>
+							<span class="link-title">Calendar</span>
+						</a>
+					</li>
+					<li class="nav-item nav-category">Components</li>
+					<li class="nav-item">
+						<a href="/pages/profile.html" class="nav-link">
+							<i class="link-icon" data-feather="user"></i>
+							<span class="link-title">Profile</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/user-management.html" class="nav-link">
+							<i class="link-icon" data-feather="users"></i>
+							<span class="link-title">My Team</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/compensation.html" class="nav-link">
+							<i class="link-icon" data-feather="dollar-sign"></i>
+							<span class="link-title">Compensation</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/installers.html" class="nav-link">
+							<i class="link-icon" data-feather="tool"></i>
+							<span class="link-title">Installers</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="/pages/documents.html" class="nav-link">
+							<i class="link-icon" data-feather="folder"></i>
+							<span class="link-title">Documents</span>
+						</a>
+					</li>
+					<li class="nav-item nav-category">Pages</li>
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="collapse" href="#general-pages" role="button"
+							aria-expanded="false" aria-controls="general-pages">
+							<i class="link-icon" data-feather="book"></i>
+							<span class="link-title">Special pages</span>
+							<i class="link-arrow" data-feather="chevron-down"></i>
+						</a>
+						<div class="collapse" data-bs-parent="#sidebarNav" id="general-pages">
+							<ul class="nav sub-menu">
+								<li class="nav-item">
+									<a href="/pages/blank-page.html" class="nav-link">Blank page</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/faq.html" class="nav-link">Faq</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/invoice.html" class="nav-link">Invoice</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/profile.html" class="nav-link">Profile</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/pricing.html" class="nav-link">Pricing</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/timeline.html" class="nav-link">Timeline</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="collapse" href="#authPages" role="button"
+							aria-expanded="false" aria-controls="authPages">
+							<i class="link-icon" data-feather="unlock"></i>
+							<span class="link-title">Authentication</span>
+							<i class="link-arrow" data-feather="chevron-down"></i>
+						</a>
+						<div class="collapse" data-bs-parent="#sidebarNav" id="authPages">
+							<ul class="nav sub-menu">
+								<li class="nav-item">
+									<a href="/pages/auth/login.html" class="nav-link">Login</a>
+								</li>
+								<li class="nav-item">
+									<a href="/pages/auth/register.html" class="nav-link">Register</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item nav-category">Docs</li>
+					<li class="nav-item">
+						<a href="/pages/settings.html" class="nav-link">
+							<i class="link-icon" data-feather="settings"></i>
+							<span class="link-title">Settings</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- partial -->
+
+		<div class="page-wrapper">
+			<!-- partial:partials/_navbar.html -->
+			<nav class="navbar">
+				<div class="navbar-content">
+					<div class="navbar-page-title d-flex align-items-center">
+						<h2 class="mb-0 fw-bold" id="navbar-page-title"></h2>
+					</div>
+
+					<ul class="navbar-nav">
+						<li class="theme-switcher-wrapper nav-item">
+							<input type="checkbox" value="" id="theme-switcher" title="Toggle theme" />
+							<label for="theme-switcher" aria-label="Toggle theme">
+								<div class="box">
+									<div class="ball"></div>
+									<div class="icons">
+										<i class="feather icon-sun"></i>
+										<i class="feather icon-moon"></i>
+									</div>
+								</div>
+							</label>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="appsDropdown" role="button"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Apps">
+								<i data-feather="grid"></i>
+							</a>
+							<div class="dropdown-menu p-0" aria-labelledby="appsDropdown">
+								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+									<p class="mb-0 fw-bold">Web Apps</p>
+									<a href="javascript:;" class="text-secondary">Edit</a>
+								</div>
+								<div class="row g-0 p-1">
+									<div class="col-3 text-center">
+										<a href="/pages/apps/chat.html"
+											class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"><i
+												data-feather="message-square" class="icon-lg mb-1"></i>
+											<p class="fs-12px">Chat</p>
+										</a>
+									</div>
+									<div class="col-3 text-center">
+										<a href="/pages/apps/calendar.html"
+											class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"><i
+												data-feather="calendar" class="icon-lg mb-1"></i>
+											<p class="fs-12px">Calendar</p>
+										</a>
+									</div>
+									<div class="col-3 text-center">
+										<a href="/pages/email/inbox.html"
+											class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"><i
+												data-feather="mail" class="icon-lg mb-1"></i>
+											<p class="fs-12px">Email</p>
+										</a>
+									</div>
+									<div class="col-3 text-center">
+										<a href="/pages/profile.html"
+											class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"><i
+												data-feather="instagram" class="icon-lg mb-1"></i>
+											<p class="fs-12px">Profile</p>
+										</a>
+									</div>
+								</div>
+								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+									<a href="javascript:;">View all</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Messages">
+								<i data-feather="message-square"></i>
+							</a>
+							<div class="dropdown-menu p-0" aria-labelledby="messageDropdown">
+								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+									<p>9 New Messages</p>
+									<a href="javascript:;" class="text-secondary">Clear all</a>
+								</div>
+								<div class="p-1">
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Leonardo Payne</p>
+												<p class="fs-12px text-secondary">Project status</p>
+											</div>
+											<p class="fs-12px text-secondary">2 min ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Carl Henson</p>
+												<p class="fs-12px text-secondary">Client meeting</p>
+											</div>
+											<p class="fs-12px text-secondary">30 min ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Jensen Combs</p>
+												<p class="fs-12px text-secondary">Project updates</p>
+											</div>
+											<p class="fs-12px text-secondary">1 hrs ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Amiah Burton</p>
+												<p class="fs-12px text-secondary">Project deatline</p>
+											</div>
+											<p class="fs-12px text-secondary">2 hrs ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div class="me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/images/profile_images/user_stock.png" alt="user" />
+										</div>
+										<div class="d-flex justify-content-between flex-grow-1">
+											<div class="me-4">
+												<p>Yaretzi Mayo</p>
+												<p class="fs-12px text-secondary">New record</p>
+											</div>
+											<p class="fs-12px text-secondary">5 hrs ago</p>
+										</div>
+									</a>
+								</div>
+								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+									<a href="javascript:;">View all</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+								title="Notifications">
+								<i data-feather="bell"></i>
+								<div class="indicator">
+									<div class="circle"></div>
+								</div>
+							</a>
+							<div class="dropdown-menu p-0" aria-labelledby="notificationDropdown">
+								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+									<p>6 New Notifications</p>
+									<a href="javascript:;" class="text-secondary">Clear all</a>
+								</div>
+								<div class="p-1">
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="gift"></i>
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>New Order Recieved</p>
+											<p class="fs-12px text-secondary">30 min ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="alert-circle"></i>
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>Server Limit Reached!</p>
+											<p class="fs-12px text-secondary">1 hrs ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<img class="w-30px h-30px rounded-circle"
+												src="/images/profile_images/user_stock.png" alt="userr" />
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>New customer registered</p>
+											<p class="fs-12px text-secondary">2 sec ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="layers"></i>
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>Apps are ready for update</p>
+											<p class="fs-12px text-secondary">5 hrs ago</p>
+										</div>
+									</a>
+									<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
+										<div
+											class="w-30px h-30px d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="download"></i>
+										</div>
+										<div class="flex-grow-1 me-2">
+											<p>Download completed</p>
+											<p class="fs-12px text-secondary">6 hrs ago</p>
+										</div>
+									</a>
+								</div>
+								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+									<a href="javascript:;">View all</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<img class="w-30px h-30px ms-1 rounded-circle"
+									src="/images/profile_images/user_stock.png" alt="profile" />
+							</a>
+							<div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
+								<div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
+									<div class="mb-3">
+										<img class="w-80px h-80px rounded-circle"
+											src="/images/profile_images/user_stock.png" alt="" />
+									</div>
+									<div class="text-center">
+										<p class="fs-16px fw-bolder" id="navbar-user-name">
+											Loading...
+										</p>
+										<p class="fs-12px text-secondary" id="navbar-user-email">
+											Loading...
+										</p>
+									</div>
+								</div>
+								<ul class="list-unstyled p-1">
+									<li class="dropdown-item py-2">
+										<a href="/pages/profile.html" class="text-body ms-0">
+											<i class="me-2 icon-md" data-feather="user"></i>
+											<span>Profile</span>
+										</a>
+									</li>
+									<li class="dropdown-item py-2">
+										<a href="javascript:;" class="text-body ms-0">
+											<i class="me-2 icon-md" data-feather="edit"></i>
+											<span>Edit Profile</span>
+										</a>
+									</li>
+									<li class="dropdown-item py-2">
+										<a href="javascript:;" class="text-body ms-0" onclick="logout()">
+											<i class="me-2 icon-md" data-feather="log-out"></i>
+											<span>Log Out</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+
+					<a href="#" class="sidebar-toggler" title="Toggle Sidebar">
+						<i data-feather="menu"></i>
+					</a>
+				</div>
+
+				<!-- LOGIN REDIRECT -->
+				<!-- <script>
+					document.addEventListener("DOMContentLoaded", async () => {
+						const user = JSON.parse(localStorage.getItem("user"));
+						if (!user) {
+							window.location.href = "/pages/login.html";
+							return;
+						}
+
+						try {
+							const res = await fetch(`https://api.sparkpro.io/profile/${user.userId}`);
+							const data = await res.json();
+
+							document.getElementById("navbar-user-name").textContent = `${data.firstName} ${data.lastName}`;
+							document.getElementById("navbar-user-email").textContent = data.email ?? "-";
+						} catch (err) {
+							console.error("Failed to load profile data:", err);
+						}
+					});
+				</script> -->
+
+				<script>
+					function logout() {
+						localStorage.removeItem("user");
+						window.location.href = "/pages/login.html";
+					}
+				</script>
+				<script>
+					// Set the page title in the navbar
+					// Removes "SPARK - " from the title
+					document.addEventListener("DOMContentLoaded", function () {
+						let pageTitle = document.title || "Page";
+						pageTitle = pageTitle.replace(/^\s*SPARK\s*-\s*/i, "");
+						// this can override the title if you want it custom
+						// let customTitle = document.body.getAttribute("data-page-title");
+						document.getElementById("navbar-page-title").textContent = pageTitle;
+					});
+				</script>
+			</nav>
+
+			<!-- partial -->
+
+			<div class="page-content">
+				<!-- TAB HEADER -->
+				<div class="row">
+					<div class="col-12 grid-margin">
+						<div class="card align-items-center">
+							<div class="d-flex p-3 rounded-bottom d-flex align-items-center m-0">
+								<ul class="nav nav-tabs nav-tabs-line" id="companySettingsTabs" role="tablist">
+									<li class="nav-item" role="presentation">
+										<button class="nav-link active" id="company-info-tab" data-bs-toggle="tab"
+											data-bs-target="#company-info" type="button" role="tab"
+											aria-controls="company-info" aria-selected="true">
+											<i class="me-1 icon-md" data-feather="briefcase"></i>
+											<span class="d-none d-md-inline">General</span>
+										</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="roles-permissions-tab" data-bs-toggle="tab"
+											data-bs-target="#roles-permissions" type="button" role="tab"
+											aria-controls="roles-permissions" aria-selected="false">
+											<i class="me-1 icon-md" data-feather="user-check"></i>
+											<span class="d-none d-md-inline">Roles and Permissions</span>
+										</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="products-payroll-tab" data-bs-toggle="tab"
+											data-bs-target="#products-payroll" type="button" role="tab"
+											aria-controls="products-payroll" aria-selected="false">
+											<i class="me-1 icon-md" data-feather="dollar-sign"></i>
+											<span class="d-none d-md-inline">Products & Payscales</span>
+										</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="payroll-payments-tab" data-bs-toggle="tab"
+											data-bs-target="#payroll-payments" type="button" role="tab"
+											aria-controls="payroll-payments" aria-selected="false">
+											<i class="me-1 icon-md" data-feather="dollar-sign"></i>
+											<span class="d-none d-md-inline">Rep Commission Settings</span>
+										</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="integrations-tab" data-bs-toggle="tab"
+											data-bs-target="#integrations" type="button" role="tab"
+											aria-controls="integrations" aria-selected="false">
+											<i class="me-1 icon-md" data-feather="link"></i>
+											<span class="d-none d-md-inline">Integrations</span>
+											<!-- Use page to submit support request for billable api integrations (use ticketing system) -->
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--TAB HEADER END -->
+				<!-- General tab content -->
+				<div class="tab-content" id="generalTabContent">
+					<div class="tab-pane fade show active" id="company-info" role="tabpanel"
+						aria-labelledby="company-info-tab">
+						<div class="row profile-body gap-4">
+							<!-- General left wrapper start -->
+							<div class="d-md-block col-md-3 col-xl-3 left-wrapper">
+								<div class="card rounded">
+									<div class="card-body profile-body">
+										<div class="profile-details">
+											<div class="detail-item mb-2">
+												<label class="detail-label">Company Name:</label>
+												<p class="detail-value" id="company-name">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Company Logo:</label>
+												<div>
+													<img id="company-logo" class="rounded border" alt="Company Logo"
+														src="/images/others/darth maul.png"
+														style="width: 72px; height: 72px; object-fit: cover;" />
+												</div>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">EIN Number:</label>
+												<p class="detail-value" id="ein-number">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Business Type(s):</label>
+												<p class="detail-value" id="business-types">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Default Currency:</label>
+												<p class="detail-value" id="default-currency">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Company Time Zone:</label>
+												<p class="detail-value" id="company-time-zone">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Main Office:</label>
+												<p class="detail-value" id="company-main-office">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Primary Color (HEX):</label>
+												<p class="detail-value" id="company-primary-color">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Accent Color (HEX):</label>
+												<p class="detail-value" id="company-accent-color">
+													N/A
+												</p>
+											</div>
+											<div class="detail-item mb-2">
+												<label class="detail-label">Operational States:</label>
+												<p class="detail-value" id="company-operational-states">
+													N/A
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- General left wrapper end -->
+							<!-- General right wrapper start -->
+							<div class="col middle-wrapper d-flex flex-column">
+								<div class="row">
+									<div class="col-md-12 grid-margin">
+										<div class="card rounded">
+											<div class="card-body">
+												<div class="d-flex justify-content-between align-items-center mb-3">
+													<h5 class="card-title m-2">Company Settings</h5>
+													<small id="saveStatus" class="text-muted"></small>
+												</div>
+
+												<!-- Live brand gradient preview -->
+												<div id="brandPreview" class="rounded m-2"
+													style="height: 40px; background: linear-gradient(90deg, #0ea5e9 0%, #22c55e 100%);">
+												</div>
+
+												<form id="companyForm" novalidate>
+													<div class="row g-3">
+														<!-- Company Name -->
+														<div class="col m-2">
+															<label for="companyName" class="form-label">Company Name
+																<span class="text-danger">*</span></label>
+															<input id="companyName" type="text" class="form-control"
+																placeholder="Ex: Spark Industries LLC" required />
+															<div class="form-text">Your legal or public-facing name.
+															</div>
+														</div>
+													</div>
+													<div class="row align-items-end">
+														<!-- EIN -->
+														<div class="col m-2">
+															<label for="ein" class="form-label">EIN Number
+																(optional)</label>
+															<input id="ein" type="text" inputmode="numeric"
+																maxlength="10" class="form-control"
+																placeholder="12-3456789" />
+														</div>
+
+														<!-- Business Type / Industry -->
+														<div class="col m-2">
+															<label for="industry" class="form-label">Industry
+																(optional)</label>
+															<select id="industry" class="form-select">
+																<option value="">Select…</option>
+																<option>Pest Control</option>
+																<option>Solar</option>
+																<option>Roofing</option>
+																<option>HVAC</option>
+																<option>Windows & Doors</option>
+																<option>General Home Services</option>
+																<option>Other</option>
+															</select>
+														</div>
+
+													</div>
+
+													<div class="row g-3">
+														<!-- Default Currency -->
+														<div class="col m-2">
+															<label for="currency" class="form-label">Default Currency
+																<span class="text-danger">*</span></label>
+															<select id="currency" class="form-select" required></select>
+														</div>
+
+														<!-- Time Zone -->
+														<div class="col m-2">
+															<label for="timeZone" class="form-label">Company Time Zone
+																<span class="text-danger">*</span></label>
+															<select id="timeZone" class="form-select" required></select>
+														</div>
+
+													</div>
+
+													<!-- Headquarters Address -->
+													<div class="col m-2">
+														<label for="hqAddress" class="form-label">Headquarters Address
+															(optional)</label>
+														<input id="hqAddress" type="text" class="form-control"
+															placeholder="123 Main St, Mesa, AZ 85201" />
+													</div>
+
+													<!-- Primary Color -->
+													<div class="row m-2 gap-3">
+														<div class="col">
+															<label for="primaryColor" class="form-label">Primary Brand
+																Color
+																(hex)</label>
+															<div class="input-group">
+																<input id="primaryColor" type="text"
+																	class="form-control" placeholder="#0ea5e9" />
+																<input id="primaryColorPicker" type="color"
+																	class="form-control form-control-color" />
+															</div>
+														</div>
+
+														<!-- Accent Color -->
+														<div class="col">
+															<label for="accentColor" class="form-label">Accent Color
+																(hex)</label>
+															<div class="input-group">
+																<input id="accentColor" type="text" class="form-control"
+																	placeholder="#22c55e" />
+																<input id="accentColorPicker" type="color"
+																	class="form-control form-control-color" />
+															</div>
+														</div>
+													</div>
+
+													<!-- Operational States -->
+													<div class="col m-2">
+														<label for="operationalStates" class="form-label">Operational
+															States</label>
+														<div class="d-flex gap-2 mb-2">
+															<button type="button" id="checkAllStates"
+																class="btn btn-sm btn-outline-secondary">Select
+																All</button>
+															<button type="button" id="uncheckAllStates"
+																class="btn btn-sm btn-outline-secondary">Clear</button>
+														</div>
+														<!-- search -->
+														<input id="stateSearch" type="text" class="form-control mb-2"
+															placeholder="Search states…" />
+
+														<!-- small actions -->
+														<div id="stateChips" class="mt-2"></div>
+
+														<!-- checkbox list -->
+														<div id="stateList" class="border rounded p-2 state-columns">
+														</div>
+													</div>
+
+													<!-- Logo upload + preview -->
+													<div class="col">
+														<div class="col m-2">
+															<label for="logo" class="form-label">Company Logo
+																(upload)</label>
+															<input id="logo" type="file" accept="image/*"
+																class="form-control" />
+															<div class="form-text">PNG or JPG up to 1MB.</div>
+														</div>
+														<div class="col m-2 d-flex align-items-end">
+															<img id="logoPreview" class="rounded border"
+																alt="Logo Preview"
+																style="width: 72px; height: 72px; object-fit: cover;" />
+														</div>
+													</div>
+
+
+													<div class="d-flex justify-content-end gap-2 mt-4">
+														<button type="button" id="btnReset"
+															class="btn btn-outline-secondary">Reset</button>
+														<button type="submit" class="btn btn-primary">Save
+															Changes</button>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- General right wrapper end -->
+						</div>
+					</div>
+				</div>
+
+				<!-- Profile tab content end -->
+				<!-- Products & Payscales tab content start -->
+				<div class="tab-content" id="ProductsPayrollTabContent">
+					<div class="tab-pane fade" id="products-payroll" role="tabpanel"
+						aria-labelledby="products-payroll-tab">
+						<div class="row profile-body gap-4">
+
+							<!-- Installers -->
+							<div class="col-12">
+								<div class="d-flex align-items-center justify-content-between mb-2">
+									<h5 class="mb-0">Installers</h5>
+									<div class="d-flex gap-2">
+										<input id="installerSearch" class="form-control form-control-sm"
+											placeholder="Search installers…" style="width:240px;">
+										<button class="btn btn-primary btn-sm" id="btnAddInstaller" type="button"
+											data-bs-toggle="modal" data-bs-target="#installerMegaModal">
+											+ Add Installer
+										</button>
+
+									</div>
+								</div>
+
+								<div class="card">
+									<div class="card-body p-0">
+										<div class="table-responsive">
+											<table class="table table-hover mb-0" id="installersTable">
+												<thead class="table-light">
+													<tr>
+														<th>Name</th>
+														<th>States</th>
+														<th>MP1 / MP2</th>
+														<th>Payment Schedule</th>
+														<th>Products</th>
+														<th>Status</th>
+														<th style="width:160px;">Actions</th>
+													</tr>
+												</thead>
+												<tbody><!-- renderInstallers() --></tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- Installer Mega Modal -->
+				<div class="modal fade" id="installerMegaModal" tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-scrollable" id="installerMegaDialog"
+						style="position:fixed; inset:auto auto auto auto; margin:0; max-width:none;">
+						<div class="modal-content h-100 shadow-lg">
+							<div class="modal-header">
+								<h5 class="modal-title">
+									<span id="im-title">Installer</span>
+								</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
+							</div>
+
+							<div class="modal-body p-3">
+								<!-- Top tabs: General | Products & Pay Scales -->
+								<ul class="nav nav-tabs" id="imTabs" role="tablist">
+									<li class="nav-item" role="presentation">
+										<button class="nav-link active" id="im-general-tab" data-bs-toggle="tab"
+											data-bs-target="#im-general" type="button" role="tab">General</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="im-products-tab" data-bs-toggle="tab"
+											data-bs-target="#im-products" type="button" role="tab">Products & Pay
+											Scales</button>
+									</li>
+								</ul>
+
+								<div class="tab-content mt-3">
+									<!-- GENERAL TAB -->
+									<div class="tab-pane fade show active" id="im-general" role="tabpanel">
+										<form id="installerForm">
+											<input type="hidden" id="installerId" />
+											<div class="row g-3">
+												<div class="col-md-6">
+													<label class="form-label">Installer Name</label>
+													<input class="form-control" id="installerName"
+														placeholder="e.g. BrightInstall" />
+												</div>
+												<div class="col-md-3">
+													<label class="form-label">MP1</label>
+													<input class="form-control" id="installerMP1" placeholder="$..." />
+												</div>
+												<div class="col-md-3">
+													<label class="form-label">MP2</label>
+													<input class="form-control" id="installerMP2" placeholder="$..." />
+												</div>
+												<div class="col-md-3">
+													<label class="form-label">Payment Schedule</label>
+													<input class="form-control" id="installerSchedule" value="Net 30" />
+												</div>
+												<div class="col-md-3">
+													<label class="form-label">Status</label>
+													<select class="form-select" id="installerStatus">
+														<option>Active</option>
+														<option>Inactive</option>
+													</select>
+												</div>
+												<div class="col-md-3">
+													<label class="form-label">Start</label>
+													<input type="date" class="form-control" id="installerStart" />
+												</div>
+												<div class="col-md-3">
+													<label class="form-label">End</label>
+													<input type="date" class="form-control" id="installerEnd" />
+												</div>
+
+												<div class="col-12">
+													<label class="form-label">States Operated In</label>
+													<div class="d-flex gap-2 align-items-center mb-2">
+														<input id="installerStateSearch"
+															class="form-control form-control-sm"
+															placeholder="Search states…" style="max-width: 240px;" />
+														<button type="button" class="btn btn-sm btn-outline-secondary"
+															id="installerStatesAll">Select All</button>
+														<button type="button" class="btn btn-sm btn-outline-secondary"
+															id="installerStatesClear">Clear</button>
+													</div>
+													<div id="installerStateList" class="border rounded p-2"
+														style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.25rem;max-height:220px;overflow:auto">
+													</div>
+												</div>
+
+												<div class="col-12">
+													<label class="form-label">Notes</label>
+													<textarea class="form-control" id="installerNotes" rows="3"
+														placeholder="Internal notes"></textarea>
+												</div>
+											</div>
+
+											<div class="d-flex justify-content-end gap-2 mt-3">
+												<button type="button" class="btn btn-outline-secondary"
+													data-bs-dismiss="modal">Close</button>
+												<button type="submit" class="btn btn-primary">Save Installer</button>
+											</div>
+										</form>
+									</div>
+
+									<!-- PRODUCTS & PAY SCALES TAB -->
+									<div class="tab-pane fade" id="im-products" role="tabpanel">
+										<!-- Sub-tabs -->
+										<ul class="nav nav-pills subtab-bar mb-3" id="im-subtabs" role="tablist">
+											<li class="nav-item">
+												<button class="nav-link active" data-bs-toggle="tab"
+													data-bs-target="#im-prod-list" type="button">List</button>
+											</li>
+											<li class="nav-item">
+												<button class="nav-link" data-bs-toggle="tab"
+													data-bs-target="#im-prod-details" type="button">Details</button>
+											</li>
+										</ul>
+
+
+										<div class="tab-content">
+											<!-- LIST -->
+											<div class="tab-pane fade show active" id="im-prod-list">
+												<div class="d-flex justify-content-between align-items-center mb-2">
+													<h6 class="mb-0">Products for this installer</h6>
+													<button id="btnAddProduct" class="btn btn-sm btn-primary">+ Add
+														Product</button>
+												</div>
+												<div class="table-responsive">
+													<table class="table table-sm align-middle" id="productsTable">
+														<thead>
+															<tr>
+																<th>Name</th>
+																<th>Category</th>
+																<th>Service</th>
+																<th>Pay Scales</th>
+																<th>Redlines</th>
+																<th>Status</th>
+																<th class="text-end">Actions</th>
+															</tr>
+														</thead>
+														<tbody></tbody>
+													</table>
+												</div>
+											</div>
+
+											<!-- DETAILS -->
+											<div class="tab-pane fade" id="im-prod-details">
+												<form id="productForm" class="row g-3">
+													<input type="hidden" id="productIndex" />
+													<div class="col-md-3">
+														<label class="form-label">Category</label>
+														<select id="productCategory" class="form-select">
+															<option>Solar</option>
+															<option>Pest</option>
+															<option>Roofing</option>
+															<option>Fiber</option>
+														</select>
+													</div>
+													<div class="col-md-4">
+														<label class="form-label">Product Name</label>
+														<input id="productName" class="form-control"
+															placeholder="e.g. Solar CA" />
+													</div>
+													<div class="col-md-2">
+														<label class="form-label">Service Type</label>
+														<select id="productServiceType" class="form-select">
+															<option>Residential</option>
+															<option>Commercial</option>
+															<option>Both</option>
+														</select>
+													</div>
+													<div class="col-md-1">
+														<label class="form-label">Unit</label>
+														<input id="productUnit" class="form-control" value="kW" />
+													</div>
+													<div class="col-md-2">
+														<label class="form-label">Status</label>
+														<select id="productStatus" class="form-select">
+															<option>Active</option>
+															<option>Inactive</option>
+														</select>
+													</div>
+
+													<div class="col-md-3">
+														<label class="form-label">Default Redline</label>
+														<input id="productDefaultRedline" class="form-control"
+															placeholder="$ per unit" />
+													</div>
+													<div class="col-md-2"><label class="form-label">Start</label><input
+															type="date" id="productStart" class="form-control" /></div>
+													<div class="col-md-2"><label class="form-label">End</label><input
+															type="date" id="productEnd" class="form-control" /></div>
+
+													<div class="col-md-5"><label class="form-label">Notes</label><input
+															id="productNotes" class="form-control" /></div>
+													<div class="col-md-6"><label class="form-label">Adders</label><input
+															id="productAdders" class="form-control"
+															placeholder="comma separated" />
+													</div>
+													<div class="col-md-6"><label
+															class="form-label">Clawbacks</label><input
+															id="productClawbacks" class="form-control"
+															placeholder="comma separated" />
+													</div>
+
+													<div class="col-12 d-flex justify-content-end gap-2">
+														<button class="btn btn-outline-secondary" type="button"
+															id="cancelProductEdit">Back to List</button>
+														<button class="btn btn-primary" type="submit">Save
+															Product</button>
+													</div>
+
+													<!-- REDLINES -->
+													<div class="col-12">
+														<div class="card">
+															<div
+																class="card-header d-flex justify-content-between align-items-center">
+																<strong>Redlines</strong>
+																<button class="btn btn-sm btn-outline-secondary"
+																	type="button" data-bs-toggle="collapse"
+																	data-bs-target="#im-redlines-body">Toggle</button>
+															</div>
+															<div id="im-redlines-body" class="collapse show">
+																<div class="card-body">
+																	<div class="row g-2 align-items-end">
+																		<div class="col-md-4">
+																			<label class="form-label">State</label>
+																			<select id="redlineState"
+																				class="form-select"></select>
+																		</div>
+																		<div class="col-md-4">
+																			<label class="form-label">Redline</label>
+																			<input id="redlineValue"
+																				class="form-control"
+																				placeholder="$2.50/W or %" />
+																		</div>
+																		<div class="col-md-4">
+																			<button id="btnAddRedline"
+																				class="btn btn-primary">Add
+																				Redline</button>
+																		</div>
+																	</div>
+																	<div class="table-responsive mt-3">
+																		<table class="table table-sm"
+																			id="redlinesTable">
+																			<thead>
+																				<tr>
+																					<th>State</th>
+																					<th>Redline</th>
+																					<th class="text-end">Actions</th>
+																				</tr>
+																			</thead>
+																			<tbody></tbody>
+																		</table>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<!-- Pay Scales (moved here) -->
+													<div class="col-12">
+														<div class="card">
+															<div
+																class="card-header d-flex justify-content-between align-items-center">
+																<strong>Pay Scales</strong>
+																<button class="btn btn-sm btn-outline-secondary"
+																	type="button" data-bs-toggle="collapse"
+																	data-bs-target="#im-scales-body">Toggle</button>
+															</div>
+															<div id="im-scales-body" class="collapse show">
+																<div class="card-body">
+																	<!-- your existing scale inputs/table -->
+																	<div class="table-responsive">
+																		<table class="table table-sm" id="scalesTable">
+																			<thead>
+																				<tr>
+																					<th>Tier</th>
+																					<th>Min</th>
+																					<th>Max</th>
+																					<th>Rate</th>
+																					<th class="text-end">Actions</th>
+																				</tr>
+																			</thead>
+																			<tbody></tbody>
+																		</table>
+																	</div>
+																	<div class="mt-2 d-flex gap-2">
+																		<button id="btnAddScale"
+																			class="btn btn-outline-primary">Add
+																			Scale</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<!-- Docs (moved here) -->
+													<div class="col-12">
+														<div class="card">
+															<div
+																class="card-header d-flex justify-content-between align-items-center">
+																<strong>Docs</strong>
+																<button class="btn btn-sm btn-outline-secondary"
+																	type="button" data-bs-toggle="collapse"
+																	data-bs-target="#im-docs-body">Toggle</button>
+															</div>
+															<div id="im-docs-body" class="collapse show">
+																<div class="card-body">
+																	<div class="mb-2">
+																		<input type="file" id="docFile"
+																			class="form-control form-control-sm"
+																			multiple />
+																	</div>
+																	<div class="table-responsive">
+																		<table class="table table-sm" id="docsTable">
+																			<thead>
+																				<tr>
+																					<th>Name</th>
+																					<th>Size</th>
+																					<th class="text-end">Actions</th>
+																				</tr>
+																			</thead>
+																			<tbody></tbody>
+																		</table>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="col-12 d-flex justify-content-end gap-2">
+														<button id="cancelProductEdit" type="button"
+															class="btn btn-outline-secondary">Cancel</button>
+														<button type="submit" class="btn btn-primary">Save
+															Changes</button>
+													</div>
+												</form>
+											</div>
+
+
+										</div> <!-- /tab-content -->
+									</div> <!-- /Products tab -->
+								</div> <!-- /top tab content -->
+							</div> <!-- /body -->
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+
+			<!-- partial:partials/_footer.html -->
+			<footer
+				class="footer d-flex flex-row align-items-center justify-content-between px-4 py-3 border-top small">
+				<p class="text-secondary mb-1 mb-md-0">
+					Copyright © <span id="currentYear"></span>
+					<a href="https://sparkpro.io" target="_blank" rel="noopener noreferrer">Spark</a>.
+				</p>
+				<script>
+					document.getElementById("currentYear").textContent = new Date().getFullYear();
+				</script>
+				<p class="text-secondary">
+					Handcrafted By<i class="mb-1 text-primary ms-1 icon-sm" data-feather="zap"></i>
+				</p>
+			</footer>
+
+			<!-- partial -->
+		</div>
+	</div>
+
+	<!-- core:js -->
+	<script src="/assets/vendors/core/core.js"></script>
+	<!-- endinject -->
+
+	<!-- Plugin js for this page -->
+	<!-- End plugin js for this page -->
+
+	<!-- inject:js -->
+	<script src="/assets/js/app.js"></script>
+	<!-- endinject -->
+
+	<!-- Custom js for this page -->
+	<script>
+		(function () {
+			// ---------- Data ----------
+			const US_STATES = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'District of Columbia', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+			const CURRENCIES = [
+				{ code: 'USD', name: 'US Dollar' },
+				{ code: 'CAD', name: 'Canadian Dollar' },
+				{ code: 'EUR', name: 'Euro' },
+				{ code: 'GBP', name: 'British Pound' },
+				{ code: 'MXN', name: 'Mexican Peso' },
+				{ code: 'AUD', name: 'Australian Dollar' }
+			];
+			const TIMEZONES = [
+				'America/New_York', 'America/Chicago', 'America/Denver', 'America/Phoenix', 'America/Los_Angeles',
+				'America/Anchorage', 'Pacific/Honolulu', 'America/Mexico_City', 'America/Toronto', 'Europe/London', 'Europe/Berlin'
+			];
+
+			// ---------- Elements ----------
+			const els = {
+				form: document.getElementById('companyForm'),
+				saveStatus: document.getElementById('saveStatus'),
+				companyName: document.getElementById('companyName'),
+				ein: document.getElementById('ein'),
+				currency: document.getElementById('currency'),
+				timeZone: document.getElementById('timeZone'),
+				industry: document.getElementById('industry'),
+				hqAddress: document.getElementById('hqAddress'),
+				primaryColor: document.getElementById('primaryColor'),
+				primaryPicker: document.getElementById('primaryColorPicker'),
+				accentColor: document.getElementById('accentColor'),
+				accentPicker: document.getElementById('accentColorPicker'),
+				brandPreview: document.getElementById('brandPreview'),
+				logo: document.getElementById('logo'),
+				logoPreview: document.getElementById('logoPreview'),
+				btnReset: document.getElementById('btnReset'),
+				stateSearch: document.getElementById('stateSearch'),
+				stateList: document.getElementById('stateList'),
+				stateChips: document.getElementById('stateChips'),
+				checkAllStates: document.getElementById('checkAllStates'),
+				uncheckAllStates: document.getElementById('uncheckAllStates')
+			};
+
+			if (!els.form) return; // Only run on the General tab page
+
+			// ---------- Helpers ----------
+			function isHex(x) { return /^#?[0-9A-Fa-f]{6}$/.test(x || ''); }
+			function normHex(x) { x = (x || '').trim(); return x && x[0] === '#' ? x : (x ? '#' + x : ''); }
+			function updatePreview() {
+				const p = isHex(els.primaryColor.value) ? normHex(els.primaryColor.value) : '#0ea5e9';
+				const a = isHex(els.accentColor.value) ? normHex(els.accentColor.value) : '#22c55e';
+				els.brandPreview.style.background = `linear-gradient(90deg, ${p} 0%, ${a} 100%)`;
+			}
+
+			// function chipHtml(code) {
+			// 	return `<span class="badge bg-secondary me-1 mb-1">${code}</span>`;
+			// }
+
+			// ---------- Populate selects ----------
+			// Currencies
+			els.currency.innerHTML = CURRENCIES
+				.map(c => `<option value="${c.code}">${c.code} — ${c.name}</option>`)
+				.join('');
+			// Timezones
+			const guessTz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Chicago';
+			const tzList = Array.from(new Set([guessTz, ...TIMEZONES]));
+			els.timeZone.innerHTML = tzList.map(tz => `<option value="${tz}">${tz}</option>`).join('');
+
+			// ---------- EIN mask ----------
+			els.ein.addEventListener('input', () => {
+				const digits = els.ein.value.replace(/\D/g, '').slice(0, 9);
+				els.ein.value = digits.length <= 2 ? digits : `${digits.slice(0, 2)}-${digits.slice(2)}`;
+			});
+
+			// ---------- Color sync & preview ----------
+			els.primaryColor.addEventListener('input', () => {
+				if (isHex(els.primaryColor.value)) els.primaryPicker.value = normHex(els.primaryColor.value);
+				updatePreview();
+			});
+			els.accentColor.addEventListener('input', () => {
+				if (isHex(els.accentColor.value)) els.accentPicker.value = normHex(els.accentColor.value);
+				updatePreview();
+			});
+			els.primaryPicker.addEventListener('input', () => { els.primaryColor.value = els.primaryPicker.value; updatePreview(); });
+			els.accentPicker.addEventListener('input', () => { els.accentColor.value = els.accentPicker.value; updatePreview(); });
+
+			// ---------- Logo preview ----------
+			els.logo.addEventListener('change', () => {
+				const file = els.logo.files?.[0];
+				if (!file) { els.logoPreview.src = ''; return; }
+				if (file.size > 1_000_000) { alert('Logo must be 1MB or less.'); els.logo.value = ''; return; }
+				const reader = new FileReader();
+				reader.onload = e => els.logoPreview.src = e.target.result;
+				reader.readAsDataURL(file);
+			});
+
+			// ---------- States: render as checkboxes ----------
+			function renderStateList(filterText = "", prechecked = new Set()) {
+				const f = (filterText || "").trim().toLowerCase();
+				const items = US_STATES
+					.filter(s => !f || s.toLowerCase().includes(f))
+					.map(s => {
+						const id = `state__${s.replace(/\s+/g, '_')}`;
+						const checked = prechecked.has(s) ? 'checked' : '';
+						return `
+							<label for="${id}" class="d-flex align-items-center gap-2 mb-1">
+							<input type="checkbox" class="form-check-input m-0" id="${id}" value="${s}" ${checked} />
+							<span>${s}</span>
+							</label>`;
+					})
+					.join('');
+				els.stateList.innerHTML = items;
+
+				// bind change handlers each render
+				els.stateList.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+					cb.addEventListener('change', renderStateChips);
+				});
+			}
+
+			// ---------- Chips ----------
+			function chipHtml(name) {
+				return `<span class="badge bg-secondary me-1 mb-1">${name}</span>`;
+			}
+			function getCheckedStates() {
+				return Array.from(
+					els.stateList.querySelectorAll('input[type="checkbox"]:checked')
+				).map(cb => cb.value);
+			}
+			function renderStateChips() {
+				const selected = getCheckedStates();
+				els.stateChips.innerHTML = selected.map(chipHtml).join('');
+			}
+
+			// ---------- Search ----------
+			els.stateSearch.addEventListener('input', () => {
+				const pre = new Set(getCheckedStates()); // keep current selections on re-render
+				renderStateList(els.stateSearch.value, pre);
+				// Re-draw chips after re-render to reflect preserved checks
+				renderStateChips();
+			});
+
+			// ---------- Select All / Clear ----------
+			els.checkAllStates.addEventListener('click', () => {
+				els.stateList.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
+				renderStateChips();
+			});
+			els.uncheckAllStates.addEventListener('click', () => {
+				els.stateList.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+				renderStateChips();
+			});
+
+			// ---------- Persistence ----------
+			const STORAGE_KEY = 'spark.settings.company';
+
+			function validate() {
+				if (!els.companyName.value.trim()) return 'Company Name is required.';
+				if (!els.currency.value) return 'Default Currency is required.';
+				if (!els.timeZone.value) return 'Company Time Zone is required.';
+				const pc = els.primaryColor.value.trim();
+				const ac = els.accentColor.value.trim();
+				if (pc && !isHex(pc)) return 'Primary Brand Color must be a 6-digit hex value.';
+				if (ac && !isHex(ac)) return 'Accent Color must be a 6-digit hex value.';
+				if (els.ein.value && !/^\d{2}-\d{7}$/.test(els.ein.value)) return 'EIN must be formatted as 12-3456789.';
+				return null;
+			}
+
+			async function saveToServer(payload) {
+				const BASE_URL = window.SParkSettingsApiBase || '/api/settings/company';
+				const hasLogo = els.logo.files && els.logo.files[0];
+				try {
+					let res;
+					if (hasLogo) {
+						const fd = new FormData();
+						Object.entries(payload).forEach(([k, v]) => fd.append(k, Array.isArray(v) ? JSON.stringify(v) : (v ?? '')));
+						fd.append('companyLogo', els.logo.files[0]);
+						res = await fetch(BASE_URL, { method: 'POST', body: fd });
+					} else {
+						res = await fetch(BASE_URL, {
+							method: 'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify(payload)
+						});
+					}
+					if (!res.ok) throw new Error(await res.text());
+					return await res.json().catch(() => ({ ok: true }));
+				} catch (err) {
+					console.warn('Save failed, falling back to localStorage. Error:', err.message);
+					return null; // signal fallback
+				}
+			}
+
+			function saveLocal(data) {
+				localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+			}
+
+			function loadLocal() {
+				try {
+					const raw = localStorage.getItem(STORAGE_KEY); if (!raw) return;
+					const data = JSON.parse(raw);
+					els.companyName.value = data.companyName || '';
+					els.ein.value = data.ein || '';
+					els.currency.value = data.currency || 'USD';
+					els.timeZone.value = data.timeZone || guessTz;
+					els.industry.value = data.industry || '';
+					els.hqAddress.value = data.hqAddress || '';
+					els.primaryColor.value = data.primaryColor || '#0ea5e9';
+					els.accentColor.value = data.accentColor || '#22c55e';
+					els.primaryPicker.value = normHex(els.primaryColor.value);
+					els.accentPicker.value = normHex(els.accentColor.value);
+					updatePreview();
+
+					// states: render with prechecked
+					const pre = new Set(data.operationalStates || []);
+					renderStateList("", pre);
+					renderStateChips();
+
+					// logo dataURL
+					if (data.logoDataUrl) els.logoPreview.src = data.logoDataUrl;
+				} catch { /* ignore */ }
+			}
+
+			els.form.addEventListener('submit', async (e) => {
+				e.preventDefault();
+				const error = validate();
+				if (error) { alert(error); return; }
+
+				const operationalStates = getCheckedStates();
+
+				const payload = {
+					companyName: els.companyName.value.trim(),
+					ein: els.ein.value.trim(),
+					currency: els.currency.value,
+					timeZone: els.timeZone.value,
+					industry: els.industry.value,
+					hqAddress: els.hqAddress.value.trim(),
+					primaryColor: normHex(els.primaryColor.value || ''),
+					accentColor: normHex(els.accentColor.value || ''),
+					operationalStates: getCheckedStates(),
+					logoDataUrl: els.logoPreview.src || ''   // keep this
+				};
+
+				// Include logo preview (DataURL) for local UX
+				//payload.logoDataUrl = els.logoPreview.src || '';
+
+				els.saveStatus.textContent = 'Saving…';
+				const serverResult = await saveToServer(payload);
+				if (serverResult) {
+					els.saveStatus.textContent = 'Saved to server.';
+				} else {
+					saveLocal(payload);
+					els.saveStatus.textContent = 'Saved locally (offline mode).';
+				}
+				setTimeout(() => els.saveStatus.textContent = '', 2500);
+			});
+
+			els.btnReset.addEventListener('click', () => {
+				localStorage.removeItem(STORAGE_KEY);
+				els.form.reset();
+				updatePreview();
+				els.logoPreview.src = '';
+				renderStateList("", new Set()); // clear checks
+				renderStateChips();
+				loadLocal();
+			});
+
+			// ---------- Init ----------
+			updatePreview();
+			renderStateList("", new Set()); // initial empty render
+			renderStateChips();
+			loadLocal();
+		})();
+	</script>
+
+	<script>
+		(() => {
+			// --- share across tabs/modals ---
+			window.US_STATES = window.US_STATES || [
+				'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'District of Columbia',
+				'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
+				'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+				'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania',
+				'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington',
+				'West Virginia', 'Wisconsin', 'Wyoming'
+			];
+
+			// safety helpers (so later renders don’t crash)
+			window.esc = window.esc || function (s = '') {
+				return String(s)
+					.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+					.replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/\//g, '&#x2F;');
+			};
+
+			window.fmtBytes = window.fmtBytes || function (b = 0) {
+				if (!Number.isFinite(b) || b < 0) return '0 B';
+				const u = ['B', 'KB', 'MB', 'GB', 'TB']; let i = 0;
+				while (b >= 1024 && i < u.length - 1) { b /= 1024; i++; }
+				return `${b.toFixed(b >= 100 || i === 0 ? 0 : 1)} ${u[i]}`;
+			};
+		})();
+	</script>
+
+
+	<script>
+		(function () {
+			// --- global-ish safety helpers (define once) ---
+			window.esc = window.esc || function (s = "") {
+				return String(s)
+					.replace(/&/g, "&amp;")
+					.replace(/</g, "&lt;")
+					.replace(/>/g, "&gt;")
+					.replace(/"/g, "&quot;")
+					.replace(/'/g, "&#39;")
+					.replace(/\//g, "&#x2F;");
+			};
+
+			window.fmtBytes = window.fmtBytes || function (b = 0) {
+				if (!Number.isFinite(b) || b < 0) return "0 B";
+				const u = ["B", "KB", "MB", "GB", "TB"];
+				let i = 0;
+				while (b >= 1024 && i < u.length - 1) { b /= 1024; i++; }
+				return `${b.toFixed(b >= 100 || i === 0 ? 0 : 1)} ${u[i]}`;
+			};
+
+			window.esc = window.esc || (s => String(s)
+				.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+				.replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/\//g, '&#x2F;'));
+
+			window.fmtBytes = window.fmtBytes || (b => {
+				if (!Number.isFinite(b) || b < 0) return '0 B';
+				const u = ['B', 'KB', 'MB', 'GB', 'TB']; let i = 0;
+				while (b >= 1024 && i < u.length - 1) { b /= 1024; i++; }
+				return `${b.toFixed(b >= 100 || i === 0 ? 0 : 1)} ${u[i]}`;
+
+				// ...the rest of your installer modal code...
+			})();
+	</script>
+
+
+	<script>
+			(function () {
+				// ---- reuse what you already have above this (US_STATES, installers, $, $$, esc, fmtBytes, etc.) ----
+
+				/* ===== Mega Modal wiring (full-screen inside page-content) ===== */
+				const imEl = document.getElementById('installerMegaModal');
+				const imDlg = document.getElementById('installerMegaDialog');
+
+				// Recreate to remove backdrop/focus trap
+				let im = bootstrap.Modal.getInstance(imEl);
+				if (im) im.dispose();
+				im = new bootstrap.Modal(imEl, { backdrop: false, focus: false, keyboard: true });
+
+				function positionInstallerMega() {
+					const page = document.querySelector('.page-content');
+					if (!page) return;
+					const r = page.getBoundingClientRect();
+					Object.assign(imDlg.style, {
+						left: r.left + 'px',
+						top: r.top + 'px',
+						width: r.width + 'px',
+						height: r.height + 'px'
+					});
+				}
+				const allowOutsideFocus = (e) => {
+					if (!imEl.classList.contains('show')) return;
+					if (!e.target.closest('#installerMegaModal')) e.stopPropagation();
+				};
+
+				imEl.addEventListener('shown.bs.modal', () => {
+					document.body.classList.add('mega-open');
+					document.body.classList.remove('modal-open');
+					document.body.style.removeProperty('padding-right');
+					document.addEventListener('focusin', allowOutsideFocus, true);
+					positionInstallerMega();
+				});
+				imEl.addEventListener('hidden.bs.modal', () => {
+					document.body.classList.remove('mega-open');
+					document.removeEventListener('focusin', allowOutsideFocus, true);
+				});
+				window.addEventListener('resize', positionInstallerMega, { passive: true });
+				window.addEventListener('scroll', positionInstallerMega, { passive: true });
+
+				/* ===== State grid in GENERAL tab ===== */
+				function renderStatesGrid(listId, searchId, precheckedSet, allBtnSel, clearBtnSel) {
+					const list = document.getElementById(listId);
+					const search = document.getElementById(searchId);
+					const draw = () => {
+						const f = (search.value || '').trim().toLowerCase();
+						list.innerHTML = US_STATES
+							.filter(s => !f || s.toLowerCase().includes(f))
+							.map(s => {
+								const id = `${listId}__${s.replace(/\s+/g, '_')}`;
+								const chk = precheckedSet.has(s) ? 'checked' : '';
+								return `<label for="${id}"><input type="checkbox" id="${id}" value="${s}" ${chk} class="form-check-input m-0"> ${s}</label>`;
+							}).join('');
+					};
+					search.oninput = () => {
+						precheckedSet = new Set(getCheckedStatesFrom(listId));
+						draw(); restoreChecks(listId, precheckedSet);
+					};
+					document.querySelector(allBtnSel)?.addEventListener('click', () => list.querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = true));
+					document.querySelector(clearBtnSel)?.addEventListener('click', () => list.querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = false));
+					draw();
+				}
+				function getCheckedStatesFrom(listId) {
+					return Array.from(document.getElementById(listId).querySelectorAll('input[type=checkbox]:checked')).map(cb => cb.value);
+				}
+				function restoreChecks(listId, set) {
+					document.getElementById(listId).querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = set.has(cb.value));
+				}
+
+				/* ===== Products & Pay Scales — state kept while the mega modal is open ===== */
+				let _currentInstallerId = null;
+				let _products = [];   // current installer's draft products
+				let _redlines = {};
+				let _scales = [];
+				let _docs = [];
+
+				function renderProductsForInstaller() {
+					const tbody = document.querySelector('#productsTable tbody');
+					const rows = _products.map((p, i) => {
+						const id = `prod-acc-${i}`;
+
+						// quick summaries for the preview (keep it fast & small)
+						const redlinesPreview = Object.entries(p.redlines || {})
+							.slice(0, 6)
+							.map(([st, v]) => `<span class="badge bg-light text-dark border me-1 mb-1">${esc(st)}: ${esc(v)}</span>`)
+							.join('') || '<span class="text-muted">None</span>';
+
+						const scalesPreview = (p.payScales || [])
+							.slice(0, 5)
+							.map(s => `<span class="badge bg-light text-dark border me-1 mb-1">${esc(s.tier ?? s.name ?? 'Tier')} — ${esc(s.rate ?? '')}</span>`)
+							.join('') || '<span class="text-muted">None</span>';
+
+						const docsPreview = (p.docs || [])
+							.slice(0, 5)
+							.map(d => `<span class="badge bg-light text-dark border me-1 mb-1">${esc(d.name ?? 'Doc')} (${esc(fmtBytes(d.size ?? 0))})</span>`)
+							.join('') || '<span class="text-muted">None</span>';
+
+						return `
+      <tr>
+        <td>
+          <button class="btn btn-xs btn-outline-secondary me-2" data-bs-toggle="collapse" data-bs-target="#${id}" aria-expanded="false" aria-controls="${id}">
+            Details
+          </button>
+          <strong>${esc(p.name || '')}</strong>
+        </td>
+        <td>${esc(p.category || '')}</td>
+        <td>${esc(p.serviceType || '')}</td>
+        <td>${p.payScales?.length || 0}</td>
+        <td>${Object.keys(p.redlines || {}).length}</td>
+        <td><span class="badge ${p.status === 'Active' ? 'bg-success' : 'bg-secondary'}">${p.status || 'Active'}</span></td>
+        <td class="text-end">
+          <button class="btn btn-xs btn-outline-primary me-1" data-act="edit" data-idx="${i}">Edit</button>
+          <button class="btn btn-xs btn-outline-danger" data-act="del" data-idx="${i}">Del</button>
+        </td>
+      </tr>
+      <tr class="collapse bg-light" id="${id}">
+        <td colspan="7" class="p-3">
+          <div class="row g-3">
+            <div class="col-lg-4">
+              <h6 class="mb-2">Redlines</h6>
+              <div class="d-flex flex-wrap">${redlinesPreview}</div>
+            </div>
+            <div class="col-lg-4">
+              <h6 class="mb-2">Pay Scales</h6>
+              <div class="d-flex flex-wrap">${scalesPreview}</div>
+            </div>
+            <div class="col-lg-4">
+              <h6 class="mb-2">Docs</h6>
+              <div class="d-flex flex-wrap">${docsPreview}</div>
+            </div>
+          </div>
+        </td>
+      </tr>`;
+					}).join('');
+
+					tbody.innerHTML = rows || `<tr><td colspan="7" class="text-center text-muted">No products yet.</td></tr>`;
+				}
+
+
+				// List actions
+				document.getElementById('btnAddProduct').addEventListener('click', () => openProductEditor());
+				document.getElementById('productsTable').addEventListener('click', (e) => {
+					const btn = e.target.closest('button'); if (!btn) return;
+					const idx = Number(btn.dataset.idx);
+					if (btn.dataset.act === 'edit') openProductEditor(idx);
+					if (btn.dataset.act === 'del') { _products.splice(idx, 1); renderProductsForInstaller(); }
+				});
+
+				// DETAILS
+				function openProductEditor(idx = null) {
+					document.getElementById('productForm').reset();
+					document.getElementById('productIndex').value = (idx == null) ? '' : String(idx);
+
+					const p = idx == null ? {} : JSON.parse(JSON.stringify(_products[idx]));
+					document.getElementById('productCategory').value = p.category || 'Solar';
+					document.getElementById('productName').value = p.name || '';
+					document.getElementById('productServiceType').value = p.serviceType || 'Residential';
+					document.getElementById('productUnit').value = p.unit || 'kW';
+					document.getElementById('productStatus').value = p.status || 'Active';
+					document.getElementById('productDefaultRedline').value = p.defaultRedline || '';
+					document.getElementById('productStart').value = p.start || '';
+					document.getElementById('productEnd').value = p.end || '';
+					document.getElementById('productNotes').value = p.notes || '';
+					document.getElementById('productAdders').value = p.adders || '';
+					document.getElementById('productClawbacks').value = p.clawbacks || '';
+
+					_redlines = p.redlines || {};
+					_scales = p.payScales || [];
+					_docs = p.docs || [];
+
+					renderRedlineStateOptions(); renderRedlines();
+					renderScales(); renderDocs();
+
+					// go to the Details subtab
+					bootstrap.Tab.getOrCreateInstance(document.querySelector('[data-bs-target="#im-prod-details"]')).show();
+				}
+
+				document.getElementById('cancelProductEdit').addEventListener('click', () => {
+					bootstrap.Tab.getOrCreateInstance(document.querySelector('[data-bs-target="#im-prod-list"]')).show();
+				});
+
+				document.getElementById('productForm').addEventListener('submit', (e) => {
+					e.preventDefault();
+					const idx = document.getElementById('productIndex').value === '' ? null : Number(document.getElementById('productIndex').value);
+					const prod = {
+						category: document.getElementById('productCategory').value,
+						name: document.getElementById('productName').value.trim(),
+						serviceType: document.getElementById('productServiceType').value,
+						unit: document.getElementById('productUnit').value,
+						status: document.getElementById('productStatus').value,
+						defaultRedline: document.getElementById('productDefaultRedline').value.trim(),
+						start: document.getElementById('productStart').value,
+						end: document.getElementById('productEnd').value,
+						notes: document.getElementById('productNotes').value.trim(),
+						adders: document.getElementById('productAdders').value.trim(),
+						clawbacks: document.getElementById('productClawbacks').value.trim(),
+						redlines: JSON.parse(JSON.stringify(_redlines)),
+						payScales: JSON.parse(JSON.stringify(_scales)),
+						docs: JSON.parse(JSON.stringify(_docs))
+					};
+					if (!prod.name) { alert('Product Name is required'); return; }
+					if (idx == null) _products.push(prod); else _products[idx] = prod;
+
+					renderProductsForInstaller();
+					bootstrap.Tab.getOrCreateInstance(document.querySelector('[data-bs-target="#im-prod-list"]')).show();
+				});
+
+				// REDLINES
+				function renderRedlineStateOptions() {
+					const sel = document.getElementById('redlineState');
+					sel.innerHTML = US_STATES.map(s => `<option>${s}</option>`).join('');
+				}
+				document.getElementById('btnAddRedline').addEventListener('click', (e) => {
+					e.preventDefault();
+					const s = document.getElementById('redlineState').value;
+					const v = document.getElementById('redlineValue').value.trim();
+					if (!s || !v) return;
+					_redlines[s] = v;
+					document.getElementById('redlineValue').value = '';
+					renderRedlines();
+				});
+				function renderRedlines() {
+					const tbody = document.querySelector('#redlinesTable tbody');
+					tbody.innerHTML = Object.entries(_redlines).map(([st, v]) => `
+	      <tr>
+	        <td>${esc(st)}</td><td>${esc(v)}</td>
+	        <td class="text-end"><button class="btn btn-xs btn-outline-danger" data-st="${st}">Del</button></td>
+	      </tr>`).join('') || `<tr><td colspan="3" class="text-center text-muted">None</td></tr>`;
+				}
+				document.getElementById('redlinesTable').addEventListener('click', (e) => {
+					const btn = e.target.closest('button'); if (!btn) return;
+					delete _redlines[btn.dataset.st]; renderRedlines();
+				});
+
+				// SCALES
+				document.getElementById('btnAddScale').addEventListener('click', () => openScaleEditor());
+				document.getElementById('cancelScale').addEventListener('click', () => document.getElementById('scaleEditor').classList.add('d-none'));
+				document.getElementById('saveScale').addEventListener('click', () => {
+					const idx = document.getElementById('scaleIndex').value === '' ? null : Number(document.getElementById('scaleIndex').value);
+					const s = {
+						name: document.getElementById('scaleName').value.trim(),
+						role: document.getElementById('scaleRole').value,
+						service: document.getElementById('scaleService').value,
+						pctDeal: document.getElementById('scalePctDeal').value.trim(),
+						pctAbove: document.getElementById('scalePctAboveRedline').value.trim(),
+						flat: document.getElementById('scaleFlat').value.trim(),
+						perUnit: document.getElementById('scalePerUnit').value.trim(),
+						minMargin: document.getElementById('scaleMinMargin').value.trim(),
+						cap: document.getElementById('scaleCap').value.trim(),
+						rounding: document.getElementById('scaleRounding').value,
+						spiff: document.getElementById('scaleSpiff').value.trim(),
+						start: document.getElementById('scaleStart').value,
+						end: document.getElementById('scaleEnd').value
+					};
+					if (!s.name) { alert('Pay Scale Name required'); return; }
+					if (idx == null) _scales.push(s); else _scales[idx] = s;
+					document.getElementById('scaleEditor').classList.add('d-none'); renderScales();
+				});
+				function openScaleEditor(idx = null) {
+					document.getElementById('scaleEditor').classList.remove('d-none');
+					document.getElementById('scaleIndex').value = idx ?? '';
+					const s = idx != null ? _scales[idx] : {};
+					document.getElementById('scaleName').value = s?.name || '';
+					document.getElementById('scaleRole').value = s?.role || 'Setter';
+					document.getElementById('scaleService').value = s?.service || 'Residential';
+					document.getElementById('scalePctDeal').value = s?.pctDeal || '';
+					document.getElementById('scalePctAboveRedline').value = s?.pctAbove || '';
+					document.getElementById('scaleFlat').value = s?.flat || '';
+					document.getElementById('scalePerUnit').value = s?.perUnit || '';
+					document.getElementById('scaleMinMargin').value = s?.minMargin || '';
+					document.getElementById('scaleCap').value = s?.cap || '';
+					document.getElementById('scaleRounding').value = s?.rounding || 'Nearest';
+					document.getElementById('scaleSpiff').value = s?.spiff || '';
+					document.getElementById('scaleStart').value = s?.start || '';
+					document.getElementById('scaleEnd').value = s?.end || '';
+				}
+				function renderScales() {
+					const tbody = document.querySelector('#scalesTable tbody');
+					tbody.innerHTML = _scales.map((s, i) => `
+	      <tr>
+	        <td>${esc(s.name || '')}</td>
+	        <td>${esc(s.role || '')}</td>
+	        <td>${['pctDeal', 'pctAbove', 'flat', 'perUnit'].filter(k => s[k] && String(s[k]).trim() !== '').join(', ') || '—'}</td>
+	        <td>${esc(s.service || '')}</td>
+	        <td>${esc((s.minMargin || '') + (s.cap ? ' / ' + s.cap : '')) || '—'}</td>
+	        <td>${esc((s.start || '') + (s.end ? ' → ' + s.end : '')) || '—'}</td>
+	        <td class="text-end">
+	          <button class="btn btn-xs btn-outline-primary me-1" data-sc="${i}" data-act="edit">Edit</button>
+	          <button class="btn btn-xs btn-outline-danger" data-sc="${i}" data-act="del">Del</button>
+	        </td>
+	      </tr>`).join('') || `<tr><td colspan="7" class="text-center text-muted">No pay scales yet.</td></tr>`;
+				}
+				document.getElementById('scalesTable').addEventListener('click', (e) => {
+					const btn = e.target.closest('button'); if (!btn) return;
+					const i = Number(btn.dataset.sc);
+					if (btn.dataset.act === 'edit') openScaleEditor(i);
+					if (btn.dataset.act === 'del') { _scales.splice(i, 1); renderScales(); }
+				});
+
+				// DOCS
+				document.getElementById('productDocs').addEventListener('change', () => {
+					_docs = Array.from(document.getElementById('productDocs').files).map(f => ({ name: f.name, size: f.size }));
+					renderDocs();
+				});
+				function renderDocs() {
+					const list = document.getElementById('docsList');
+					list.innerHTML = _docs.map(d => `<li class="list-group-item d-flex justify-content-between">
+	      <span>${esc(d.name)}</span><span class="text-muted">${fmtBytes(d.size)}</span></li>`).join('') ||
+						`<li class="list-group-item text-muted">No docs uploaded.</li>`;
+				}
+
+				/* ===== Open installer (from your table’s Edit / Add) ===== */
+				window.openInstaller = function (inst = null, jumpToProducts = false) {
+					// Title
+					document.getElementById('im-title').textContent = inst ? `Installer • ${inst.name}` : 'Add Installer';
+
+					// Populate GENERAL
+					document.getElementById('installerForm').reset();
+					document.getElementById('installerId').value = inst?.id ?? '';
+					document.getElementById('installerName').value = inst?.name ?? '';
+					document.getElementById('installerSchedule').value = inst?.schedule ?? 'Net 30';
+					document.getElementById('installerMP1').value = inst?.mp1 ?? '';
+					document.getElementById('installerMP2').value = inst?.mp2 ?? '';
+					document.getElementById('installerStatus').value = inst?.status ?? 'Active';
+					document.getElementById('installerStart').value = inst?.start ?? '';
+					document.getElementById('installerEnd').value = inst?.end ?? '';
+					document.getElementById('installerNotes').value = inst?.notes ?? '';
+
+					renderStatesGrid('installerStateList', 'installerStateSearch', new Set(inst?.states || []), '#installerStatesAll', '#installerStatesClear');
+
+					// Products state
+					_currentInstallerId = inst?.id ?? null;
+					_products = JSON.parse(JSON.stringify(inst?.products || []));
+					renderProductsForInstaller();
+
+					// start on requested tab
+					bootstrap.Tab.getOrCreateInstance(document.querySelector('#im-general-tab')).show();
+					if (jumpToProducts) {
+						setTimeout(() => bootstrap.Tab.getOrCreateInstance(document.querySelector('#im-products-tab')).show(), 50);
+					}
+
+					im.show();
+				};
+
+				// Save GENERAL
+				document.getElementById('installerForm').addEventListener('submit', (e) => {
+					e.preventDefault();
+					const id = document.getElementById('installerId').value ? Number(document.getElementById('installerId').value) : Date.now();
+					const idx = installers.findIndex(x => x.id === id);
+					const data = {
+						id,
+						name: document.getElementById('installerName').value.trim(),
+						schedule: document.getElementById('installerSchedule').value,
+						mp1: document.getElementById('installerMP1').value.trim(),
+						mp2: document.getElementById('installerMP2').value.trim(),
+						status: document.getElementById('installerStatus').value,
+						start: document.getElementById('installerStart').value,
+						end: document.getElementById('installerEnd').value,
+						notes: document.getElementById('installerNotes').value.trim(),
+						states: getCheckedStatesFrom('installerStateList'),
+						products: JSON.parse(JSON.stringify(_products))
+					};
+					if (!data.name) { alert('Installer Name is required'); return; }
+					if (idx < 0) installers.push(data); else installers[idx] = data;
+					im.hide(); renderInstallers();   // call your existing table render
+				});
+
+				// expose openInstaller for buttons you already have
+			})();
+	</script>
+
+
+
+	<!-- End custom js for this page -->
+</body>
+
+</html>
