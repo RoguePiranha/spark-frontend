@@ -33,8 +33,8 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         // ---------- HTML ----------
-        { src: 'index.html', dest: '.' },
-        { src: 'pages/**/*', dest: 'pages' },
+        { src: ['*.html', '!node_modules/**', '!dist/**'], dest: '.' },
+        { src: 'pages/**/*.html', dest: 'pages' },
         // { src: 'partials/**/*', dest: 'partials' },
 
         // ---------- Top-level static ----------
