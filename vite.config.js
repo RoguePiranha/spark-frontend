@@ -11,22 +11,19 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       input: {
-        // Recreate your gulp concatenations/outputs
-        core: path.resolve('assets/vendors/core/core.js'),         // -> dist/assets/vendors/core/core.js
-        coreStyles: path.resolve('assets/vendors/core/core.css'),  // -> dist/assets/vendors/core/core.css
-        style: path.resolve('assets/scss/style.scss')              // -> dist/assets/css/style.css
+        core: path.resolve('assets/vendors/core/core.js'),
+        coreStyles: path.resolve('assets/vendors/core/core.css'),
+        style: path.resolve('assets/scss/style.scss')
       },
       output: {
         entryFileNames: (chunk) => {
           if (chunk.name === 'core') return 'assets/vendors/core/core.js';
-          return 'assets/js/[name].js'; // any other JS entries (we only have 'core' here)
+          return 'assets/js/[name].js';
         },
         assetFileNames: (asset) => {
-          // Map CSS emitted by the two CSS entries to your expected paths
           if (asset.name === 'coreStyles.css') return 'assets/vendors/core/core.css';
           if (asset.name === 'style.css')      return 'assets/css/style.css';
 
-          // Fallback for other emitted assets (images/fonts discovered via url() in CSS, etc.)
           return 'assets/[name][extname]';
         }
       }
@@ -144,5 +141,5 @@ export default defineConfig({
       ]
     })
   ],
-  server: { port: 5173 }
+  server: { port: 5001 }
 });
