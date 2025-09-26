@@ -51,7 +51,7 @@
 					<div class="row g-0 p-1">
 						<div class="col-3 text-center">
 							<a
-								href="/pages/apps/chat.html"
+								href="/apps/chat/"
 								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
 								><i
 									data-feather="message-square"
@@ -61,7 +61,7 @@
 						</div>
 						<div class="col-3 text-center">
 							<a
-								href="/pages/apps/calendar.html"
+								href="/apps/calendar/"
 								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
 								><i
 									data-feather="calendar"
@@ -71,7 +71,7 @@
 						</div>
 						<div class="col-3 text-center">
 							<a
-								href="/pages/email/inbox.html"
+								href="/email/inbox/"
 								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
 								><i
 									data-feather="mail"
@@ -81,7 +81,7 @@
 						</div>
 						<div class="col-3 text-center">
 							<a
-								href="/pages/profile.html"
+								href="/profile/"
 								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
 								><i
 									data-feather="instagram"
@@ -349,7 +349,7 @@
 					<ul class="list-unstyled p-1">
 						<li class="dropdown-item py-2">
 							<a
-								href="/pages/profile.html"
+								href="/profile/"
 								class="text-body ms-0">
 								<i
 									class="me-2 icon-md"
@@ -394,7 +394,7 @@
 		document.addEventListener("DOMContentLoaded", async () => {
 			const user = JSON.parse(localStorage.getItem("user"));
 			if (!user) {
-				window.location.href = "/pages/login.html";
+				window.location.href = "/auth/login/";
 				return;
 			}
 
@@ -413,7 +413,7 @@
 	<script>
 		function logout() {
 			localStorage.removeItem("user");
-			window.location.href = "/pages/login.html";
+			window.location.href = "/auth/login/";
 		}
 	</script>
 	<script>

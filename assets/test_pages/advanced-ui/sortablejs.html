@@ -59,7 +59,7 @@
 			id="sidebarNav">
 			<li class="nav-item nav-category">Main</li>
 			<li class="nav-item">
-				<a href="/pages/dashboard.html" class="nav-link">
+				<a href="/dashboard/" class="nav-link">
 					<i class="link-icon" data-feather="zap"></i>
 					<span class="link-title">Dashboard</span>
 				</a>
@@ -67,7 +67,7 @@
 			<li class="nav-item nav-category">Web Apps</li>
 			<li class="nav-item">
 				<a
-					href="/pages/apps/chat.html"
+					href="/apps/chat/"
 					class="nav-link">
 					<i
 						class="link-icon"
@@ -77,7 +77,7 @@
 			</li>
 			<li class="nav-item">
 				<a
-					href="/pages/apps/calendar.html"
+					href="/apps/calendar/"
 					class="nav-link">
 					<i
 						class="link-icon"
@@ -88,7 +88,7 @@
 			<li class="nav-item nav-category">Components</li>
 			<li class="nav-item">
 				<a
-					href="/pages/profile.html"
+					href="/profile/"
 					class="nav-link">
 					<i
 						class="link-icon"
@@ -98,7 +98,7 @@
 			</li>
 			<li class="nav-item">
 				<a
-					href="/pages/my-team.html"
+					href="/my-team/"
 					class="nav-link">
 					<i
 						class="link-icon"
@@ -108,7 +108,7 @@
 			</li>
 			<li class="nav-item">
 				<a
-					href="/pages/compensation.html"
+					href="/compensation/"
 					class="nav-link">
 					<i
 						class="link-icon"
@@ -118,7 +118,7 @@
 			</li>
 			<li class="nav-item">
 				<a
-					href="/pages/installers.html"
+					href="/installers/"
 					class="nav-link">
 					<i
 						class="link-icon"
@@ -128,7 +128,7 @@
 			</li>
 			<li class="nav-item">
 				<a
-					href="/pages/documents.html"
+					href="/documents/"
 					class="nav-link">
 					<i
 						class="link-icon"
@@ -160,42 +160,42 @@
 					<ul class="nav sub-menu">
 						<li class="nav-item">
 							<a
-								href="/pages/blank-page.html"
+								href="/blank-page/"
 								class="nav-link"
 								>Blank page</a
 							>
 						</li>
 						<li class="nav-item">
 							<a
-								href="/pages/faq.html"
+								href="/faq/"
 								class="nav-link"
 								>Faq</a
 							>
 						</li>
 						<li class="nav-item">
 							<a
-								href="/pages/invoice.html"
+								href="/invoice/"
 								class="nav-link"
 								>Invoice</a
 							>
 						</li>
 						<li class="nav-item">
 							<a
-								href="/pages/profile.html"
+								href="/profile/"
 								class="nav-link"
 								>Profile</a
 							>
 						</li>
 						<li class="nav-item">
 							<a
-								href="/pages/pricing.html"
+								href="/pricing/"
 								class="nav-link"
 								>Pricing</a
 							>
 						</li>
 						<li class="nav-item">
 							<a
-								href="/pages/timeline.html"
+								href="/timeline/"
 								class="nav-link"
 								>Timeline</a
 							>
@@ -226,14 +226,14 @@
 					<ul class="nav sub-menu">
 						<li class="nav-item">
 							<a
-								href="/pages/auth/login.html"
+								href="/auth/login/"
 								class="nav-link"
 								>Login</a
 							>
 						</li>
 						<li class="nav-item">
 							<a
-								href="/pages/auth/register.html"
+								href="/auth/register/"
 								class="nav-link"
 								>Register</a
 							>
@@ -244,7 +244,7 @@
 			<li class="nav-item nav-category">Docs</li>
 			<li class="nav-item">
 				<a
-					href="/pages/settings.html"
+					href="/settings/"
 					class="nav-link">
 					<i
 						class="link-icon"
@@ -317,7 +317,7 @@
 					<div class="row g-0 p-1">
 						<div class="col-3 text-center">
 							<a
-								href="/pages/apps/chat.html"
+								href="/apps/chat/"
 								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
 								><i
 									data-feather="message-square"
@@ -327,7 +327,7 @@
 						</div>
 						<div class="col-3 text-center">
 							<a
-								href="/pages/apps/calendar.html"
+								href="/apps/calendar/"
 								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
 								><i
 									data-feather="calendar"
@@ -337,7 +337,7 @@
 						</div>
 						<div class="col-3 text-center">
 							<a
-								href="/pages/email/inbox.html"
+								href="/email/inbox/"
 								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
 								><i
 									data-feather="mail"
@@ -347,7 +347,7 @@
 						</div>
 						<div class="col-3 text-center">
 							<a
-								href="/pages/profile.html"
+								href="/profile/"
 								class="dropdown-item d-flex flex-column align-items-center justify-content-center w-70px h-70px"
 								><i
 									data-feather="instagram"
@@ -615,7 +615,7 @@
 					<ul class="list-unstyled p-1">
 						<li class="dropdown-item py-2">
 							<a
-								href="/pages/profile.html"
+								href="/profile/"
 								class="text-body ms-0">
 								<i
 									class="me-2 icon-md"
@@ -660,7 +660,7 @@
 		document.addEventListener("DOMContentLoaded", async () => {
 			const user = JSON.parse(localStorage.getItem("user"));
 			if (!user) {
-				window.location.href = "/pages/login.html";
+				window.location.href = "/auth/login/";
 				return;
 			}
 
@@ -679,7 +679,7 @@
 	<script>
 		function logout() {
 			localStorage.removeItem("user");
-			window.location.href = "/pages/login.html";
+			window.location.href = "/auth/login/";
 		}
 	</script>
 	<script>
